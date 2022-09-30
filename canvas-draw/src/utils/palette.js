@@ -40,6 +40,7 @@ export class Palette {
     this.bindMouseup = function () {}; // 解决 eventlistener 不能bind
     this.init();
   }
+
   init() {
     if (this.fillStyle) {
       this.ctx.fillStyle = '#fff';
@@ -63,6 +64,7 @@ export class Palette {
     this.canvas.addEventListener(eventNameDown, this.bindMousedown);
     this.canvas.addEventListener(eventNameUp, this.bindMouseup);
   }
+
   // 获取当前位置
   getPoint(e) {
     const { pageX, pageY, target } = e.changedTouches[0];
@@ -71,6 +73,7 @@ export class Palette {
     const y = (pageY - top) * this.ratio;
     return { x, y };
   }
+
   // 鼠标按下
   onmousedown(e) {
     e.preventDefault();
@@ -87,6 +90,7 @@ export class Palette {
     this.y = e.offsetY;
     this.last = [this.x, this.y];
   }
+
   gatherImage() {
     // 采集图像
     this.imgData = this.imgData.slice(0, this.index + 1); // 每次鼠标抬起时，将储存的imgdata截取至index处
@@ -95,6 +99,7 @@ export class Palette {
     this.index = this.imgData.length - 1; // 储存完后将 index 重置为 imgData 最后一位
     this.allowCallback(this.index > 0, this.index < this.imgData.length - 1);
   }
+
   reSetImage() {
     // 重置为上一帧
     this.ctx.clearRect(0, 0, this.width, this.height);
@@ -102,6 +107,7 @@ export class Palette {
       this.ctx.putImageData(this.imgData[this.index], 0, 0);
     }
   }
+
   // 鼠标移动
   onmousemove(e) {
     if (this.isTouch) {
@@ -183,6 +189,7 @@ export class Palette {
         break;
     }
   }
+
   // 鼠标抬起
   onmouseup(e) {
     e.preventDefault();
@@ -201,6 +208,7 @@ export class Palette {
       }
     }
   }
+
   // 绘制线性（直线和铅笔）
   line(last, now, lineWidth, drawColor, isPencil) {
     if (!isPencil) {
@@ -220,6 +228,7 @@ export class Palette {
       this.last = now;
     }
   }
+
   // 绘制矩形
   rect(x, y, width, height, lineWidth, drawColor) {
     this.reSetImage();
@@ -227,6 +236,7 @@ export class Palette {
     this.ctx.strokeStyle = drawColor;
     this.ctx.strokeRect(x, y, width, height);
   }
+
   // 绘制多边形
   polygon(x, y, sides, width, height, lineWidth, drawColor) {
     this.reSetImage();
@@ -245,6 +255,7 @@ export class Palette {
     this.ctx.closePath();
     this.ctx.stroke();
   }
+
   // 绘制圆形
   arc(x, y, width, height, lineWidth, drawColor) {
     this.reSetImage();
@@ -256,11 +267,13 @@ export class Palette {
     this.ctx.closePath();
     this.ctx.stroke();
   }
+
   // 橡皮擦
   eraser(endx, endy, lineWidth) {
     this.ctx.save();
     this.line(this.last, [endx, endy], lineWidth * 2, '#fff', true);
   }
+
   // 撤回
   cancel() {
     if (--this.index < 0) {
@@ -270,6 +283,7 @@ export class Palette {
     this.allowCallback(this.index > 0, this.index < this.imgData.length - 1);
     this.ctx.putImageData(this.imgData[this.index], 0, 0);
   }
+
   // 前进
   go() {
     if (++this.index > this.imgData.length - 1) {
@@ -279,12 +293,14 @@ export class Palette {
     this.allowCallback(this.index > 0, this.index < this.imgData.length - 1);
     this.ctx.putImageData(this.imgData[this.index], 0, 0);
   }
+
   // 清屏
   clear() {
     this.imgData = [];
     this.ctx.clearRect(0, 0, this.width, this.height);
     this.gatherImage();
   }
+
   // 设置画板参数
   changeWay({ type, color, lineWidth, sides }) {
     if (type === 'eraser') {
@@ -298,10 +314,12 @@ export class Palette {
     this.lineWidth = lineWidth || this.lineWidth; // 线宽
     this.sides = sides || this.sides; // 边数
   }
+
   // 获取当前画面数据
   getImageDataNow() {
     return this.imgData[this.index];
   }
+
   // 销毁画板
   destroy() {
     this.clear();
