@@ -1,4 +1,4 @@
-import { Particle, offScreenItem } from "../lib/particle.js";
+import {Particle, offScreenItem} from "../lib/particle.js";
 
 class exampleMove extends Particle {
     //粒子形状绘制
@@ -9,6 +9,7 @@ class exampleMove extends Particle {
         ctx.closePath();
         ctx.fill();
     };
+
     //粒子如何运动
     moveFunc(ctx, width, height) {
         this.particle.map(item => {
@@ -16,7 +17,8 @@ class exampleMove extends Particle {
             if (item.posY > height) {
                 item.posX = Math.round(Math.random() * width);
                 item.posY = Math.round(Math.random() * height);
-            };
+            }
+            ;
             if (this.offScreenRendering) {
                 item.instance.move(this.ctx, item.posX, item.posY);
             } else {
@@ -24,6 +26,7 @@ class exampleMove extends Particle {
             }
         });
     };
+
     //离屏粒子初始化位置
     createOffScreenInstance(width, height, amount) {
         let particle1 = new offScreenItem(4, 4, (ctx, width, height) => {
@@ -38,7 +41,8 @@ class exampleMove extends Particle {
                 posX: Math.round(Math.random() * width),
                 posY: Math.round(Math.random() * height)
             });
-        };
+        }
+        ;
     };
 
     //正常粒子初始化位置
@@ -54,18 +58,17 @@ class exampleMove extends Particle {
     }
 }
 
-var example = new exampleMove('example', 400, 400, { speed: 3, amount: 6000 }, true);
+var example = new exampleMove('example', 400, 400, {speed: 3, amount: 6000}, true);
 
 
-
-document.getElementById('clear').addEventListener('click', function() {
+document.getElementById('clear').addEventListener('click', function () {
     example.clear();
 });
 
-document.getElementById('pause').addEventListener('click', function() {
+document.getElementById('pause').addEventListener('click', function () {
     example.stop();
 });
 
-document.getElementById('run').addEventListener('click', function() {
+document.getElementById('run').addEventListener('click', function () {
     example.run();
 });

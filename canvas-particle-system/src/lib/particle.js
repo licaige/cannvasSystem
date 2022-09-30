@@ -17,31 +17,35 @@ class Particle {
         this.height = height;
         this.init();
     };
+
     //2. 初始化粒子
     init() {
         this.particle = [];
         let amount = this.options.amount;
-        let { width, height } = this;
+        let {width, height} = this;
         if (this.offScreenRendering) {
             this.createOffScreenInstance(width, height, amount);
         } else {
             this.createNormalInstance(width, height, amount);
         }
     };
+
     //3. 绘制粒子到画布
     draw() {
         let self = this;
-        let { ctx, width, height } = this;
+        let {ctx, width, height} = this;
         ctx.clearRect(0, 0, width, height);
         this.moveFunc(ctx, width, height);
         this.timer = requestAnimationFrame(() => {
             self.draw();
         });
     };
+
     //4. 定义粒子的运动方式
     moveFunc() {
 
     };
+
     //5. 控制动画的播放与暂停。
     run() {
         if (this.status !== STATUS_RUN) {
@@ -49,10 +53,12 @@ class Particle {
             this.draw();
         }
     };
+
     stop() {
         this.status = STATUS_STOP;
         cancelAnimationFrame(this.timer);
     };
+
     //6. 清除画布
     clear() {
         this.stop();
@@ -69,6 +75,7 @@ class offScreenItem {
         this.ctx = this.canvas.getContext('2d');
         create(this.ctx, this.width, this.height);
     };
+
     // 移动粒子
     move(ctx, x, y) {
         if (this.canvas.width && this.canvas.height) {
