@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body style="opacity: 1;">
+  <body>
+    <!-- <script>
+      var documentElement = document.documentElement;
+      function callback() {
+        var clientWidth = documentElement.clientWidth;
+        // 屏幕宽度大于780，不在放大
+        clientWidth = clientWidth < 780 ? clientWidth : 780;
+        documentElement.style.fontSize = clientWidth / 10 + 'px';
+      }
+      document.addEventListener('DOMContentLoaded', callback);
+      window.addEventListener('orientationchange' in window ? 'orientationchange' : 'resize', callback);
+    </script> -->
+    <div id="my-lucky"></div>
+    <br />
+    <button onclick="myLucky.play()">play()</button>
+    <button onclick="myLucky.stop(0)">stop(0)</button>
+    <button onclick="myLucky.stop(1)">stop(1)</button>
+    <button onclick="myLucky.stop(-1)">stop(-1)</button>
+    <button onclick="myLucky.init()">init()</button>
+    <script src="../dist/index.umd.js"></script>
+    <script>
+      const myLucky = new LuckyCanvas.LuckyWheel('#my-lucky', {
+        width: '200px',
+        height: '200px',
+        blocks: [{ padding: '10px', background: '#869cfa' }],
+        prizes: [
+          { fonts: [{ text: '0', top: '0%', left: '49%' }], background: '#e9e8fe' },
+          { fonts: [{ text: '1', top: '10%' }], background: '#b8c5f2' },
+          { fonts: [{ text: '2', top: '10%' }], background: '#e9e8fe' },
+          { fonts: [{ text: '3', top: '10%' }], background: '#b8c5f2' },
+          { fonts: [{ text: '4', top: '10%' }], background: '#e9e8fe' },
+          { fonts: [{ text: '5', top: '10%' }], background: '#b8c5f2' },
+        ],
+        buttons: [
+          { radius: '50%', background: '#617df2' },
+          { radius: '45%', background: '#afc8ff' },
+          {
+            radius: '40%', background: '#869cfa',
+            pointer: true,
+            fonts: [{ text: '开始\n抽奖', top: '-20px' }]
+          },
+        ],
+        start () {
+          myLucky.play()
+          setTimeout(() => {
+          myLucky.stop(0)
+          })
+        }
+      })
+    </script>
+  </body>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Vue.js </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="style.css">
+  <script src="vue.js"></script>
+</head>
+<body onload="draw()">
+  <div id="vue-app">
+  </div>
+  <canvas id="canvas" width="800" height="600">
+    你这浏览器不支持这玩意啊
+  </canvas>
+  <script src="app.js"></script>
+  <script>
+    function draw(){
+      /** @type {HTMLCanvasElement} */ 
+      const canvas = document.getElementById("canvas");
+      if(canvas.getContext){
+        const ctx = canvas.getContext("2d");
+        // 圆的组成: 圆心(x,y) 半径 开始角度 结束角度 顺时针/逆时针
+        /* 外部圆 */
+        ctx.beginPath();
+        ctx.arc(400,300,300,0,Math.PI*2,false);
+        /* 两个眼睛 */
+        ctx.moveTo(275,200);
+        ctx.arc(250,200,25,0,Math.PI*2,false);
+        ctx.moveTo(575,200);
+        ctx.arc(550,200,25,0,Math.PI*2,false);
+        ctx.stroke();
+        /* 嘴巴 */
+        ctx.beginPath()
+        ctx.arc(400,300,200,Math.PI/4,Math.PI*3/4,false);
+        ctx.stroke();
+      }
+    }
+  </script>
+</body>
+
+</html>

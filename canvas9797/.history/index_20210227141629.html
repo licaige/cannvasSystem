@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>画板</title>
+        <link rel="stylesheet" href="reset.css"/>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <div id="features" class="features">
+            <svg class="icon" aria-hidden="true" id="pencil">
+                <use xlink:href="#icon-qianbi"></use>
+            </svg>
+            <svg class="icon" aria-hidden="true" id="rubber">
+                <use xlink:href="#icon-xiangpi"></use>
+            </svg>
+            <svg class="icon" aria-hidden="true" id="clean">
+                <use xlink:href="#icon-saozhou"></use>
+            </svg>
+        </div>
+        <div id="download" class="download">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-baocun"></use>
+            </svg>
+        </div>
+        <ul id="colors" class="colors">
+            <li id="black" class=""></li>
+            <li id="red" class=""></li>
+            <li id="yellow" class=""></li>
+            <li id="green" class=""></li>
+            <li id="blue" class=""></li>
+        </ul>
+        <ul id="line-style" class="line-style">
+            <li id="big" class=""></li>
+            <li id="normal" class=""></li>
+            <li id="small" class=""></li>
+        </ul>
+        <canvas id="canvas" width="100" height="100"></canvas>
+        <script src="main.js"></script>
+        <script src="//at.alicdn.com/t/font_2390340_rwvmw45fzk9.js"></script>
+    </body>
+</html>

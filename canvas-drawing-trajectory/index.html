@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta charset="utf-8">
+		<meta http-equiv= "x-ua-compatible"content="ie=edge" >
+		<title>canvas学习</title>
+		<meta name= "description">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			.canvas{
+				position: fixed;
+				left: 0;
+				top:0;
+				z-index: 2;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img id="theImg" src="./tree.jpg">
+			<canvas id="theCanvas" class="canvas"></canvas>
+			<!-- <canvas id="theCanvas" class="canvas" width="500" height="555"></canvas> -->
+			<button>按钮</button>
+		</div>
+		<script type="module">
+			window.onload=function(){
+				let theImg = document.querySelector('#theImg')
+				let theCanvas = document.querySelector('#theCanvas')
+				// theCanvas.style.width = theImg.width +'px';
+				// theCanvas.style.height = theImg.height+'px';
+				theCanvas.width = theImg.width;
+				theCanvas.height = theImg.height;
+				console.log(theImg.width,theImg.height)
+			}
+			function windowToCanvas(canvas,x,y){
+				// console.log('12',canvas)
+				let rect = canvas.getBoundingClientRect()
+				return {
+					x: x - rect.left*( canvas.width/rect.width),
+					y : y - rect.top *(canvas.height/rect.height)
+				}
+			}
+			(function(){
+				let theCanvas = document.querySelector('#theCanvas')
+				if ( !theCanvas || !theCanvas.getContext) {
+					return false
+				} else {
+					let context = theCanvas.getContext('2d')
+					let isAllowDrawLine = false
+					theCanvas.onmousedown = function(e) {
+						isAllowDrawLine = true
+						let ele = windowToCanvas(theCanvas,e.clientX,e.clientY)
+						let { x,y } = ele
+						context.moveTo(x,y)
+						theCanvas.onmousemove = (e) =>{
+							if (isAllowDrawLine) {
+								let ele = windowToCanvas(theCanvas, e.clientX,e.clientY)
+								let { x,y } = ele
+								context.lineTo(x,y)
+								context.stroke()
+							}
+						}
+					}
+					theCanvas.onmouseup = function() {
+						isAllowDrawLine = false
+					}
+				}
+			})()
+		</script>
+	</body>
+</html>

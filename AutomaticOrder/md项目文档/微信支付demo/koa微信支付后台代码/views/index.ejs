@@ -1,0 +1,79 @@
+<!doctype html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">  
+    <title>微信测试页面</title>  
+    <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>  
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>  
+    <script src="http://wechatfe.github.io/vconsole/lib/vconsole.min.js?v=3.2.0"></script>
+    <script>  
+        var vConsole = new VConsole();     
+        /* 获取微信网页打开的url字符串，微信code返回 */  
+        function getQueryString(name) {  
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");  
+            var r = window.location.search.substr(1).match(reg);  
+            if (r != null) return decodeURI(r[2]);  
+            return null;  
+        }  
+        //1、调用上面的方法，获取code
+        var code=getQueryString('code');      /*获取code*/
+
+        //把后台的数据赋值给前台页面
+        var orderid="<%=order_id%>";
+        var returnUrl="<%=returnUrl%>";
+
+        $(function(){  
+            // 2、调用后台接口，获取openid
+            $.get('http://b.itying.com/getOpenId?code='+code,function(response){
+                var openid=response.openid;
+                wxInit(openid)
+            })
+        })          
+       
+        function wxInit(openid){
+            var param = {'cmd':'get_js_config','url':location.href};  
+            //发送请求获取wx_js_config  
+            $.ajax({  
+                url: 'http://b.itying.com/wechat',    //获取config
+                type: 'POST',  
+                data: param,  
+                datatype: 'json',  
+                success: function (data) {  
+                    wx.config(data);  
+                    wx.ready(function(){  
+                        // // 监听支付
+                        // document.querySelector('#onPay').onclick = function () {
+                        //根据openid获取支付参数
+                        $.get('http://b.itying.com/order/?openid='+openid+'&orderid='+orderid,function(response){
+                            console.log(response);
+                            wx.chooseWXPay({                                                                                
+                                "timestamp":response.timeStamp,   // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符
+                                "nonceStr":response.nonceStr,
+                                "package":response.package,
+                                "signType":response.signType,
+                                "paySign":response.paySign,
+                                success: function (res) {
+                                // 支付成功后的回调函数
+                                    alert(JSON.stringify(res));
+
+                                    location.href=returnUrl;
+                                }
+                            });
+                        })                              
+                    });  
+                    wx.error(function(res){  
+                        alert(JSON.stringify(res));  
+                        // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。  
+        
+                    });  
+                }  
+            })  
+        }
+    </script>  
+</head>  
+<body>  
+    <button id="btn3">扫一扫</button>
+    <button id="onPay">支付</button>
+</body>  
+</html>  

@@ -1,0 +1,16 @@
+{
+  "name": "@zjxpcyc/js_event",
+  "version": "1.0.0",
+  "description": "极简版本的事件实现",
+  "main": "index.js",
+  "scripts": {
+    "pub": "npm publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/yansen_zh/js_event"
+  },
+  "keywords": ["事件","event"],
+  "author": "Yansen <418580217@qq.com> (https://gitee.com/yansen_zh)",
+  "license": "MulanPSL"
+}

@@ -1,0 +1,13 @@
+{
+  "root": true,
+  "extends": ["@cicada-design/eslint-config"],
+  "rules": {
+    "prefer-object-spread": "off"
+  },
+  "overrides": [{
+    "files": ["src/**/*.vue"],
+    "rules": {
+      "vue/multi-word-component-names": "off",
+    }
+  }]
+}

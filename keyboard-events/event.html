@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>自定义事件</title>
+</head>
+<body>
+<input type="text">
+<h4 id="name"></h4>
+</body>
+<script src="./keyboard.js"></script>
+<script>
+    //监测键盘活动状态
+    window.addEventListener("KeyboardUp",function() {
+        document.getElementById("name").innerHTML = "键盘弹起来了";
+    },false);
+
+    window.addEventListener("KeyboardDown",function() {
+        document.getElementById("name").innerHTML = "哎呀，键盘收起来了";
+    },false);
+
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="vue.js"></script>
+  </head>
+  <body onload="draw()">
+    <div id="vue-app"></div>
+    <canvas id="canvas" width="800" height="600">
+      你这浏览器不支持这玩意啊
+    </canvas>
+    <script src="app.js"></script>
+    <script>
+      function draw() {
+        // 让vscode可以显示canvas智能提示
+        /** @type {HTMLCanvasElement} */
+        const canvas = document.getElementById('canvas');
+        if (canvas.getContext) {
+          const ctx = canvas.getContext('2d');
+          ctx.beginPath();
+        }
+      }
+    </script>
+  </body>
+</html>

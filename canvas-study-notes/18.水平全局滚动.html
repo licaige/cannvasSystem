@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="vue.js"></script>
+  </head>
+  <body onload="draw()">
+    <div id="vue-app"></div>
+    <canvas id="canvas" width="320" height="565">
+      你这浏览器不支持这玩意啊
+    </canvas>
+    <script src="app.js"></script>
+    <script>
+      function draw() {
+        // 让vscode可以显示canvas智能提示
+        /** @type {HTMLCanvasElement} */
+        const canvas = document.getElementById('canvas')
+        if (canvas.getContext) {
+          const ctx = canvas.getContext('2d')
+          let y = 0
+          function bgMove() {
+            ctx.save()
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
+            ctx.translate(0, y)
+            //两幅图片的原因是俩图片收尾相接,然后向左,然后到最左边瞬间重置是看不出来的.
+            ctx.drawImage(bgImage, 0, 0)
+            ctx.drawImage(bgImage, 0, -canvas.height)
+
+            // 判断x的偏移量
+            y++
+            if (y >= canvas.height) {
+              y = 0
+            }
+            ctx.restore()
+            window.requestAnimationFrame(bgMove)
+          }
+          const bgImage = new Image()
+          bgImage.src = 'background.png'
+          bgImage.onload = function () {
+            bgMove()
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

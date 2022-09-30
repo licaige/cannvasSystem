@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="vue.js"></script>
+  </head>
+  <body onload="draw()">
+    <div id="vue-app"></div>
+    <canvas id="canvas" width="800" height="600">
+      你这浏览器不支持这玩意啊
+    </canvas>
+    <script src="app.js"></script>
+    <script>
+      function draw() {
+        // 让vscode可以显示canvas智能提示
+        /** @type {HTMLCanvasElement} */
+        const canvas = document.getElementById('canvas')
+        if (canvas.getContext) {
+          const ctx = canvas.getContext('2d')
+          //设置线性渐变linear gradient
+          const linerGradient = ctx.createLinearGradient(100, 200, 500, 200)
+          linerGradient.addColorStop(0.5, '#cc6677')
+          linerGradient.addColorStop(1, '#000')
+
+          //设置阴影
+          ctx.shadowColor = 'gray'
+          ctx.shadowBlur = 10
+          ctx.shadowOffsetX = 20
+          ctx.shadowOffsetY = 20
+          /**
+           * font-weight
+           * font-style
+           * font-size
+           * font-family
+           */
+          // 设置bg
+          var my_gradient = ctx.createLinearGradient(0, 0, 0, 600)
+          my_gradient.addColorStop(0, 'white')
+          my_gradient.addColorStop(1, 'black')
+          
+          ctx.fillStyle = my_gradient
+          ctx.fillRect(0, 0, 800, 600)
+
+          ctx.font = 'bold italic 160px arial'
+          ctx.fillStyle = linerGradient
+          ctx.fillText('Shinkai', 100, 200)
+        }
+      }
+    </script>
+  </body>
+</html>

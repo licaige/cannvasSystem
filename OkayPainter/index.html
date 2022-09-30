@@ -1,0 +1,96 @@
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<div id="canvas" style="width:500px;height:600px;"></div>
+</body>
+<script src="src/index.js"></script>
+<script>
+    class FlowNode extends okay.Layer{
+        constructor(canvas){
+            super()
+            this.canvas = canvas
+            this.text = new okay.Text('测试')
+            this.rect = new okay.Rectangle()
+            this.sector1 = new okay.Sector(0,Math.PI/2,3*Math.PI/2)
+            this.sector2 = new okay.Sector(0,3*Math.PI/2,Math.PI/2)
+            this.circles = [new okay.HollowCircle(6),new okay.HollowCircle(6),new okay.HollowCircle(6),new okay.HollowCircle(6)]
+            this.rect.color = new okay.Color(88,88,255,255)
+            this.sector1.color = new okay.Color(88,88,255,255)
+            this.sector2.color = new okay.Color(88,88,255,255)
+            this.text.font = "20px Arial"
+            this.addChild(this.rect)
+            this.addChild(this.sector1)
+            this.addChild(this.sector2)
+            this.addChild(this.text)
+            for(let i = 0;i < this.circles.length;i++){
+                this.addChild(this.circles[i])
+                this.circles[i].lineWidth = 2
+                this.circles[i].visible = false
+                this.circles[i].color = new okay.Color(0,0,255,255)
+            }
+
+        }
+        onSelected() {
+            for(let i = 0;i < this.circles.length;i++) {
+                this.circles[i].visible = true
+            }
+        }
+        onUnSelected() {
+            for(let i = 0;i < this.circles.length;i++) {
+                this.circles[i].visible = false
+            }
+        }
+        containPoint(_p) {
+            return this.rect.containPoint(_p) || this.sector1.containPoint(_p) || this.sector2.containPoint(_p)
+        }
+        setPosition(_x , _y){
+            this.position.x = _x
+            this.position.y = _y
+            this.text.setPosition(_x - this.text.text.length*10,_y - 10)
+            this.rect.setPosition(_x - this.size.width/2,_y + this.size.height/2)
+            this.rect.setSize(this.size.width,this.size.height)
+            this.sector1.setRadius(this.size.height/2)
+            this.sector1.setPosition(_x - this.size.width/2,_y)
+            this.sector2.setRadius(this.size.height/2)
+            this.sector2.setPosition(_x + this.size.width/2,_y)
+            this.circles[0].setPosition(_x,_y + this.size.height/2)
+            this.circles[1].setPosition(_x + this.size.width/2 + this.size.height/2,_y)
+            this.circles[2].setPosition(_x, _y - this.size.height/2)
+            this.circles[3].setPosition(_x-this.size.width/2-this.size.height/2,_y)
+        }
+        setSize(_width, _height = 0) {
+            if(_width instanceof okay.Size) {
+                this.size = _width
+            }else {
+                this.size.width = _width
+                this.size.height = _height
+            }
+            this.setPosition(this.position.x,this.position.y)
+        }
+    }
+
+    let canvas = new okay.Canvas({
+        ele:'canvas',
+        canAction:true,
+        debug:true
+    })
+    let flow = new FlowNode(canvas)
+    flow.setPosition(300,300)
+    flow.setSize(100,60)
+
+    let rect = new okay.Rectangle()
+    rect.setPosition(100,100)
+    rect.setSize(100,100)
+    canvas.addChild(flow)
+    //canvas.addChild(rect)
+    //rect.addEventListener(okay.Event.Type.EVENT_MOUSE_DOWN,function(e,obj){
+    //	console.log(3)
+    //})
+    let edit = new okay.EditText(canvas,"Hello World")
+    edit.setPosition(100,100)
+    edit.color = new okay.Color(0,0,0,255)
+    canvas.addChild(edit)
+    canvas.paint()
+</script>
+

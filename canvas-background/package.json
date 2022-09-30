@@ -1,0 +1,30 @@
+{
+  "name": "canvas-background",
+  "version": "1.0.0",
+  "description": "使用canvas创建绚丽背景",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitee.com:iwantCoding/canvas-background.git"
+  },
+  "keywords": [
+    "canvas",
+    "background"
+  ],
+  "author": "iwantCoding",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.1.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1"
+  },
+  "dependencies": {}
+}

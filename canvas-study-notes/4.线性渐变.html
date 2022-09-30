@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="vue.js"></script>
+  </head>
+  <body onload="draw()">
+    <div id="vue-app"></div>
+    <canvas id="canvas" width="800" height="600">
+      你这浏览器不支持这玩意啊
+    </canvas>
+    <script src="app.js"></script>
+    <script>
+      function draw() {
+        /** @type {HTMLCanvasElement} */
+        const canvas = document.getElementById('canvas')
+        if (canvas.getContext) {
+          const ctx = canvas.getContext('2d')
+          /**
+           * 线性渐变
+           * 参数1: 起点x1
+           * 参数2: 起点y1
+           * 参数3: 起点x2
+           * 参数4: 起点y2
+           *
+           */
+          const linearGradient = ctx.createLinearGradient(0, 0, 0, 150)
+          /**
+           * linearGradient.addColorStop(0,'#cc6677');
+           * 参数1: 必须是0.0~1.0之间的一个数值,数值表示颜色所在的相对位置
+           * 参数2: 颜色,
+           */
+          linearGradient.addColorStop(0, '#cc6677')
+          linearGradient.addColorStop(0.5, '#fff')
+          linearGradient.addColorStop(0.5, '#c6c776')
+          const linearGradient2 = ctx.createLinearGradient(0, 50, 0, 90)
+          linearGradient2.addColorStop(0.5, '#000')
+          linearGradient2.addColorStop(1, 'rgba(0,0,0,0)')
+
+          ctx.fillStyle = linearGradient
+          ctx.fillRect(10, 10, 150, 150)
+          ctx.strokeStyle = linearGradient2
+          ctx.strokeRect(60,50,50,50)
+        }
+      }
+    </script>
+  </body>
+</html>

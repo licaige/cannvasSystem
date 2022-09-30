@@ -1,0 +1,5 @@
+/builds/
+/public/
+/dist/
+/*.js
+/node_modules/

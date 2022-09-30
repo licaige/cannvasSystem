@@ -1,0 +1,123 @@
+<!doctype html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">  
+    <title>微信测试页面</title>  
+    <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>  
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>  
+
+    <script src="http://wechatfe.github.io/vconsole/lib/vconsole.min.js?v=3.2.0"></script>
+
+
+    <script>  
+
+        var vConsole = new VConsole();
+        
+        
+        function getQueryString(name) {  
+          var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");  
+          var r = window.location.search.substr(1).match(reg);  
+          if (r != null) return decodeURI(r[2]);  
+          return null;  
+        }  
+        //1、获取code
+        var code=getQueryString('code');      /*获取code*/
+
+        $(function(){  
+            
+            // 2、获取openid
+             $.get('http://b.itying.com/getOpenId?code='+code,function(response){
+
+                  var openid=response.openid;
+
+                  wxInit(openid)
+              })
+  
+        })          
+
+       
+        function wxInit(openid){
+
+             var param = {'cmd':'get_js_config','url':location.href};  
+            //发送请求获取wx_js_config  
+            $.ajax({  
+                    url: 'http://b.itying.com/wechat',    //获取config
+                    type: 'POST',  
+                    data: param,  
+                    datatype: 'json',  
+                    success: function (data) {  
+                        wx.config(data);  
+
+                        wx.ready(function(){  
+            
+                                    
+            
+                            document.getElementById('btn3').onclick = function() {
+                                wx.scanQRCode({
+                                    needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+                                    scanType: ["qrCode", "barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+                                    success: function(res) {
+                                        var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+
+                                        alert(result);
+                                    },fail:function(err){
+                                        
+                                        alert(JSON.stringify(err))
+                                    }
+                                });
+                            }                            
+
+
+                            // 监听支付
+                            document.querySelector('#onPay').onclick = function () {
+                                    //根据openid获取支付参数
+                                    $.get('http://b.itying.com/order/?openid='+openid,function(response){
+
+                                            console.log(response);
+                                            wx.chooseWXPay({                                                                                
+
+                                                "timestamp":response.timeStamp,   // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符
+                                                "nonceStr":response.nonceStr,
+                                                "package":response.package,
+                                                "signType":response.signType,
+                                                "paySign":response.paySign,
+                                                success: function (res) {
+                                                // 支付成功后的回调函数
+                                                    alert(JSON.stringify(res));
+                                                }
+                                            });
+
+                                            //js支付的安全域名配置错误  choosewxpay:fail （具体什么错误不提示）
+
+                                            //出现 choosewxpay:fail错误以后   用ios手机调试  这时候会告诉你具体错误
+
+
+
+                                    })                              
+                            };
+                                            
+                                
+                                                
+                        });  
+                        wx.error(function(res){  
+                            alert(JSON.stringify(res));  
+                            // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。  
+            
+                        });  
+                    }  
+                })  
+
+        }
+           
+        
+  
+    </script>  
+</head>  
+<body>  
+     <button id="btn3">扫一扫</button>
+    
+
+    <button id="onPay">支付</button>
+</body>  
+</html>  

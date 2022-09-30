@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas拖拽</title>
+</head>
+<body>
+<canvas id="cjCanvas" width="496" height="549" style="border:3px solid #9017b4;"></canvas>
+<div>
+    <button onclick="drawImage()">转化img</button>
+    <button onclick="removeCanvas()">清除canvas</button>
+    <input type="file" id="loadIpt">
+</div>
+<p>
+    <img src="" alt="" id="viewImg">
+</p>
+<script src="js/hammer.min.js"></script>
+<script src="js/easeljs-0.8.1.min.js"></script>
+<script src="js/style.js"></script>
+<script>
+//调取本地方式
+var img = new Image();
+img.onload = function () {
+    var bjCont = new createjs.Container();
+    bjCont.name = 'bjCont';
+    bjCont.x = 496/2;
+    bjCont.y = 549/2;
+    
+    var pic = new createjs.Bitmap(this);
+    pic.regX = this.width/2;
+    pic.regY = this.height/2;
+    
+    var scale = Math.max( 496/this.width, 549/this.height );
+    pic.scaleX = pic.scaleY = scale;
+    
+    bjCont.addChild(pic);
+    stage.addChild(bjCont);
+    
+    D.addChild(bjCont);
+}
+img.src = "image/p1.jpg";
+
+// 调取本地第二个img
+var img2 = new Image();
+img2.onload = function () {  
+    var bjCont = new createjs.Container();
+    bjCont.name = 'bjCont';
+    bjCont.x = 496/2;
+    bjCont.y = 549/2;
+    
+    var pic = new createjs.Bitmap(this);
+    pic.regX = 50;
+    pic.regY = 40;
+
+    bjCont.addChild(pic);
+    stage.addChild(bjCont);
+    
+    D.addChild(bjCont);
+}
+img2.src = "image/p2.jpg";
+
+//通过上传方式
+var ipt = document.getElementById("loadIpt");
+ipt.onchange = function () {
+    var file = this.files[0];
+    //判断file的类型是不是图片类型。
+    if(!/image\/\w+/.test(file.type)){ 
+        alert("文件必须为图片！"); 
+        return false; 
+    } 
+    var img3 = new Image();
+    img3.onload = function () {  
+        var bjCont = new createjs.Container();
+		bjCont.name = 'bjCont';
+		bjCont.x = 0;
+		bjCont.y = 0;
+		
+        var pic = new createjs.Bitmap(this);
+		pic.regX = this.width/2;
+		pic.regY = this.height/2;
+
+        bjCont.addChild(pic);
+        stage.addChild(bjCont);
+        
+        D.addChild(bjCont);
+    }
+
+    var reader = new FileReader(); //声明一个FileReader实例
+    reader.onload = function (e) {
+        img3.src = e.target.result;
+    }
+    reader.readAsDataURL(file);
+}
+
+
+//截取img
+function drawImage(){
+    var dataPIC = canEle.toDataURL("image/png")
+	viewImg.src = dataPIC;
+}
+
+//清空画布
+function removeCanvas() {
+    stage.removeAllChildren();
+    D.removeAllChild();
+}
+</script>
+</body>
+</html>

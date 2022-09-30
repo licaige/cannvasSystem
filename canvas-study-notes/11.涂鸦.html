@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <style>
+      body {
+        text-align: center;
+        padding-top: 20px;
+        /* margin: 0; */
+      }
+      canvas {
+        box-shadow: 0 0 10px #333;
+        margin: 0 auto;
+        border-radius: 25px;
+        /* position: absolute; */
+        /* left: 0; */
+      }
+    </style>
+    <script src="vue.js"></script>
+  </head>
+  <body>
+    <div id="vue-app">
+      <canvas id="canvas" width="800" height="600">
+        你这浏览器不支持这玩意啊
+      </canvas>
+      <button @click="mountedMethod()" :value="control">
+        {{control?'正在涂鸦':'已停用涂鸦'}}
+      </button>
+    </div>
+
+    <!-- <script src="app.js"></script> -->
+    <script>
+      new Vue({
+        el: '#vue-app',
+        data: {
+          control: false,
+        },
+        created() {},
+        methods: {
+          draw() {
+            // 让vscode可以显示canvas智能提示
+            /** @type {HTMLCanvasElement} */
+            const canvas = document.getElementById('canvas')
+            if (canvas.getContext) {
+              const ctx = canvas.getContext('2d')
+
+              /* 涂鸦 */
+              // 添加鼠标的按下event
+              canvas.onmousedown = function (e) {
+                console.log('执行')
+                const ev = e || window.event //兼容
+                // xy 是 在画布上的坐标. 就是屏幕上当前的坐标-画布离左上角的坐标.
+                const x = ev.clientX - canvas.offsetLeft
+
+                const y = ev.clientY - canvas.offsetTop
+                console.log(x, y)
+                // 配置画笔
+                ctx.strokeStyle = 'green'
+                ctx.lineWidth = 10
+
+                //
+                ctx.beginPath()
+                ctx.moveTo(x, y)
+                // 因为不是只需要线,而是涂鸦所以还需要检测移动
+                canvas.onmousemove = function (e) {
+                  console.log('移动')
+                  const ev = e || window.event //兼容
+                  // xy 是 在画布上的坐标. 就是屏幕上当前的坐标-画布离左上角的坐标.
+                  const x = ev.clientX - canvas.offsetLeft
+                  const y = ev.clientY - canvas.offsetTop
+
+                  ctx.lineTo(x, y)
+                  ctx.stroke()
+                }
+
+                // 设置结束事件也就是 mouseup
+                canvas.onmouseup = function (e) {
+                  canvas.onmousemove = ''
+                }
+              }
+            }
+          },
+          mountedMethod() {
+            this.control = !this.control
+            this.$nextTick(() => {
+              this.draw()
+            })
+          },
+        },
+      })
+    </script>
+  </body>
+</html>

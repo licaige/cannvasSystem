@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>canvas-test</title>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <style>
+    body {
+      padding: 0px !important;
+      margin: 0
+    }
+
+    #canvas {
+      width: 100vw;
+      height: 100vh;
+      background: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id='canvas'></canvas>
+</body>
+<script>
+  //canvas闭包空间
+  (async function () {
+    // 加载中国地图数据
+    const promise = new Promise((resolve, reject) => {
+      var xhr = new XMLHttpRequest();
+      xhr.open('get', 'http://182.43.179.137:81/public/map/china_noChildren.json');
+      xhr.timeout = 1000000;
+      xhr.ontimeout = function () {
+        reject()
+      };
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status == 200) {
+            resolve(JSON.parse(xhr.response))
+          } else {
+            reject()
+          }
+        }
+      }
+
+      xhr.send();
+    })
+
+    const [state, rs, err] = await promise.then(rs => [true, rs, null], err => [false, null, err])
+    if (!state) return
+    // 打印出中国地图数据
+    console.log(rs)
+
+
+    //公共数据
+    let canvas = document.getElementById('canvas');
+    let ctx = canvas.getContext("2d"); // canvas元素的contex对象
+    const width = window.innerWidth; // 画布宽度
+    const height = window.innerHeight; // 画布高度
+    canvas.width = width;
+    canvas.height = height;
+
+
+    // 坐标转换
+    function coordTrans(coord, center) {
+      // coord和center传入的都要是原始经纬度坐标
+      // 经纬度坐标，纬度大的点在canvas的坐标系中会处于下方，而现实中应该处于上方，
+      // 所以对所有点纬度坐标进行取反修正
+      coord = [coord[0], -coord[1]]
+      center = [center[0], -center[1]]
+
+      // 然后把中心点已到坐标系原点，重新计算其他点坐标
+      return [coord[0] - center[0], coord[1] - center[1]]
+    }
+
+    // 渲染地图
+    function draw() {
+      //清除画布
+      ctx.clearRect(0, 0, width, height);
+      ctx.save(); //保存初始状态
+      ctx.translate(width / 2, height / 2) // 移动坐标系原点到canvas画布中心
+      ctx.strokeStyle = '#00ff00'
+      ctx.strokeWidth = '1px'
+      let scale = 10
+      if (window.innerWidth < 1000) scale = 3
+
+      // 由于地图数据里没给出中国地理中心的位置，这里人为取个大概位置
+      const center = [108, 34]
+
+      // 开始设置路径
+      ctx.beginPath();
+
+      // 中国地图
+      rs.features.forEach((feature, featureIndex) => {
+        // 不画省份边界
+        if (feature.properties.type == '省界' || feature.properties.type == '港澳') return
+
+        // 争议地区边界
+        if (feature.properties.type == '争议') {
+          // 争议部分的边界，是一段连续的线段，不是多段
+          feature.geometry.coordinates.forEach((coord, index) => {
+            // 坐标转换
+            const real_coord = coordTrans(coord, center)
+            if (index == 0) {
+              // 起点
+              ctx.moveTo(real_coord[0] * scale, real_coord[1] * scale);
+            } else {
+              // 非起点
+              ctx.lineTo(real_coord[0] * scale, real_coord[1] * scale);
+            }
+          })
+
+        } else {
+          // 非争议地区边界（陆地国界和海洋国界）
+          feature.geometry.coordinates.forEach((subCoords, index) => {
+            // 陆地国界和海洋国界，是由多条连续线段构成
+            subCoords.forEach((coord, index1) => {
+              // 坐标转换
+              const real_coord = coordTrans(coord, center)
+              if (index1 == 0) {
+                // 设置成跳跃点
+                ctx.moveTo(real_coord[0] * scale, real_coord[1] * scale);
+
+              } else {
+                // 非起点
+                ctx.lineTo(real_coord[0] * scale, real_coord[1] * scale);
+              }
+            })
+          })
+        }
+      })
+
+      // 划线
+      ctx.stroke()
+      ctx.restore(); //回退状态
+      window.requestAnimationFrame(draw)
+    }
+
+    // 请求关键帧
+    window.requestAnimationFrame(draw)
+
+  })();
+</script>
+
+</html>

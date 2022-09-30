@@ -1,0 +1,21 @@
+{
+  "name": "okaypainter",
+  "version": "1.0.1",
+  "description": "Canvas画库",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/djxfire/OkayPainter.git"
+  },
+  "author": "阿武阿哥",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-latest": "^6.24.1",
+    "webpack": "^4.8.3"
+  }
+}

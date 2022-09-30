@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/switch.css">
+</head>
+
+<body>
+    <section id="barrage">
+        <header class="barrage-header">
+            <h1>canvas实现弹幕Demo__杨道波</h1>
+        </header>
+        <section class="barrage-container">
+            <section class="barrage-player">
+                <section class="player-container">
+                    <!-- 实时预览小窗口 -->
+                    <section class="pointer-video">
+                        <video id="pointer-player" src="" style="object-fit: fill;"></video>
+                        <section class="pointer-video-current">00:00</section>
+                    </section>
+                    <video src="" id="player" style="object-fit: fill" autoplay>
+                        该浏览器不支持video
+                    </video>
+                    <canvas id="drawing" dir="ltr">
+                    </canvas>
+                    <section class="player-controls">
+                        <section class="video-progress">
+                            <!-- 自定义进入条 -->
+                            <section class="progress">
+                                <!-- 进度拖拽按钮 -->
+                                <section class="progress-btn"></section>
+                                <!-- 当前播放进度 -->
+                                <section class="progress-current"></section>
+                                <!-- 视频每帧指针 -->
+                                <section class="progress-pointer">
+                                </section>
+                            </section>
+                        </section>
+                        <section class="video-modify">
+                            <section class="modify">
+                                <section class="paused-play" style="cursor: pointer;">
+                                    <img src="./icons/play.svg" data-state="play" data-show="true" width="20"
+                                        height="20" alt="">
+                                    <img src="./icons/paused.svg" data-state="paused" data-show="false"
+                                        style="display: none;" width="20" height="20" alt="">
+                                </section>
+                                <section class="current-time" style="margin-bottom: 4px;">
+                                    <span class="player-currentTime"
+                                        style="width: 70px;display: inline-block;text-align: right;">00:00</span> /
+                                    <span style="width: 70px;display: inline-block;"
+                                        class="player-duration">00:00:00</span>
+                                </section>
+                            </section>
+                            <section class="player-barrage fullScreen-barrage">
+                                <img src="./icons/barrage_open.svg" style="display: none;" width="25" height="25"
+                                    data-state="open" alt="">
+                                <img src="./icons//barrage_close.svg" width="25" height="25" data-state="close" alt="">
+                                <section class="barrage-btn">
+                                    <section class="barrage-avatar">
+                                        <img src="./images/avatar1.jpg" width="20" height="20" alt="">
+                                        <section class="avatars">
+                                            <section class="avatar-imgs">
+                                                <img src="./images/avatar1.jpg" data-state="avatar" width="20" height="20"
+                                                    alt="" class="active">
+                                                <img src="./images/avatar2.jpg" data-state="avatar" width="20" height="20"
+                                                    alt="">
+                                                <img src="./images/avatar3.jpg" data-state="avatar" width="20" height="20"
+                                                    alt="">
+                                                <img src="./images/avatar4.jpg" data-state="avatar" width="20" height="20"
+                                                    alt="">
+                                            </section>
+                                            <section class="avatar-empty"> </section>
+                                        </section>
+                                    </section>
+                                    <input type="text" placeholder="发表你的观点" class="barrage-inout">
+                                    <section class="send-barrage" data-state="send">发送</section>
+                                </section>
+                            </section>
+                            <section class="modify-btns">
+                                <section class="modify-btn" style="margin-bottom: 4px;">
+                                    <span>倍速</span>
+                                    <section class="modify-btn-sub">
+                                        <ul class="play-back-rate">
+                                            <li data-state="2.0">2.0X</li>
+                                            <li data-state="1.5">1.5X</li>
+                                            <li data-state="1.25">1.25X</li>
+                                            <li data-state="1.0" class="active">1.0X</li>
+                                            <li data-state="0.75">0.75X</li>
+                                        </ul>
+                                        <section class="btn-empty"></section>
+                                    </section>
+                                </section>
+                                <section class="modify-btn volume-icon">
+                                    <img src="./icons/sound.svg" width="20" height="20" data-state="sound" alt="">
+                                    <img src="./icons/mute.svg" width="20" height="20" data-state='mute' alt=""
+                                        style="display: none;">
+                                    <section class="player-volume-range">
+                                        <section class="volume-range-container">
+                                            <section class="volume-number">50%</section>
+                                            <section class="volume-range">
+                                                <section class="volume-current" id="ttt"></section>
+                                                <section class="volume-btn"></section>
+                                            </section>
+                                        </section>
+                                        <section class="btn-empty"></section>
+                                    </section>
+                                </section>
+                                <section class="modify-btn pip-btn tooltip" data-direction='top' data-tooltip="画中画">
+                                    <img src="./icons/hua.svg" width="20" height="20" alt="">
+                                </section>
+                                <section class="modify-btn fullScreen-btn">
+                                    <section class="btn-tip-fullScreen">网页全屏</section>
+                                    <img src="./icons/fullScreen.svg" data-state="full" width="20" height="20" alt="">
+                                    <img src="./icons/unfullScreen.svg" style="display: none;" data-state="exit"
+                                        width="20" height="20" alt="">
+                                </section>
+                                <section class="modify-btn into-full">
+                                    <section class="btn-tip-into">全屏</section>
+                                    <img src="./icons/intoFull.svg" data-state="full" width="20" height="20" alt="">
+                                    <img src="./icons/exitFull.svg" style="display: none;" data-state="exit" width="20"
+                                        height="20" alt="">
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+                <section class="player-footer">
+                    <section class="player-btns">
+                        <section class="player-btn collection-btn">
+                            <img src="./icons/collection.svg" alt="" width="25" height="25">
+                            <span>收藏</span>
+                        </section>
+                        <section class="player-btn">
+                            <img src="./icons/comment.svg" alt="" width="25" height="25">
+                            <span>1000万</span>
+                        </section>
+                        <section class="player-btn">
+                            <img src="./icons/info.svg" alt="" width="25" height="25">
+                            <span>评论</span>
+                        </section>
+                        <section class="player-btn">
+                            <img src="./icons/share.svg" alt="" width="25" height="25">
+                            <span>分享</span>
+                        </section>
+                        <section class="player-btn">
+                            <img src="./icons/download.svg" alt="" width="25" height="25">
+                            <span>下载</span>
+                        </section>
+                        <section class="player-btn">
+                            <img src="./icons/more.svg" alt="" width="25" height="25">
+                            <span>更多</span>
+                        </section>
+                    </section>
+                    <section class="player-barrage">
+                        <img src="./icons/barrage_open.svg" style="display: none;" width="25" height="25"
+                            data-state="open" alt="">
+                        <img src="./icons//barrage_close.svg" width="25" height="25" data-state="close" alt="">
+                        <section class="barrage-btn">
+                            <section class="barrage-avatar">
+                                <img src="./images/avatar1.jpg" width="20" height="20" alt="">
+                                <section class="avatars">
+                                    <section class="avatar-imgs">
+                                        <img src="./images/avatar1.jpg" data-state="avatar" width="20" height="20"
+                                            alt="" class="active">
+                                        <img src="./images/avatar2.jpg" data-state="avatar" width="20" height="20"
+                                            alt="">
+                                        <img src="./images/avatar3.jpg" data-state="avatar" width="20" height="20"
+                                            alt="">
+                                        <img src="./images/avatar4.jpg" data-state="avatar" width="20" height="20"
+                                            alt="">
+                                    </section>
+                                    <section class="avatar-empty"> </section>
+                                </section>
+                            </section>
+                            <input type="text" placeholder="发表你的观点" class="barrage-inout">
+                            <section class="send-barrage" data-state="send">发送</section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <aside class="barrage-aside">
+                <section class="aside-header">
+                    <h3>周杰伦-手写的从前</h3>
+                </section>
+                <section class="switch-items">
+                    <section class="switch-container">
+                        <section>开启悬浮功能</section>
+                        <section class="switch-item">
+                            <input id="switch-curour" type="checkbox" class="switch" />
+                            <label for="switch-curour"></label>
+                        </section>
+                       
+                    </section>
+                    <p style="font-size: 10px;">
+                        功能介绍：开启此功能之后，使用鼠标触摸弹幕，弹幕会停止移动
+                    </p>
+                    <section class="switch-container">
+                        <section>开启弹幕头像</section>
+                        <section class="switch-item">
+                            <input id="switch-avatar" type="checkbox" class="switch" />
+                            <label for="switch-avatar"></label>
+                        </section>
+                       
+                    </section>
+                    <p style="font-size: 10px;">
+                        功能介绍：开启此功能之后，选择弹幕头像之后，发送的弹幕会有弹幕头像
+                    </p>
+                </section>
+                <section class="video-list">
+
+                </section>
+            </aside>
+        </section>
+    </section>
+    <script src="./index.js"></script>
+</body>
+
+</html>

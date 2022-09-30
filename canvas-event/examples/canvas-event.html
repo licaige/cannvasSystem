@@ -1,0 +1,370 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Canvas-Event</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta charset="utf-8">
+    <!-- import omg -->
+    <script type="text/javascript" src="omg.js"></script>
+    <!-- import Bootstrap CDN -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/1.12.0/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .title-float {
+            margin: 10px;
+        }
+
+        .content {
+            height: 450px;
+        }
+
+        .Detail {
+            margin-top: 10px;
+        }
+
+        .Detail>p {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="padding: 28px 30px 0 30px;">
+        <div class="title-float">
+            <button id="addAxisBtn" type="button" class="btn btn-info btn-rounded">
+                <i class="glyphicon glyphicon-plus"></i> 添加圆点
+            </button>
+            <button id="translateReverseBtn" type="button" onclick="translateReverse()" class="btn btn-info btn-rounded">
+                开启拖拽
+            </button>
+            <button id="scaleeReverseBtn" type="button" onclick="scaleeReverse()" class="btn btn-info btn-rounded">
+                关闭缩放
+            </button>
+            <button id="scaleResetBtn" type="button" onclick="scaleReset()" class="btn btn-info btn-rounded">
+                缩放还原
+            </button>
+        </div>
+        <div class="content row">
+            <div>
+                <canvas id="Canvas" width="750px" height="450px">您的浏览器不支持canvas</canvas>
+            </div>
+        </div>
+        <!-- 鼠标坐标 -->
+        <div class="Detail">
+            鼠标坐标（相对于画布）：
+            <span id="coordinates"></span>
+        </div>
+        <!-- 模态框 -->
+        <div class="modal fade" id="circlemodel" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header  text-center">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">圆的信息</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-warning">
+                            <div>
+                                <span>名称：
+                                    <strong id="name"></strong>
+                                </span>
+                            </div>
+                            <div>
+                                <span>值：
+                                    <strong id="value"></strong>
+                                </span>
+                            </div>
+                        </div>
+                        <div onclick="delArc()" class="text-danger" style="cursor: pointer; ">删除圆点</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info btn-rounded" data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal -->
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    const stage = omg({
+        element: document.getElementById('Canvas'),
+        width: 750,
+        height: 450,
+        enableGlobalTranslate: false, // 开启全局拖拽
+        enableGlobalScale: true, // 开启全局缩放
+        position: 'absolute', // canvas.style.position
+        prepareImage: true, // 提前加载图片
+    });
+
+    stage.init();
+
+    var currentCircle, currentArc; // 当前操作的圆点
+    const AxisBtn = document.getElementById("addAxisBtn");
+    let stageleft, stagetop, imgsrc = "../img/1348814103993.jpg";
+
+    // 圆
+    function Circle(x, y, radius, type, name, value, id) {
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+        this.type = type;
+        this.name = name;
+        this.value = value;
+        this.id = id;
+    }
+
+    // 圆的的数组
+    var circles = [{ "name": "FW1-01", "type": 1, "x": 0.69, "y": 0.66 },
+    { "name": "FW1-02", "type": 1, "x": 0.71, "y": 0.64 },
+    { "name": "FW1-03", "type": 1, "x": 0.71, "y": 0.56 },
+    { "name": "FW1-04", "type": 1, "x": 0.67, "y": 0.56 },
+    { "name": "FW1-05", "type": 1, "x": 0.67, "y": 0.48 },
+    { "name": "FW1-06", "type": 1, "x": 0.67, "y": 0.41 },
+    { "name": "FW1-07", "type": 1, "x": 0.67, "y": 0.28 },
+    { "name": "FW1-08", "type": 1, "x": 0.67, "y": 0.19 },
+    { "name": "FW1-09", "type": 1, "x": 0.72, "y": 0.19 },
+    { "name": "FW1-10", "type": 1, "x": 0.72, "y": 0.1 },
+    { "name": "FW1-11", "type": 1, "x": 0.65, "y": 0.1 }];
+    //circles.push(new Circle(0.29, 0.39, 5, 1, "one", 40, 2));
+
+    // 获取鼠标指针坐标
+    function getMousePos(evt) {
+        // let rect = stage.element.getBoundingClientRect();
+        // rect.left,rect.top;
+        stageleft = stage.utils.getPos().x;
+        stagetop = stage.utils.getPos().y;
+    }
+
+    // 监听鼠标移动
+    // 记录mouse的x和y
+    stage.element.addEventListener("mousemove", function (evt) {
+        getMousePos(evt);
+        let message = stageleft + "," + stagetop;
+        document.getElementById("coordinates").innerHTML = message;
+    }, false);
+
+    // 创建新的圆点并加入数组
+    function createCircle() {
+        // 移除鼠标坐标的缩放的影响
+        let cir = new Circle((stageleft / (stage.width * stage.scale)).toFixed(2), (stagetop / (stage.height * stage.scale)).toFixed(2), 5, 2, 2333, 40, 2);
+        circles.push(cir);
+        createArc(cir);
+        // 计算原点坐标，保留两位小数
+        console.log("x:" + (stageleft / (stage.width * stage.scale)).toFixed(2));
+        console.log("y:" + (stagetop / (stage.height * stage.scale)).toFixed(2));
+        console.log(circles.length)
+    }
+
+    // 给canvas添加点击事件
+    const CanvasClick = function (evt) {
+        createCircle();
+        // 创建元素后就移除点击事件，避免重复创建
+        stage.element.removeEventListener('click', CanvasClick, false);
+        canvasRedraw();
+        // 0.1秒后提示是否添加，此时画布重画完毕！
+        setTimeout(function () {
+            if (!addcfm()) {
+                circles.pop();
+                stage.removeLastChild();
+                canvasRedraw()
+            }
+            tip.style.display = 'none';
+        }, 100);
+    };
+
+    AxisBtn.addEventListener('click', function () {
+        // 在绑定前提前解除绑定，避免重复绑定
+        stage.element.removeEventListener('click', CanvasClick, false);
+        // 给canvas添加点击事件
+        stage.element.addEventListener('click', CanvasClick, false);
+    }, false);
+
+    // 添加圆到stage数组
+    function createArc(circle) {
+        let cirColor;
+        switch (circle.type) {
+            case 1:
+                cirColor = "#330099";
+                break;
+            case 2:
+                cirColor = "#00CCFF";
+                break;
+            case 3:
+                cirColor = "#FFFF33";
+                break;
+            case 4:
+                cirColor = "#993300";
+                break;
+            default:
+                console.log("类型异常");
+                throw new TypeError('TypeError in createArc');
+        }
+        const arc = stage.graphs.arc({
+            x: (circle.x * stage.width).toFixed(1) + 100,
+            y: (circle.y * stage.height).toFixed(1) + 100,
+            radius: 5,
+            color: cirColor,
+            style: 'fill'
+        }).on('mouseenter', function () {
+            tip.style.display = 'block';
+            setValue({
+                title: '圆点信息',
+                color: cirColor,
+                name: circle.name,
+                type: circle.type
+            });
+            stage.element.style.cursor = 'pointer';
+            let x = mousePos.x - 120;
+            let y = mousePos.y - 80;
+            tip.style.left = x + 'px';
+            tip.style.top = y + 'px';
+        }).on('mouseleave', function () {
+            tip.style.display = 'none';// 隐藏tip
+            stage.element.style.cursor = 'default';
+        }).on('mousedown', function () {
+            tip.style.display = 'none';
+            document.getElementById("name").innerHTML = circle.name;
+            document.getElementById("value").innerHTML = circle.value;
+            $("#circlemodel").modal('show');
+            currentArc = arc;
+            currentCircle = circle;
+        }).config({
+            drag: false,
+            changeIndex: false
+        });
+        stage.addChild(arc);
+    }
+
+    // 添加背景图片
+    function createImage() {
+        const image = stage.graphs.image({
+            x: 0,
+            y: 0,
+            width: stage.width,
+            height: stage.height,
+            src: imgsrc,
+        }).config({
+            fixed: true,
+            zindex: -1
+        });
+        stage.addChild(image);
+    }
+
+    // 画圆
+    function drawArc() {
+        for (let i = 0; i < circles.length; i++) {
+            createArc(circles[i]);
+        }
+    }
+
+    // 删除圆点
+    function delArc() {
+        if (addcfm()) {
+            let arrIndex = getIndexWithArr(circles, currentCircle);
+            circles.splice(arrIndex, 1);
+            stage.removeChild(currentArc);
+            canvasRedraw();
+            $("#circlemodel").modal('hide');
+        }
+    }
+
+    // 获得当前圆点在 array 中的坐标
+    function getIndexWithArr(_arr, _obj) {
+        for (var i = _arr.length - 1; i >= 0; i--) {
+            if (_arr[i] === _obj)
+                return i;
+        }
+        throw new Error('Object is not in array');
+    }
+
+    createImage();
+    drawArc();
+    stage.show();
+
+    // 添加确认框
+    function addcfm() {
+        return confirm("请确认是否添加？");
+    }
+
+    // 删除确认框
+    function delcfm() {
+        return confirm("请确认是否删除？");
+    }
+
+    // 重绘
+    function canvasRedraw() {
+        stage.removeAllChilds();
+        createImage();
+        if (circles.length > 0) {
+            drawArc()
+        }
+        stage.redraw()
+    };
+
+    // 全局拖拽设置
+    function translateReverse() {
+        let translateBtn = document.getElementById("translateReverseBtn");
+        if (stage.enableGlobalTranslate) {
+            translateBtn.innerHTML = "开启拖拽";
+            stage.enableGlobalTranslate = false;
+        } else {
+            translateBtn.innerHTML = "关闭拖拽";
+            stage.enableGlobalTranslate = true;
+        }
+    }
+
+    // 缩放设置
+    function scaleeReverse() {
+        let scaleeBtn = document.getElementById("scaleeReverseBtn");
+        if (stage.enableGlobalScale) {
+            scaleeBtn.innerHTML = "开启缩放";
+            stage.enableGlobalScale = false;
+        } else {
+            scaleeBtn.innerHTML = "关闭缩放";
+            stage.enableGlobalScale = true;
+        }
+        stage._event.triggerEvents();
+    }
+
+    // 重置缩放
+    function scaleReset() {
+        stage.scale = 1;
+        stage.redraw()
+    }
+
+    // tooltip 提示
+    let style = 'position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1), top 0.4s cubic-bezier(0.23, 1, 0.32, 1); background-color: rgba(50, 50, 50, 0.701961); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px; font-family: sans-serif; line-height: 21px; padding: 5px;';
+    let tip = document.createElement('div');
+    tip.style = style;
+
+    tip.innerHTML = '';
+
+    document.body.appendChild(tip);
+
+    const setValue = function (value) {
+        let innerhtml = value.title + '<br><span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + value.color + '"></span>' + "名称" + ' : ' + value.name + '<br>' + '类型' + ' : ' + value.type + '';
+        tip.innerHTML = innerhtml;
+    }
+
+    function mousePosition(ev) {
+        if (ev.pageX || ev.pageY) {
+            return { x: ev.pageX, y: ev.pageY };
+        }
+        return {
+            x: ev.clientX + document.body.scrollLeft - document.body.clientLeft,
+            y: ev.clientY + document.body.scrollTop - document.body.clientTop
+        };
+    }
+    document.onmousemove = mouseMove;
+    function mouseMove(ev) {
+        ev = ev || window.event;
+        mousePos = mousePosition(ev);
+    }
+</script>
+
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style>
+      body {
+        text-align: center;
+        padding-top: 80px;
+      }
+      canvas {
+        box-shadow: 0 0 40px #333;
+        background-color: rgb(135, 192, 206);
+        border: 1px solid rgb(110, 188, 207);
+      }
+    </style>
+  </head>
+  <body onload="draw()">
+    <div id="vue-app"></div>
+    <canvas id="canvas" width="800" height="600">
+      你这浏览器不支持这玩意啊
+    </canvas>
+    <script>
+      function draw() {
+        // 让vscode可以显示canvas智能提示
+        /** @type {HTMLCanvasElement} */
+        const canvas = document.getElementById('canvas');
+        // 定时器
+        let timer = null;
+        // 得分统计
+        let score = 0;
+        if (canvas.getContext) {
+          const ctx = canvas.getContext('2d');
+          /**
+           * 贪吃蛇步骤
+           * 1.蛇
+           * 1.1蛇头蛇身绘制
+           * 2让蛇动起来
+           * 2.1添加键盘事件
+           * 2.2animate运动
+           * 3随机投放食物
+           * 3.1坐标位置
+           * 3.2食物是否投放到了蛇头和蛇身上(数组去重)
+           * 4吃食物
+           * 4.1碰撞检测
+           * 4.2将食物添加到蛇身上
+           * 5.边缘检测,判断游戏是否结束
+           * 5.1碰撞检测
+           * 5.2GameOver
+           * 优化: 1.不让蛇走快
+           *        2. 蛇不能回头
+           *
+           */
+          // 1.蛇头蛇身,用类来写,因为方便后续创建嘛
+
+          // 创建 Rect类  所有的都是Rect食物/蛇头/蛇身
+          function Rect(x, y, width, height, color) {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+            this.color = color;
+          }
+          // 方法 绘制rect
+          Rect.prototype.draw = function () {
+            ctx.beginPath();
+            ctx.fillStyle = this.color;
+            ctx.fillRect(this.x, this.y, this.width, this.height);
+            ctx.strokeRect(this.x, this.y, this.width, this.height);
+          };
+
+          // 创建 蛇类
+          function Snake() {
+            //蛇头
+            this.head = new Rect(
+              canvas.width / 2,
+              canvas.height / 2 + 20,
+              40,
+              40,
+              'gold'
+            );
+            //蛇身
+            this.snakeBody = new Array();
+            let x = this.head.x - 40;
+            let y = this.head.y;
+            for (let i = 0; i < 3; i++) {
+              let rect = new Rect(x, y, 40, 40, 'gray');
+              this.snakeBody.push(rect);
+              x -= 40;
+            }
+          }
+          // 方法 绘制蛇
+          Snake.prototype.sDraw = function () {
+            //绘制蛇头
+            this.head.draw();
+            //绘制蛇身
+            for (let i = 0; i < this.snakeBody.length; i++) {
+              this.snakeBody[i].draw();
+            }
+          };
+          //初始化 移动方向
+          Snake.prototype.direction = 2;
+          // 蛇 移动方法
+          Snake.prototype.move = function () {
+            // 加头 去尾
+            const rect = new Rect(
+              this.head.x,
+              this.head.y,
+              this.head.width,
+              this.head.height,
+              'gray'
+            );
+            //方向判断
+            // switch (this.direction) {
+            //   case 0: {
+            //     // console.log('左');
+            //     this.head.x -= this.head.width;
+            //     break;
+            //   }
+            //   case 1: {
+            //     // console.log('上');
+            //     this.head.y -= this.head.height;
+            //     break;
+            //   }
+            //   case 2: {
+            //     // console.log('右');
+            //     this.head.x += this.head.width;
+            //     break;
+            //   }
+            //   case 3: {
+            //     // console.log('下');
+            //     this.head.y += this.head.height;
+            //     break;
+            //   }
+            // }
+            calcDirection(this,this.direction)
+
+            //加头去尾
+            this.snakeBody.splice(0, 0, rect);
+            this.snakeBody.pop();
+          };
+          let calcDirectionObj = {
+            0:self => self.head.x -=self.head.width,
+            1:self => self.head.y -=self.head.height,
+            2:self => self.head.x +=self.head.width,
+            3:self => self.head.y +=self.head.height
+          }
+          function calcDirection(self,target){
+            console.log(target)
+            return calcDirectionObj[target](self)
+          }
+
+          // 创建 食物类
+          function Food() {
+            this.x = Math.floor(Math.random() * (800 - 40 + 1));
+            this.y = Math.floor(Math.random() * (600 - 40 + 1));
+            this.width = 40;
+            this.height = 40;
+            this.color = 'red';
+          }
+          // 方法 食物绘制
+          Food.prototype.draw = function () {
+            ctx.beginPath();
+            ctx.fillStyle = this.color;
+            ctx.fillRect(this.x, this.y, this.width, this.height);
+            ctx.strokeRect(this.x, this.y, this.width, this.height);
+          };
+          // 判断 食物是否被吃
+          Food.prototype.isEat = function () {
+            // head
+            let distanceX = Math.abs(food.x - snake.head.x);
+            let distanceY = Math.abs(food.y - snake.head.y);
+            if (distanceX > 40 || distanceY > 40) {
+              // console.log('没吃到');
+            } else {
+              console.log(`bingo吃到了,`);
+              score++;
+              food = null;
+              snake.snakeBody.push(
+                new Rect(
+                  snake.snakeBody[snake.snakeBody.length - 1].x - 40,
+                  snake.snakeBody[snake.snakeBody.length - 1].y,
+                  40,
+                  40,
+                  'gray'
+                )
+              );
+            }
+          };
+
+          // main
+          // 创建 蛇
+          const snake = new Snake();
+          // 绘制 蛇
+          snake.sDraw();
+          // 初始化 食物
+          let food = null;
+          // 预处理 食物(是否被生成在蛇身/头)
+          food = preDraw();
+          // 绘制 食物
+          food.draw();
+          // 开始动画
+          timer = setInterval(animate, 150);
+          // 动画 函数
+          function animate() {
+            //清除
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            //移动
+            snake.move();
+            //每次移动都要判断是否游戏结束,但是要渲染出来蛇碰到的样子
+            //移动后判断是否被吃
+            food.isEat();
+            // 被吃后会置空food,没被吃还会打印之前的food
+            preDraw();
+            // 绘制
+            food.draw();
+            snake.sDraw();
+            if (isGameOver()) {
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+              clearInterval(timer);
+              timer = null;
+              alert(`菜狗,贪吃蛇都玩不明白
+              得分${score}`);
+              //刷新页面
+              location.reload();
+            }
+          }
+          // 预处理 函数
+          function preDraw() {
+            if (food === null) {
+              //吃掉以后置空
+              // console.log('新建了food',score);
+              console.log('目前得分',score);
+              food = new Food();
+            }
+
+            if (isHit(food, snake.head) || isHit(food, snake.snakeBody)) {
+              food = null;
+              return (food = preDraw());
+            } else {
+              return food;
+            }
+          }
+
+          // 绘制食物之前要判断新生成的Food的坐标行不行.1.头有没有碰到. 2.身体有没有碰到
+          // 因为判断的内容不一样,所以传参吧.
+          // 碰撞判断 函数
+          function isHit(food, aim) {
+            // 这个函数不好写哦~我来梳理逻辑
+            // 1. 要判断是否碰到蛇头, 所以传参食物和蛇头比较就好
+            // 2. 要判断是否碰到蛇身, 蛇身是多个可以函数内循环也可以外面循环这个函数.
+            // 3. 如果没有碰到正常渲染即可. 既然每次new了都要判断不如扔一个函数里?
+            // 4. 如果碰到,需要重新new. 刚好符合3 扔一个函数开搞
+            // ps. 因为原型上的方法是访问不到new的x和y的.所以必须写在外面~反正尽量考虑少写在全局,但是没办法也没办法啊~
+            let result = true; //装结果
+            //每次都要判断食物和整个蛇一起传没毛病
+            // 判断aim类型
+            if (Array.isArray(aim)) {
+              // snakeBody
+
+              result = aim.some((item) => {
+                let distanceX = Math.abs(food.x - item.x);
+                let distanceY = Math.abs(food.y - item.y);
+                if (distanceX > 40 || distanceY > 40) {
+                  return false;
+                } else {
+                  return true;
+                }
+              });
+              return result;
+            } else {
+              // head
+              let distanceX = Math.abs(food.x - aim.x);
+              let distanceY = Math.abs(food.y - aim.y);
+              if (distanceX > 40 || distanceY > 40) {
+                result = false;
+                return result;
+              } else {
+                result = true;
+                return result;
+              }
+            }
+
+            return result;
+          }
+
+          //游戏结束 1.自己碰到自己 2.碰到边缘
+          // 游戏结束判断 函数
+          function isGameOver() {
+            //撞四周简单先写撞四周
+            if (
+              snake.head.x >= canvas.width ||
+              snake.head.x < 0 ||
+              snake.head.y >= canvas.height ||
+              snake.head.y < 0
+            ) {
+              return true;
+            }
+            // 撞自己也简单
+            return snake.snakeBody.some((item, i) => {
+              if (i === 0) {
+                return false;
+              }
+              let distanceX = Math.abs(snake.head.x - item.x);
+              let distanceY = Math.abs(snake.head.y - item.y);
+              if (distanceX >= 40 || distanceY >= 40) {
+                return false;
+              } else {
+                alert(`你是真得儿,自己撞自己呗
+                得分${score}`);
+                return true;
+              }
+            });
+          }
+
+          //按键检测 事件
+          document.onkeydown = function (e) {
+            var event = e || window.event;
+            switch (event.keyCode) {
+              case 37: {
+                snake.preDirection = snake.direction; //为了不让蛇撞自己
+                if(snake.direction == 0){break}
+                else if (snake.preDirection !== 2) {
+                  snake.direction = 0;
+                }
+                
+                snake.move();
+                snake.sDraw();
+                break;
+              }
+              case 38: {
+                snake.preDirection = snake.direction;
+
+                if(snake.direction == 1){break}
+                else if (snake.preDirection !== 3) {
+                  snake.direction = 1;
+                }
+                
+
+                snake.move();
+                snake.sDraw();
+                break;
+              }
+              case 39: {
+                snake.preDirection = snake.direction;
+
+                if(snake.direction == 2){break}
+                else if (snake.preDirection !== 0) {
+                  snake.direction = 2;
+                }
+                snake.move();
+                snake.sDraw();
+                break;
+              }
+              case 40: {
+                snake.preDirection = snake.direction;
+
+                if(snake.direction == 3){break}
+                else if (snake.preDirection !== 1) {
+                  snake.direction = 3;
+                }
+                snake.move();
+                snake.sDraw();
+                break;
+              }
+            }
+          };
+        }
+      }
+    </script>
+  </body>
+</html>

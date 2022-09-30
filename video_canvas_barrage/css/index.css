@@ -1,0 +1,731 @@
+/* 默认样式开始 */
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body,#barrage{
+    height: 100%;
+    width: 100%;
+    user-select: none;
+}
+ul,ol{
+    list-style: none;
+}
+/* 默认样式结束 */
+
+
+
+/* 弹幕容器样式开始 */
+#barrage{
+    background-color: #292929;
+}
+/* 弹幕容器样式结束 */
+
+
+/* 弹幕头部样式开始 */
+#barrage .barrage-header{
+    width: 100%;
+    height: 64px;
+    background-color: #232325;
+    color: #ccc;
+    text-align: center;
+    font-size: 18px;
+}
+/*header里面h1实现打字机效果*/
+.barrage-header h1{
+    display: inline-block;
+    border-right:0.1em solid;
+	width:384px;
+    margin:16px 1em 0;
+    height: 32px;
+    line-height: 32px;
+	white-space:nowrap;
+    overflow:hidden;
+    animation:typing 3s steps(20,end),blink-caret 0.5s step-end infinite alternate;
+}
+@keyframes typing {
+	from {
+	    width:0;
+    }
+}
+@keyframes blink-caret {
+	50% {
+	    border-color:transparent;
+    }
+}
+/* 弹幕头部样式结束 */
+
+
+
+/* 弹幕左侧容器样式开始 */
+#barrage .barrage-container{
+    width: 1300px;
+    margin: 0 auto;
+    height: calc(100% - 64px);
+    box-sizing: border-box;
+    padding: 10px 0;
+    display: flex;
+}
+/* 弹幕左侧容器样式结束 */
+
+
+
+.barrage-container .barrage-player{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    flex: 1;
+    height: 100%;
+}
+
+.barrage-player .player-container{
+    flex: 1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.barrage-player .player-footer{
+    height: 48px;
+    background-color: #232325;
+    box-sizing: border-box;
+    
+    display: flex;
+    justify-content: space-between;
+}
+.player-footer .player-btns{
+    margin-top: 10px;
+}
+.player-footer .player-btn{
+    display: inline-block;
+    height: 25px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+.player-footer .player-btn img ,.player-footer .player-btn span{
+    vertical-align: middle;
+    color: #ccc;
+  
+}
+.player-footer .player-btn.collection-btn{
+    padding-right: 28px;
+    border-right: 1px solid #333;
+}
+ .player-barrage{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.player-barrage.fullScreen-barrage{
+    display: none;
+}
+.player-barrage img{
+    cursor: pointer;
+    margin: 0 15px;
+}
+
+.player-barrage .barrage-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #444;
+    border-radius: 20px;
+    /* overflow: hidden; */
+    height: 25px;
+}
+.player-barrage .barrage-btn input{
+    outline: none;
+    width: 200px;
+    border: none;
+    height: 100%;
+    line-height: 25px;
+    text-indent: 0.5em;
+    box-sizing: border-box;
+    padding-right: 1em;
+    color: #999;
+    background-color: #444;
+
+}
+.player-barrage .barrage-btn .send-barrage{
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #a7a7a7;
+    background: #666;
+    height: 100%;
+    line-height: 25px;
+    cursor: pointer;
+    overflow: hidden;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+/* 鼠标移入弹幕发送按钮出现白光划过动画效果 */
+.player-barrage .barrage-btn .send-barrage::before{
+    display: block;
+	/*注意这里top和left，让白光移动到图片左上角，
+	后续的划过动画也是依靠这两个属性*/
+	top: -192%;
+	left: -40%;
+	/*定义白光的宽高*/
+	width: 50%;
+	height: 300%;
+	/*旋转角度，你也可以调整*/
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	/*使用渐变来实现白光*/
+	background: -webkit-linear-gradient(left, rgba(255, 255, 255, .05) 20%, 
+            rgba(255, 255, 255, .6) 65%, rgba(255, 255, 255, .05) 100%);
+	background: linear-gradient(left, rgba(255, 255, 255, .05) 20%,
+            rgba(255, 255, 255, .6) 65%, rgba(255, 255, 255, .05) 100%);
+	content: '';
+	z-index: 2;
+	position: absolute;
+}
+.player-barrage .barrage-btn .send-barrage:hover::before {
+    /* 这里省略了私有前缀代码 */
+	animation: crossed .5s linear;
+}
+@keyframes crossed{
+    0% {
+		top: -192%;
+	    left: -40%;
+	}
+	100% {
+		top: -42%;
+	    left: 110%;
+	}
+}
+
+
+.player-barrage .barrage-btn .send-barrage.active{
+    color: #ccc;
+    background-color: #00be06;
+}
+.player-container #player,.player-container #drawing{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+   height: 100%;
+   display: block;
+   cursor: pointer;
+}
+.player-container #drawing{
+    height: 300px;
+}
+.player-container .player-controls{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    display: none;
+   
+}
+.player-container .player-controls.active{
+    display: block;
+}
+.player-container .video-progress{
+    position: absolute;
+    bottom: 48px;
+    left: 0;
+    height: 10px;
+    width: 100%;
+    
+}
+.player-container .video-progress .progress{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.4);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.video-progress .progress .progress-btn{
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: 30;
+    display: none;
+}
+.progress .progress-btn:after {
+    position: absolute;
+    z-index: 29;
+    display: block;
+    content: '';
+    width: 14px;
+    height: 14px;
+    top: -8px;
+    left: -8px;
+    border: 8px solid rgba(255,255,255,0.1);
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+.progress .progress-btn:hover:after{
+    opacity: 0.4;
+    border-color: #00be06;
+}
+.player-container .video-progress .progress.active,.player-container .video-progress .progress.active .progress-current{
+    height: 10px;
+}
+.player-container .video-progress .progress.active .progress-btn,
+.player-container .video-progress .progress.active .progress-pointer
+{
+    display: block;
+}
+.progress .progress-current{
+    width: 0%;
+    background-color: #00be06;
+    height: 5px;
+    transition: height 0.2s;
+}
+.progress .progress-pointer{
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 10px;
+    width: 1px;
+    background-color: #fff;
+    display: none;
+}
+.player-container .pointer-video {
+    position: absolute;
+    width: 180px;
+    height: 100px;
+    bottom: 58px;
+    z-index: 30;
+    left: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    display: none;
+}
+.player-container .pointer-video.active {
+    display: block;
+}
+.pointer-video .pointer-video-current{
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    bottom: 0;
+}
+.pointer-video video{
+    width: 180px;
+    height: 100px;
+}
+.player-controls .video-modify{
+    position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+    height: 48px;
+    background: rgba(0,0,0,0.5);
+    box-sizing: border-box;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    color: #ccc;
+}
+.video-modify .modify,.video-modify .modify-btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modify .current-time{
+    margin-left: 15px;
+   
+}
+.modify-btns .modify-btn{
+    position: relative;
+    margin-left: 15px;
+    cursor: pointer;
+}
+/*工具提示（tooltip）样式*/
+.modify-btn.tooltip::before{
+    position: absolute;
+    content: '';
+    border: 5px solid transparent;
+}
+.modify-btn.tooltip::after{
+    font-size: 14px;
+    line-height: normal;
+    position: absolute;
+    padding: 3px 10px;
+    content: attr(data-tooltip);
+    white-space: nowrap;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+     background-color: rgba(0,0,0,0.7);
+}
+
+.tooltip::after
+{
+    z-index: 1000000;
+    visibility: hidden;
+    -webkit-transition: .3s ease;
+       -moz-transition: .3s ease;
+            transition: .3s ease;
+    -webkit-transition-delay: 0ms;
+       -moz-transition-delay: 0ms;
+            transition-delay: 0ms;
+    pointer-events: none;
+    opacity: 0;
+}
+.tooltip:hover::after
+{
+    visibility: visible;
+    opacity: 1;
+}
+[data-direction='top']::after
+{
+    top: -webkit-calc(-100% + -18px);
+    top:    -moz-calc(-100% + -18px);
+    top:         calc(-100% + -18px);
+}
+[data-direction='top']::after
+{
+    left: 50%;
+    -webkit-transform: translate3d(-50%,0,0);
+    -moz-transform: translate3d(-50%,0,0);
+    transform: translate3d(-50%,0,0);
+}
+
+
+.modify-btns .modify-btn:hover .modify-btn-sub{
+    display: block;
+}
+.modify-btn .modify-btn-sub{
+    position: absolute;
+    bottom: 18px;
+    left: -50px;
+    margin-left: 50%;
+    z-index: 20;
+    color: #ccc;
+    display: none;
+    
+}
+.modify-btn-sub .play-back-rate{
+    text-align: center;
+    width: 100px;
+    border-radius: 5px;
+    padding-top: 10px;
+    background-color: rgba(0,0,0,0.7);
+}
+.modify-btn-sub .btn-empty{
+    /* background-color: #fff; */
+    height: 20px;
+}
+.modify-btn .player-volume-range{
+    position: absolute;
+    width: 40px;
+    bottom: 18px;
+    left: -20px;
+    margin-left: 50%;
+    display: none;
+    
+}
+.player-volume-range.active {
+    display: block;
+}
+.modify-btn .btn-tip{
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    top: -50px;
+    width: 50px;
+    border-radius: 5px;
+    left: -30px;
+    line-height: 25px;
+    padding: 0 5px;
+    height: 25px;
+    text-align: center;
+    margin-left: 50%;
+    display: none;
+}
+.modify-btn .btn-tip-fullScreen{
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    top: -50px;
+    width: 80px;
+    border-radius: 5px;
+    left: -45px;
+    line-height: 25px;
+    text-align: center;
+    padding: 0 5px;
+    height: 25px;
+    display: none;
+    margin-left: 50%;
+}
+.modify-btn .btn-tip-into{
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    top: -50px;
+    width: 40px;
+    border-radius: 5px;
+    left: -20px;
+    line-height: 25px;
+    text-align: center;
+    padding: 0 5px;
+    height: 25px;
+    display: none;
+}
+.modify-btn:hover .btn-tip-fullScreen{
+    display: block;
+}
+.modify-btn:hover .btn-tip-into{
+    display: block;
+}
+.modify-btn:hover .btn-tip{
+    display: block;
+}
+.modify-btn:hover .player-volume-range{
+    display: block;
+}
+.player-volume-range .btn-empty{
+    height: 24px;
+}
+.player-volume-range .volume-range-container{
+    background-color: rgba(0,0,0,0.7);
+    padding: 5px 0;
+    border-radius: 5px;
+    text-align: center;
+}
+.volume-range-container .volume-number{
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.volume-range-container .volume-range{
+    position: relative;
+    display: inline-block;
+    height: 100px;
+    width: 5px;
+    background-color:rgba(255,255,255,0.4);
+    border-radius: 2px;
+}
+.volume-range-container .volume-range .volume-current{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #00be06;
+    border-radius: 2px;
+}
+.volume-range-container .volume-range .volume-btn{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: -3px;
+    top:45px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.volume-range .volume-btn::after{
+    position: absolute;
+    display: block;
+    content: '';
+    width: 10px;
+    height: 10px;
+    top: -5px;
+    left: -5px;
+    border: 5px solid rgba(255,255,255,0.1);
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+.volume-range .volume-btn:hover::after {
+    opacity: 0.4;
+    border-color: #00be06;
+}
+.play-back-rate li {
+    line-height: 35px;
+    transition: all 0.2s;
+}
+.play-back-rate li.active{
+    font-size: 18px;
+    color: #00be06;
+}
+.play-back-rate li:hover{
+    font-size: 18px;
+    color: #00be06;
+}
+.barrage-container .barrage-aside{
+    width: 300px;
+    height: 100%;
+    background-color: #1f1f1f;
+    color: #ccc;
+    
+}
+.barrage-aside .switch-items{
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+.switch-items .switch-container{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aside-header h3{
+    color: #00be06;
+    border-bottom: 1px solid #999;
+    line-height: 50px;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+/* 播放列表样式 */
+.video-list{
+    margin-top: 20px;
+    font-size: 18px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+.video-list li {
+    line-height: 40px;
+    border-bottom: 1px solid #999;
+    transition: all 0.2s;
+    margin-bottom: 10px;
+    position:relative;
+}
+.video-list li::before,
+.video-list li::after,
+.video-list li span::before,
+.video-list li span::after{
+    position: absolute;
+    content: '';
+    background-color: #00be06;
+    -webkit-transition:all .2s ease;
+	transition:all .2s ease;
+}
+/*上边框*/
+.video-list li::before{
+    width: 0;
+    top: -2px;
+    right: 0;
+    height: 2px;
+}
+/*下边框*/
+.video-list li::after{
+    width: 0;
+    bottom: -2px;
+    height: 2px;
+    left: 0;
+}
+/*左边框*/
+.video-list li span::before{
+    width: 2px;
+    left: -2px;
+    top: 0;
+    height: 0;
+}
+/*右边框*/
+.video-list li span::after{
+    width: 2px;
+    right: -2px;
+    bottom: 0;
+    height: 0;
+}
+/*播放列表动态边框样式*/
+/*鼠标移动上去时*/
+.video-list li:hover::before,
+.video-list li:hover::after {
+	width:calc(100% + 2px);
+}
+.video-list li:hover span::before,
+.video-list li:hover span::after {
+	height:calc(100% + 2px);
+}
+/*添加过渡延迟时间*/
+.video-list li:hover span::before,
+.video-list li:hover span::after {
+	-webkit-transition-delay:.2s;
+	transition-delay:.2s;
+}
+/*选中列表的动态边框动画延迟时间设置*/
+.video-list li.active:hover span::before{
+    -webkit-transition-delay:.2s;
+	transition-delay:.2s;
+}
+.video-list li.active:hover::after{
+    -webkit-transition-delay:.4s;
+	transition-delay:.4s;
+}
+.video-list li.active:hover span::after {
+    -webkit-transition-delay:.6s;
+	transition-delay:.6s;
+}   
+
+
+
+.video-list li.active{
+    font-size: 20px;
+    color: #00be06;
+}
+.video-list li:hover{
+    font-size: 20px;
+    color: #00be06;
+}
+
+
+
+/* 弹幕图片部分样式 */
+.barrage-avatar{
+    position: relative;
+    width: 30px;
+    text-align: center;
+    /* background-color: red; */
+    height: 25px;
+    
+}
+.barrage-avatar img {
+    margin: 0;
+    border-radius: 50%;
+}
+.barrage-avatar>img {
+    margin-top: 2px;
+   
+}
+.barrage-avatar .avatars{
+    position: absolute;
+    width: 30px;
+    left: -5px;
+    height: 0;
+    bottom: 25px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.2s;
+}
+.barrage-avatar .avatars .avatar-imgs{
+    border-radius: 20px;
+    background-color: rgba(0,0,0,0.7);
+}
+.barrage-avatar .avatars .avatar-empty{
+    background-color:transparent;
+    height: 20px;
+}
+.barrage-avatar:hover .avatars{
+    height: 140px;
+}
+.barrage-avatar .avatars img {
+    margin-top: 3px;
+    border: 1px solid transparent;
+}
+.barrage-avatar .avatars img:hover{
+    border-color: #00be06;
+}
+.barrage-avatar .avatars img.active{
+    border-color: #00be06;
+}

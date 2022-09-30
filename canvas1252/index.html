@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas</title>
+	<style>
+		html,body{margin: 0;}
+		canvas{box-shadow: 0 0 10px 0 rgba(0,0,0,.3);margin: 20px 0 0 20px;}
+	</style>
+</head>
+<body>
+    <canvas id="canvas" width="300" height="500"></canvas>
+	<script type="module">
+		import { Canvas } from './canvas.js'
+		import data from './data.js'
+
+		const canvas = new Canvas('#canvas')
+		canvas.draw(data)
+		canvas.drag('圆角矩形框')
+	</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Vue.js </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="style.css">
+  <script src="vue.js"></script>
+</head>
+<body onload="draw()">
+  <div id="vue-app">
+  </div>
+  <canvas id="canvas" width="800" height="600">
+    你这浏览器不支持这玩意啊
+  </canvas>
+  <script src="app.js"></script>
+  <script>
+    function draw(){
+      /** @type {HTMLCanvasElement} */ 
+      const canvas = document.getElementById("canvas");
+      if(canvas.getContext){
+        const ctx = canvas.getContext("2d");
+        // 圆的组成: 圆心(x,y) 半径 开始角度 结束角度 顺时针/逆时针
+        /*循环生成圆弧*/
+        let x=150;
+        let y=60;
+        const r=50;
+        let end = Math.PI;
+        let anticlockWise=false;   
+        ctx.lineWidth="2"; 
+        const rule1 = [0,1];  
+        const rule2 = [2,3];  
+        for (let i = 0; i < 4; i++) {
+          
+          i!==0&&(x=150,y+=150,end=Math.PI,anticlockWise =!anticlockWise);
+          for (let j = 0; j < 3; j++) {
+            ctx.beginPath();
+            ctx.arc(x,y,r,0,end,anticlockWise);
+            (i<2)&&ctx.stroke();
+            (i>=2)&&ctx.fill();
+            x+=250;
+            end+=1/2*Math.PI;
+            
+          }
+          
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

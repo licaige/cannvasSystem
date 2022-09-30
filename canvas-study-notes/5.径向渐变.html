@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="vue.js"></script>
+  </head>
+  <body onload="draw()">
+    <div id="vue-app"></div>
+    <canvas id="canvas" width="800" height="600">
+      你这浏览器不支持这玩意啊
+    </canvas>
+    <script src="app.js"></script>
+    <script>
+      function draw() {
+        // 让vscode可以显示canvas智能提示
+        /** @type {HTMLCanvasElement} */
+        const canvas = document.getElementById('canvas')
+        if (canvas.getContext) {
+          const ctx = canvas.getContext('2d')
+          /**
+           * 径向渐变 radial gradient
+           * 参数1: x1
+           * 参数2: y1
+           * 参数3: r1
+           * 参数4: x2
+           * 参数5: y2
+           * 参数6: r2
+           */
+          const radialGradient = ctx.createRadialGradient(170,170,10,180,180,30);
+          radialGradient.addColorStop(0,'#a7d30c');
+          radialGradient.addColorStop(0.9,'#019f62');
+          radialGradient.addColorStop(1,'rgba(1,159,98,0)');
+          const radialGradient2 = ctx.createRadialGradient(280,290,10,280,280,80) 
+          radialGradient2.addColorStop(0,'#ff5f98');
+          radialGradient2.addColorStop(0.9,'#ff0188');
+          radialGradient2.addColorStop(1,'rgba(255,1,136,0)');
+          //画图
+          ctx.fillStyle = radialGradient;
+          ctx.fillRect(0,0,800,800);
+          ctx.fillStyle = radialGradient2;
+          ctx.fillRect(0,0,325,325);
+          
+        }
+      }
+    </script>
+  </body>
+</html>

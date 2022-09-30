@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="vue.js"></script>
+  </head>
+  <body onload="draw()">
+    <div id="vue-app"></div>
+    <img src="beautiful.jpg" alt="" />
+    <canvas id="canvas" width="800" height="600">
+      你这浏览器不支持这玩意啊
+    </canvas>
+    <script src="app.js"></script>
+    <script>
+      function draw() {
+        // 让vscode可以显示canvas智能提示
+        /** @type {HTMLCanvasElement} */
+        const canvas = document.getElementById('canvas')
+        if (canvas.getContext) {
+          const ctx = canvas.getContext('2d')
+          console.log(ctx);
+          //蒙版
+          ctx.beginPath()
+          ctx.fillStyle = 'rgba(100,100,100,0.99)'
+          ctx.fillRect(0, 0, 240, 360)
+
+          ctx.globalCompositeOperation = 'destination-out'
+          ctx.lineWidth = 20
+          ctx.lineCap = 'round'
+
+          canvas.onmousedown = function (e) {
+            const ev = e || window.event
+            const x = ev.clientX
+            const y = ev.clientY
+            ctx.moveTo(x, y)
+            canvas.onmousemove = function (e) {
+              const ev = e || window.event
+              const x = ev.clientX
+              const y = ev.clientY
+              ctx.lineTo(x, y)
+              ctx.stroke()
+            }
+            canvas.onmouseup = function (e) {
+              canvas.onmousemove = ''
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

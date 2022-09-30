@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>无人点餐 无人支付 云打单系统 </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js?v=3.2.0"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js?v=3.2.0"></script>  
+
+    <script src="http://wechatfe.github.io/vconsole/lib/vconsole.min.js?v=3.2.0"></script>
+
+    <script>  
+        var vConsole = new VConsole();
+       
+        $(function(){              
+            // 2、获取openid
+             wxInit()         
+  
+        }) 
+       
+        function wxInit(){
+
+          
+             var param = {'cmd':'get_js_config','url':'http://b.itying.com/index.html'};  
+            //发送请求获取wx_js_config  
+            $.ajax({  
+                    url: 'http://b.itying.com/wechat',    //获取config
+                    type: 'POST',  
+                    data: param,  
+                    datatype: 'json',  
+                    success: function (data) {  
+                        console.log(data);                        
+                        wx.config(data);  
+
+                        wx.ready(function(){      
+                          
+                          console.log('ready');
+                                                
+                        });  
+                        wx.error(function(res){  
+                            alert(JSON.stringify(res));  
+                            // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。  
+            
+                        });  
+                    }  
+                })  
+
+        }
+        
+
+
+    </script>
+
+
+  </head>
+  <body>
+    
+    <div id="app"></div>
+    <script src="/dist/build.js"></script>
+  </body>
+</html>

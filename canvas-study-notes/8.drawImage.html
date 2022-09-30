@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="vue.js"></script>
+  </head>
+  <body onload="draw()">
+    <div id="vue-app"></div>
+    <canvas id="canvas" width="800" height="600">
+      你这浏览器不支持这玩意啊
+    </canvas>
+    <script src="app.js"></script>
+    <script>
+      function draw() {
+        // 让vscode可以显示canvas智能提示
+        /** @type {HTMLCanvasElement} */
+        const canvas = document.getElementById('canvas')
+        if (canvas.getContext) {
+          const ctx = canvas.getContext('2d')
+          const img = new Image()
+          img.src = 'hello.png'
+          img.onload = function () {
+            /**
+             * 1.图像
+             * 2.x轴
+             * 3.y轴
+             * 4.宽度
+             * 5.高度
+             * 6.绘制x轴
+             * 7.绘制y轴
+             * 8.绘制的宽度
+             * 9.绘制的高度
+             */
+            // ctx.drawImage(this,0,0); //正常
+            // ctx.drawImage(this,0,0,300,200); //缩放
+            ctx.drawImage(this, 0, 0, 120, 100, 150, 50, 100, 50) //裁剪
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

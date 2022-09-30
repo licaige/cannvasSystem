@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Vue.js </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="style.css">
+  <script src="vue.js"></script>
+</head>
+<body onload="draw()">
+  <div id="vue-app">
+  </div>
+  <canvas id="canvas" width="600" height="600">
+    你这浏览器不支持这玩意啊
+  </canvas>
+  <script src="app.js"></script>
+  <script>
+    function draw(){
+      /** @type {HTMLCanvasElement} */ 
+      const canvas = document.getElementById("canvas");
+      if(canvas.getContext){
+        const ctx = canvas.getContext("2d");
+        /** 图形的基本元素就是路径
+         * 
+         * 1.首先,创建起始路径 beginPath();
+         * 2. 使用画图命令画出路径 moveTo()
+         * 3. 把路径闭合
+         * 4. 通过描边或者填充来绘制.
+        */
+       
+        /* 绘制一个矩形 */
+        ctx.strokeRect(50,50,500,500)
+        /* 绘制左上方三角形 */
+        // 开始绘制路径
+        ctx.beginPath();
+        // 起始点
+        ctx.moveTo(150,150);
+        // 第一条线
+        ctx.lineTo(400,150);
+        // 第二条线
+        ctx.lineTo(150,400);
+        // 闭合
+        ctx.closePath();
+        // 绘制
+        ctx.fill();
+        
+        /* 绘制第二个三角形 */
+        ctx.beginPath();
+        ctx.moveTo(450,450);
+        ctx.lineTo(200,450);
+        ctx.lineTo(450,200);
+        ctx.closePath();
+        ctx.stroke();
+
+        /* 绘制中间十字 */
+        // 第一条线
+        ctx.lineWidth = 5;
+        ctx.beginPath();
+        ctx.moveTo(300,275);
+        ctx.lineTo(300,325);
+        ctx.stroke();
+        // 第二条线
+        ctx.beginPath();
+        ctx.moveTo(275,300);
+        ctx.lineTo(325,300);
+        ctx.stroke();
+
+        
+      }
+    }
+  </script>
+</body>
+
+</html>

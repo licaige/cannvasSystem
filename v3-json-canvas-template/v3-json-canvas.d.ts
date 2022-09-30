@@ -1,0 +1,1 @@
+declare module "v3-json-canvas"declare module "v3-json-canvas/dist/lib/button"declare module "v3-json-canvas/dist/lib/icon"declare module "v3-json-canvas/dist/lib/input"declare module "v3-json-canvas/dist/lib/json-edit"declare module "v3-json-canvas/dist/lib/json-parse"

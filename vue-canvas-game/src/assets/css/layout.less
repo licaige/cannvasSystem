@@ -1,0 +1,34 @@
+html {
+	height: 100%;
+	vertical-align: baseline;
+	font-size: 100%;
+}
+
+html, body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, td, img, div, tr, input, dl, dd, textarea, button, hr, pre {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	list-style-type: none;
+}
+
+body {
+	height: 100%;
+	font-size: 12px;
+	// font-family : "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+	//font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+
+	& > .view {
+		min-width: 1250px;
+		height: 100%;
+	}
+
+	& > div#printBox {
+		display: none;
+	}
+
+	input, textarea, select, button {
+		font-weight: normal !important;
+		// font-family:"Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif!important;
+		font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+	}
+}

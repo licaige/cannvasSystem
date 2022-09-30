@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="vue.js"></script>
+  </head>
+  <body onload="draw()">
+    <div id="vue-app"></div>
+    <canvas id="canvas" width="800" height="600">
+      你这浏览器不支持这玩意啊
+    </canvas>
+    <script src="app.js"></script>
+    <script>
+      function draw() {
+        // 让vscode可以显示canvas智能提示
+        /** @type {HTMLCanvasElement} */
+        const canvas = document.getElementById('canvas');
+        if (canvas.getContext) {
+          const ctx = canvas.getContext('2d');
+          /**
+           * 面向对象方式
+           */
+          // 小球类
+          function Ball(x, y, r, color, speedX, speedY) {
+            this.x = x;
+            this.y = y;
+            this.r = r;
+            this.color = color;
+            this.speedX = speedX;
+            this.speedY = speedY;
+          }
+          // 因为所有小球都有这个方法,其实move可以放成私有的,但是没更改需求就先放原型上.
+          // 绘制方法
+          Ball.prototype.draw = function () {
+            ctx.beginPath();
+            ctx.fillStyle = this.color;
+            ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+            ctx.fill();
+          };
+          // 移动方法
+          Ball.prototype.move = function () {
+            this.x += this.speedX;
+            if (this.x > canvas.width - this.r) {
+              this.speedX *= -1;
+            } else if (this.x < this.r) {
+              this.speedX *= -1;
+            }
+            this.y += this.speedY;
+            if (this.y > canvas.height - this.r) {
+              this.speedY *= -1;
+            } else if (this.y < this.r) {
+              this.speedY *= -1;
+            }
+          };
+          //收集实例方法
+          // Ball.prototype.balls = []; //不想放这里
+          // 让用户用这个方法前自己新建一个数组balls
+          const balls = [];
+          Ball.prototype.collect = function () {
+            balls.push(this);
+            console.log(balls);
+          };
+
+          const ball1 = new Ball(100, 100, 50, 'gold', 5, 0);
+          const ball2 = new Ball(700, 100, 50, 'grey', -5, 0);
+          const ball3 = new Ball(500, 400, 50, 'lightblue', 3, 6);
+          const ball4 = new Ball(300, 200, 50, 'lightgreen', 7, -7);
+          const ball5 = new Ball(400, 100, 50, 'pink', 4, -2);
+          //我准备要把他们新建以后就放到balls数组里,
+          // 有个点要注意,是引用传值,所以ball1被修改balls里的也会改哦.
+          //要利用这个js特性可以方便但是要注意
+
+          ball1.collect();
+          ball2.collect();
+          ball3.collect();
+          ball4.collect();
+          ball5.collect();
+          //收集完就可以循环创建了
+          balls.forEach((item) => {
+            item.draw();
+          });
+
+          // 动画 封装方法 这方法封装了个啥玩意啊...
+          animate();
+          function animate() {
+            //动画四步骤, 绘制,清除,挪位置,重绘
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            /**
+             * 捋一下
+             * 两个小球开始移动,一个右一个左,移动距离是speed.
+             * 当快要碰到,也就是圆心距离<=两球半径 就要转向.
+             * 逻辑没问题,一定是变量问题,每个都打印一遍.
+             */
+
+            // '圆心距离小于两个半径之和'Math.sqrt((x1-x2)^2 +(y1-y2)^2)
+            // 碰撞检测 不用高级的查询了,就正常冒泡挨个查
+            function isHit(item1, item2) {
+              let distance =
+                Math.sqrt(
+                  Math.pow(item1.x - item2.x, 2) +
+                    Math.pow(item1.y - item2.y, 2)
+                ) -
+                (item1.r + item2.r);
+              if (distance <= 0) {
+                
+                item1.speedX *=-1;
+                item1.speedY *= -1;
+                item2.speedX *=-1;
+                item2.speedY *= -1;
+              }
+            }
+
+            
+
+            //移动
+            balls.forEach((item) => {
+              item.move();
+            });
+
+            //检测
+            for (let i = 0; i < balls.length; i++) {
+              for (let j = i; j < balls.length; j++) {
+                isHit(balls[i],balls[j])
+              }
+            }
+            
+            //重绘
+            balls.forEach((item) => {
+              item.draw();
+            });
+
+            window.requestAnimationFrame(animate);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,288 @@
+<!doctype html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">  
+    <title>微信测试页面</title>  
+    <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>  
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>  
+    <script>  
+        $(function(){  
+            //获取jsconfig  
+            var param_get_js_config = {'cmd':'get_js_config','url':'http://b.itying.com/aaa.html'};  
+            hander_data_from_wechat_api(param_get_js_config,hander_js_config);  
+  
+        })  
+        //配置JSconfig  
+        function hander_js_config(data){  
+            /*wx.config({ 
+                debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。 
+                appId: '', // 必填，公众号的唯一标识 
+                timestamp: , // 必填，生成签名的时间戳 
+                nonceStr: '', // 必填，生成签名的随机串 
+                signature: 'sM4AOVdWfPE4DxkXGEs8VJAAX0hDsNvepedYVgPudpde87_OEkUJdX4mFJAutu8m3l0Zg2FbxavtkibLqYZHcw',// 必填，签名，见附录1 
+                jsApiList: [] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2 
+            });*/  
+            wx.config(data);  
+            wx.ready(function(){  
+  
+                // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。  
+                // wx.checkJsApi({  
+                //     jsApiList: ['onMenuShareTimeline'], // 需要检测的JS接口列表，所有JS接口列表见附录2,  
+                //     success: function(res) {  
+                //         alert(JSON.stringify(res));  
+                //         // 以键值对的形式返回，可用的api值true，不可用为false  
+                //         // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}  
+                //     }  
+                // });  
+                // wx.onMenuShareTimeline({  
+                //     title: '分享的标题', // 分享标题  
+                //     link: 'www.baidu.com', // 分享链接  
+                //     imgUrl: '', // 分享图标  
+                //     success: function (res) {  
+                //         alert('share success');  
+                //         // 用户确认分享后执行的回调函数  
+                //     },  
+                //     cancel: function (res) {  
+                //         alert('share fail')  
+                //         // 用户取消分享后执行的回调函数  
+                //     }  
+                // });  
+
+                // 在这里调用 API    
+    			// 通过js注册事件,注意在移动开发中为了提升性能不建议使用PC端JS框架例如Jquery
+				            document.getElementById('btn1').onclick = function() {
+										
+                                        wx.chooseImage({
+                                            count: 5, // 默认可以选择5张图片
+                                            sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+                                            sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+                                            success: function(res) {
+                                                var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+                                            }
+                                        });
+                                    }
+                    
+                                    document.getElementById('btn2').onclick = function() {
+                                        wx.openLocation({
+                                            latitude: 39.54, // 纬度，浮点数，范围为90 ~ -90
+                                            longitude: 116.23, // 经度，浮点数，范围为180 ~ -180。
+                                            name: '帝都天安门', // 位置名
+                                            address: '天安门的中心', // 地址详情说明
+                                            scale: 14, // 地图缩放级别,整形值,范围从1~28。默认为最大
+                                            infoUrl: 'http://www.163.com' // 在查看位置界面底部显示的超链接,可点击跳转
+                                        });
+                                    }
+                    
+                                    document.getElementById('btn3').onclick = function() {
+                                        wx.scanQRCode({
+                                            needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+                                            scanType: ["qrCode", "barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+                                            success: function(res) {
+                                                var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+
+                                                alert(result);
+                                            },fail:function(err){
+                                                
+                                                alert(JSON.stringify(err))
+                                            }
+                                        });
+                                    }
+                                    
+                                    
+                                    // 2. 分享接口
+                                  // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+                                  document.querySelector('#onMenuShareAppMessage').onclick = function () {
+                                    wx.onMenuShareAppMessage({
+                                      title: '互联网之子',
+                                      desc: '在长大的过程中，我才慢慢发现，我身边的所有事，别人跟我说的所有事，那些所谓本来如此，注定如此的事，它们其实没有非得如此，事情是可以改变的。更重要的是，有些事既然错了，那就该做出改变。',
+                                      link: 'http://movie.douban.com/subject/25785114/',
+                                      imgUrl: 'http://demo.open.weixin.qq.com/jssdk/images/p2166127561.jpg',
+                                      trigger: function (res) {
+                                        // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
+                                        alert('用户点击发送给朋友');
+                                      },
+                                      success: function (res) {
+                                        alert('已分享');
+                                      },
+                                      cancel: function (res) {
+                                        alert('已取消');
+                                      },
+                                      fail: function (res) {
+                                        alert(JSON.stringify(res));
+                                      }
+                                    });
+                                    alert('已注册获取“发送给朋友”状态事件');
+                                  };
+                                
+                                  // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
+                                  document.querySelector('#onMenuShareTimeline').onclick = function () {
+                                    wx.onMenuShareTimeline({
+                                      title: '锤子安全锤_锤子真的出了个“锤子”：车充＋安全锤',
+                                      link: 'http://www.phonegap100.com/article-495-1.html',
+                                      imgUrl: 'http://www.phonegap100.com/data/attachment/portal/201605/20/213752y6wjjh702wuxk33w.jpg',
+                                      trigger: function (res) {
+                                        // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
+                                        alert('用户点击分享到朋友圈');
+                                      },
+                                      success: function (res) {
+                                        alert('已分享');
+                                      },
+                                      cancel: function (res) {
+                                        alert('已取消');
+                                      },
+                                      fail: function (res) {
+                                        alert(JSON.stringify(res));
+                                      }
+                                    });
+                                    alert('已注册获取“分享到朋友圈”状态事件');
+                                  };
+                                
+                                  // 2.3 监听“分享到QQ”按钮点击、自定义分享内容及分享结果接口
+                                  document.querySelector('#onMenuShareQQ').onclick = function () {
+                                    wx.onMenuShareQQ({
+                                      title: '锤子安全锤_锤子真的出了个“锤子”：车充＋安全锤',
+                                      link: 'http://www.phonegap100.com/article-495-1.html',
+                                      imgUrl: 'http://www.phonegap100.com/data/attachment/portal/201605/20/213752y6wjjh702wuxk33w.jpg',	      
+                                      desc: '在长大的过程中，我才慢慢发现，我身边的所有事，别人跟我说的所有事，那些所谓本来如此，注定如此的事，它们其实没有非得如此，事情是可以改变的。更重要的是，有些事既然错了，那就该做出改变。',
+                                     
+                                      trigger: function (res) {
+                                        alert('用户点击分享到QQ');
+                                      },
+                                      complete: function (res) {
+                                        alert(JSON.stringify(res));
+                                      },
+                                      success: function (res) {
+                                        alert('已分享');
+                                      },
+                                      cancel: function (res) {
+                                        alert('已取消');
+                                      },
+                                      fail: function (res) {
+                                        alert(JSON.stringify(res));
+                                      }
+                                    });
+                                    alert('已注册获取“分享到 QQ”状态事件');
+                                  };
+                                  
+                                  // 2.4 监听“分享到微博”按钮点击、自定义分享内容及分享结果接口
+                                  document.querySelector('#onMenuShareWeibo').onclick = function () {
+                                    wx.onMenuShareWeibo({
+                                      title: '锤子安全锤_锤子真的出了个“锤子”：车充＋安全锤',
+                                      link: 'http://www.phonegap100.com/article-495-1.html',
+                                      imgUrl: 'http://www.phonegap100.com/data/attachment/portal/201605/20/213752y6wjjh702wuxk33w.jpg',	      
+                                      desc: '在长大的过程中，我才慢慢发现，我身边的所有事，别人跟我说的所有事，那些所谓本来如此，注定如此的事，它们其实没有非得如此，事情是可以改变的。更重要的是，有些事既然错了，那就该做出改变。',
+                                      trigger: function (res) {
+                                        alert('用户点击分享到微博');
+                                      },
+                                      complete: function (res) {
+                                        alert(JSON.stringify(res));
+                                      },
+                                      success: function (res) {
+                                        alert('已分享');
+                                      },
+                                      cancel: function (res) {
+                                        alert('已取消');
+                                      },
+                                      fail: function (res) {
+                                        alert(JSON.stringify(res));
+                                      }
+                                    });
+                                    alert('已注册获取“分享到微博”状态事件');
+                                  };
+                                
+                                  // 2.5 监听“分享到QZone”按钮点击、自定义分享内容及分享接口
+                                  document.querySelector('#onMenuShareQZone').onclick = function () {
+                                    wx.onMenuShareQZone({
+                                      title: '锤子安全锤_锤子真的出了个“锤子”：车充＋安全锤',
+                                      link: 'http://www.phonegap100.com/article-495-1.html',
+                                      imgUrl: 'http://www.phonegap100.com/data/attachment/portal/201605/20/213752y6wjjh702wuxk33w.jpg',	      
+                                      desc: '在长大的过程中，我才慢慢发现，我身边的所有事，别人跟我说的所有事，那些所谓本来如此，注定如此的事，它们其实没有非得如此，事情是可以改变的。更重要的是，有些事既然错了，那就该做出改变。',
+                                     
+                                      trigger: function (res) {
+                                        alert('用户点击分享到QZone');
+                                      },
+                                      complete: function (res) {
+                                        alert(JSON.stringify(res));
+                                      },
+                                      success: function (res) {
+                                        alert('已分享');
+                                      },
+                                      cancel: function (res) {
+                                        alert('已取消');
+                                      },
+                                      fail: function (res) {
+                                        alert(JSON.stringify(res));
+                                      }
+                                    });
+                                    alert('已注册获取“分享到QZone”状态事件');
+                                  };
+
+
+                                   // 2.4 监听“分享到微博”按钮点击、自定义分享内容及分享结果接口
+                                   document.querySelector('#onPay').onclick = function () {
+                                    wx.chooseWXPay({
+                                                                                 
+								
+										    "timestamp":"1529115449",
+										    "nonceStr":"rv66pgqunyc",
+											"package":"prepay_id=wx16101730349678243a418be40162270682",
+											"signType":"MD5",
+											"paySign":"DDADAF2BA6DBE371ED9B4328D19A365C",
+                                          success: function (res) {
+                                          // 支付成功后的回调函数
+                                             alert(JSON.stringify(res));
+                                          },
+                                          fail:function(err){
+
+                                            alert(JSON.stringify(err));
+                                          }
+                                      });
+                                  };
+                                
+                    
+                                    
+            });  
+            wx.error(function(res){  
+                alert(JSON.stringify(res));  
+                // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。  
+  
+            });  
+        }  
+        //传递参数请求wechat_api数据，请求成功后的回调函数fn处理得到的数据  
+        function hander_data_from_wechat_api(param,fn) {  
+            console.info(param);  
+            //发送请求获取wx_js_config  
+            $.ajax({  
+                url: 'http://b.itying.com/wechat',  
+                type: 'POST',  
+                data: param,  
+                datatype: 'json',  
+                success: function (data) {  
+                    fn(data);  
+                }  
+            })  
+        }  
+  
+    </script>  
+</head>  
+<body>  
+    <button id="btn1">拍照或者选择图片</button>
+    <button id="btn2">地图</button>
+    <button id="btn3">扫一扫</button>
+    
+    <button id="onMenuShareAppMessage">分享朋友</button>
+    
+    <button id="onMenuShareTimeline">分享到朋友圈</button>
+    
+    <button id="onMenuShareQQ">分享到QQ</button>
+    
+    
+    <button id="onMenuShareWeibo">分享到微博</button>
+
+    <button id="onMenuShareQZone">分享到QQ空间</button>
+
+
+    <button id="onPay">支付</button>
+</body>  
+</html>  

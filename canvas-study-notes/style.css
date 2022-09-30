@@ -1,0 +1,13 @@
+body{
+  text-align: center;
+  padding-top: 80px;
+  /* margin:0 auto */
+}
+canvas{
+  /* box-shadow: 0 0 10px #333; */
+  /* margin: 0 auto; */
+  /* border-radius: 25px; */
+  box-shadow: 0 0 40px #333;
+  border: 1px solid rgb(196,200,201);
+  /* background-color: rgba(155,155,155,155); */
+}

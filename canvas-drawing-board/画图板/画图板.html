@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/画图板.css"/>
+		<script src="js/画图板.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<div class="pen_size_box">
+					<h1>铅笔大小</h1>
+					<!-- <input type="" name="pen-size" id="size"/> -->
+					<progress max="50" id="size" value="10"></progress>
+					<span id="sizevalue"></span>
+					<input type="button" id="add" value="+"/>
+					<input type="button" id="reduce" value="-"/>
+					<audio id="error" src="song/error.mp3"></audio>
+				</div>
+				<div class="eraser_box">
+					<h1>橡皮擦</h1>
+					<span id="ereaser"></span>
+					<span id="reset"></span>
+					<span id="cancel"></span>
+				</div>
+				<div class="color_box">
+					<h1>颜色</h1>
+					<div id="colorgreen"></div>
+					<ul id="licolors">
+						<li style="background-color: red;"></li>
+						<li style="background-color: orange;"></li>
+						<li style="background-color: yellow;"></li>
+						<li style="background-color: green;"></li>
+						<li style="background-color: cyan;"></li>
+						<li style="background-color: blue;"></li>
+						<li style="background-color: purple;"></li>
+						<li style="background-color: skyblue;"></li>
+						<li style="background-color: black;"></li>
+						<li style="background-color: gray;"></li>
+					</ul>
+					<input type="color" id="incolor"/>
+				</div>
+				<div class="shape-box">
+					<h1>形状</h1>
+					<ul>
+						<li id="vertical"></li>
+						<li id="spot">.</li>
+						<li id="line"></li>
+						<li id="arc"></li>
+						<li id="react"></li>
+					</ul>
+				</div>
+			</header>
+			<div class="canvas">
+				<canvas id="canvas" width="988" height="488"> </canvas>
+			</div>
+		</div>
+	</body>
+</html>
