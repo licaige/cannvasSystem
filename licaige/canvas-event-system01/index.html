@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #msg {
+            width: 50%;
+            display: inline-block;
+            height: 90vh;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" height="300"></canvas>
+    <div id="msg">
+
+    </div>
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.core.js"></script>
+<script type="module">
+    import Canvas from './Canvas/index.js'
+    const msgContainer = document.querySelector('#msg')
+    // 在对应展示区内添加内容
+    function log(text) {
+        const textNode = document.createTextNode(text)
+        const div = document.createElement('div')
+        div.appendChild(textNode)
+        msgContainer.appendChild(div)
+    }
+    //创建Canvas实例
+    const canvas = new Canvas(document.querySelector('#canvas'))
+    console.log('canvas',canvas)
+    //创建rect实例
+    let rect1 = canvas.addShape('rect', {
+        x: 0,
+        y: 0,
+        width: 150,
+        height: 50,
+        // fillStyle: '#ccc'
+        fillStyle: 'red',
+        id:'9999999999',
+      isClick:false
+    })
+    //注册click事件
+    // rect1.on('click', (event) => {
+    //     console.log('李琦 rect1',event)
+    //     log('rect1 click')
+    // })
+    rect1.on('mousedown', (event) => {
+      console.log('李琦 rect1',event,rect1)
+      console.log('李琦 canvas',canvas.children)
+      if(rect1.isClick){
+        console.log('mousedown000000')
+      //  说明可以归为了
+        rect1=  canvas.removeShape(rect1)
+         canvas.addShape('rect', {
+          x: 0,
+          y: 0,
+          width: 150,
+          height: 50,
+          // fillStyle: '#ccc'
+          fillStyle: 'red',
+          id:'9999999999',
+          isClick:false
+        })
+        canvas.draw()
+      }else {
+        console.log('mousedown1111111')
+        canvas.removeShape(rect1)
+        rect1= canvas.addShape('rect', {
+          x: 0,
+          y: 0,
+          width: 150,
+          height: 50,
+          // fillStyle: '#ccc'
+          fillStyle: 'green',
+          id:'9999999999',
+          isClick:true
+        })
+        canvas.draw()
+      }
+
+      // log('rect1 mousedown')
+    })
+    // rect1.on('mouseup', (event) => {
+    //   console.log('李琦 rect1',event)
+    //   log('rect1 mouseup')
+    // })
+    const rect2 = canvas.addShape('rect', {
+        x: 0,
+        y: 50,
+        width: 100,
+        height: 50,
+        // fillStyle: '#333'
+        fillStyle: 'yellow',
+        id:'9999999999',
+      isClick:false
+    })
+    rect2.on('click', (event) => {
+      canvas.removeShape(rect2)
+        console.log('李琦 rect2',event)
+        log('rect2 click')
+    })
+    // rect2.on('mousedown', (event) => {
+    //     log('rect2 mousedown')
+    // })
+    // rect2.on('mouseup', () => {
+    //     log('rect2 mouseup')
+    // })
+    const rect23= canvas.addShape('rect', {
+      x: 0,
+      y: 80,
+      width: 100,
+      height: 50,
+      // fillStyle: '#333'
+      fillStyle: 'blue',
+      id:'9999999999',
+      isClick:false
+    })
+    rect23.on('click', (event) => {
+      canvas.removeShape(rect23)
+      console.log('李琦 rect23',event)
+      log('rect23 click')
+    })
+    const polygon01= canvas.addShape('polygon', {
+      points: [
+        [40,  110],
+        [60, 180],
+        [40, 200],
+        [10, 180]
+      ],
+      // fillStyle: '#ccc'
+      fillStyle: 'green'
+    })
+    console.log('polygon01  李琦',polygon01)
+
+    //此处polygon01未执行？
+    polygon01.on('click', (event) => {
+      console.log('李琦 polygon',event)
+        log('polygon01 click')
+    })
+    //绘制画布
+    canvas.draw()
+</script>
+
+</html>
