@@ -1,0 +1,1 @@
+{"version":3,"file":"Register.d.ts","sourceRoot":"","sources":["../../../src/frameworks/controls/Register.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,WAAW,EAAE,MAAM,2BAA2B,CAAC;AAExD,MAAM,WAAW,QAAQ;IACrB,MAAM,IAAI,IAAI,CAAC;CAClB;AACD,8BAAsB,QAAQ;;IAY1B,IAAI,GAAG,IAAI,iBAAiB,CAE3B;IAED,IAAI,WAAW,IAAI,WAAW,CAE7B;WAEa,QAAQ,CAAC,YAAY,EAAE,QAAQ,GAAG,IAAI;CAGvD"}

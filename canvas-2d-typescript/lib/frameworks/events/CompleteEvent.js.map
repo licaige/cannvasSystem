@@ -1,0 +1,1 @@
+{"version":3,"file":"CompleteEvent.js","sourceRoot":"","sources":["../../../src/frameworks/events/CompleteEvent.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAoB,MAAM,oBAAoB,CAAC;AAEjE,MAAM,OAAO,aAAc,SAAQ,SAAS;IACxC,YAAY,MAAwB;QAChC,KAAK,CAAC,MAAM,EAAE,aAAa,CAAC,IAAI,CAAC,CAAC;IACtC,CAAC;;AAEa,kBAAI,GAAW,eAAe,CAAC"}

@@ -1,0 +1,331 @@
+<svg width="949.9999999999999" height="580" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 950 580">
+ <style type="text/css">.st0{fill:none;stroke:#1EAB3A;stroke-width:6;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#FF0000;stroke-width:6;}
+	.st2{fill:none;stroke:#0071BC;stroke-width:6;}
+	.st3{font-family:&#x27;SimHei';}
+	.st4{font-size:7px;}
+	.st5{font-size:7px;glyph-orientation-vertical:0;writing-mode:tb;}
+	.st6{fill:#FF0000;}
+	.st7{fill:#FFFFFF;}
+	.st8{fill:#1EAB3A;}
+	.st9{fill:#0071BC;}
+	.st10{font-size:9px;}
+	.st11{opacity:0.98;fill:#BF2100;enable-background:new    ;}
+	.st12{font-size:21.3333px;}
+	.st13{opacity:0.3;fill:#CCCCCC;stroke:#999999;stroke-width:1.0716;stroke-miterlimit:10;enable-background:new    ;}
+	.st14{font-size:18px;}
+	.st15{opacity:0.7;fill:#333333;stroke:#333333;stroke-width:1.2579;stroke-miterlimit:10;enable-background:new    ;}
+	.st16{opacity:0.7;fill:#999999;enable-background:new    ;}
+	.st17{fill:#32CD32;}
+	.st18{font-size:16px;}
+	.st19{fill:#EEEE00;}
+	.st20{fill:#D3D3D3;}
+	.st21{fill:#231815;}
+	.st22{font-family:'Alibaba-PuHuiTi-R';}</style>
+ <title>Layer 1</title>
+ <g>
+  <title>Layer 1</title>
+  <line id="svg_5" class="st0" x1="499.5" y1="264.4" x2="499.5" y2="338.1"/>
+  <path id="svg_2" class="st1" d="m35.9,164.1c0,-5.9 0,-11.8 0,-17.7c0,-2.4 1.9,-4.4 4.4,-4.4c46.9,0 85.3,0 132.1,0c2.4,0 4.4,1.9 4.4,4.4c0,4.4 0,8.9 0,13.3c0,2.4 1.9,4.4 4.4,4.4c35.5,0 122,0 157.5,0c2.4,0 4.4,-1.9 4.4,-4.4c0,-4.5 0,-8.9 0,-13.4c0,-2.4 1.9,-4.4 4.4,-4.4c4.7,0 9.4,0 14,0c1.2,0 2.3,0.5 3.1,1.3c6.4,6.4 12.7,12.7 19.1,19.1c0.8,0.8 1.3,1.9 1.3,3.1c0,46.7 0,121.6 0,168.3c0,2.4 1.9,4.4 4.4,4.4c36.7,0 73.4,0 110.1,0c0,41.9 0,83.8 0,125.8c0,1.2 -0.5,2.3 -1.3,3.1c-2.5,2.5 -4.9,4.9 -7.4,7.4" fill="black"/>
+  <path id="svg_3" class="st2" d="m302,29.2c0,61.7 0,123.4 0,185.1c0,2.4 1.9,4.4 4.4,4.4c53.4,0 135.1,0 188.5,0c2.4,0 4.4,1.9 4.4,4.4c0,13.8 0,27.6 0,41.5c26.8,0 53.7,0 80.5,0c2.4,0 4.4,1.9 4.4,4.4c0,6.2 0,12.4 0,18.6" fill="black"/>
+  <line id="svg_4" class="st2" x1="280.4" y1="29.2" x2="323.5" y2="29.2"/>
+  <text id="svg_6" transform="matrix(1,0,0,1,21.958,177.9621) " class="st3 st4">秀园路站</text>
+  <text id="svg_8" transform="matrix(1,0,0,1,49.3627,105.5763) " class="st3 st5">秀清路站</text>
+  <text id="svg_10" transform="matrix(1,0,0,1,72.2407,98.5767) " class="st3 st5">秀洲大道站</text>
+  <text id="svg_12" transform="matrix(1,0,0,1,95.1187,105.5763) " class="st3 st5">新洲路站</text>
+  <text id="svg_14" transform="matrix(1,0,0,1,117.9968,98.5767) " class="st3 st5">昌盛中路站</text>
+  <text id="svg_16" transform="matrix(1,0,0,1,140.8752,105.5763) " class="st3 st5">友谊街站</text>
+  <text id="svg_18" transform="matrix(1,0,0,1,163.753,105.5767) " class="st3 st5">洪兴路站</text>
+  <text id="svg_68" transform="matrix(1,0,0,1,266.4398,19.9565) " class="st3 st4">汽车北站</text>
+  <text id="svg_70" transform="matrix(1,0,0,1,313.0317,19.9565) " class="st3 st4">东方路</text>
+  <g id="svg_110">
+   <ellipse id="svg_111" class="st6" cx="48.8" cy="164.1" rx="3.7" ry="3.7"/>
+   <g id="svg_112">
+    <path id="svg_113" class="st7" d="m47.8,166l0,-3.2l-1,0l0,-0.4l2.3,0l0,0.4l-1,0l0,3.2l-0.3,0z"/>
+    <path id="svg_114" class="st7" d="m50.8,166l-0.4,0l0,-2.8c-0.1,0.1 -0.2,0.2 -0.3,0.3s-0.3,0.2 -0.4,0.2l0,-0.4c0.2,-0.1 0.4,-0.3 0.5,-0.4c0.2,-0.2 0.3,-0.3 0.3,-0.5l0.2,0l0,3.6l0.1,0l0,0z"/>
+   </g>
+  </g>
+  <g id="svg_115">
+   <ellipse id="svg_116" class="st6" cx="477.6" cy="474.4" rx="3.7" ry="3.7"/>
+   <g id="svg_117">
+    <path id="svg_118" class="st7" d="m476.6,476.3l0,-3.2l-1,0l0,-0.4l2.3,0l0,0.4l-1,0l0,3.2l-0.3,0z"/>
+    <path id="svg_119" class="st7" d="m479.5,476.3l-0.4,0l0,-2.8c-0.1,0.1 -0.2,0.2 -0.3,0.3c-0.1,0.1 -0.3,0.2 -0.4,0.2l0,-0.4c0.2,-0.1 0.4,-0.3 0.5,-0.4c0.2,-0.2 0.3,-0.3 0.3,-0.5l0.2,0l0.1,3.6l0,0l0,0z"/>
+   </g>
+  </g>
+  <g id="svg_120">
+   <ellipse id="svg_121" class="st8" cx="489.6" cy="328.1" rx="3.7" ry="3.7"/>
+   <g id="svg_122">
+    <path id="svg_123" class="st7" d="m488.2,329.8l0,-3.2l-1,0l0,-0.4l2.3,0l0,0.4l-1,0l0,3.2l-0.3,0z"/>
+    <path id="svg_124" class="st7" d="m491.7,327.1l-0.4,0c0,-0.2 -0.1,-0.3 -0.2,-0.4s-0.2,-0.2 -0.3,-0.2c-0.2,0 -0.4,0.1 -0.5,0.4c-0.1,0.2 -0.2,0.6 -0.2,1c0.1,-0.2 0.2,-0.3 0.3,-0.4c0.1,-0.1 0.3,-0.1 0.4,-0.1c0.2,0 0.4,0.1 0.6,0.3c0.2,0.2 0.3,0.5 0.3,0.8c0,0.2 0,0.5 -0.1,0.7s-0.2,0.3 -0.3,0.4s-0.3,0.1 -0.5,0.1c-0.3,0 -0.5,-0.1 -0.7,-0.4s-0.3,-0.7 -0.3,-1.3c0,-0.7 0.1,-1.2 0.3,-1.5c0.2,-0.3 0.4,-0.4 0.8,-0.4c0.2,0 0.4,0.1 0.6,0.2s0.2,0.5 0.2,0.8l0,0zm-1.5,1.6c0,0.3 0.1,0.5 0.2,0.6c0.1,0.2 0.3,0.2 0.4,0.2s0.3,-0.1 0.4,-0.2s0.2,-0.4 0.2,-0.6c0,-0.3 -0.1,-0.5 -0.2,-0.6s-0.2,-0.2 -0.4,-0.2c-0.2,0 -0.3,0.1 -0.4,0.2s-0.2,0.3 -0.2,0.6z"/>
+   </g>
+  </g>
+  <g id="svg_125">
+   <ellipse id="svg_126" transform="matrix(0.6203,-0.7844,0.7844,0.6203,78.2454,219.9587) " class="st9" cx="266.3" cy="29.2" rx="3.7" ry="3.7"/>
+   <g id="svg_127">
+    <path id="svg_128" class="st7" d="m265,31l0,-3.2l-1,0l0,-0.4l2.3,0l0,0.4l-1,0l0,3.2l-0.3,0z"/>
+    <path id="svg_129" class="st7" d="m268.5,30.6l0,0.4l-1.9,0c0,-0.2 0,-0.4 0.2,-0.6c0.1,-0.2 0.3,-0.5 0.6,-0.8c0.3,-0.3 0.6,-0.6 0.7,-0.8c0.1,-0.2 0.2,-0.4 0.2,-0.5c0,-0.2 -0.1,-0.3 -0.2,-0.4s-0.2,-0.2 -0.4,-0.2c-0.2,0 -0.3,0.1 -0.4,0.2s-0.2,0.3 -0.2,0.5l-0.4,0c0,-0.3 0.1,-0.6 0.3,-0.8c0.2,-0.2 0.4,-0.3 0.7,-0.3c0.3,0 0.5,0.1 0.7,0.3c0.2,0.2 0.2,0.4 0.2,0.7c0,0.2 -0.1,0.4 -0.2,0.7s-0.3,0.5 -0.7,0.8c-0.2,0.2 -0.4,0.4 -0.4,0.4c-0.1,0.1 -0.1,0.2 -0.2,0.2l1.4,0l0,0.2l0,0z"/>
+   </g>
+  </g>
+  <g id="svg_130">
+   <ellipse id="svg_131" transform="matrix(0.3847,-0.9231,0.9231,0.3847,180.8844,329.6974) " class="st9" cx="337.7" cy="29.2" rx="3.7" ry="3.7"/>
+   <g id="svg_132">
+    <path id="svg_133" class="st7" d="m336.4,31l0,-3.2l-1,0l0,-0.4l2.3,0l0,0.4l-1,0l0,3.2l-0.3,0z"/>
+    <path id="svg_134" class="st7" d="m339.9,30.6l0,0.4l-1.9,0c0,-0.2 0,-0.4 0.2,-0.6c0.1,-0.2 0.3,-0.5 0.6,-0.8c0.3,-0.3 0.6,-0.6 0.7,-0.8c0.1,-0.2 0.2,-0.4 0.2,-0.5c0,-0.2 -0.1,-0.3 -0.2,-0.4s-0.2,-0.2 -0.4,-0.2c-0.2,0 -0.3,0.1 -0.4,0.2s-0.2,0.3 -0.2,0.5l-0.4,0c0,-0.3 0.1,-0.6 0.3,-0.8c0.2,-0.2 0.4,-0.3 0.7,-0.3c0.3,0 0.5,0.1 0.7,0.3c0.2,0.2 0.2,0.4 0.2,0.7c0,0.2 -0.1,0.4 -0.2,0.7s-0.3,0.5 -0.7,0.8c-0.2,0.2 -0.4,0.4 -0.4,0.4c-0.1,0.1 -0.1,0.2 -0.2,0.2l1.4,0l0,0.2l0,0z"/>
+   </g>
+  </g>
+  <g id="svg_135">
+   <circle id="svg_136" class="st9" cx="597.2" cy="287.6" r="3.7"/>
+   <g id="svg_137">
+    <path id="svg_138" class="st7" d="m596,289.4l0,-3.2l-1,0l0,-0.4l2.3,0l0,0.4l-1,0l0,3.2l-0.3,0z"/>
+    <path id="svg_139" class="st7" d="m599.5,289l0,0.4l-2,0c0,-0.2 0,-0.4 0.2,-0.6c0.1,-0.2 0.3,-0.5 0.6,-0.8s0.6,-0.6 0.7,-0.8c0.1,-0.2 0.2,-0.4 0.2,-0.5c0,-0.2 -0.1,-0.3 -0.2,-0.4c-0.1,-0.1 -0.2,-0.2 -0.4,-0.2s-0.3,0.1 -0.4,0.2c-0.1,0.1 -0.2,0.3 -0.2,0.5l-0.4,0c0,-0.3 0.1,-0.6 0.3,-0.8c0.2,-0.2 0.4,-0.3 0.7,-0.3s0.5,0.1 0.7,0.3c0.2,0.2 0.2,0.4 0.2,0.7c0,0.2 -0.1,0.4 -0.2,0.7s-0.3,0.5 -0.7,0.8c-0.2,0.2 -0.4,0.4 -0.4,0.4c-0.1,0.1 -0.1,0.2 -0.2,0.2l1.5,0l0,0.2l0,0z"/>
+   </g>
+  </g>
+  <g id="svg_140">
+   <ellipse id="svg_141" class="st8" cx="489.6" cy="274.3" rx="3.7" ry="3.7"/>
+   <g id="svg_142">
+    <path id="svg_143" class="st7" d="m488.3,276.1l0,-3.2l-1,0l0,-0.4l2.3,0l0,0.4l-1,0l0,3.2l-0.3,0z"/>
+    <path id="svg_144" class="st7" d="m491.8,273.4l-0.4,0c0,-0.2 -0.1,-0.3 -0.2,-0.4s-0.2,-0.2 -0.3,-0.2c-0.2,0 -0.4,0.1 -0.5,0.4c-0.1,0.2 -0.2,0.6 -0.2,1c0.1,-0.2 0.2,-0.3 0.3,-0.4c0.1,-0.1 0.3,-0.1 0.4,-0.1c0.2,0 0.4,0.1 0.6,0.3c0.2,0.2 0.3,0.5 0.3,0.8c0,0.2 0,0.5 -0.1,0.7s-0.2,0.3 -0.3,0.4s-0.3,0.1 -0.5,0.1c-0.3,0 -0.5,-0.1 -0.7,-0.4s-0.3,-0.7 -0.3,-1.3c0,-0.7 0.1,-1.2 0.3,-1.5c0.2,-0.3 0.4,-0.4 0.8,-0.4c0.2,0 0.4,0.1 0.6,0.2s0.2,0.5 0.2,0.8l0,0zm-1.5,1.5c0,0.3 0.1,0.5 0.2,0.6c0.1,0.2 0.3,0.2 0.4,0.2s0.3,-0.1 0.4,-0.2s0.2,-0.4 0.2,-0.6c0,-0.3 -0.1,-0.5 -0.2,-0.6s-0.2,-0.2 -0.4,-0.2c-0.2,0 -0.3,0.1 -0.4,0.2c-0.1,0.2 -0.2,0.4 -0.2,0.6z"/>
+   </g>
+  </g>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,30.2889,158.4781) " id="svg_1"/>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,43.6933,136.4107) " id="svg_7"/>
+  <image width="157" height="157" id="svg_147" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,66.5714,136.4107) "/>
+  <image width="157" height="157" id="svg_148" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,89.4495,136.4107) "/>
+  <image width="157" height="157" id="svg_149" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,112.3276,136.4107) "/>
+  <image width="157" height="157" id="svg_150" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,135.2057,136.4107) "/>
+  <image width="157" height="157" id="svg_151" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,158.0837,136.4107) "/>
+  <image width="157" height="157" id="svg_152" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,204.8038,158.4483) "/>
+  <image width="157" height="157" id="svg_152_1_" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,182.126,158.4483) "/>
+  <image width="157" height="157" id="01150000" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,227.6819,158.4483) "/>
+  <image width="157" height="157" id="01160000" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,250.56,158.4483) "/>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,273.438,158.4483) " id="01170000"/>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,347.5186,136.3768) " id="01180000"/>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,368.3286,147.1865) " id="01190000"/>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,379.1383,167.1915) " id="011A0000"/>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,379.1383,190.0695) " id="011B0000"/>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,296.3162,135.5702) " id="svg_20"/>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,296.3162,112.6921) " id="svg_21"/>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,296.3162,89.814) " id="svg_22"/>
+  <image width="157" height="157" id="svg_164" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,296.3162,66.9359) "/>
+  <image width="157" height="157" id="svg_165" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,296.3162,44.0578) "/>
+  <image width="157" height="157" id="svg_166" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,274.7707,23.5078) "/>
+  <image width="157" height="157" id="svg_167" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,317.8623,23.5078) "/>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,296.3162,180.3731) " id="svg_23"/>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,296.3162,197.4371) " id="svg_24"/>
+  <image width="157" height="157" id="svg_170" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,324.3583,212.9476) "/>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,379.1383,241.8257) " id="011C0000"/>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,379.1383,264.7038) " id="011D0000"/>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,379.1383,287.5819) " id="011E0000"/>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,379.1383,310.2595) " id="011F0000"/>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,418.6451,332.4501) " id="01210000"/>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,391.9987,332.4501) " id="01200000"/>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,445.2916,332.4501) " id="01220000"/>
+  <image width="157" height="157" id="svg_178" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,397.4935,212.9476) "/>
+  <image width="157" height="157" id="svg_179" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,417.9265,212.9476) "/>
+  <image width="157" height="157" id="svg_180" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,438.3594,212.9476) "/>
+  <image width="157" height="157" id="svg_181" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,458.7924,212.9476) "/>
+  <image width="157" height="157" id="svg_182" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,479.2253,212.9476) "/>
+  <image width="157" height="157" id="svg_183" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,493.5689,224.5407) "/>
+  <image width="157" height="157" id="svg_183_1_" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,493.5689,241.2155) "/>
+  <image width="157" height="157" id="svg_185" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,511.4471,258.7574) "/>
+  <image width="157" height="157" id="svg_186" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,531.9773,258.7574) "/>
+  <image width="157" height="157" id="svg_187" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,552.5076,258.7574) "/>
+  <image width="157" height="157" id="svg_188" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,578.4185,281.7108) "/>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,493.5689,362.4298) " id="01240000"/>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,493.5689,383.423) " id="01250000"/>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,493.5689,404.4162) " id="01260000"/>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,493.5689,425.4094) " id="01270000"/>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,493.5689,446.4026) " id="01280000"/>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,484.9402,468.654) " id="01290000"/>
+  <text id="text76-8-4" transform="matrix(0.9766,0,0,1,60.7007,555.1769) " class="st3 st10">PCA便携式检票机</text>
+  <text id="text6-7-6-4" transform="matrix(1,0,0,1,19.9769,468.5065) " class="st11 st3 st12">线路级设备</text>
+  <image width="403" height="367" xlink:href="/svg/line/LINEICON/PCAS_GY.png" transform="matrix(0.1741,0,0,0.1741,58.57,479.4351) " id="00000900"/>
+  <text id="text76-8" transform="matrix(0.9766,0,0,1,33.9351,330.3668) " class="st3 st10">列车01</text>
+  <text id="text76-8-5" transform="matrix(0.9766,0,0,1,71.6304,330.3668) " class="st3 st10">列车02</text>
+  <text id="text76-8-1" transform="matrix(0.9766,0,0,1,109.3257,330.3668) " class="st3 st10">列车03</text>
+  <text id="text76-8-6" transform="matrix(0.9766,0,0,1,147.0205,330.3668) " class="st3 st10">列车04</text>
+  <text id="text76-8-61" transform="matrix(0.9766,0,0,1,184.7158,330.3668) " class="st3 st10">列车05</text>
+  <text id="text76-8-619" transform="matrix(0.9766,0,0,1,222.4121,330.3668) " class="st3 st10">列车06</text>
+  <text id="text76-8-9" transform="matrix(0.9766,0,0,1,260.1074,330.3668) " class="st3 st10">列车07</text>
+  <text id="text6-7-6" transform="matrix(1,0,0,1,19.81,275.4324) " class="st11 st3 st12">列车</text>
+  <image id="00070000" width="337" height="481" xlink:href="/svg/line/LINEICON/TRAIN_GY.png" transform="matrix(0.07889589,0,0,0.07889589,259.9969,282.0916) "/>
+  <image id="00060000" width="337" height="481" xlink:href="/svg/line/LINEICON/TRAIN_GY.png" transform="matrix(0.07889589,0,0,0.07889589,222.3016,282.0916) "/>
+  <image id="00050000" width="337" height="481" xlink:href="/svg/line/LINEICON/TRAIN_GY.png" transform="matrix(0.07889589,0,0,0.07889589,184.6063,282.0916) "/>
+  <image id="00040000" width="337" height="481" xlink:href="/svg/line/LINEICON/TRAIN_GY.png" transform="matrix(0.07889589,0,0,0.07889589,146.911,282.0916) "/>
+  <image id="00030000" width="337" height="481" xlink:href="/svg/line/LINEICON/TRAIN_GY.png" transform="matrix(0.07889589,0,0,0.07889589,109.2157,282.0916) "/>
+  <image id="00020000" width="337" height="481" xlink:href="/svg/line/LINEICON/TRAIN_GY.png" transform="matrix(0.07889589,0,0,0.07889589,71.5204,282.0916) "/>
+  <image id="00010000" width="337" height="481" xlink:href="/svg/line/LINEICON/TRAIN_GY.png" transform="matrix(0.07889589,0,0,0.07889589,33.8251,282.0916) "/>
+  <text id="text76-8_1_" transform="matrix(0.9766,0,0,1,33.9351,384.2252) " class="st3 st10">列车08</text>
+  <text id="text76-8-5_1_" transform="matrix(0.9766,0,0,1,71.6304,384.2252) " class="st3 st10">列车09</text>
+  <text id="text76-8-1_1_" transform="matrix(0.9766,0,0,1,109.3257,384.2252) " class="st3 st10">列车10</text>
+  <text id="text76-8-6_1_" transform="matrix(0.9766,0,0,1,147.0205,384.2252) " class="st3 st10">列车11</text>
+  <text id="text76-8-61_1_" transform="matrix(0.9766,0,0,1,184.7158,384.2252) " class="st3 st10">列车12</text>
+  <text id="text76-8-619_1_" transform="matrix(0.9766,0,0,1,222.4121,384.2252) " class="st3 st10">列车13</text>
+  <text id="text76-8-9_1_" transform="matrix(0.9766,0,0,1,260.1074,384.2252) " class="st3 st10">列车14</text>
+  <image id="000E0000" width="337" height="481" xlink:href="/svg/line/LINEICON/TRAIN_GY.png" transform="matrix(0.07889589,0,0,0.07889589,259.9969,335.9502) "/>
+  <image id="000D0000" width="337" height="481" xlink:href="/svg/line/LINEICON/TRAIN_GY.png" transform="matrix(0.07889589,0,0,0.07889589,222.3016,335.9502) "/>
+  <image id="000C0000" width="337" height="481" xlink:href="/svg/line/LINEICON/TRAIN_GY.png" transform="matrix(0.07889589,0,0,0.07889589,184.6063,335.9502) "/>
+  <image id="000B0000" width="337" height="481" xlink:href="/svg/line/LINEICON/TRAIN_GY.png" transform="matrix(0.07889589,0,0,0.07889589,146.911,335.9502) "/>
+  <image id="000A0000" width="337" height="481" xlink:href="/svg/line/LINEICON/TRAIN_GY.png" transform="matrix(0.07889589,0,0,0.07889589,109.2157,335.9502) "/>
+  <image id="00090000" width="337" height="481" xlink:href="/svg/line/LINEICON/TRAIN_GY.png" transform="matrix(0.07889589,0,0,0.07889589,71.5204,335.9502) "/>
+  <image id="00080000" width="337" height="481" xlink:href="/svg/line/LINEICON/TRAIN_GY.png" transform="matrix(0.07889589,0,0,0.07889589,33.8251,335.9502) "/>
+  <text id="text76-8_2_" transform="matrix(0.9766,0,0,1,33.9351,438.0831) " class="st3 st10">列车15</text>
+  <text id="text76-8-5_2_" transform="matrix(0.9766,0,0,1,71.6304,438.0831) " class="st3 st10">列车16</text>
+  <text id="text76-8-1_2_" transform="matrix(0.9766,0,0,1,109.3257,438.0831) " class="st3 st10">列车17</text>
+  <text id="text76-8-6_2_" transform="matrix(0.9766,0,0,1,147.0205,438.0831) " class="st3 st10">列车18</text>
+  <text id="text76-8-61_2_" transform="matrix(0.9766,0,0,1,184.7158,438.0831) " class="st3 st10">列车19</text>
+  <text id="text76-8-619_2_" transform="matrix(0.9766,0,0,1,222.4121,438.0831) " class="st3 st10">列车20</text>
+  <image id="00140000" width="337" height="481" xlink:href="/svg/line/LINEICON/TRAIN_GY.png" transform="matrix(0.07889589,0,0,0.07889589,222.3016,389.8085) "/>
+  <image id="00130000" width="337" height="481" xlink:href="/svg/line/LINEICON/TRAIN_GY.png" transform="matrix(0.07889589,0,0,0.07889589,184.6063,389.8085) "/>
+  <image id="00120000" width="337" height="481" xlink:href="/svg/line/LINEICON/TRAIN_GY.png" transform="matrix(0.07889589,0,0,0.07889589,146.911,389.8085) "/>
+  <image id="00110000" width="337" height="481" xlink:href="/svg/line/LINEICON/TRAIN_GY.png" transform="matrix(0.07889589,0,0,0.07889589,109.2157,389.8085) "/>
+  <image id="00100000" width="337" height="481" xlink:href="/svg/line/LINEICON/TRAIN_GY.png" transform="matrix(0.07889589,0,0,0.07889589,71.5204,389.8085) "/>
+  <image id="000F0000" width="337" height="481" xlink:href="/svg/line/LINEICON/TRAIN_GY.png" transform="matrix(0.07889589,0,0,0.07889589,33.8251,389.8085) "/>
+  <rect id="rect4" x="641.8" y="31.2" class="st13" width="243.4" height="114.1"/>
+  <text id="text6" transform="matrix(1,0,0,1,744.8387,56.8466) " class="st3 st14">图例</text>
+  <rect id="rect8" x="641.8" y="31.2" class="st15" width="243.4" height="4.9"/>
+  <rect id="rect10" x="641" y="65.3" class="st16" width="245" height="1"/>
+  <circle id="circle12" class="st17" cx="694.9" cy="81.8" r="10"/>
+  <text id="text14" transform="matrix(0.9766,0,0,1,711.209,86.7843) " class="st3 st18">正常</text>
+  <circle id="circle16" class="st19" cx="694.9" cy="116.8" r="10"/>
+  <text id="text18" transform="matrix(0.9766,0,0,1,711.209,122.4596) " class="st3 st18">警告</text>
+  <circle id="circle20" class="st6" cx="783.8" cy="81.8" r="10"/>
+  <text id="text22" transform="matrix(0.9766,0,0,1,800.125,88.1349) " class="st3 st18">报警</text>
+  <circle id="circle24" class="st20" cx="783.8" cy="116.8" r="10"/>
+  <text id="text26" transform="matrix(0.9766,0,0,1,800.125,123.4742) " class="st3 st18">离线</text>
+  <text id="text6-7" transform="matrix(1,0,0,1,20.06,38.9946) " class="st11 st3 st12">车站</text>
+  <image width="13" height="12.0625" xlink:href="/svg/line/LINEICON/TRANSFER_GY.png" id="svg_80" y="156.93946" x="298.87579"/>
+  <g id="svg_42">
+   <text transform="matrix(1,0,0,1,476.6093,488.6906) " class="st3 st4" id="svg_43">嘉兴南站</text>
+  </g>
+  <g id="svg_44">
+   <text transform="matrix(1,0,0,1,353.1877,98.5757) " class="st3 st5" id="svg_45">人民公园站</text>
+  </g>
+  <g id="svg_46">
+   <text transform="matrix(1,0,0,1,382.3259,151.8648) " class="st3 st4" id="svg_47">嘉兴火车站</text>
+  </g>
+  <g id="svg_48">
+   <text transform="matrix(1,0,0,1,393.3121,198.1998) " class="st3 st4" id="svg_49">纺工路景湖路站</text>
+  </g>
+  <g id="svg_50">
+   <text transform="matrix(1,0,0,1,393.3121,175.3215) " class="st3 st4" id="svg_51">纺工路滨河路站</text>
+  </g>
+  <g id="svg_52">
+   <text transform="matrix(1,0,0,1,477.6071,280.6158) " class="st3 st5" id="svg_53" y="-1.79297" x="0">庆丰路由拳路站</text>
+  </g>
+  <g id="svg_54">
+   <text transform="matrix(1,0,0,1,507.741,370.5605) " class="st3 st4" id="svg_55">庆丰路长水路站</text>
+  </g>
+  <g id="svg_56">
+   <text transform="matrix(1,0,0,1,507.741,391.5536) " class="st3 st4" id="svg_57">有轨电车庆丰路基地站</text>
+  </g>
+  <g id="svg_58">
+   <text transform="matrix(1,0,0,1,507.741,412.5468) " class="st3 st4" id="svg_59">庆丰路槜李路站</text>
+  </g>
+  <g id="svg_60">
+   <text transform="matrix(1,0,0,1,507.741,433.5397) " class="st3 st4" id="svg_61">庆丰路三环南路站</text>
+  </g>
+  <g id="svg_62">
+   <text transform="matrix(1,0,0,1,507.741,454.5332) " class="st3 st4" id="svg_63">庆丰路百川路站</text>
+  </g>
+  <g id="svg_64">
+   <text transform="matrix(1,0,0,1,341.3048,249.9558) " class="st3 st4" id="svg_65">南湖湖滨站</text>
+  </g>
+  <g id="svg_66">
+   <text transform="matrix(1,0,0,1,327.3048,272.8343) " class="st3 st4" id="svg_67">纺工路烟雨路站</text>
+  </g>
+  <g id="svg_69">
+   <text transform="matrix(1,0,0,1,341.3048,295.7118) " class="st3 st4" id="svg_71">嘉兴一中站</text>
+  </g>
+  <g id="svg_72">
+   <text transform="matrix(1,0,0,1,341.3048,318.39) " class="st3 st4" id="svg_73">中央公园站</text>
+  </g>
+  <g id="svg_74">
+   <text transform="matrix(1,0,0,1,397.6682,347.106) " class="st3 st5" id="svg_75">由拳路富润路站</text>
+  </g>
+  <g id="svg_76">
+   <text transform="matrix(1,0,0,1,424.3142,347.106) " class="st3 st5" id="svg_77">由拳路商务大道站</text>
+  </g>
+  <g id="svg_78">
+   <text transform="matrix(1,0,0,1,450.9609,347.106) " class="st3 st5" id="svg_79">由拳路双溪路站</text>
+  </g>
+  <g id="svg_80">
+   <text transform="matrix(1,0,0,1,477.6072,347.106) " class="st3 st5" id="svg_81">由拳路庆丰路站</text>
+  </g>
+  <text transform="matrix(1,0,0,1,570.3115,301.0838) " class="st21 st22 st4" id="svg_82">科技城站</text>
+  <g id="svg_83">
+   <text transform="matrix(1,0,0,1,310.2282,205.5671) " class="st3 st4" id="svg_84">南湖大桥站</text>
+  </g>
+  <g id="svg_85">
+   <text transform="matrix(1,0,0,1,507.0367,232.6712) " class="st3 st4" id="svg_86">望湖路站</text>
+  </g>
+  <g id="svg_87">
+   <text transform="matrix(1,0,0,1,507.0367,249.3457) " class="st3 st4" id="svg_88">凌公塘路站</text>
+  </g>
+  <g id="svg_89">
+   <text transform="matrix(1,0,0,1,330.0273,227.1208) " class="st3 st5" id="svg_90">会景园站</text>
+  </g>
+  <g id="svg_91">
+   <text transform="matrix(1,0,0,1,237.4805,143.7007) " class="st3 st4" id="svg_92">建国南路勤俭路站</text>
+  </g>
+  <g id="svg_93">
+   <text transform="matrix(1,0,0,1,237.4805,120.8221) " class="st3 st4" id="svg_94">月河历史街区东站</text>
+  </g>
+  <g id="svg_95">
+   <text transform="matrix(1,0,0,1,230.4809,97.9443) " class="st3 st4" id="svg_96">建国北路东升东路站</text>
+  </g>
+  <g id="svg_97">
+   <text transform="matrix(1,0,0,1,265.481,75.0663) " class="st3 st4" id="svg_98">三元路站</text>
+  </g>
+  <g id="svg_99">
+   <text transform="matrix(1,0,0,1,258.481,52.188) " class="st3 st4" id="svg_100">辅成小学站</text>
+  </g>
+  <g id="svg_101">
+   <text transform="matrix(1,0,0,1,517.1167,272.8781) " class="st3 st5" id="svg_102">城东枢纽站</text>
+  </g>
+  <g id="svg_103">
+   <text transform="matrix(1,0,0,1,537.6469,272.8781) " class="st3 st5" id="svg_104">亚欧路站</text>
+  </g>
+  <g id="svg_105">
+   <text transform="matrix(1,0,0,1,558.1766,272.8781) " class="st3 st5" id="svg_106">工业园站</text>
+  </g>
+  <g id="svg_107">
+   <text transform="matrix(1,0,0,1,233.3512,172.6514) " class="st3 st5" id="svg_108">中山东路安乐街站</text>
+  </g>
+  <g id="svg_109">
+   <text transform="matrix(1,0,0,1,256.2295,172.6514) " class="st3 st5" id="svg_145">中山东路禾兴南路站</text>
+  </g>
+  <g id="svg_146">
+   <text transform="matrix(1,0,0,1,279.1073,172.6514) " class="st3 st5" id="svg_154">中山东路建国南路站</text>
+  </g>
+  <g id="svg_155">
+   <text transform="matrix(1,0,0,1,187.7955,172.6514) " class="st3 st5" id="svg_156">越秀路站</text>
+  </g>
+  <g id="svg_157">
+   <text transform="matrix(1,0,0,1,210.4733,172.6514) " class="st3 st5" id="svg_158">洪波路站</text>
+  </g>
+  <g id="svg_159">
+   <text transform="matrix(1,0,0,1,403.1628,227.1214) " class="st3 st5" id="svg_160">农翔路站</text>
+  </g>
+  <g id="svg_161">
+   <text transform="matrix(1,0,0,1,423.5961,227.1214) " class="st3 st5" id="svg_162">中环东路站</text>
+  </g>
+  <g id="svg_163">
+   <text transform="matrix(1,0,0,1,444.0288,227.1213) " class="st3 st5" id="svg_168">南溪路站</text>
+  </g>
+  <g id="svg_169">
+   <text transform="matrix(1,0,0,1,464.4618,227.1215) " class="st3 st5" id="svg_171">云东路站</text>
+  </g>
+  <g id="svg_172">
+   <text transform="matrix(1,0,0,1,484.8947,227.1215) " class="st3 st5" id="svg_173">嘉兴塘站</text>
+  </g>
+  <g id="svg_174">
+   <text transform="matrix(1,0,0,1,310.2278,188.5035) " class="st3 st4" id="svg_175">建国南路环城南路站</text>
+  </g>
+  <g id="svg_176">
+   <text transform="matrix(1,0,0,1,310.7495,176.338) " class="st3 st4" id="svg_177">建国南路中山东路站</text>
+  </g>
+  <image width="157" height="157" xlink:href="/svg/line/LINEICON/STATION_GY.png" transform="matrix(0.07222027,0,0,0.07222027,471.938,332.4501) " id="01230000" y="-4.57403" x="11.92831"/>
+  <image width="139" height="124" xlink:href="/svg/line/LINEICON/TRANSFER_GY.png" transform="rotate(-178.78152465820312 296.07019042968756,162.89086914062497) matrix(0.08279224282488425,0,0,0.09290011876623061,295.7381301846143,156.0603715604895) " id="svg_81" y="11.52519" x="-65.48939"/>
+ </g>
+</svg>

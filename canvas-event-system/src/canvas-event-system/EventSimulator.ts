@@ -1,3 +1,4 @@
+// 事件模拟 它将根据传入的当前鼠标动作类型，预判此时应该发生的事件
 import { Listener, EventNames } from './shapes';
 
 export interface Action {

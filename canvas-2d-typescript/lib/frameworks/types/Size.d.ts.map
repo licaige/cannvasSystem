@@ -1,0 +1,1 @@
+{"version":3,"file":"Size.d.ts","sourceRoot":"","sources":["../../../src/frameworks/types/Size.ts"],"names":[],"mappings":"AAEA,UAAU,KAAK;IACX,KAAK,CAAC,EAAE,MAAM,CAAC;IACf,MAAM,CAAC,EAAE,MAAM,CAAC;CACnB;AACD,qBACa,IAAI;IACb,QAAQ,CAAC,KAAK,EAAE,MAAM,CAAC;IACvB,QAAQ,CAAC,MAAM,EAAE,MAAM,CAAC;gBAEZ,KAAK,CAAC,EAAE,KAAK;CAK5B"}

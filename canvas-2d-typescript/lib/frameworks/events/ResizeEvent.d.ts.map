@@ -1,0 +1,1 @@
+{"version":3,"file":"ResizeEvent.d.ts","sourceRoot":"","sources":["../../../src/frameworks/events/ResizeEvent.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,gBAAgB,EAAE,MAAM,oBAAoB,CAAC;AACjE,OAAO,EAAE,IAAI,EAAE,MAAM,eAAe,CAAC;AAErC,qBAAa,WAAY,SAAQ,SAAS;IACtC,IAAI,EAAE,IAAI,CAAC;gBACC,MAAM,EAAE,gBAAgB,EAAE,IAAI,EAAE,IAAI;IAIhD,OAAc,IAAI,EAAE,MAAM,CAAY;CACzC"}

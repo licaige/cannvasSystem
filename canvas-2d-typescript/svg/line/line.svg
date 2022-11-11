@@ -1,0 +1,1442 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="707.5"
+   height="580"
+   viewBox="0 0 707.5 580"
+   version="1.1"
+   id="svg578"
+   sodipodi:docname="line.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata584">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs582" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview580"
+     showgrid="false"
+     inkscape:zoom="1.337931"
+     inkscape:cx="351.64896"
+     inkscape:cy="290"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg578" />
+  <style
+     type="text/css"
+     id="style298">.st0{font-family:'SimHei';}
+	.st1{font-size:9px;}
+	.st2{opacity:0.98;enable-background:new    ;}
+	.st3{font-size:14px;}
+	.st4{font-size:8.4607px;}
+	.st5{fill:none;stroke:#1EAB3A;stroke-width:5;stroke-miterlimit:10;}
+	.st6{fill:none;stroke:#FF0000;stroke-width:5;}
+	.st7{fill:none;stroke:#0071BC;stroke-width:5;}
+	.st8{font-size:8.2123px;}
+	.st9{font-size:8.2123px;glyph-orientation-vertical:0;writing-mode:tb;}
+	.st10{fill:#FF0000;}
+	.st11{fill:#FFFFFF;}
+	.st12{fill:#1EAB3A;}
+	.st13{fill:#0071BC;}
+	.st14{fill:#231815;}
+	.st15{font-family:'Alibaba-PuHuiTi-R';}
+	.st16{fill:#32CD32;}
+	.st17{font-size:10px;}
+	.st18{fill:#EEEE00;}
+	.st19{fill:#D3D3D3;}
+	.st20{fill:none;stroke:#0071BC;stroke-width:2;stroke-miterlimit:10;}</style>
+  <title
+     id="title300">Layer 1</title>
+  <title
+     id="title302">Layer 1</title>
+  <g
+     id="g576"
+     transform="matrix(1.000078,0,0,0.89688703,-0.00123247,58.951057)">
+    <title
+       id="title304">Layer 1</title>
+    <path
+       d="m 31.7,190.1 c 0,-6.9 0,-13.8 0,-20.8 0,-2.8 2.2,-5.2 5.2,-5.2 55,0 100.1,0 155,0 2.8,0 5.2,2.2 5.2,5.2 0,5.2 0,10.4 0,15.6 0,2.8 2.2,5.2 5.2,5.2 41.6,0 143.1,0 184.8,0 2.8,0 5.2,-2.2 5.2,-5.2 0,-5.3 0,-10.4 0,-15.7 0,-2.8 2.2,-5.2 5.2,-5.2 5.5,0 11,0 16.4,0 1.4,0 2.7,0.6 3.6,1.5 7.5,7.5 14.9,14.9 22.4,22.4 0.9,0.9 1.5,2.2 1.5,3.6 0,54.8 0,142.7 0,197.4 0,2.8 2.2,5.2 5.2,5.2 43.1,0 86.1,0 129.2,0 0,49.2 0,98.3 0,147.6 0,1.4 -0.6,2.7 -1.5,3.6 -2.9,2.9 -5.7,5.7 -8.7,8.7"
+       class="st6"
+       id="svg_2"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#ff0000;stroke-width:5" />
+    <text
+       class="st0 st1"
+       transform="matrix(0.9766,0,0,1,62.385,369.5324)"
+       id="text76-8-4"
+       style="font-size:9px;font-family:SimHei">PCA便携式检票机</text>
+    <text
+       class="st2 st0 st3"
+       transform="translate(25.1666,281.2924)"
+       id="text6-7-6-4"
+       style="font-size:14px;font-family:SimHei;opacity:0.98000004;enable-background:new">线路级设备</text>
+    <image
+       id="00000900"
+       transform="matrix(0.04949482,0,0,0.04949482,65.4145,301.1564)"
+       xlink:href="/svg/line/LINEICON/PCAS_GY.png"
+       height="1104"
+       width="1204"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\PCAS_GY.png" />
+    <text
+       class="st2 st0 st3"
+       transform="translate(25.1668,393.4873)"
+       id="text6-7-6"
+       style="font-size:14px;font-family:SimHei;opacity:0.98000004;enable-background:new">列车</text>
+    <g
+       id="svg_13" />
+    <g
+       id="svg_17" />
+    <g
+       id="svg_25" />
+    <g
+       id="svg_27" />
+    <g
+       id="svg_29" />
+    <g
+       id="svg_31" />
+    <g
+       id="svg_35" />
+    <g
+       id="svg_37" />
+    <g
+       id="svg_39" />
+    <g
+       id="svg_41" />
+    <g
+       id="svg_184" />
+    <g
+       id="svg_190" />
+    <g
+       id="svg_192" />
+    <g
+       id="svg_194" />
+    <g
+       id="svg_196" />
+    <g
+       id="svg_198" />
+    <g
+       id="svg_200" />
+    <g
+       id="svg_202" />
+    <g
+       id="svg_204" />
+    <text
+       class="st2 st0 st3"
+       transform="translate(25.1666,38.9946)"
+       id="text6-7"
+       style="font-size:14px;font-family:SimHei;opacity:0.98000004;enable-background:new">车站</text>
+    <line
+       y2="394.20001"
+       x2="575.59998"
+       y1="307.79999"
+       x1="575.59998"
+       class="st5"
+       id="svg_5"
+       style="fill:none;stroke:#1eab3a;stroke-width:5;stroke-miterlimit:10" />
+    <path
+       d="m 343.9,31.8 c 0,72.4 0,144.8 0,217.2 0,2.8 2.2,5.2 5.2,5.2 62.6,0 158.5,0 221.1,0 2.8,0 5.2,2.2 5.2,5.2 0,16.2 0,32.4 0,48.7 31.4,0 63,0 94.4,0 2.8,0 5.2,2.2 5.2,5.2 0,7.3 0,14.5 0,21.8"
+       class="st7"
+       id="svg_3"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#0071bc;stroke-width:5" />
+    <line
+       y2="31.799999"
+       x2="369.20001"
+       y1="31.799999"
+       x1="318.60001"
+       class="st7"
+       id="svg_4"
+       style="fill:none;stroke:#0071bc;stroke-width:5" />
+    <text
+       class="st0 st8"
+       transform="translate(15.3933,206.3683)"
+       id="svg_6"
+       style="font-size:8.2123003px;font-family:SimHei">秀园路站</text>
+    <text
+       class="st0 st9"
+       transform="translate(47.5442,121.4464)"
+       id="svg_8"
+       style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">秀清路站</text>
+    <text
+       class="st0 st9"
+       transform="translate(74.384,113.2345)"
+       id="svg_10"
+       style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">秀洲大道站</text>
+    <text
+       class="st0 st9"
+       transform="translate(101.2243,121.4464)"
+       id="svg_12"
+       style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">新洲路站</text>
+    <text
+       class="st0 st9"
+       transform="translate(128.0647,113.2345)"
+       id="svg_14"
+       style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">昌盛中路站</text>
+    <text
+       class="st0 st9"
+       transform="translate(154.9055,121.4464)"
+       id="svg_16"
+       style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">友谊街站</text>
+    <text
+       class="st0 st9"
+       transform="translate(181.7453,121.4464)"
+       id="svg_18"
+       style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">洪兴路站</text>
+    <text
+       class="st0 st8"
+       transform="translate(302.216,20.9982)"
+       id="svg_68"
+       style="font-size:8.2123003px;font-family:SimHei">汽车北站</text>
+    <text
+       class="st0 st8"
+       transform="translate(356.8772,20.9982)"
+       id="svg_70"
+       style="font-size:8.2123003px;font-family:SimHei">东方路</text>
+    <g
+       id="svg_110">
+      <circle
+         cy="190.10001"
+         cx="46.900002"
+         class="st10"
+         id="svg_111"
+         r="4.3000002"
+         style="fill:#ff0000" />
+      <g
+         id="svg_112">
+        <path
+           d="m 45.7,192.3 v -3.8 H 44.5 V 188 h 2.7 v 0.5 H 46 v 3.8 z"
+           class="st11"
+           id="svg_113"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+        <path
+           d="M 49.2,192.3 H 48.7 V 189 c -0.1,0.1 -0.2,0.2 -0.4,0.4 -0.2,0.2 -0.4,0.2 -0.5,0.2 v -0.5 c 0.2,-0.1 0.5,-0.4 0.6,-0.5 0.2,-0.2 0.4,-0.4 0.4,-0.6 H 49 v 4.2 l 0.2,0.1 v 0 z"
+           class="st11"
+           id="svg_114"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+      </g>
+    </g>
+    <g
+       id="svg_115">
+      <circle
+         cy="554.09998"
+         cx="549.90002"
+         class="st10"
+         id="svg_116"
+         r="4.3000002"
+         style="fill:#ff0000" />
+      <g
+         id="svg_117">
+        <path
+           d="m 548.8,556.4 v -3.8 h -1.2 v -0.5 h 2.7 v 0.5 h -1.2 v 3.8 z"
+           class="st11"
+           id="svg_118"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+        <path
+           d="m 552.2,556.4 h -0.5 v -3.3 c -0.1,0.1 -0.2,0.2 -0.4,0.4 -0.2,0.2 -0.4,0.2 -0.5,0.2 v -0.5 c 0.2,-0.1 0.5,-0.4 0.6,-0.5 0.2,-0.2 0.4,-0.4 0.4,-0.6 h 0.2 l 0.2,4.3 v 0 0 z"
+           class="st11"
+           id="svg_119"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+      </g>
+    </g>
+    <g
+       id="svg_120">
+      <circle
+         cy="382.5"
+         cx="564"
+         class="st12"
+         id="svg_121"
+         r="4.3000002"
+         style="fill:#1eab3a" />
+      <g
+         id="svg_122">
+        <path
+           d="m 562.4,384.5 v -3.8 h -1.2 v -0.5 h 2.7 v 0.5 h -1.2 v 3.8 z"
+           class="st11"
+           id="svg_123"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+        <path
+           d="M 566.5,381.3 H 566 c 0,-0.2 -0.1,-0.4 -0.2,-0.5 -0.1,-0.1 -0.2,-0.2 -0.4,-0.2 -0.2,0 -0.5,0.1 -0.6,0.5 -0.1,0.2 -0.2,0.7 -0.2,1.2 0.1,-0.2 0.2,-0.4 0.4,-0.5 0.1,-0.1 0.4,-0.1 0.5,-0.1 0.2,0 0.5,0.1 0.7,0.4 0.2,0.2 0.4,0.6 0.4,0.9 0,0.2 0,0.6 -0.1,0.8 -0.1,0.2 -0.2,0.4 -0.4,0.5 -0.1,0.1 -0.4,0.1 -0.6,0.1 -0.4,0 -0.6,-0.1 -0.8,-0.5 -0.2,-0.4 -0.4,-0.8 -0.4,-1.5 0,-0.8 0.1,-1.4 0.4,-1.8 0.2,-0.4 0.5,-0.5 0.9,-0.5 0.2,0 0.5,0.1 0.7,0.2 0.2,0.2 0.2,0.7 0.2,1 v 0 z m -1.8,1.9 c 0,0.4 0.1,0.6 0.2,0.7 0.1,0.2 0.4,0.2 0.5,0.2 0.1,0 0.4,-0.1 0.5,-0.2 0.1,-0.1 0.2,-0.5 0.2,-0.7 0,-0.4 -0.1,-0.6 -0.2,-0.7 -0.1,-0.1 -0.2,-0.2 -0.5,-0.2 -0.3,0 -0.4,0.1 -0.5,0.2 -0.1,0.1 -0.2,0.4 -0.2,0.7 z"
+           class="st11"
+           id="svg_124"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+      </g>
+    </g>
+    <g
+       id="svg_125">
+      <circle
+         cy="31.799999"
+         cx="302.10001"
+         class="st13"
+         transform="matrix(0.6203,-0.7844,0.7844,0.6203,89.7466,249.0405)"
+         id="svg_126"
+         r="4.3000002"
+         style="fill:#0071bc" />
+      <g
+         id="svg_127">
+        <path
+           d="m 300.5,34 v -3.8 h -1.2 v -0.5 h 2.7 v 0.5 h -1.2 V 34 Z"
+           class="st11"
+           id="svg_128"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+        <path
+           d="M 304.6,33.5 V 34 h -2.2 c 0,-0.2 0,-0.5 0.2,-0.7 0.1,-0.2 0.4,-0.6 0.7,-0.9 0.3,-0.3 0.7,-0.7 0.8,-0.9 0.1,-0.2 0.2,-0.5 0.2,-0.6 0,-0.2 -0.1,-0.4 -0.2,-0.5 -0.1,-0.1 -0.2,-0.2 -0.5,-0.2 -0.2,0 -0.4,0.1 -0.5,0.2 -0.1,0.1 -0.2,0.4 -0.2,0.6 h -0.5 c 0,-0.4 0.1,-0.7 0.4,-0.9 0.2,-0.2 0.5,-0.4 0.8,-0.4 0.4,0 0.6,0.1 0.8,0.4 0.2,0.2 0.2,0.5 0.2,0.8 0,0.2 -0.1,0.5 -0.2,0.8 -0.1,0.4 -0.4,0.6 -0.8,0.9 -0.2,0.2 -0.5,0.5 -0.5,0.5 -0.1,0.1 -0.1,0.2 -0.2,0.2 h 1.6 l 0.1,0.2 v 0 z"
+           class="st11"
+           id="svg_129"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+      </g>
+    </g>
+    <g
+       id="svg_130">
+      <circle
+         cy="31.799999"
+         cx="385.89999"
+         class="st13"
+         transform="matrix(0.3847,-0.9231,0.9231,0.3847,208.0468,375.7783)"
+         id="svg_131"
+         r="4.3000002"
+         style="fill:#0071bc" />
+      <g
+         id="svg_132">
+        <path
+           d="m 384.3,34 v -3.8 h -1.2 v -0.5 h 2.7 v 0.5 h -1.2 V 34 Z"
+           class="st11"
+           id="svg_133"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+        <path
+           d="M 388.4,33.5 V 34 h -2.2 c 0,-0.2 0,-0.5 0.2,-0.7 0.1,-0.2 0.4,-0.6 0.7,-0.9 0.4,-0.4 0.7,-0.7 0.8,-0.9 0.1,-0.2 0.2,-0.5 0.2,-0.6 0,-0.2 -0.1,-0.4 -0.2,-0.5 -0.1,-0.1 -0.2,-0.2 -0.5,-0.2 -0.2,0 -0.4,0.1 -0.5,0.2 -0.1,0.1 -0.2,0.4 -0.2,0.6 h -0.5 c 0,-0.4 0.1,-0.7 0.4,-0.9 0.2,-0.2 0.5,-0.4 0.8,-0.4 0.3,0 0.6,0.1 0.8,0.4 0.2,0.2 0.2,0.5 0.2,0.8 0,0.2 -0.1,0.5 -0.2,0.8 -0.1,0.4 -0.4,0.6 -0.8,0.9 -0.2,0.2 -0.5,0.5 -0.5,0.5 -0.1,0.1 -0.1,0.2 -0.2,0.2 h 1.6 l 0.1,0.2 v 0 z"
+           class="st11"
+           id="svg_134"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+      </g>
+    </g>
+    <g
+       id="svg_135">
+      <circle
+         r="4.3000002"
+         cy="335"
+         cx="690.29999"
+         class="st13"
+         id="svg_136"
+         style="fill:#0071bc" />
+      <g
+         id="svg_137">
+        <path
+           d="m 688.9,337.1 v -3.8 h -1.2 v -0.5 h 2.7 v 0.5 h -1.2 v 3.8 z"
+           class="st11"
+           id="svg_138"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+        <path
+           d="m 693,336.6 v 0.5 h -2.3 c 0,-0.2 0,-0.5 0.2,-0.7 0.1,-0.2 0.4,-0.6 0.7,-0.9 0.4,-0.4 0.7,-0.7 0.8,-0.9 0.1,-0.2 0.2,-0.5 0.2,-0.6 0,-0.2 -0.1,-0.4 -0.2,-0.5 -0.1,-0.1 -0.2,-0.2 -0.5,-0.2 -0.2,0 -0.4,0.1 -0.5,0.2 -0.1,0.1 -0.2,0.4 -0.2,0.6 h -0.5 c 0,-0.4 0.1,-0.7 0.4,-0.9 0.2,-0.2 0.5,-0.4 0.8,-0.4 0.4,0 0.6,0.1 0.8,0.4 0.2,0.2 0.2,0.5 0.2,0.8 0,0.2 -0.1,0.5 -0.2,0.8 -0.1,0.4 -0.4,0.6 -0.8,0.9 -0.2,0.2 -0.5,0.5 -0.5,0.5 -0.1,0.1 -0.1,0.2 -0.2,0.2 h 1.8 v 0.2 0 z"
+           class="st11"
+           id="svg_139"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+      </g>
+    </g>
+    <g
+       id="svg_140">
+      <circle
+         cy="319.39999"
+         cx="564"
+         class="st12"
+         id="svg_141"
+         r="4.3000002"
+         style="fill:#1eab3a" />
+      <g
+         id="svg_142">
+        <path
+           d="m 562.5,321.5 v -3.8 h -1.2 v -0.5 h 2.7 v 0.5 h -1.2 v 3.8 z"
+           class="st11"
+           id="svg_143"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+        <path
+           d="m 566.6,318.3 h -0.5 c 0,-0.2 -0.1,-0.4 -0.2,-0.5 -0.1,-0.1 -0.2,-0.2 -0.4,-0.2 -0.2,0 -0.5,0.1 -0.6,0.5 -0.1,0.2 -0.2,0.7 -0.2,1.2 0.1,-0.2 0.2,-0.4 0.4,-0.5 0.1,-0.1 0.4,-0.1 0.5,-0.1 0.2,0 0.5,0.1 0.7,0.4 0.2,0.2 0.4,0.6 0.4,0.9 0,0.2 0,0.6 -0.1,0.8 -0.1,0.2 -0.2,0.4 -0.4,0.5 -0.1,0.1 -0.4,0.1 -0.6,0.1 -0.4,0 -0.6,-0.1 -0.8,-0.5 -0.2,-0.4 -0.4,-0.8 -0.4,-1.5 0,-0.8 0.1,-1.4 0.4,-1.8 0.2,-0.4 0.5,-0.5 0.9,-0.5 0.2,0 0.5,0.1 0.7,0.2 0.2,0.2 0.2,0.7 0.2,1 v 0 z m -1.8,1.8 c 0,0.4 0.1,0.6 0.2,0.7 0.1,0.2 0.4,0.2 0.5,0.2 0.1,0 0.4,-0.1 0.5,-0.2 0.1,-0.1 0.2,-0.5 0.2,-0.7 0,-0.4 -0.1,-0.6 -0.2,-0.7 -0.1,-0.1 -0.2,-0.2 -0.5,-0.2 -0.3,0 -0.4,0.1 -0.5,0.2 0,0.2 -0.2,0.5 -0.2,0.7 z"
+           class="st11"
+           id="svg_144"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+      </g>
+    </g>
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,25.1665,183.51)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_1"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,40.8923,157.6208)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_7"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,67.7326,157.6208)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_147"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,94.5729,157.6208)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_148"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,121.4132,157.6208)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_149"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,148.2535,157.6208)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_150"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,175.0937,157.6208)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_151"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,229.9051,183.4751)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_152"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,203.2998,183.4751)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_152_1_"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       id="01150000"
+       transform="matrix(0.08472788,0,0,0.08472788,256.7454,183.4751)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       id="01160000"
+       transform="matrix(0.08472788,0,0,0.08472788,283.5857,183.4751)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       id="01170000"
+       transform="matrix(0.08472788,0,0,0.08472788,310.4258,183.4751)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       id="01180000"
+       transform="matrix(0.08472788,0,0,0.08472788,397.3362,157.5811)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       id="01190000"
+       transform="matrix(0.08472788,0,0,0.08472788,421.7502,170.2628)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       id="011A0000"
+       transform="matrix(0.08472788,0,0,0.08472788,434.432,193.7325)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       id="011B0000"
+       transform="matrix(0.08472788,0,0,0.08472788,434.432,220.5726)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,337.2662,156.6348)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_20"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,337.2662,129.7945)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_21"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,337.2662,102.9542)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_22"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,337.2662,76.1139)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_164"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,337.2662,49.2736)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_165"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,311.9893,25.1646)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_166"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,362.5438,25.1646)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_167"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,337.2662,209.1969)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_23"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,337.2662,229.2162)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_24"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,370.1649,247.4129)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_170"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       id="011C0000"
+       transform="matrix(0.08472788,0,0,0.08472788,434.432,281.2923)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       id="011D0000"
+       transform="matrix(0.08472788,0,0,0.08472788,434.432,308.1326)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       id="011E0000"
+       transform="matrix(0.08472788,0,0,0.08472788,434.432,334.9729)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       id="011F0000"
+       transform="matrix(0.08472788,0,0,0.08472788,434.432,361.5779)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       id="01210000"
+       transform="matrix(0.08472788,0,0,0.08472788,480.7809,387.6117)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       id="01200000"
+       transform="matrix(0.08472788,0,0,0.08472788,449.5197,387.6117)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       id="01220000"
+       transform="matrix(0.08472788,0,0,0.08472788,512.0422,387.6117)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,455.9661,247.4129)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_178"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,479.9379,247.4129)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_179"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,503.9095,247.4129)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_180"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,527.8812,247.4129)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_181"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,551.8528,247.4129)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_182"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,568.6805,261.0138)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_183"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,568.6805,280.5764)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_183_1_"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,589.655,301.1564)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_185"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,613.7407,301.1564)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_186"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,637.8267,301.1564)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_187"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       transform="matrix(0.08472788,0,0,0.08472788,668.225,328.085)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       id="svg_188"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       id="01240000"
+       transform="matrix(0.08472788,0,0,0.08472788,568.6805,422.7835)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       id="01250000"
+       transform="matrix(0.08472788,0,0,0.08472788,568.6805,447.4124)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       id="01260000"
+       transform="matrix(0.08472788,0,0,0.08472788,568.6805,472.0414)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       id="01270000"
+       transform="matrix(0.08472788,0,0,0.08472788,568.6805,496.6703)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       id="01280000"
+       transform="matrix(0.08472788,0,0,0.08472788,568.6805,521.2993)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <image
+       id="01290000"
+       transform="matrix(0.08472788,0,0,0.08472788,558.5574,547.4043)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <g
+       id="svg_42">
+      <text
+         class="st0 st8"
+         transform="translate(548.7844,570.9113)"
+         id="svg_43"
+         style="font-size:8.2123003px;font-family:SimHei">嘉兴南站</text>
+    </g>
+    <g
+       id="svg_44">
+      <text
+         class="st0 st9"
+         transform="translate(403.9875,113.233)"
+         id="svg_45"
+         style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">人民公园站</text>
+    </g>
+    <g
+       id="svg_46">
+      <text
+         class="st0 st8"
+         transform="translate(438.1721,175.7511)"
+         id="svg_47"
+         style="font-size:8.2123003px;font-family:SimHei">嘉兴火车站</text>
+    </g>
+    <g
+       id="svg_48">
+      <text
+         class="st0 st8"
+         transform="translate(451.0608,230.111)"
+         id="svg_49"
+         style="font-size:8.2123003px;font-family:SimHei">纺工路景湖路站</text>
+    </g>
+    <g
+       id="svg_50">
+      <text
+         class="st0 st8"
+         transform="translate(451.0608,203.2706)"
+         id="svg_51"
+         style="font-size:8.2123003px;font-family:SimHei">纺工路滨河路站</text>
+    </g>
+    <g
+       id="svg_52">
+      <text
+         class="st0 st9"
+         transform="translate(549.9543,324.6964)"
+         id="svg_53"
+         style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">庆丰路由拳路站</text>
+    </g>
+    <g
+       id="svg_54">
+      <text
+         class="st0 st8"
+         transform="translate(585.3078,432.3224)"
+         id="svg_55"
+         style="font-size:8.2123003px;font-family:SimHei">庆丰路长水路站</text>
+    </g>
+    <g
+       id="svg_56">
+      <text
+         class="st0 st8"
+         transform="translate(585.3078,456.9513)"
+         id="svg_57"
+         style="font-size:8.2123003px;font-family:SimHei">有轨电车庆丰路基地站</text>
+    </g>
+    <g
+       id="svg_58">
+      <text
+         class="st0 st8"
+         transform="translate(585.3078,481.5802)"
+         id="svg_59"
+         style="font-size:8.2123003px;font-family:SimHei">庆丰路槜李路站</text>
+    </g>
+    <g
+       id="svg_60">
+      <text
+         class="st0 st8"
+         transform="translate(585.3078,506.2081)"
+         id="svg_61"
+         style="font-size:8.2123003px;font-family:SimHei">庆丰路三环南路站</text>
+    </g>
+    <g
+       id="svg_62">
+      <text
+         class="st0 st8"
+         transform="translate(585.3078,530.838)"
+         id="svg_63"
+         style="font-size:8.2123003px;font-family:SimHei">庆丰路百川路站</text>
+    </g>
+    <g
+       id="svg_64">
+      <text
+         class="st0 st8"
+         transform="translate(390.0466,290.8302)"
+         id="svg_65"
+         style="font-size:8.2123003px;font-family:SimHei">南湖湖滨站</text>
+    </g>
+    <g
+       id="svg_66">
+      <text
+         class="st0 st8"
+         transform="translate(373.6223,317.671)"
+         id="svg_67"
+         style="font-size:8.2123003px;font-family:SimHei">纺工路烟雨路站</text>
+    </g>
+    <g
+       id="svg_69">
+      <text
+         class="st0 st8"
+         transform="translate(390.0466,344.5109)"
+         id="svg_71"
+         style="font-size:8.2123003px;font-family:SimHei">嘉兴一中站</text>
+    </g>
+    <g
+       id="svg_72">
+      <text
+         class="st0 st8"
+         transform="translate(390.0466,371.1163)"
+         id="svg_73"
+         style="font-size:8.2123003px;font-family:SimHei">中央公园站</text>
+    </g>
+    <g
+       id="svg_74">
+      <text
+         class="st0 st9"
+         transform="translate(456.1716,404.8058)"
+         id="svg_75"
+         style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">由拳路富润路站</text>
+    </g>
+    <g
+       id="svg_76">
+      <text
+         class="st0 st9"
+         transform="translate(487.4319,404.8058)"
+         id="svg_77"
+         style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">由拳路商务大道站</text>
+    </g>
+    <g
+       id="svg_78">
+      <text
+         class="st0 st9"
+         transform="translate(518.6935,404.8058)"
+         id="svg_79"
+         style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">由拳路双溪路站</text>
+    </g>
+    <g
+       id="svg_226">
+      <text
+         class="st0 st9"
+         transform="translate(549.9543,404.8058)"
+         id="svg_81"
+         style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">由拳路庆丰路站</text>
+    </g>
+    <text
+       class="st14 st15 st8"
+       transform="translate(658.7141,350.8126)"
+       id="svg_82"
+       style="font-size:8.2123003px;font-family:Alibaba-PuHuiTi-R;fill:#231815">科技城站</text>
+    <g
+       id="svg_83">
+      <text
+         class="st0 st8"
+         transform="translate(353.5881,238.754)"
+         id="svg_84"
+         style="font-size:8.2123003px;font-family:SimHei">南湖大桥站</text>
+    </g>
+    <g
+       id="svg_85">
+      <text
+         class="st0 st8"
+         transform="translate(584.4807,270.5524)"
+         id="svg_86"
+         style="font-size:8.2123003px;font-family:SimHei">望湖路站</text>
+    </g>
+    <g
+       id="svg_87">
+      <text
+         class="st0 st8"
+         transform="translate(584.4807,290.1144)"
+         id="svg_88"
+         style="font-size:8.2123003px;font-family:SimHei">凌公塘路站</text>
+    </g>
+    <g
+       id="svg_89">
+      <text
+         class="st0 st9"
+         transform="translate(376.8161,264.0406)"
+         id="svg_90"
+         style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">会景园站</text>
+    </g>
+    <g
+       id="svg_91">
+      <text
+         class="st0 st8"
+         transform="translate(268.2414,166.173)"
+         id="svg_92"
+         style="font-size:8.2123003px;font-family:SimHei">建国南路勤俭路站</text>
+    </g>
+    <g
+       id="svg_93">
+      <text
+         class="st0 st8"
+         transform="translate(268.2414,139.3322)"
+         id="svg_94"
+         style="font-size:8.2123003px;font-family:SimHei">月河历史街区东站</text>
+    </g>
+    <g
+       id="svg_95">
+      <text
+         class="st0 st8"
+         transform="translate(260.0295,112.4923)"
+         id="svg_96"
+         style="font-size:8.2123003px;font-family:SimHei">建国北路东升东路站</text>
+    </g>
+    <g
+       id="svg_97">
+      <text
+         class="st0 st8"
+         transform="translate(301.091,85.6525)"
+         id="svg_98"
+         style="font-size:8.2123003px;font-family:SimHei">三元路站</text>
+    </g>
+    <g
+       id="svg_99">
+      <text
+         class="st0 st8"
+         transform="translate(292.8786,58.8116)"
+         id="svg_100"
+         style="font-size:8.2123003px;font-family:SimHei">辅成小学站</text>
+    </g>
+    <g
+       id="svg_101">
+      <text
+         class="st0 st9"
+         transform="translate(596.3068,317.7228)"
+         id="svg_102"
+         style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">城东枢纽站</text>
+    </g>
+    <g
+       id="svg_103">
+      <text
+         class="st0 st9"
+         transform="translate(620.3928,317.7228)"
+         id="svg_104"
+         style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">亚欧路站</text>
+    </g>
+    <g
+       id="svg_105">
+      <text
+         class="st0 st9"
+         transform="translate(644.4777,317.7228)"
+         id="svg_106"
+         style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">工业园站</text>
+    </g>
+    <g
+       id="svg_107">
+      <text
+         class="st0 st9"
+         transform="translate(263.3967,200.1378)"
+         id="svg_108"
+         style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">中山东路安乐街站</text>
+    </g>
+    <g
+       id="svg_109">
+      <text
+         class="st0 st9"
+         transform="translate(290.2375,200.1378)"
+         id="svg_145"
+         style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">中山东路禾兴南路站</text>
+    </g>
+    <g
+       id="svg_146">
+      <text
+         class="st0 st9"
+         transform="translate(317.0774,200.1378)"
+         id="svg_154"
+         style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">中山东路建国南路站</text>
+    </g>
+    <g
+       id="svg_155">
+      <text
+         class="st0 st9"
+         transform="translate(209.9514,200.1378)"
+         id="svg_156"
+         style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">越秀路站</text>
+    </g>
+    <g
+       id="svg_157">
+      <text
+         class="st0 st9"
+         transform="translate(236.5569,200.1378)"
+         id="svg_158"
+         style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">洪波路站</text>
+    </g>
+    <g
+       id="svg_159">
+      <text
+         class="st0 st9"
+         transform="translate(462.6174,264.0411)"
+         id="svg_160"
+         style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">农翔路站</text>
+    </g>
+    <g
+       id="svg_161">
+      <text
+         class="st0 st9"
+         transform="translate(486.5901,264.0411)"
+         id="svg_162"
+         style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">中环东路站</text>
+    </g>
+    <g
+       id="svg_163">
+      <text
+         class="st0 st9"
+         transform="translate(510.5608,264.0411)"
+         id="svg_168"
+         style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">南溪路站</text>
+    </g>
+    <g
+       id="svg_169">
+      <text
+         class="st0 st9"
+         transform="translate(534.5324,264.0411)"
+         id="svg_171"
+         style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">云东路站</text>
+    </g>
+    <g
+       id="svg_172">
+      <text
+         class="st0 st9"
+         transform="translate(558.5041,264.0411)"
+         id="svg_173"
+         style="font-size:8.2123003px;font-family:SimHei;writing-mode:tb-rl">嘉兴塘站</text>
+    </g>
+    <g
+       id="svg_174">
+      <text
+         class="st0 st8"
+         transform="translate(353.5876,218.7355)"
+         id="svg_175"
+         style="font-size:8.2123003px;font-family:SimHei">建国南路环城南路站</text>
+    </g>
+    <g
+       id="svg_176">
+      <text
+         class="st0 st8"
+         transform="translate(354.1994,204.463)"
+         id="svg_177"
+         style="font-size:8.2123003px;font-family:SimHei">建国南路中山东路站</text>
+    </g>
+    <image
+       id="01230000"
+       transform="matrix(0.08472788,0,0,0.08472788,545.3247,386.8366)"
+       xlink:href="/svg/line/LINEICON/STATION_GY.png"
+       height="157"
+       width="157"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\STATION_GY.png" />
+    <g
+       id="svg_228">
+      <image
+         transform="matrix(0.1117,0,0,0.1117,343.3413,183.2011)"
+         xlink:href="/svg/line/LINEICON/TRANSFER_GY.png"
+         id="svg_80"
+         height="124"
+         width="139"
+         sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\TRANSFER_GY.png" />
+      <image
+         id="svg_229"
+         transform="matrix(-0.09710881,-0.00206547,0.00231763,-0.109,344.4072,197.0256)"
+         xlink:href="/svg/line/LINEICON/TRANSFER_GY.png"
+         height="124"
+         width="139"
+         sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\TRANSFER_GY.png" />
+    </g>
+    <g
+       id="svg_230">
+      <g
+         id="svg_231">
+        <text
+           class="st0 st3"
+           transform="translate(477.5365,47.3771)"
+           id="text6_1_"
+           style="font-size:14px;font-family:SimHei">图例</text>
+        <g
+           id="svg_232">
+          <g
+             id="svg_233">
+            <circle
+               r="5.6999998"
+               cy="66.400002"
+               cx="485"
+               class="st16"
+               id="circle12_1_"
+               style="fill:#32cd32" />
+            <text
+               class="st0 st17"
+               transform="matrix(0.9766,0,0,1,496.1111,69.9415)"
+               id="text14_1_"
+               style="font-size:10px;font-family:SimHei">正常</text>
+          </g>
+          <g
+             id="svg_234">
+            <circle
+               r="5.6999998"
+               cy="66.400002"
+               cx="540.70001"
+               class="st18"
+               id="circle16_1_"
+               style="fill:#eeee00" />
+            <text
+               class="st0 st17"
+               transform="matrix(0.9766,0,0,1,551.8112,69.9415)"
+               id="text18_1_"
+               style="font-size:10px;font-family:SimHei">警告</text>
+          </g>
+          <g
+             id="svg_235">
+            <text
+               class="st0 st17"
+               transform="matrix(0.9766,0,0,1,607.5193,69.9417)"
+               id="text22_1_"
+               style="font-size:10px;font-family:SimHei">报警</text>
+            <circle
+               r="5.6999998"
+               cy="66.400002"
+               cx="596.40002"
+               class="st10"
+               id="circle20_1_"
+               style="fill:#ff0000" />
+          </g>
+          <g
+             id="svg_236">
+            <circle
+               r="5.6999998"
+               cy="66.400002"
+               cx="652.09998"
+               class="st19"
+               id="circle24_1_"
+               style="fill:#d3d3d3" />
+            <text
+               class="st0 st17"
+               transform="matrix(0.9766,0,0,1,663.2194,69.9417)"
+               id="text26_1_"
+               style="font-size:10px;font-family:SimHei">离线</text>
+          </g>
+        </g>
+      </g>
+      <path
+         id="svg_237"
+         d="M 688.9,79.6 H 471.4 c -3.1,0 -5.7,-2.6 -5.7,-5.7 V 33.6 c 0,-3.1 2.6,-5.7 5.7,-5.7 H 689 c 3.1,0 5.7,2.6 5.7,5.7 v 40.3 c -0.1,3.1 -2.7,5.7 -5.8,5.7 z"
+         class="st20"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#0071bc;stroke-width:2;stroke-miterlimit:10" />
+    </g>
+    <text
+       class="st0 st4"
+       transform="matrix(0.9766,0,0,1,262.9094,468.1759)"
+       id="text76-8-9"
+       style="font-size:8.46070004px;font-family:SimHei">列车07</text>
+    <image
+       id="00070000"
+       transform="matrix(0.03844154,0,0,0.03844154,259.5225,425.6193)"
+       xlink:href="/svg/line/LINEICON/TRAIN_GY.png"
+       height="781"
+       width="821"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\TRAIN_GY.png" />
+    <text
+       class="st0 st4"
+       transform="matrix(0.9766,0,0,1,223.8498,468.1759)"
+       id="text76-8-619"
+       style="font-size:8.46070004px;font-family:SimHei">列车06</text>
+    <image
+       id="00060000"
+       transform="matrix(0.03844154,0,0,0.03844154,220.4632,425.6193)"
+       xlink:href="/svg/line/LINEICON/TRAIN_GY.png"
+       height="781"
+       width="821"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\TRAIN_GY.png" />
+    <text
+       class="st0 st4"
+       transform="matrix(0.9766,0,0,1,184.7898,468.1759)"
+       id="text76-8-61"
+       style="font-size:8.46070004px;font-family:SimHei">列车05</text>
+    <image
+       id="00050000"
+       transform="matrix(0.03844154,0,0,0.03844154,181.4039,425.6193)"
+       xlink:href="/svg/line/LINEICON/TRAIN_GY.png"
+       height="781"
+       width="821"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\TRAIN_GY.png" />
+    <text
+       class="st0 st4"
+       transform="matrix(0.9766,0,0,1,145.7302,468.1759)"
+       id="text76-8-6"
+       style="font-size:8.46070004px;font-family:SimHei">列车04</text>
+    <image
+       id="00040000"
+       transform="matrix(0.03844154,0,0,0.03844154,142.3446,425.6193)"
+       xlink:href="/svg/line/LINEICON/TRAIN_GY.png"
+       height="781"
+       width="821"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\TRAIN_GY.png" />
+    <text
+       class="st0 st4"
+       transform="matrix(0.9766,0,0,1,106.6716,468.1759)"
+       id="text76-8-1"
+       style="font-size:8.46070004px;font-family:SimHei">列车03</text>
+    <image
+       id="00030000"
+       transform="matrix(0.03844154,0,0,0.03844154,103.2853,425.6193)"
+       xlink:href="/svg/line/LINEICON/TRAIN_GY.png"
+       height="781"
+       width="821"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\TRAIN_GY.png" />
+    <text
+       class="st0 st4"
+       transform="matrix(0.9766,0,0,1,67.6125,468.1759)"
+       id="text76-8-5"
+       style="font-size:8.46070004px;font-family:SimHei">列车02</text>
+    <image
+       id="00020000"
+       transform="matrix(0.03844154,0,0,0.03844154,64.226,425.6193)"
+       xlink:href="/svg/line/LINEICON/TRAIN_GY.png"
+       height="781"
+       width="821"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\TRAIN_GY.png" />
+    <text
+       class="st0 st4"
+       transform="matrix(0.9766,0,0,1,28.5529,468.1759)"
+       id="text76-8"
+       style="font-size:8.46070004px;font-family:SimHei">列车01</text>
+    <image
+       id="00010000"
+       transform="matrix(0.03844154,0,0,0.03844154,25.1667,425.6193)"
+       xlink:href="/svg/line/LINEICON/TRAIN_GY.png"
+       height="781"
+       width="821"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\TRAIN_GY.png" />
+    <text
+       class="st0 st4"
+       transform="matrix(0.9766,0,0,1,145.7317,517.4132)"
+       id="text76-8-9_1_"
+       style="font-size:8.46070004px;font-family:SimHei">列车14</text>
+    <image
+       id="000D0000"
+       transform="matrix(0.03844154,0,0,0.03844154,142.3446,474.8568)"
+       xlink:href="/svg/line/LINEICON/TRAIN_GY.png"
+       height="781"
+       width="821"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\TRAIN_GY.png" />
+    <text
+       class="st0 st4"
+       transform="matrix(0.9766,0,0,1,106.6721,517.4132)"
+       id="text76-8-619_1_"
+       style="font-size:8.46070004px;font-family:SimHei">列车13</text>
+    <image
+       id="000C0000"
+       transform="matrix(0.03844154,0,0,0.03844154,103.2853,474.8568)"
+       xlink:href="/svg/line/LINEICON/TRAIN_GY.png"
+       height="781"
+       width="821"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\TRAIN_GY.png" />
+    <text
+       class="st0 st4"
+       transform="matrix(0.9766,0,0,1,67.612,517.4132)"
+       id="text76-8-61_1_"
+       style="font-size:8.46070004px;font-family:SimHei">列车12</text>
+    <image
+       id="svg_40"
+       transform="matrix(0.03844154,0,0,0.03844154,64.226,474.8568)"
+       xlink:href="/svg/line/LINEICON/TRAIN_GY.png"
+       height="781"
+       width="821"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\TRAIN_GY.png" />
+    <text
+       class="st0 st4"
+       transform="matrix(0.9766,0,0,1,28.5525,517.4132)"
+       id="text76-8-6_1_"
+       style="font-size:8.46070004px;font-family:SimHei">列车11</text>
+    <image
+       id="000B0000"
+       transform="matrix(0.03844154,0,0,0.03844154,25.1667,474.8568)"
+       xlink:href="/svg/line/LINEICON/TRAIN_GY.png"
+       height="781"
+       width="821"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\TRAIN_GY.png" />
+    <text
+       class="st0 st4"
+       transform="matrix(0.9766,0,0,1,380.0866,468.1759)"
+       id="text76-8-1_1_"
+       style="font-size:8.46070004px;font-family:SimHei">列车10</text>
+    <image
+       id="000A0000"
+       transform="matrix(0.03844154,0,0,0.03844154,376.7004,425.6193)"
+       xlink:href="/svg/line/LINEICON/TRAIN_GY.png"
+       height="781"
+       width="821"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\TRAIN_GY.png" />
+    <text
+       class="st0 st4"
+       transform="matrix(0.9766,0,0,1,341.0276,468.1759)"
+       id="text76-8-5_1_"
+       style="font-size:8.46070004px;font-family:SimHei">列车09</text>
+    <image
+       id="00090000"
+       transform="matrix(0.03844154,0,0,0.03844154,337.6411,425.6193)"
+       xlink:href="/svg/line/LINEICON/TRAIN_GY.png"
+       height="781"
+       width="821"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\TRAIN_GY.png" />
+    <text
+       class="st0 st4"
+       transform="matrix(0.9766,0,0,1,301.968,468.1759)"
+       id="text76-8_1_"
+       style="font-size:8.46070004px;font-family:SimHei">列车08</text>
+    <image
+       id="00080000"
+       transform="matrix(0.03844154,0,0,0.03844154,298.5818,425.6193)"
+       xlink:href="/svg/line/LINEICON/TRAIN_GY.png"
+       height="781"
+       width="821"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\TRAIN_GY.png" />
+    <text
+       class="st0 st4"
+       transform="matrix(0.9766,0,0,1,380.0871,517.4132)"
+       id="text76-8-619_2_"
+       style="font-size:8.46070004px;font-family:SimHei">列车20</text>
+    <image
+       id="00140000"
+       transform="matrix(0.03844154,0,0,0.03844154,376.7004,474.8571)"
+       xlink:href="/svg/line/LINEICON/TRAIN_GY.png"
+       height="781"
+       width="821"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\TRAIN_GY.png" />
+    <text
+       class="st0 st4"
+       transform="matrix(0.9766,0,0,1,341.0271,517.4132)"
+       id="text76-8-61_2_"
+       style="font-size:8.46070004px;font-family:SimHei">列车19</text>
+    <image
+       id="00130000"
+       transform="matrix(0.03844154,0,0,0.03844154,337.6411,474.8572)"
+       xlink:href="/svg/line/LINEICON/TRAIN_GY.png"
+       height="781"
+       width="821"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\TRAIN_GY.png" />
+    <text
+       class="st0 st4"
+       transform="matrix(0.9766,0,0,1,301.9675,517.4132)"
+       id="text76-8-6_2_"
+       style="font-size:8.46070004px;font-family:SimHei">列车18</text>
+    <image
+       id="00120000"
+       transform="matrix(0.03844154,0,0,0.03844154,298.5818,474.8572)"
+       xlink:href="/svg/line/LINEICON/TRAIN_GY.png"
+       height="781"
+       width="821"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\TRAIN_GY.png" />
+    <text
+       class="st0 st4"
+       transform="matrix(0.9766,0,0,1,262.9089,517.4132)"
+       id="text76-8-1_2_"
+       style="font-size:8.46070004px;font-family:SimHei">列车17</text>
+    <image
+       id="00110000"
+       transform="matrix(0.03844154,0,0,0.03844154,259.5225,474.8572)"
+       xlink:href="/svg/line/LINEICON/TRAIN_GY.png"
+       height="781"
+       width="821"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\TRAIN_GY.png" />
+    <text
+       class="st0 st4"
+       transform="matrix(0.9766,0,0,1,223.8493,517.4132)"
+       id="text76-8-5_2_"
+       style="font-size:8.46070004px;font-family:SimHei">列车16</text>
+    <image
+       id="00100000"
+       transform="matrix(0.03844154,0,0,0.03844154,220.4632,474.8571)"
+       xlink:href="/svg/line/LINEICON/TRAIN_GY.png"
+       height="781"
+       width="821"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\TRAIN_GY.png" />
+    <text
+       class="st0 st4"
+       transform="matrix(0.9766,0,0,1,184.7903,517.4132)"
+       id="text76-8_2_"
+       style="font-size:8.46070004px;font-family:SimHei">列车15</text>
+    <image
+       id="000F0000"
+       transform="matrix(0.03844154,0,0,0.03844154,181.4039,474.8571)"
+       xlink:href="/svg/line/LINEICON/TRAIN_GY.png"
+       height="781"
+       width="821"
+       sodipodi:absref="E:\SVN\2007XMjiaxingP1\Code\AFC\console\svg\line\LINEICON\TRAIN_GY.png" />
+  </g>
+</svg>

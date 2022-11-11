@@ -31,9 +31,9 @@ export default class Rect extends Base {
     ctx.fill();
     ctx.stroke();
     ctx.restore();
-
+    //这个id就是通过r, g, b, a拼装出来的，可以相互进行查找
     const [r, g, b, a] = idToRgba(this.id);
-
+    // 为保持两个画布的同步，每当在 ctx 绘制一个矩形时，也要在 osCtx 同步绘制
     osCtx.save();
     osCtx.beginPath();
     osCtx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${a})`;

@@ -1,0 +1,42 @@
+import { IDisplayObject, Graphics } from './Core';
+import { PropertyChangedEvent } from '../events/PropertyChangedEvent';
+import { EventDispatcher } from './EventDispatcher';
+import { BackgroundStyle } from '../types/BackgroundStyle';
+export declare const propertyEquals: (a: any, b: any) => boolean;
+export declare const InvalidateSizeOrPosition: (target: any, propertyKey: string, descriptor: PropertyDescriptor) => void;
+export declare const InvalidateProperties: (target: any, propertyKey: string, descriptor: PropertyDescriptor) => void;
+export declare abstract class DisplayObject extends EventDispatcher implements IDisplayObject {
+    protected x: number;
+    protected y: number;
+    protected width: number;
+    protected height: number;
+    protected background: BackgroundStyle;
+    private _graphics;
+    private _parentObject;
+    constructor();
+    protected initializeListeners(): void;
+    protected onPropertyChanged(event: PropertyChangedEvent): void;
+    protected onComplete(): void;
+    render(): void;
+    onPaint(): void;
+    complete(): boolean;
+    abstract beforePaint(g: Graphics): void;
+    abstract paint(g: Graphics): void;
+    abstract afterPaint(g: Graphics): void;
+    get graphics(): Graphics;
+    set graphics(g: Graphics);
+    get parentObject(): IDisplayObject;
+    set parentObject(parent: IDisplayObject);
+    getX(): number;
+    setX(x: number): void;
+    getY(): number;
+    setY(y: number): void;
+    getWidth(): number;
+    setWidth(width: number): void;
+    getHeight(): number;
+    setHeight(height: number): void;
+    getBackgroundStyle(): string | CanvasGradient | CanvasPattern;
+    getBackground(): BackgroundStyle;
+    setBackground(background: BackgroundStyle): void;
+}
+//# sourceMappingURL=DisplayObject.d.ts.map

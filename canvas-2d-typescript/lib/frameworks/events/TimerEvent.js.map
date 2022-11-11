@@ -1,0 +1,1 @@
+{"version":3,"file":"TimerEvent.js","sourceRoot":"","sources":["../../../src/frameworks/events/TimerEvent.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAoB,MAAM,oBAAoB,CAAC;AAEjE,MAAM,OAAO,UAAW,SAAQ,SAAS;IAErC,YAAY,MAAwB,EAAE,MAAc;QAChD,KAAK,CAAC,MAAM,EAAE,UAAU,CAAC,IAAI,CAAC,CAAC;QAC/B,IAAI,CAAC,MAAM,GAAG,MAAM,CAAC;IACzB,CAAC;;AACM,eAAI,GAAW,OAAO,CAAC"}
