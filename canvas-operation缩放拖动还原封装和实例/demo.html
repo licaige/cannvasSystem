@@ -40,7 +40,7 @@
     canvas.addDragEvent(); // 添加拖动事件
     canvas.draw();
 
-    // 用户绘图
+    // 用户绘图操作，这个地方相当于写死了
     function userDraw() {
         this.ctx.fillStyle = "#f00";
         this.ctx.fillRect(0, 0, 100, 100);
@@ -99,7 +99,9 @@
         // 绘图（会进行缩放和位移）
         this.draw = function () {
             this.clearCanvas();
+            //位移操作
             this.ctx.translate(offset.x, offset.y);
+            //缩放操作
             this.ctx.scale(scale, scale);
             _this.userDraw();
         };
