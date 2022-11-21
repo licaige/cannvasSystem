@@ -8,9 +8,9 @@ import "@/style/text.scss";
 //改变font-size
 import "@/util/rem.js";
 // css格式化文件
-import "normalize.css";
+// import "normalize.css";
 // css工程化样式统一管理
-import "./assets/layoutStyle/index.css";
+// import "./assets/layoutStyle/index.css";
 Vue.use(ElementUI);
 
 Vue.config.productionTip = false;
