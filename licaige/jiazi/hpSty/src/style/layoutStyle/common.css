@@ -1,0 +1,549 @@
+/* c- 类名 */
+/* 字体 */
+/* 颜色 */
+/* 单位 */
+/* 通用行高 */
+/* size */
+/* width && height */
+/*全局字体及文字颜色*/
+body {
+    /*font-family: PingFang-SC-Medium;
+    background-color: #fff;*/
+}
+/*标签默认样式*/
+div,span{
+    /*font-size: 28px;
+    color: #333;*/
+}
+ul,li{
+    list-style: none;
+}
+/*用于当行文字过长加...*/
+.ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/*保持动画在最后一个关键帧中定义*/
+.errshake{
+    animation:shake 0.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count:3;
+}
+/*申明弹性布局*/
+.flex{
+    display:flex;
+}
+/*交叉轴上居中*/
+.acenter{
+    align-items: center;
+}
+/*在主轴上居中*/
+.jcenter{
+    justify-content: center;
+}
+.jbetween{
+    justify-content: space-between;
+}
+/*正居中*/
+.jacenter{
+    justify-content: center;
+    align-items: center;
+}
+/*x轴水平布局*/
+.flexRow{
+    flex-direction: row;
+}
+/*y轴垂直布局*/
+.flexColumn{
+    flex-direction:column
+}
+/*一行过多进行换行*/
+.flexWrap{
+    flex-wrap: wrap;
+}
+/*常见弹性正居中*/
+.flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*主轴居中，交叉轴方向靠下布局*/
+.justEnd{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+/*主轴靠结束位置，交叉轴居中*/
+.alignEnd{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.flexEnd{
+    justify-content: flex-end;
+}
+/*主轴水平居中*/
+.justCenter{
+    display: flex;
+    justify-content: center;
+}
+/*交叉轴居中，主轴两边对齐*/
+.justBetween{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.justAround{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+/*交叉轴居中*/
+.alignCenter{
+    display: flex;
+    align-items: center;
+}
+/*y轴方向布局，正居中*/
+.columnCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column
+}
+.blankbg{
+    background-color: #fff;
+}
+/*占据剩余空间多大*/
+.flex1 {
+    flex: 1
+}
+.flex2{
+    flex: 2
+}
+.flex3{
+    flex: 3
+}
+.flex4{
+    flex: 4
+}
+.border{
+    border:1px solid #f8f8f8;
+}
+/*边框部分*/
+.borderTop{
+    border-top:1px solid #f8f8f8;
+}
+.borderRight{
+    border-right:1px solid #f8f8f8;
+}
+.borderBottom{
+    border-bottom:1px solid #f8f8f8;
+}
+.borderLeft{
+    border-left:1px solid #f8f8f8;
+}
+.mb3{
+    margin-bottom: 0.075rem;
+}
+/*10px外边距部分*/
+.mt5{
+    margin-top:0.125rem
+}
+.mb5{
+    margin-bottom:0.125rem
+}
+.mr5{
+    margin-right:0.125rem
+}
+.ml5{
+    margin-left:0.125rem
+}
+/*10px内边距*/
+.pt5{
+    padding-top:0.125rem
+}
+.pb5{
+    padding-bottom:0.125rem
+}
+.pr5{
+    padding-right:0.125rem
+}
+.pl5{
+    padding-left:0.125rem
+}
+/*16px外边距部分*/
+.mt8{
+    margin-top: 0.2rem
+}
+.mb8{
+    margin-bottom:0.2rem
+}
+.mr8{
+    margin-right:0.2rem
+}
+.ml8{
+    margin-left:0.2rem
+}
+/*16px内边距*/
+.pt8{
+    padding-top: 0.2rem
+}
+.pb8{
+    padding-bottom:0.2rem
+}
+.pr8{
+    padding-right:0.2rem
+}
+.pl8{
+    padding-left:0.2rem
+}
+/*20px外边距*/
+.mt10 {
+    margin-top:0.25rem
+}
+.mb10 {
+    margin-bottom:0.25rem
+}
+.mr10 {
+    margin-right:0.25rem
+}
+.ml10 {
+    margin-left:0.25rem
+}
+/*20px内边距*/
+.pt10 {
+    padding-top:0.25rem
+}
+.pb10 {
+    padding-bottom:0.25rem
+}
+.pr10 {
+    padding-right:0.25rem
+}
+.pl10 {
+    padding-left:0.25rem
+}
+/*24px外边距*/
+.mt12 {
+    margin-top: 0.3rem
+}
+.mb12 {
+    margin-bottom:0.3rem
+}
+.mr12 {
+    margin-right:0.3rem
+}
+.ml12 {
+    margin-left:0.3rem
+}
+/*24px内边距*/
+.pt12 {
+    padding-top:0.3rem
+}
+.pb12 {
+    padding-bottom:0.3rem
+}
+.pr12 {
+    padding-right:0.3rem
+}
+.pl12 {
+    padding-left:0.3rem
+}
+/*30px外边距*/
+.mt15 {
+    margin-top:0.375rem
+}
+.mb15 {
+    margin-bottom:0.375rem
+}
+.mr15 {
+    margin-right:0.375rem
+}
+.ml15 {
+    margin-left:0.375rem
+}
+/*28px内边距*/
+.pt14 {
+    padding-top:0.35rem
+}
+.pb14 {
+    padding-bottom:0.35rem
+}
+.pr14 {
+    padding-right:0.35rem
+}
+.pl14 {
+    padding-left:0.35rem
+}
+/*30px内边距*/
+.pt15 {
+    padding-top:0.375rem
+}
+.pb15 {
+    padding-bottom:0.375rem
+}
+.pr15 {
+    padding-right:0.375rem
+}
+.pl15 {
+    padding-left:0.375rem
+}
+/*40px外边距*/
+.mt20 {
+    margin-top:0.5rem
+}
+.mb20 {
+    margin-bottom:0.5rem
+}
+.mr20 {
+    margin-right:0.5rem
+}
+.ml20 {
+    margin-left:0.5rem
+}
+/*40px内边距*/
+.pt20 {
+    padding-top:0.5rem
+}
+.pb20 {
+    padding-bottom:0.5rem
+}
+.pr20 {
+    padding-right:0.5rem
+}
+.pl20 {
+    padding-left:0.5rem
+}
+/*50px外边距*/
+.mt25 {
+    margin-top:0.625rem
+}
+.mb25 {
+    margin-bottom:0.625rem
+}
+.mr25 {
+    margin-right:0.625rem
+}
+.ml25 {
+    margin-left:0.625rem
+}
+/*50px内边距*/
+.pt25 {
+    padding-top:0.625rem
+}
+.pb25 {
+    padding-bottom:0.625rem
+}
+.pr25 {
+    padding-right:0.625rem
+}
+.pl25 {
+    padding-left:0.625rem
+}
+/*60px外边距*/
+.mt30 {
+    margin-top:0.75rem
+}
+.mb30 {
+    margin-bottom:0.75rem
+}
+.mr30 {
+    margin-right:0.75rem
+}
+.ml30 {
+    margin-left:0.75rem
+}
+/*60px内边距*/
+.pt30 {
+    padding-top:0.75rem
+}
+.pb30 {
+    padding-bottom:0.75rem
+}
+.pr30 {
+    padding-right:0.75rem
+}
+.pl30 {
+    padding-left:0.75rem
+}
+/*70px外边距*/
+.mt35 {
+    margin-top:0.875rem
+}
+.mb35 {
+    margin-bottom:0.875rem
+}
+.mr35 {
+    margin-right:0.875rem
+}
+.ml35 {
+    margin-left:0.875rem
+}
+/*70px内边距*/
+.pt35 {
+    padding-top:0.875rem
+}
+.pb35 {
+    padding-bottom:0.875rem
+}
+.pr35 {
+    padding-right:0.875rem
+}
+.pl35 {
+    padding-left:0.875rem
+}
+/*80px外边距*/
+.mt40 {
+    margin-top:1rem
+}
+.mb40 {
+    margin-bottom:1rem
+}
+.mr40 {
+    margin-right:1rem
+}
+.ml40 {
+    margin-left:1rem
+}
+/*80px内边距*/
+.pt40 {
+    padding-top:1rem
+}
+.pb40 {
+    padding-bottom:1rem
+}
+.pr40 {
+    padding-right:1rem
+}
+.pl40 {
+    padding-left:1rem
+}
+/*90px外边距*/
+.mt45 {
+    margin-top:1.125rem
+}
+.mb45 {
+    margin-bottom:1.125rem
+}
+/*对于2行文字，加...*/
+.ellipsis2 {
+    display: -webkit-box !important;
+    -ms-text-overflow: ellipsis;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+/*字体大小部分*/
+.font6{
+    font-size:0.15rem;
+}
+.font7{
+    font-size: 0.175rem;
+}
+.font8{
+    font-size: 0.2rem;
+}
+.font9{
+    font-size: 0.225rem;
+}
+.font10{
+    font-size: 0.25rem;
+}
+.font11{
+    font-size: 0.275rem;
+}
+.font12{
+    font-size: 0.3rem;
+}
+.font13{
+    font-size: 0.325rem;
+}
+.font14{
+    font-size: 0.35rem;
+}
+.font15{
+    font-size: 0.375rem;
+}
+.font16{
+    font-size: 0.4rem;
+}
+.font17{
+    font-size: 0.425rem;
+}
+.font18{
+    font-size: 0.45rem;
+}
+.font19{
+    font-size: 0.475rem;
+}
+.font20{
+    font-size: 0.5rem;
+}
+.font21{
+    font-size: 0.525rem;
+}
+.font22{
+    font-size: 0.55rem;
+}
+.font23{
+    font-size: 0.575rem;
+}
+.font24{
+    font-size: 0.6rem;
+}
+.font26{
+    font-size: 0.65rem;
+}
+.font30{
+    font-size: 0.75rem;
+}
+/*相对定位*/
+.por{
+    position: relative;
+}
+/*阴影部分*/
+.shadow{
+    box-shadow: 0.025rem 0.05rem 0.05rem #dfdfdf;
+}
+.mr3{
+    margin-right: 0.075rem;
+}
+/*scroller默认样式*/
+.scroller {
+    width: 100%;
+    background-color: #fff;
+}
+
+.scrollContainer {
+    width: 2.375rem;
+    height: auto;
+    margin-right: 0.125rem;
+    white-space: nowrap;
+}
+/*播放按钮*/
+.playBtn{
+    width:3.5rem;
+    height:1.1rem;
+    border-radius: 0.675rem;
+    background-color: #986AF5;
+}
+/*按钮*/
+.xiaoxiong{
+    width:0.45rem;
+    height:0.5875rem;
+    display:block;
+}
+.playlabelicon{
+    width:0.6rem;
+    height:0.6rem;
+    background-color: #627CEC;
+    border-radius: 50%;
+    padding:0.0125rem 0 0 0.0125rem;
+    box-sizing: border-box;
+}
+.playlabeltext{
+    font-size: 0.5rem;
+    font-weight: bold;
+}

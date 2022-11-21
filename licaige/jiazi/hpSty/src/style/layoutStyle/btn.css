@@ -1,0 +1,76 @@
+.commonbtn{
+    background: #627CEC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border:0.0125rem solid #627CEC;
+    font-size: 0.35rem;
+    box-sizing: border-box;
+}
+.smallBtn{
+    height: 0.7rem;
+    border-radius: 0.35rem;
+    padding-left: 0.375rem;
+    padding-right: 0.375rem;
+    font-size: 0.3rem;
+}
+.midBtn{
+    height: 0.875rem;
+    border-radius: 0.4375rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.fullBtn{
+    height: 1.125rem;
+    border-radius: 0.15rem;
+}
+.disabledBtn{
+    background: #aaa !important;
+    border-color: #aaa  !important;
+    color:#fff !important;
+}
+.disabledEmptyBtn {
+    background-color: transparent;
+    border-color: #aaa !important;
+    color: #aaa !important;
+}
+.middleFixedBtn {
+    border-radius: 0.2rem;
+    width: 2.375rem;
+    height: 0.875rem;
+}
+.middleCircle {
+    border-radius: 0.4375rem !important;
+}
+.bigFixedBtn {
+    font-size: 0.3rem;
+    border-radius: 0.1rem;
+    width: 3.5rem;
+    height: 1rem;
+}
+.bigCircle {
+    border-radius: 0.5rem !important;
+}
+.fullCircle {
+    border-radius: 0.5625rem !important;
+}
+.emptyBtn{
+    background-color: #fff;
+    color:#627CEC;
+}
+.emptyBorder{
+    border: 0.0125rem solid #627CEC;
+}
+.grayBtn{
+    background: #999;
+    border-color: #999;
+    color: #fff
+}
+.mainbtn {
+    height:1.125rem;
+    background-image: -webkit-linear-gradient(left, #6AA1F9, #627CEC);
+    border:none;
+    border-radius: 0.2rem;
+    font-size: 0.4rem;
+}

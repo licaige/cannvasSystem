@@ -1,0 +1,102 @@
+.themeText{
+    color: #627CEC !important;
+}
+.redText{
+    color: #f35f66 !important;
+}
+.priceText{
+    color: #627CEC !important;
+}
+.color1{
+    color:#333;
+}
+.color2{
+    color:#8F99AD;
+}
+.color3{
+    color:#BDC4CF;
+}
+.color4{
+    color:#4D4D4D;
+}
+.color5{
+    color:#808080;
+}
+.color6{
+    color: #FF5454;
+}
+.color7{
+    color: #666666;
+}
+.color8{
+    color: #999999;
+}
+.color9{
+    color: #08CBAE;
+}
+.color10{
+    color: #B3B3B3;
+}
+.color11{
+    color: #fff
+}
+.color12{
+    color: #040300;
+}
+.color13{
+    color: #CCCCCC;
+}
+.color14{
+    color: #76634A;
+}
+.color15{
+    color: #23C8D5;
+}
+.color16{
+    color: #FADB14;
+}
+.whiteText{
+    color: #fff !important;
+}
+.themeBg{
+    background: #627CEC !important;
+}
+.whiteBg{
+    background-color: #fff !important
+}
+.grayBg{
+    background-color: #ddd !important;
+}
+.greenBg{
+    background-color: #52C41A !important;
+}
+.yellowBg{
+    background-color: #FADB14 !important;
+}
+.orangeBg{
+    background-color: #FA8C16 !important;
+}
+.redBg{
+    background-color: #F5222D !important;
+}
+.purpleBg{
+    background-color: #722ED1 !important;
+}
+.dangerous{
+    background-color: #610B00 !important;
+}
+.temBg{
+    background-color: #fdb201 !important;
+}
+.wrap{
+    background-color: #fff
+}
+.textBold{
+    font-weight:bold;
+}
+.greenStatus{
+    color: green;
+}
+.redStatus{
+    color: red;
+}
