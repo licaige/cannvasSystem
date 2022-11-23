@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta name="baidu-site-verification" content="code-MLwsGWLtjw"/><meta name="msvalidate.01" content="5838FD18FF4E679EAFE3EE3434262DD3"/><meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1, maximum-scale=1,user-scalable=no"/><meta name="version" content="5.17.2"/><link rel="icon" href="favicon.ico"/><script>
+    var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?42390c0f29154a993b6cd6ee6cbbec8e";
+              var s = document.getElementsByTagName("script")[0];
+              s.parentNode.insertBefore(hm, s);
+            })();
+    </script><script>
+    if (~navigator.userAgent.indexOf('NewsArticle')) {
+      localStorage.setItem('marketSource', 'toutiao');
+      (function (r, d, s, l) {
+        var meteor = (r.meteor = r.meteor || []);
+        meteor.methods = ['track', 'off', 'on'];
+        meteor.factory = function (method) {
+          return function () {
+            var args = Array.prototype.slice.call(arguments);
+            args.unshift(method);
+            meteor.push(args);
+            return meteor;
+          };
+        };
+        for (var i = 0; i < meteor.methods.length; i++) {
+          var key = meteor.methods[i];
+          meteor[key] = meteor.factory(key);
+        }
+        meteor.load = function () {
+          var js,
+            fjs = d.getElementsByTagName(s)[0];
+          js = d.createElement(s);
+          js.src = 'https://analytics.snssdk.com/meteor.js/v1/' + l + '/sdk';
+          fjs.parentNode.insertBefore(js, fjs);
+        };
+        meteor.load();
+        if (meteor.invoked) {
+          return;
+        }
+        meteor.invoked = true;
+        meteor.track('pageview');
+      })(window, document, 'script', '1680601740559367');
+    }
+    </script><script>
+    if (
+      ~location.search.indexOf('cb=') ||
+      ~navigator.userAgent.indexOf('ZhihuHybrid DefaultBrowser Futureve') ||
+      localStorage.getItem('marketSource') === 'zhihu'
+    ) {
+      localStorage.setItem('marketSource', 'zhihu');
+      (function (root) {
+        window.zhad = [];
+        var tag = document.createElement('script');
+        tag.type = 'text/javascript';
+        tag.async = true;
+        tag.src = '//unpkg.zhimg.com/@efe/zhad-tracker@1.4.1';
+        tag.onerror = function () {
+          var img = new Image();
+          img.src =
+            '//sugar.zhihu.com/log_fe?js_url=' +
+            window.encodeURIComponent(tag.src) +
+            '&t=' +
+            +new Date();
+        };
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(tag, s);
+      })(window);
+    }
+    </script><script>
+    if (
+      ~location.search.indexOf("bd_vid=")  ||
+    localStorage.getItem("marketSource") === "baidu"
+  ) {
+    localStorage.setItem("marketSource", "baidu");
+    window._agl = window._agl || [];
+  (function () {
+  _agl.push(
+  ['production', '_f7L2XwGXjyszb4d1e2oxPybgD']
+  );
+  (function () {
+  var agl = document.createElement('script');
+  agl.type = 'text/javascript';
+  agl.async = true;
+  agl.src = 'https://fxgate.baidu.com/angelia/fcagl.js?production=_f7L2XwGXjyszb4d1e2oxPybgD';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(agl, s);
+  })();
+  })();
+  }
+    </script><script>
+    const href = window.location.href;
+
+                const urls = [
+                  {
+                    regExp:/t=market/,
+                    name:'线下活动',
+                    code:'market'
+                  },
+                  {
+                    regExp:/t=online/,
+                    name:'线上直播',
+                    code:'online'
+                  },
+                  {
+                    regExp: /t=zxhd/,
+                    name: '在线活动',
+                    code: 'zxhd',
+                  },
+                  {
+                    regExp: /t=bdtg/,
+                    name: '百度推广',
+                    code: 'baidu',
+                  },
+                  {
+                    regExp: /t=zhijia/,
+                    name: '知+',
+                    code: 'zhihu_zhi+',
+                  },
+                  {
+                    regExp: /t=zhrw/,
+                    name: '知乎kol',
+                    code: 'zhihu_kol',
+                  },
+                  {
+                    regExp: /t=gzh/,
+                    name: '公众号',
+                    code: 'gzh',
+                  },
+                  {
+                    regExp: /inviterId=/,
+                    name: '合伙人计划',
+                    code: 'hhr',
+                  },
+                  {
+                    regExp: /inviterAccountId=/,
+                    name: '用户邀请',
+                    code: 'yhyq',
+                  },
+                ];
+
+                const item = urls.find(e=>e.regExp.test(href));
+                item && localStorage.setItem('marketSource',item.code);
+
+                // 合伙人计划特殊逻辑
+                const { inviterId, inviterAccountId } = parseUrl(href);
+                if (inviterId) {
+                  item && localStorage.setItem('inviterId', inviterId);
+                }
+
+                if (inviterAccountId) {
+                  item && localStorage.setItem('inviterAccountId', inviterAccountId);
+                }
+
+                function parseUrl(url) {
+                  const search = url.split('?')[1];
+                  if (!search) return {};
+                  const paramsList = search.split('&');
+                  const obj = {};
+                  paramsList.forEach(o => {
+                    const [paramName, paramsValue] = o.split('=');
+                    obj[paramName] = paramsValue;
+                  });
+                  return obj;
+                }
+    </script><script>
+    (function (a, b, c, d, e, j, s) {
+      a[d] =
+        a[d] ||
+        function () {
+          (a[d].a = a[d].a || []).push(arguments);
+        };
+      (j = b.createElement(c)), (s = b.getElementsByTagName(c)[0]);
+      j.async = true;
+      j.charset = 'UTF-8';
+      j.src = 'https://static.meiqia.com/dist/meiqia.js?_=t';
+      s.parentNode.insertBefore(j, s);
+    })(window, document, 'script', '_MEIQIA');
+    _MEIQIA('entId', 246503);
+    _MEIQIA('withoutBtn');
+    </script><script>
+var s = document.createElement("script"); s.type = "text/javascript";s.charset = "utf-8"; s.src = "https://www.fxiaoke.com/ec/kemai/release/static/marketing-website-access.js?id=" + Math.random() + ";"; s.id = "fsMarketingWebsiteScript"; s.innerHTML = "FSscriptArgs.WebsiteEa ='easyvcloud'; FSscriptArgs.host ='www.fxiaoke.com'"; window.FsYxtWebsiteEa= 'easyvcloud';window.FsYxtHost='www.fxiaoke.com'; document.getElementsByTagName("head")[0].appendChild(s);
+    </script><title>集团公司周年庆 - EasyV素材广场</title><meta name="description" content="数据可视化怎么做?易知微EasyV素材广场精选可视化大屏行业模板、设计素材、主题资源、三维模型等设计资产，官方VE.Design团队设计师品质鉴定，帮助设计师激发灵感，EasyV平台一键即可轻松搭建数字孪生可视化大屏应用"/><meta name="keywords" content="EasyV,易知微,可视化设计,大屏模板,设计素材,主题资源,三维模型,资产库"/><meta property="og:title" content="集团公司周年庆"/><meta property="og:image" content="https://easyv.assets.dtstack.com/"/><meta property="og:description" content=""/><meta name="next-head-count" content="19"/><link rel="preload" href="_next/static/css/e9241c13ba622a52f9ba.css" as="style"/><link rel="stylesheet" href="_next/static/css/e9241c13ba622a52f9ba.css" data-n-g=""/><link rel="preload" href="_next/static/css/c4c430c4f1ecc932eaa0.css" as="style"/><link rel="stylesheet" href="_next/static/css/c4c430c4f1ecc932eaa0.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="_next/static/chunks/polyfills-a40ef1678bae11e696dba45124eadd70.js"></script><script src="_next/static/chunks/webpack-23aff17bcce2a317ca8a.js" defer=""></script><script src="_next/static/chunks/framework-336caa3f6419768205fe.js" defer=""></script><script src="_next/static/chunks/main-1a8ab6958d75eb67f0c6.js" defer=""></script><script src="_next/static/chunks/pages/_app-9666eaeb58d54b760b9e.js" defer=""></script><script src="_next/static/chunks/pages/market-preview-fb5b5d13e6596ffc6c4a.js" defer=""></script><script src="_next/static/X43J3Cz9XWMNk0q985Ivv/_buildManifest.js" defer=""></script><script src="_next/static/X43J3Cz9XWMNk0q985Ivv/_ssgManifest.js" defer=""></script></head><body><div id="__next"><div><div class="Layout_container__3_qV5"><div class="Layout_pageWrapper__1Mm6_"><div class="market-preview_iframeWrapper___VpXJ"></div></div></div><div class="Toastify"></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"data":{"name":"集团公司周年庆","description":"","previewScreenId":954683}},"__N_SSP":true},"page":"/market-preview","query":{"id":"139"},"buildId":"X43J3Cz9XWMNk0q985Ivv","runtimeConfig":{"DOMAIN":"https://easyv.cloud","URLS":{"API_PREFIX":"/api/service/v1","API_UAC":"/api/uac/v1","SALES":"/api/easyv-sales/v1","EV_HP":"/api/easyv-hp/v1","MATERIAL":"/api/easyv/v5/resource","MARKET":"/api/easyv/v5","FS":"/api/easyv-hp/v1/fs","EASYV_V4":"/api/easyv/v4","WORKSPACE":"/workspace","EV_SERVER":"/api/ev-service/v1","HOME":"https://easyv.cloud","UAC_PATH":"https://uac.easyv.cloud/overview","UAC_INVITE_PATH":"https://uac.easyv.cloud/invite-friends","UAC_RIGHTS_PATH":"https://uac.easyv.cloud/me","UAC_ME_PATH":"https://uac.easyv.cloud/my-order"},"COMMON_OSS":"https://easyv.assets.dtstack.com/homepage/common","ENV":"production","ASSETS_URL":"https://easyv.assets.dtstack.com","WORKSPACE":"https://workspace.easyv.cloud","assetPrefix":"https://easyv.assets.dtstack.com/homepage-pro"},"isFallback":false,"gssp":true,"scriptLoader":[]}</script></body></html>
