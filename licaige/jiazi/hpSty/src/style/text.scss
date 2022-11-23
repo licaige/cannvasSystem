@@ -1,0 +1,34 @@
+/*公共样式字体居中*/
+/*flex垂直居中对齐*/
+.align-center-vertical {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+//字体样式
+.text {
+  font-family: SourceHanSansCN-Medium;
+  letter-spacing: 0em;
+}
+.body{
+  font-size: 14px;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+ul,
+li {
+  list-style: none;
+}
+html,
+body{
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: auto;
+}

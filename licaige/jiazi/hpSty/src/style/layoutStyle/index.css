@@ -1,0 +1,234 @@
+@import "./iconfont.css";
+@import "./common.css";
+@import "./btn.css";
+@import "./color.css";
+@import "./animate.css";
+
+.boxshadow{
+    box-shadow: 0 0.0125rem 0.1rem #bbb;
+}
+.popWhite{
+    position: fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    z-index:99999999;
+    background: rgba(0,0,0,0.1);
+}
+.popUp{
+    position: fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    z-index:999;
+    background: rgba(0,0,0,0.5);
+}
+.masker{
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    z-index:999;
+    background: rgba(0,0,0,0.5);
+}
+.popMain{
+    position: fixed;
+    left:0.025rem;
+    right:0.025rem;
+    height:6.25rem;
+    bottom:0;
+    box-shadow: 0 0 0.025rem #aaa;
+    background: #fff;
+    z-index:99;
+    overflow: hidden;
+    border-radius: 0.125rem 0.125rem 0 0;
+}
+.popHeader{
+    height:0.625rem;color:#333;font-size: 0.1875rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.popBack{
+    width:0.375rem;
+    height:0.375rem;
+    border-radius: 50%;
+    border:0.0125rem solid #aaa;
+    position: absolute;
+    left:0.1875rem;
+    top:0.1125rem;
+    transform: rotate(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popBtn{
+    height:0.5625rem;
+    border-radius: 0.275rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    position: absolute;
+    bottom:0.25rem;left:0.1875rem;
+    right:0.1875rem;
+    background: #f66c03;
+    color:#fff;
+    font-size: 0.2rem;
+}
+.popUpAnimate{
+    animation:slideUp 0.3s;
+}
+.popContent{
+    height:5.625rem;
+    overflow-y: auto;
+}
+.popALL{
+    height:5.625rem;
+}
+/* 标题前蓝色小圆点 */
+.blueCircle{
+    height: 0.7rem;
+    display: flex;
+    align-items: center;
+    /* background: #191f28; */
+}
+.blueCircle::before{
+    content: ' ';
+    display: inline-block;
+    width: 0.075rem;
+    height: 0.075rem;
+    border-radius: 0.075rem;
+    background: linear-gradient(120deg, #5DF3FF 0%, #3D78FF 100%);
+    margin-right: 0.15rem;
+}
+.blueCircle .top-desc-txt{
+    font-size: 0.175rem;
+    color: rgba(255, 255, 255, .6);
+    margin-left: 0.125rem;
+}
+.page-out{
+    background-color: #050612;
+    padding: 0.375rem;
+    border-top: none;
+    box-sizing: border-box;
+}
+/* 带边框按钮组 */
+.borderBtnGroup .el-radio-button__inner{
+    background: none !important;
+    color: rgba(255, 255, 255, .6);
+    border-color: rgba(255, 255, 255, 0) !important;
+}
+.borderBtnGroup .is-active:after{
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 86%;
+    border-radius: 50% / 50%;
+    position: absolute;
+    top: 8%;
+    left: 0;
+    background: #439AFF;
+    filter: blur(6px);
+    z-index: 0;
+}
+.borderBtnGroup .is-active .el-radio-button__inner{
+    border-color: rgba(255, 255, 255, 0) !important;
+    position: relative;
+    z-index: 1;
+    box-shadow: none;
+    color: rgba(230, 241, 252, .8);
+}
+.borderBtnGroup .el-radio-button__inner{
+    padding: 0.07rem 0.12rem;
+    font-size: 0.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 !important;
+}
+/* 黑色背景表格 */
+.black-table{
+    background: none;
+}
+.black-table:before{
+    height: 0;
+}
+.black-table tr,.black-table th{
+    height: 0.6625rem;
+    background: #191f28 !important;
+    color: #fff !important;
+}
+.black-table th, .black-table td{
+    padding-left: 0.2rem;
+    text-align: left;
+    font-weight: normal;
+    border: 0 !important;
+}
+.black-table tr:hover td{
+    background: none !important;
+}
+.black-table .cell{
+    padding: 0 !important;
+}
+.black-table .el-table__empty-block{
+    width: 100% !important;
+}
+.black-table-empty img{
+    width: 0.8rem;
+}
+.black-table .el-table__body tr.current-row>td, .black-table tr.current-row:hover td{
+    background-color: #1890ff !important;
+}
+.modelbox{
+    background: #0C1530;
+    border: 1px solid rgba(67, 154, 255, 0.25);
+    border-radius: 0.075rem;
+    box-shadow: 0px 0px 40px 0px rgba(12, 21, 49, 0.3);
+}
+/* 黑色编辑弹窗 */
+.editDialog .el-dialog{
+    background: #181f29;
+}
+.editDialog .el-dialog__title, .editDialog .el-dialog__headerbtn .el-dialog__close{
+    color: #fff;
+    font-size: .2rem;
+}
+.editDialog .el-dialog__header{
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+    border-bottom: .0125rem solid #000;
+}
+.editDialog .el-dialog__footer{
+    padding-top: .125rem;
+    padding-bottom: .125rem;
+    border-top: .0125rem solid #000;
+}
+.editDialog .el-dialog__body{
+    color: #fff;
+}
+.editDialog .el-form-item__label{
+    color: #fff;
+}
+.editDialog .el-textarea__inner, .editDialog .el-input__inner{
+    background: #5a6882;
+    color: #fff;
+    border: 0;
+}
+.editDialog .el-upload--text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 2.5rem;
+}
+.editDialog .el-upload--text .el-icon-plus{
+    font-size: .425rem;
+}
+.editDialog .el-dialog__headerbtn{
+    top: .25rem;
+}

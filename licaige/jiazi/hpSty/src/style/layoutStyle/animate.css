@@ -1,0 +1,48 @@
+@keyframes slideUp
+{
+    from {transform: translateY(100%)}
+    to {transform: translateY(0rem)}
+}
+@-webkit-keyframes slideUp
+{
+    from {transform: translateY(100%)}
+    to {transform: translateY(0rem)}
+}
+@keyframes slideDown
+{
+    from {transform: translateY(0rem)}
+    to {transform: translateY(100%)}
+}
+@-webkit-keyframes slideDown
+{
+    from {transform: translateY(0rem)}
+    to {transform: translateY(100%)}
+}
+@keyframes scaleUp
+{
+    from {transform: scale(0.5);}
+    to {transform: scale(1);}
+}
+
+@-webkit-keyframes slideUp
+{
+    from {transform: scale(0.5);}
+    to {transform: scale(1);}
+}
+@keyframes shake
+{
+    0% {transform: translateX(0);}
+    25% {transform: translateX(0.125rem);}
+    50% {transform: translateX(0);}
+    75% {transform: translateX(-0.125rem);}
+    100% {transform: translateX(0);}
+}
+
+@-webkit-keyframes shake
+{
+    0% {transform: translateX(0);}
+    25% {transform: translateX(0.125rem);}
+    50% {transform: translateX(0);}
+    75% {transform: translateX(0.125rem);}
+    100% {transform: translateX(0);}
+}
