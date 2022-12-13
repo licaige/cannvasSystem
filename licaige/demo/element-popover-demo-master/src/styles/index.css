@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+.layout-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+
+.side-bar-menu {
+  width: 236px;
+  height: 100%;
+  background-color: rgba(84, 92, 100);
+}
+
+.main-wrapper {
+  width: 100%;
+}
+
+.navbar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: calc(100% - 236px);
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  background-image: linear-gradient(45deg, red, green, transparent);
+  z-index: 666;
+}
+
+.app-main{
+  padding: 50px 24px 24px 24px;
+}
+
+.custom-popper-class{
+  z-index: 665 !important;
+}

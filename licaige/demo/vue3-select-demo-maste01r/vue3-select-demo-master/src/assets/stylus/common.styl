@@ -1,0 +1,169 @@
+@import './varsty'
+/*公共样式*/
+.fl-r {
+	float:right
+}
+.fl-l {
+	float:left
+}
+a{
+	cursor: pointer
+}
+/*清浮动*/
+.clearfix:after{
+	content:""
+	height:0
+	line-height:0
+	display:block
+	clear:both
+	visibility:hidden
+}
+.fx-price-font {
+	color:$fxPrice
+}
+.fx-default-font {
+	color:$fxDefaultColor
+}
+.fx-warn-font {
+	color:$fxRed
+}
+.fx-green-font {
+	color:$fxGreen2
+}
+/*阴影块*/
+.fx-shadow-block {
+	box-shadow:2px -2px 5px #eee
+	border:1px solid #eee
+	border-radius:5px
+}
+/*通用阴影-down*/
+.fx-shadow-down {
+	box-shadow:2px -2px 6px $fxBorder
+}
+/*通用阴影-up*/
+.fx-shadow-up {
+	box-shadow:0px -2px 2px $fxBorder
+}
+/*省略号*/
+.fx-ellipsis {
+	overflow:hidden
+	text-overflow : ellipsis
+	white-space:nowrap
+}
+/*待办标记*/
+.fx-red-dot {
+	&:after {
+		top: 0;
+		right: 5px
+		width: 10px
+		height: 10px
+		content: ' ';
+		position: absolute;
+		border-radius: 100%;
+		background-color: #f44;
+	}
+}
+/*边框无圆角*/
+.fx-no-radius {
+	border-radius:0 !important
+}
+/*伪按钮*/
+.fx-Pseudo-btn {
+	&::after {
+		background-color: #ccc;
+		content: " ";
+		opacity: 0;
+		position: absolute;
+		top:0;
+		bottom:0;
+		left:0;
+		right:0;
+	}
+	&:active::after {
+		opacity: .4;
+	}
+}
+/*蓝色竖线小标题*/
+.fx-block-title::before {
+	width: 3px
+	height: 16px
+	content: ''
+	display: inline-block
+	vertical-align: text-top
+	margin-right: 5px
+	margin-left: 5px
+	background-color: #538FFD
+	border-radius: 2px;
+}
+/*自定义滚动条*/
+.fx-custom-scroll::-webkit-scrollbar {
+	width: 6px;
+	height: 6px
+	background-color: #F5F5F5;
+}
+.fx-custom-scroll::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+	background-color: #ccc;
+}
+.fx-custom-scroll::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+/*bottom-line*/
+.fx-bottom-line {
+	position: relative
+	&::after {
+		content: ''
+		display: block;
+		border-bottom: 1px solid $fxBorder
+		height: 1px
+		position: absolute
+		bottom: 0
+		left: 0
+		right: 0
+		margin: 0 20px
+	}
+}
+/*cursor*/
+.fx-cursor {
+	cursor: pointer
+}
+/*顶层容器*/
+.fx-page-first-container {
+	overflow: auto;
+	// min-width: 1040px
+}
+
+/*collapse标题样式, 常用于详情每个模块标题没用collapse组件的情况*/
+.details-info-title {
+	height: 36px;
+	line-height: 36px
+	font-size: 12px;
+	font-weight: 700;
+	padding-left: 20px
+	position:relative
+	&::after {
+		content: ' '
+		position: absolute
+		box-sizing:border-box
+		right: 0
+		bottom: 0
+		left: 20px
+		border-bottom:1px solid $fxGray3
+		transform:scaleY(0.5)
+	}
+}
+
+/*单选下拉框optionRender渲染样式，常用于仓库、品项等需要同时展示code和name的下拉框*/
+.fx-common__cell-select__option {
+	display: flex
+	&-left {
+		flex: 3
+		margin-right 15px
+	}
+	&-right {
+		flex: 7
+	}
+}
