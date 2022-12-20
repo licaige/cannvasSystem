@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>版本对比功能 Monaco Editor</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+</head>
+
+<body>
+<h2>Monaco Editor 版本对比功能</h2>
+<button onclick="changeShowWay()">切换对比方式</button>
+
+<div id="container" style="width: 100%; height:800px; border: 1px solid grey"></div>
+
+<script src="./monaco-editor/package/min/vs/loader.js"></script>
+<script src="./const.js"></script>
+<script>
+    require.config({ paths: { vs: './monaco-editor/package/min/vs' } });
+    let diffEditor
+    let renderSideBySide = true
+
+    require(['vs/editor/editor.main'], function () {
+
+        diffEditor = monaco.editor.createDiffEditor(document.getElementById('container'), {
+            enableSplitViewResizing: false
+        });
+
+        var oldVersionModel = monaco.editor.createModel(oldVersion, 'text/javascript');
+        var newVersionModel = monaco.editor.createModel(newVersion, 'text/javascript');
+
+        diffEditor.setModel({
+            original: oldVersionModel,
+            modified: newVersionModel
+        });
+
+    });
+
+    function changeShowWay() {
+        diffEditor.updateOptions({
+            renderSideBySide: !renderSideBySide
+        });
+        renderSideBySide = !renderSideBySide
+    }
+
+    window.onresize = function () {
+        if (diffEditor) {
+            diffEditor.layout();
+        }
+    };
+
+
+</script>
+</body>
+
+</html>
