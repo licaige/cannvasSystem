@@ -3,6 +3,8 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/licaige/EveryDay" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/licaige/demo/monaco-editor" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/licaige/demo/vue-monaco-editor" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/node/code/coderhub" vcs="Git" />
   </component>
 </project>
