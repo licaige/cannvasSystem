@@ -1,4 +1,5 @@
 // 比较文件
+/*
 async versionDiff (index) {
     let newId = this.versionList[index].id
     let oldId = this.versionList[index + 1].id
@@ -9,3 +10,4 @@ async versionDiff (index) {
     this.dialogDiffVisible = true
 }
 }
+*/
