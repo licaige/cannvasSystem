@@ -186,7 +186,7 @@ export default {
     },
     // 内容改变自动获取值
     changeValue (val) {
-      console.log(val)
+      console.log('内容改变自动获取值',val)
     },
     async reload () {
       this.containerReload = false

@@ -76,6 +76,7 @@ export default {
       // 生成编辑器配置
       let editorOptions = Object.assign(this.defaultOpts, this.opts)
       if (!this.isDiff) {
+        console.log('没有不同')
         // 初始化编辑器实例
         this.monacoEditor = monaco.editor.create(this.$refs.container, editorOptions)
         // 编辑器内容发生改变时触发
@@ -83,8 +84,11 @@ export default {
           this.$emit('change', this.monacoEditor.getValue())
         })
       } else {
+        console.log('有不同')
         this.oldValue = this.readLocalFile('./testCode1.js');
+        // console.log('this.oldValue0000000',this.oldValue)
         this.newValue = this.readLocalFile('./testCode2.js');
+        // console.log('this.newValue1111111111',this.newValue)
         editorOptions.readOnly = true;
         editorOptions.language = 'javascript'
         // editorOptions.inlineHints = true;
@@ -96,7 +100,6 @@ export default {
           // oldValue为新的值
           modified: monaco.editor.createModel(this.newValue, editorOptions.language)
         })
-
       }
     },
     //直接升级配置项 renderSideBySide: false 即可
