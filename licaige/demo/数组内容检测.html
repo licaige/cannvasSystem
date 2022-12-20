@@ -6,6 +6,221 @@
 </head>
 <body>
 <script >
+    // 在StackOverflow上有大神已经提供了正确的方法，我就做下搬运工吧
+    // Warn if overriding existing method
+   /* if(Array.prototype.equals)
+        console.warn("Overriding existing Array.prototype.equals. Possible causes: New API defines the method, there's a framework conflict or you've got double inclusions in your code.");
+    // attach the .equals method to Array's prototype to call it on any array
+    Array.prototype.equals = function (array) {
+        // if the other array is a falsy value, return
+        if (!array)
+            return false;
+
+        // compare lengths - can save a lot of time
+        if (this.length != array.length)
+            return false;
+
+        for (var i = 0, l = this.length; i < l; i++) {
+            // Check if we have nested arrays
+            if (this[i] instanceof Array && array[i] instanceof Array) {
+                // recurse into the nested arrays
+                if (!this[i].equals(array[i]))
+                    return false;
+            }
+            else if (this[i] != array[i]) {
+                // Warning - two different object instances will never be equal: {x:20} != {x:20}
+                return false;
+            }
+        }
+        return true;
+    }
+    // Hide method from for-in loops
+    Object.defineProperty(Array.prototype, "equals", {enumerable: false});*/
+    // 大神还顺手给了比较Object的方法
+  /*  Object.prototype.equals = function(object2) {
+        //For the first loop, we only check for types
+        for (propName in this) {
+            //Check for inherited methods and properties - like .equals itself
+            //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty
+            //Return false if the return value is different
+            if (this.hasOwnProperty(propName) != object2.hasOwnProperty(propName)) {
+                return false;
+            }
+            //Check instance type
+            else if (typeof this[propName] != typeof object2[propName]) {
+                //Different types => not equal
+                return false;
+            }
+        }
+        //Now a deeper check using other objects property names
+        for(propName in object2) {
+            //We must check instances anyway, there may be a property that only exists in object2
+            //I wonder, if remembering the checked values from the first loop would be faster or not
+            if (this.hasOwnProperty(propName) != object2.hasOwnProperty(propName)) {
+                return false;
+            }
+            else if (typeof this[propName] != typeof object2[propName]) {
+                return false;
+            }
+            //If the property is inherited, do not check any more (it must be equa if both objects inherit it)
+            if(!this.hasOwnProperty(propName))
+                continue;
+
+            //Now the detail check and recursion
+
+            //This returns the script back to the array comparing
+            /!**REQUIRES Array.equals**!/
+            if (this[propName] instanceof Array && object2[propName] instanceof Array) {
+                // recurse into the nested arrays
+                if (!this[propName].equals(object2[propName]))
+                    return false;
+            }
+            else if (this[propName] instanceof Object && object2[propName] instanceof Object) {
+                // recurse into another objects
+                //console.log("Recursing to compare ", this[propName],"with",object2[propName], " both named \""+propName+"\"");
+                if (!this[propName].equals(object2[propName]))
+                    return false;
+            }
+            //Normal value comparison for strings and numbers
+            else if(this[propName] != object2[propName]) {
+                return false;
+            }
+        }
+        //If everything passed, let's say YES
+        return true;
+    }*/
+    // 1、不能比较对象数组
+    //比较数组
+   /* function compareArray(a1, a2) {
+        if (a1 === a2) return true;
+        if ((!a1 && a2) || (a1 && ! a2)) return false;
+        if (a1.length !== a2.length) return false;
+        for (var i = 0, n = a1.length; i < n; i++) {
+            if (a1[i] !== a2[i]) return false;
+        }
+        return true;
+    }
+    let list = [1, 2, 4];
+    let newList = [1, 2, 4, 5];
+    //方法调用
+    if(compareArray(list , newList)){
+        console.log("数据相同------------- ");
+    }else {
+        console.log("数组不同------------- ");//不同
+    }*/
+    // 2、可以比较对象数组
+   /* let obj1 = [{"id" : 1, "name" : "xiaoMing"}];
+    let obj2 = [{"id" : 1, "name" : "xiaoMing"}];
+    var isEqualN = JSON.stringify(obj1) === JSON.stringify(obj2);
+    console.log(isEqualN);//true*/
+  /*  一、some()：用于检测数组中的元素是否满足指定条件
+
+    some方法会依次执行数组的每个元素；
+
+如果有一个元素满足条件，则表达式返回true , 剩余的元素不会再执行检测
+    如果没有满足条件的元素，则返回false
+    二、every()：用于检测数组所有元素是否都符合指定条件
+
+    every和some正好相反：
+
+如果数组中检测到有一个元素不满足，则整个表达式返回 false ，且剩余的元素不会再进行检测。
+如果所有元素都满足条件，则返回 true。*/
+    // 3、判断正常数组
+  /*  var arr = [0,0,0,7];
+    //判断数组中的每一项是否都等于7
+    var everyResult = arr.every( item => item === 7 );
+    //判断数组中的是否有一项等于7
+    var someResult = arr.some( item => item === 7 );console.log(everyResult ); //结果：false
+    console.log(someResult );//结果: true*/
+    // 4、判断对象数组
+
+  /*  var arr = [
+        { name: "苹果", price: 16 },
+        { name: "橘子", price: 8 },
+        { name: "香蕉", price: 4 },
+        { name: "西瓜", price: 12 }
+    ];
+
+    //判断数组中每一条数据的price是否都大于10
+    var everyResult = arr.every(function(item) {
+        return item.price > 10;
+    });
+
+    //判断数组中是否有一条数据的price大于10
+    var someResult = arr.some(function(item) {
+        return item.price > 10;
+    });
+
+    console.log(everyResult); //结果：false
+    console.log(someResult);//结果: true*/
+
+    /**
+     * 判断是否为基础类型object（这为基础类型判断，所以数组和对象是区分不开的，只为下边对比使用）
+     * @param {any} obj 传入要判断的数据类型
+     * @returns 为object的为 true， 否则为false
+     */
+    function isObject (obj) {
+        return obj !== null && typeof obj === 'object'
+    }
+
+    /**
+     * 判断两个值是否相等
+     * @param {any} a 任意数据类型
+     * @param {any} b 任意数据类型
+     * @returns true 为一致， false 为不相等
+     */
+    function looseEqual (a, b) {
+        if (a === b) { return true }
+        var isObjectA = isObject(a);
+        var isObjectB = isObject(b);
+        if (isObjectA && isObjectB) {
+            try {
+                var isArrayA = Array.isArray(a);
+                var isArrayB = Array.isArray(b);
+                if (isArrayA && isArrayB) {
+                    return a.length === b.length && a.every(function (e, i) {
+                        return looseEqual(e, b[i])
+                    })
+                } else if (a instanceof Date && b instanceof Date) {
+                    return a.getTime() === b.getTime()
+                } else if (!isArrayA && !isArrayB) {
+                    var keysA = Object.keys(a);
+                    var keysB = Object.keys(b);
+                    return keysA.length === keysB.length && keysA.every(function (key) {
+                        return looseEqual(a[key], b[key])
+                    })
+                } else {
+                    /* istanbul ignore next */
+                    return false
+                }
+            } catch (e) {
+                /* istanbul ignore next */
+                return false
+            }
+        } else if (!isObjectA && !isObjectB) {
+            return String(a) === String(b)
+        } else {
+            return false
+        }
+    }
+
+    /**
+     * 获取在集合中，当前值的位置
+     * @param {any} arr 传入的集合
+     * @param {any} val 要查询是否在集合中位置的值
+     * @returns -1 为不存在，0或0以上为存在的位置下标
+     */
+    function looseIndexOf (arr, val) {
+        for (var i = 0; i < arr.length; i++) {
+            if (looseEqual(arr[i], val)) { return i }
+        }
+        return -1
+    }
+
+
+
+
+
 
 </script>
 </body>
