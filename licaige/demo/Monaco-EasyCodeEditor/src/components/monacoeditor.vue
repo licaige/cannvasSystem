@@ -85,7 +85,8 @@ export default {
         })
       } else {
         console.log('有不同')
-        this.oldValue = this.readLocalFile('./testCode3.js');
+        // this.oldValue = this.readLocalFile('./testCode3.js');
+        this.oldValue = this.readLocalFile('./testCode4.js');
         // console.log('this.oldValue0000000',this.oldValue)
         this.newValue = this.readLocalFile('./testCode4.js');
         // console.log('this.newValue1111111111',this.newValue)
