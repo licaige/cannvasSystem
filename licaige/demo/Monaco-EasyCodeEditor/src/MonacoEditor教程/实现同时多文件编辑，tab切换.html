@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hello World Monaco Editor</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+</head>
+
+<body>
+<h2>Hello World Monaco Editor</h2>
+<button onclick="setValue()">设置值</button>
+<button onclick="getValue()">获取值</button>
+
+<button onclick="showFile('file1')">文件1</button>
+<button onclick="showFile('file2')">文件2</button>
+<button onclick="showFile('file3')">文件3</button>
+
+<div id="container" style="width: 800px; height: 600px; border: 1px solid grey"></div>
+
+<!--<script src="./monaco-editor/package/min/vs/loader.js"></script>-->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
+<script>
+    require.config({ paths: { vs: './monaco-editor/package/min/vs' } });
+    let editor
+
+    require(['vs/editor/editor.main'], function () {
+        editor = monaco.editor.create(document.getElementById('container'), {
+            value: ['function x() {', '\tconsole.log("Hello world!");', '}'].join('\n'),
+            language: 'javascript'
+        });
+    });
+
+    function setValue() {
+
+        // 第一种重新设置值
+        // var currentModel = editor.getModel();
+        // currentModel.setValue(`// 重新设置值
+        // const blog = 'https://fizzz.blog.csdn.net/'
+        // `)
+
+        // 第二种重新设置值
+        var currentModel = editor.getModel();
+        const model = monaco.editor.createModel(`
+// 重新设置值
+x = y = z = 1
+print(x) #1
+`, 'python');
+
+        editor.setModel(model);
+
+        model.onDidChangeContent(e => {
+            console.log(e)
+        });
+
+        if (currentModel) {
+            currentModel.dispose();
+        }
+
+    }
+
+    function getValue() {
+        var currentModel = editor.getModel();
+        console.log(currentModel.getValue())
+    }
+
+    const fileMap = new Map()
+    fileMap.set('file1', { content: 'const blog = "https://fizzz.blog.csdn.net/"', language: 'javascript', model: null, state: null })
+    fileMap.set('file2', { content: 'x = 1 \nprint(x)', language: 'python', model: null, state: null })
+    fileMap.set('file3', { content: 'System.out.println("Hello World");', language: 'java', model: null, state: null })
+    function showFile(fileName) {
+        const fileItem = fileMap.get(fileName)
+        var currentState = editor.saveViewState();
+        var currentModel = editor.getModel();
+        fileMap.forEach((item, key) => {
+            if (currentModel === item.model) {
+                item.state = currentState
+            }
+        })
+
+        if (fileItem.model) {
+            editor.setModel(fileItem.model);
+            editor.restoreViewState(fileItem.state);
+        } else {
+            const newModel = monaco.editor.createModel(fileItem.content, fileItem.language);
+            editor.setModel(newModel);
+            fileItem.model = newModel
+        }
+        editor.focus();
+    }
+</script>
+</body>
+
+</html>
