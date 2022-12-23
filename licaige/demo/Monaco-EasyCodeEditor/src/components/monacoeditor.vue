@@ -105,6 +105,8 @@ export default {
     },
     //直接升级配置项 renderSideBySide: false 即可
     upDateDiff (val) {
+      //是否行内比较
+      console.log('是否行内比较',val)
       this.monacoDiffInstance.updateOptions({
         renderSideBySide: !val
       });

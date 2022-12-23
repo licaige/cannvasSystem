@@ -168,7 +168,7 @@ export default {
       reload: this.reload
     }
   },
-  // 
+  //
   mounted () {
     // 创建一个新的xhr对象
   },
@@ -195,6 +195,7 @@ export default {
     },
     inlineDiffChange (val) {
       this.$refs.monaco.upDateDiff(val)
+      console.log('this.inlineDiff',this.inlineDiff)
     }
   }
 }
