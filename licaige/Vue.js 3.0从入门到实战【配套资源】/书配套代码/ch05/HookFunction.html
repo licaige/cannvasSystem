@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<div id="app">
+		    <p v-demo:foo.a.b="message"></p>
+		</div>
+	
+		<script src="https://unpkg.com/vue@next"></script>
+		<script>
+		    const app = Vue.createApp({
+		        data() {
+    			    return {
+    			        message: 'Java无难事'
+    			    }
+			    }
+		    })
+		    
+			app.directive('demo', {
+			    mounted (el, binding, vnode) {
+    			    let s = JSON.stringify
+    			    el.innerHTML =
+    			      'instance: '   + s(binding.instance) + '<br>' +
+    			      'value: '      + s(binding.value) + '<br>' +
+    			      'argument: '   + s(binding.arg) + '<br>' +
+    			      'modifiers: '  + s(binding.modifiers) + '<br>' +
+    			      'vnode keys: ' + Object.keys(vnode).join(', ')
+    			    
+			    }
+			})
+			app.mount('#app')
+		</script>
+	</body>
+</html>

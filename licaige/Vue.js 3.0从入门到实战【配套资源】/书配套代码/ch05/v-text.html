@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<span v-text="message"></span>
+		
+			<!-- 等价于
+			<span v-text>{{message}}</span>
+			-->
+		</div>
+	
+		<script src="https://unpkg.com/vue@next"></script>
+		<script>
+			const vm = Vue.createApp({
+				data() {
+				    return {
+				        message: 'Hello Vue.js'    
+				    }
+				}
+			}).mount('#app');
+		</script>
+	</body>
+</html>

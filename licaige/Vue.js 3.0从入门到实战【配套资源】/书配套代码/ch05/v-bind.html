@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <div id="app">
+            <!-- 绑定一个属性 -->
+            <img v-bind:src="imgSrc">
+            
+            <!-- 简写语法 -->
+            <img :src="imgSrc">
+            
+            <!-- 动态属性名 -->
+            <a v-bind:[attrname]="url">链接</a>
+            
+            <!-- 内联字符串拼接 -->
+            <img :src="'images/' + fileName">
+            
+            <!-- 绑定一个有属性的对象 -->
+			<form v-bind="formObj">
+				<input type="text">
+			</form>
+        </div>
+    
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const vm = Vue.createApp({
+            data() {
+                return {
+                    attrname: 'href',
+                    url: 'http://www.sina.com.cn/',
+                    imgSrc: 'images/bg.jpg',
+                    fileName: 'bg.jpg',
+                    formObj: {
+						method: 'get',
+						action: '#'
+					}
+                }
+            }
+        }).mount('#app');
+    </script>
+  </body>
+</html>

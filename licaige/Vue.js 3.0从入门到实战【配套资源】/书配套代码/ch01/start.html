@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="GBK">
+		<title>Hello Vue.js</title>
+	</head>
+	<body>
+		<!--View-->
+		<div id="app">
+		    <button @click="increment">count值：{{ state.count }}</button>
+		</div>
+
+        <!-- 引入Vue.js -->
+		<script src="https://unpkg.com/vue@next"></script>
+		<script>
+			const App = {
+			    setup(){
+			        // 为目标对象创建一个响应式对象
+			        const state = Vue.reactive({count: 0});
+			        function increment(){
+			            state.count++;
+			        }
+			        return {
+			            state,
+			            increment
+			        }   
+			    }
+			};
+			// 创建应用程序实例，该实例提供应用程序上下文。
+			// 应用程序实例装载的整个组件树将共享相同的上下文.
+			const app = Vue.createApp(App);
+			// 在id为app的DOM元素上装载应用程序实例的根组件
+			app.mount('#app');
+		</script>
+	</body>
+</html>

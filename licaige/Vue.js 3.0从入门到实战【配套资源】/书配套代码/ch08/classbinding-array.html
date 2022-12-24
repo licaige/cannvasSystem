@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>class绑定</title>
+		<style>
+			.static {
+				border: solid 2px black;
+			}
+			.active {
+				width: 100px;
+				height: 100px;
+				background: green;
+			}
+			.text-danger {
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id = "app">
+		   <div v-bind:class="[activeClass, errorClass]"></div>
+		</div>
+	
+		<script src="https://unpkg.com/vue@next"></script>
+		<script>
+			const vm = Vue.createApp({
+    		    data() {
+    		        return {
+    		            activeClass: 'active',
+    	  			    errorClass: 'text-danger'
+    		        }
+    		    }
+		    }).mount('#app');
+		</script>
+	</body>
+</html>

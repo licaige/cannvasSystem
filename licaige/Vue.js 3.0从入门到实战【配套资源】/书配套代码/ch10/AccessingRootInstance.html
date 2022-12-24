@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<parent></parent>
+		</div>
+		
+	    <script src="https://unpkg.com/vue@next"></script>
+        <script>
+            const app = Vue.createApp({
+                data() {
+                    return {
+                       price: 188 
+                    }
+        	    },
+        	    computed: {
+        	  	    totalPrice(){
+        	  		    return this.price * 10;
+        	  	    }
+        	    },
+        	    methods: {
+        	  	    hello(){
+        	  		    return "Hello, Java无难事";
+        	  	    }
+        	    }
+            })
+            
+        	app.component('parent', {
+        		template: '<child></child>'
+        	})
+        	
+        	app.component('child', {
+        	 	methods: {
+        	 		accessRoot(){
+        	 			console.log("单价：" + this.$root.price);
+        	 			console.log("总价：" + this.$root.totalPrice);
+        	 			console.log(this.$root.hello());
+        	 		}
+        	 	},
+        		template: '<button @click="accessRoot">访问根实例</button>'
+        	})
+
+        	app.mount('#app');
+        </script>
+	</body>
+</html>

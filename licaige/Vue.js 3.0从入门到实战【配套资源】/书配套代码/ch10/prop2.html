@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<div id="app">
+			<post-list></post-list>
+		</div>
+	    <script src="https://unpkg.com/vue@next"></script>
+		<script>
+		    const app = Vue.createApp({});
+		    const PostItem = {
+                props: ['post'],
+                template: `
+                  <div>
+                      <h3>{{ post.title }}</h3>
+                      <p> 作者：{{ post.author }}</p>
+                      <p>{{ post.content }}</p>
+                  </div>`
+            };
+
+  		    app.component('PostList', {
+      			data() {
+      				return {
+      					post: {
+      						author: '孙鑫',
+      						title: 'Java无难事',
+      						content: '这本书不错'
+      					}	
+      				}
+      			},
+      			components: {
+            	    PostItem
+            	},
+    	        template: '<div><PostItem :post="post"/></div>'
+      		});
+  		
+			app.mount('#app');
+		</script>
+	</body>
+</html>

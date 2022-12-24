@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	    <div id="app">{{ count }}</div>
+	    
+		<script src="https://unpkg.com/vue@next"></script>
+        <script>
+            const {ref, watchEffect} = Vue;
+            const vm = Vue.createApp({
+                setup(){
+                    const count = ref(0);
+                    watchEffect(() => {
+                        console.log(count.value);
+                    }
+                    return {
+                        count
+                    }
+                }
+            }).mount('#app');
+        </script>
+	</body>
+</html>

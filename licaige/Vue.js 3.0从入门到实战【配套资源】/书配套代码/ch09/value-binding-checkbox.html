@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id = "app">
+		    <!--
+			<input id="agreement" type="checkbox" v-model="isAgree"
+			  	true-value="yes"
+			  	false-value="no">
+			-->
+			
+			<input id="agreement" type="checkbox" v-model="isAgree"
+			  	:true-value="trueVal"
+			  	:false-value="falseVal">
+			<label for="agreement">{{ isAgree }}</label>
+			
+		</div>
+	
+		<script src="https://unpkg.com/vue@next"></script>
+        <script>
+        	const vm = Vue.createApp({
+        	    data() {
+        	        return {
+        	            isAgree: false,
+        	    	    trueVal: '真',
+        	    	    falseVal: '假'
+        	        }
+        	    }
+            }).mount('#app');
+        </script>
+	</body>
+</html>

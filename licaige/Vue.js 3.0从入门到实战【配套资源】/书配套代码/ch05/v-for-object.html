@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <li v-for="(value, key, index) in book">{{index}}. {{key}} : {{value}}</li>
+            </ul>
+        </div>
+    
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const vm = Vue.createApp({
+            data() {
+                return {
+                    book: {
+                        title: 'VC++深入详解',
+                        author: '孙鑫',
+                        isbn: '9787121362217'
+                    }
+                }
+            }
+        }).mount('#app');
+    </script>
+  </body>
+</html>
