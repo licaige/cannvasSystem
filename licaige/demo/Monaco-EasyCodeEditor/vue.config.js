@@ -10,3 +10,16 @@ module.exports = {
     ]
   }
 }
+
+// vue.config.js 配置chainWebpack
+/*const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin')
+
+module.exports = {
+  // ...
+  chainWebpack: function(config) {
+    config.plugin('monaco').use(new MonacoWebpackPlugin())
+  },
+  configureWebpack: function(config) {
+  }
+}*/
+
