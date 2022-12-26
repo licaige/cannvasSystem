@@ -9,7 +9,8 @@
 
 <script>
 // vue文件中导入monaco
-import * as monaco from 'monaco-editor'
+// import * as monaco from 'monaco-editor'
+import * as monaco from "monaco-editor/esm/vs/editor/editor.api"
 // import 'monaco-editor/esm/vs/basic-languages/shell/shell.contribution'
 // import 'monaco-editor/esm/vs/basic-languages/sql/sql.contribution'
 // import 'monaco-editor/esm/vs/basic-languages/python/python.contribution'
