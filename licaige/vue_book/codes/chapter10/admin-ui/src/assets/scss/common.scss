@@ -1,0 +1,245 @@
+/* created by zouqj on 2019-5-8
+    此样式文件用于定义公共样式
+    暂定规则： 功能_样式_...... 类型
+*/
+/* 公共样式*/
+// $yellow:#C7D200;
+
+.clear:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/*修改placeholder*/
+.clear-both::after {
+    content: "";
+    width: 0;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.border-box {
+    box-sizing: border-box;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.text-ellipse {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+/*常用布局*/
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+.mr10 {
+    margin-right: 10px;
+}
+
+.mr20 {
+    margin-right: 20px;
+}
+
+.mr30 {
+    margin-right: 30px;
+}
+
+.mr40 {
+    margin-right: 40px;
+}
+
+.mr50 {
+    margin-right: 50px;
+}
+
+.ml10 {
+    margin-left: 10px;
+}
+
+.ml20 {
+    margin-left: 20px;
+}
+
+.ml30 {
+    margin-left: 30px;
+}
+
+.ml40 {
+    margin-left: 40px;
+}
+
+.ml50 {
+    margin-left: 50px;
+}
+
+.mb10 {
+    margin-bottom: 10px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.mb30 {
+    margin-bottom: 30px;
+}
+
+.mb40 {
+    margin-bottom: 40px;
+}
+
+.mb50 {
+    margin-bottom: 50px;
+}
+
+.pt10 {
+    padding-top: 10px;
+}
+
+.pl10 {
+    padding-left: 10px;
+}
+
+.pl15 {
+    padding-left: 15px;
+}
+
+.pl20 {
+    padding-left: 20px;
+}
+
+.pl30 {
+    padding-left: 30px;
+}
+
+.pr20 {
+    padding-right: 20px;
+}
+
+.pr30 {
+    padding-right: 30px;
+}
+
+.pr40 {
+    padding-right: 40px;
+}
+
+.pb10 {
+    padding-bottom: 10px;
+}
+
+.pb0 {
+    padding-bottom: 0px;
+}
+
+.pt0 {
+    padding-top: 0px;
+}
+
+.left-active-btn {
+    position: absolute;
+    top: 400px;
+    left: -13px;
+    font-size: 20px;
+    color: #bebebe;
+    cursor: pointer;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.pr {
+    position: relative;
+}
+
+/*时间粒度*/
+
+.granularity {
+    width: 108px;
+    border: 1px solid #909A9A;
+    height: 22px;
+    line-height: 24px;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+}
+
+/*------------------------------------------------------------*/
+
+html,
+body {
+    min-width: 1400px;
+}
+
+.p-container {
+    height: 100%;
+    min-width: 1284px;
+}
+
+//分舵树布局
+.layout-tree {
+    float: left;
+    margin-left: 20px;
+}
+
+/*标题前的小矩形*/
+.rectangle {
+    width: 3px;
+    height: 18px;
+    display: block;
+    color: $cardTitle;
+    background-color: $cardTitle;
+    float: left;
+    margin: 14px 8px 0px 10px;
+}
+
+.p-abs {
+    position: absolute;
+}
+
+//表格中的操作列
+.opration-btn {
+    display: flex;
+    justify-content: space-around;
+}
+
+//超级链接样式
+.u-link {
+    color: #3678BA;
+    cursor: pointer;
+
+    &:hover {
+        color: $hoverColor;
+    }
+}
