@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        async function abc() {
+           let s=await a();//同步
+            return "a";
+        }
+        
+        async function a() {
+          return "ab";
+        }
+      /*function abc() {
+          return new Promise(function (res,rej) {
+              res("a");
+          })
+      }*/
+
+        abc().then(function (data) {
+            console.log(data);
+        });
+
+
+
+     export   class Box{
+            constructor(r){
+                this.r=r;
+            }
+            play(){
+                console.log(this.r);
+            }
+            set num(value){
+                this._num=value;
+            }
+            get num(){
+                return this._num;
+            }
+            static  getInstance(){
+                if(!Box._instance){
+                    Box._instance=new Box();
+                }
+                return Box._instance;
+            }
+        }
+
+
+
+        class Ball extends Box
+        {
+            constructor(r){
+                super(r);
+            }
+            play(){
+                super.play();
+                console.log("s");
+            }
+        }
+
+//        import Box from "./js"
+    </script>
+</body>
+</html>

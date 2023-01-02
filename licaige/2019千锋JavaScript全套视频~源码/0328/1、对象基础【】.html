@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div></div>
+    <script>
+//        var obj={a:1,b:2};
+
+//        var obj2=Object.create(obj);
+//        直接显示在对象下的属性,是对象属性,每个对象的属性可以相同,属性值可以不同
+//        console.log(obj);
+//        console.log(obj);
+//        obj.__proto__ //原型链
+//        var arr=[1,2,3,4,[1,2,3]];
+//        扁平化数组
+        /*console.log(arr.flatMap(function (item) {
+             return item;
+        }));*/
+//        arr.a=10;
+//        console.log(arr.hasOwnProperty("a"));
+//        console.log(arr);
+//        var date=new Date();
+//        console.log(date.__proto__)
+
+//        var div=document.querySelector("div");
+//        div.a=10;
+//        console.log(div.__proto__);
+
+
+//            var obj={a:1,b:2};
+//            var obj1=new Object(obj);
+////            引用地址完全相同
+//            console.log(obj1);
+
+
+
+            var obj={a:1,b:2};
+            var obj2=Object.create(obj);
+            console.log(obj2.a);//1
+            obj2.a=10;
+
+//            写在__proto__下面的属性叫做原型属性,继承于父类的属性和方法
+//      获取属性时,先判断是否有对象属性,如果没有就判断原型链上所有的继承对象中是否有该属性
+//        并且返回距离对象最近的一层继承原型属性.如果有对象属性就可以直接返回对象属性
+
+        obj2.init=function () {
+            this.a=this.__proto__.a;
+        };
+        console.log(obj2.a);//10;
+        obj.a=50;
+        obj2.init();
+        console.log(obj2.a);//50;
+//        obj2.__proto__.a=100;//禁止使用
+        console.log(obj);
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+
+        /*
+        *  生成器函数就是为了完成异步调用等待再继续执行其他内容的方式
+        *
+        *
+        * */
+        /*function* abc() {
+//            停下来
+            let a=3;
+            yield a;
+            let b=4;
+            yield b;
+            console.log(a+b);
+            yield a+b;
+        }
+
+    let f=abc();
+        let obj;
+        /!*console.log(f.next());
+        console.log(f.next());
+        console.log(f.next());
+        console.log(f.next());*!/
+        while (!(obj=f.next()).done){
+            console.log(obj.value)
+        }*/
+
+
+        let arr=[];
+        let f;
+        function* loadImg() {
+            yield loads("img/a.jpeg");
+            yield loads("img/b.jpeg");
+            yield loads("img/c.jpeg");
+            yield loads("img/d.jpeg");
+            console.log(arr)
+        }
+        
+        function loads(src) {
+            return new Promise(function (res,rej) {
+                let img=new Image();
+                img.onload=function () {
+                    res(img);
+                };
+                img.src=src;
+            })
+        }
+        init(loadImg);
+        function init(generators) {
+            if(!f) f=generators();
+            let obj=f.next();
+            if(obj.done)
+            {
+                f=null;
+                return;
+            }
+            obj.value.then(function (img) {
+                arr.push(img);
+                init(generators);
+            })
+        }
+       /* let f=loadImg();
+        let obj=f.next();
+        console.log(obj.done);
+//        循环是同步，而加载图片是异步，也就是先循环，
+再去完成异步，这样会死循环卡死
+        while(!obj.done){
+            obj.value.then(function (img) {
+                arr.push(img);
+                obj=f.next();
+            })
+        }*/
+    </script>
+</body>
+</html>

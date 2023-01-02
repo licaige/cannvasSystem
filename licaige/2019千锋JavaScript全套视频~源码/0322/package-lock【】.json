@@ -1,0 +1,11 @@
+{
+  "requires": true,
+  "lockfileVersion": 1,
+  "dependencies": {
+    "resutiles": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/resutiles/-/resutiles-1.0.0.tgz",
+      "integrity": "sha512-BiNpuDYAK3wyC4JPFZYioalcuF6AGquaHNmpIzywA2Wdk7CeCNOLaPTyKxu+8as9RIP8p5esujaBSyz7n7NvSQ=="
+    }
+  }
+}

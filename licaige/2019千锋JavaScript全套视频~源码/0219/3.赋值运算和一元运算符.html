@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var x=5;
+        /*x=x+5;
+        x=x+5;
+        x=x+5;*/
+        x+=5;//x+=n   x=x+n;
+        x-=5;
+        x*=5;
+        x/=5;
+        x%=5;//x=x%5
+
+
+        var y="5";
+        y+=5;//x+=n;n就是步长
+        console.log(y);//55,使用赋值运算符运算时遵照算数运算完成
+
+
+
+        var a1="10";
+        a1++;//与 a1+=1 或者a1=a1+1;  类似;
+        console.log(a1);//11,使用一元运算符,将会把所有内容转换为数值运算,不使用字符运算
+        a1++;//12
+        console.log(a1);
+        ++a1;//13
+        console.log(a1);
+
+        var i=1;
+//        var s=i++;
+//        var s=(++i);
+        /*
+        *  i++ 和 ++i  独立运算时是,运算的结果是完全相同的
+        *  但是如果将i++或者++i赋值\打印\获取
+        *  将运算的先后顺序和赋值先后顺序产生改变
+        *  如果i++,变量在前,先赋值,再运算
+        *  如果++i,变量在后,先运算,再赋值
+        *
+        * */
+//        console.log(s,i);
+
+//        var d=3+(++i);
+//        var d=3-i++;
+//        console.log(d);
+
+        if(--i){
+            console.log("aa")
+        }
+    </script>
+</body>
+</html>

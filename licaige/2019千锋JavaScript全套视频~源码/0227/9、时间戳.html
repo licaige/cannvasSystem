@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        //time 1
+       /* var date=new Date();
+        var time=date.getTime();//从1970.1.1 0:0:0到现在的毫秒数
+//        永远不会重复
+        console.log(time);*/
+
+
+
+
+   /*
+     分解代码运行效率  获取代码之间的时间差
+
+     var time=new Date().getTime();
+       for(var i=0;i<10000000;i++){
+
+       }
+       console.log(new Date().getTime()-time);*/
+
+   /*
+   *   不重复id
+   *
+   * */
+
+   /*
+   *  时间戳
+   *  因为每次访问服务器的时间不同,因此,我们可以通过这个时间戳增加在要访问的地址后面
+   *  这样就不会读取缓存的数据
+   *
+   * */
+   var url="http://www.163.com/index.html?a=1&b=2&time="+new Date().getTime();
+   console.log(url);
+    </script>
+</body>
+</html>

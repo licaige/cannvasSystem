@@ -1,0 +1,18 @@
+1、调用省菜单
+    req
+      type:0;
+    res
+      resArr:[]
+2、调用省对应的市菜单
+    req
+      type:1
+      province:string
+    res
+      resArr:[]
+3、市对应的县菜单
+    req
+       type:2
+        province:string
+       city:string
+    res
+      resArr:[];

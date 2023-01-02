@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div0
+        {
+            width: 200px;
+            height: 200px;
+            background-color: chartreuse;
+            position: absolute;
+            left:740px;
+            top:740px;
+        }
+        #div1
+        {
+            width: 400px;
+            height: 400px;
+            background-color: deepskyblue;
+            position: absolute;
+            left:250px;
+            top:250px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="div1"></div>
+<div id="div0"></div>
+    <script>
+        var x1=740,
+            x2=250,
+            y1=740,
+            y2=250;
+        var bool=false;
+        if(x1>=x2 && x1<=x2+400 && y1>=y2 && y1<=y2+400){
+            bool=true;
+        }else if(x1+200>=x2 && x1+200<=x2+400 && y1>=y2 && y1<=y2+400){
+            bool=true;
+        }else if(x1>=x2 && x1<=x2+400 && y1+200>=y2 && y1+200<=y2+400){
+            bool=true;
+        }else if(x1+200>=x2 && x1+200<=x2+400 && y1+200>=y2 && y1+200<=y2+400){
+            bool=true;
+        }
+        if(bool){
+            console.log("碰撞了");
+        }else{
+            console.log("没有碰撞")
+        }
+
+
+        var sum=Number(prompt("请输入你的成绩"));
+       /* if(!isNaN(sum) && sum<=100 && sum>=0){
+
+        }else{
+            console.log("请输入正确的数值");
+        }*/
+
+        var str="";
+       if(isNaN(sum) || sum>100 || sum<0){
+           console.log("请输入正确的数值");
+       }else{
+            if(sum===100){
+                str="S";
+            }else if(sum>=90){
+                str="A";
+            }else if(sum>=80){
+                str="B";
+            }else if(sum>=70){
+                str="C";
+            }else if(sum>=60){
+                str="D";
+            }else{
+                str="E";
+            }
+       }
+
+       console.log(str);
+
+    </script>
+</body>
+</html>

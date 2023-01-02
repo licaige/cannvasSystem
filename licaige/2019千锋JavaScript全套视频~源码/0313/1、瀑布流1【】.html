@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/Utils.js"></script>
+</head>
+<body>
+    <script>
+        var ul;
+        var heightList=[];
+        var num=2;
+        var bodyWidth;
+        const MAX=79;
+        const COL_NUM=5;
+        const MARGIN_LEFT=10;
+        init();
+        function init() {
+            bodyWidth=document.body.clientWidth;
+            ul=document.createElement("ul");
+            Object.assign(ul.style,{
+                listStyle:"none",
+                width:"100%",
+                margin:0,
+                padding:0
+            });
+            for(var i=0;i<COL_NUM;i++){
+                var li=document.createElement("li");
+                Object.assign(li.style,{
+                    margin:0,
+                    marginLeft:i===0 ? 0 : MARGIN_LEFT+"px",
+                    padding:0,
+                    fontSize:0,
+                    width:(document.body.clientWidth-MARGIN_LEFT*(COL_NUM-1))/COL_NUM+"px",
+                    float:"left"
+                });
+                heightList.push(0);
+                ul.appendChild(li);
+            }
+            document.body.appendChild(ul);
+            resizeHandler();
+            window.addEventListener("resize",resizeHandler);
+
+            loadHandler("2-.jpg")
+        }
+        function resizeHandler(e) {
+            bodyWidth=document.body.clientWidth;
+            for(var i=0;i<ul.children.length;i++){
+                var width=(document.body.clientWidth-MARGIN_LEFT*(COL_NUM-1))/COL_NUM+"px";
+                ul.children[i].style.width=width;
+                for(var j=0;j<ul.children[i].children.length;j++){
+                    ul.children[i].children[j].style.width=width;
+                }
+            }
+        }
+        
+
+       function loadImage(src) {
+           return new Promise(function (res,rej) {
+               var img=new Image();
+               img.src=src;
+               img.onload=function () {
+                   res(img);
+               }
+           })
+       }
+
+       function loadHandler(src) {
+           loadImage("./img/"+src).then(function (img) {
+               var min=Math.min.apply(null,heightList);
+               var index=heightList.indexOf(min);
+               img.style.marginBottom=MARGIN_LEFT+"px";
+               img.style.width=(document.body.clientWidth-MARGIN_LEFT*(COL_NUM-1))/COL_NUM+"px";
+               ul.children[index].appendChild(img);
+               heightList[index]+=(img.height+MARGIN_LEFT);
+               if(document.body.clientWidth!==bodyWidth){
+                   resizeHandler();
+               }
+               num++;
+               if(num>=MAX) return;
+               loadHandler(num+"-.jpg");
+           })
+       }
+       
+    </script>
+</body>
+</html>

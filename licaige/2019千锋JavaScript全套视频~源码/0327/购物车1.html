@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html
+        {
+            background-color: #cccccc;
+
+        }
+    </style>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="js/goodsItem.js"></script>
+</head>
+<body>
+<div id="div0"></div>
+    <script>
+
+        var shoppingList=[];
+        var tableHeadList=["全选","","商品","","单价","数量","小计","操作"];
+
+        var table;
+
+       $.post("http://10.9.25.176:3005",{type:0x01},init);
+        function init(data) {
+            data=JSON.parse(decodeURIComponent(data)).resolute;
+             var elem=document.createDocumentFragment();
+            var div0=document.getElementById("div0");
+            for(var i=0;i<data.length;i++){
+                var goods=new GoodsItem(data[i],elem);
+            }
+            document.body.appendChild(elem);
+            document.addEventListener(GoodsItem.ADD_SHOPPING_LIST_EVENT,addShoppingList);
+            document.addEventListener(StepNumber.CHANGE_STEP_NUMBER_EVENT,changeNumberHandler);
+        }
+
+        function changeNumberHandler(e) {
+//            console.log(e.data,e.num);
+            shoppingList=shoppingList.map(function (t) {
+                if(t.id===e.data.id){
+                    t.num=e.num;
+                    t.sum=(Number(t.num)*t.price).toFixed(2);
+                }
+                return t;
+            });
+            clearTable();
+            createTable(shoppingList);
+        }
+
+        function addShoppingList(e) {
+            var id=e.data.id;
+            var bool=shoppingList.some(function (t) {
+                return t.id===id;
+            });
+            if(!bool){
+                $.post("http://10.9.25.176:3005",{type:0x03,id:id},function (data) {
+                    data=JSON.parse(decodeURIComponent(data)).resolute;
+                    clearTable();
+                    createTable(data);
+                });
+            }
+
+
+        }
+
+
+        function clearTable() {
+            if(table){
+                table.remove();
+            }
+        }
+        function createTable(list) {
+            table=document.createElement("table");
+            Object.assign(table.style,{
+                borderCollapse: "collapse",
+                position:"relative",
+                float:"none",
+                width:"990px",
+                margin:"auto"
+            });
+            createTableHead(table);
+            createTrAndTd(table,list);
+            document.body.appendChild(table);
+            var sum=shoppingList.reduce(function (sum,t) {
+                if(t.selected){
+                    sum+=Number(t.sum);
+                }
+                return sum;
+            },0).toFixed(2);
+            console.log(sum);
+        }
+        function createTableHead(table) {
+            var tr=document.createElement("tr");
+            var widthList=[80,103,208,200,160,120,180,75];
+            for(var i=0;i<tableHeadList.length;i++){
+                var th=document.createElement("th");
+                th.textContent=tableHeadList[i];
+                if(tableHeadList[i]==="全选"){
+                    var check=document.createElement("input");
+                    check.type="checkbox";
+                    th.insertBefore(check,th.firstChild);
+                    check.style.position="relative";
+                    check.style.top="2px";
+                    check.addEventListener("click",checkHandler);
+                    check.checked=getAllChecked();
+//                    check.style.left="-10px"
+                }
+                Object.assign(th.style,{
+                    backgroundColor:"#F3F3F3",
+                    color:"#666666",
+                    fontSize:"12px",
+                    lineHeight:"32px",
+                    height:"32px",
+                    width:widthList[i]+"px"
+                });
+                tr.appendChild(th);
+            }
+            tr.style.border="1px solid #CCCCCC";
+            tr.style.padding="5px 0";
+            table.appendChild(tr);
+        }
+
+        function createTrAndTd(table,list) {
+	console.log(list)
+            for(var i=0;i<list.length;i++){
+                var tr=document.createElement("tr");
+                tr.style.border="1px solid #CCCCCC";
+                for(var prop in list[i]){
+                    if(prop==="id") continue;
+                    var td=document.createElement("td");
+                    td.style.textAlign="center";
+                    td.style.fontSize="12px";
+                    td.style.backgroundColor="#F3F3F3";
+                    switch (prop){
+                        case "selected":
+                            var check=document.createElement("input");
+                            check.type="checkbox";
+                            check.style.marginLeft="-15px";
+                           td.appendChild(check);
+                            check.checked=list[i][prop];
+                            check.data=list[i];
+                            check.addEventListener("click",checkHandler);
+                            break;
+                        case "icon":
+                            var img=new Image();
+                            img.src=list[i][prop];
+                            td.appendChild(img);
+                            break;
+                        case "num":
+                            var step=new StepNumber(list[i],td);
+                            break;
+                        case "deleted":
+                            var del=document.createElement("a");
+
+                            del.textContent="删除";
+                            del.addEventListener("click",deletedHandler);
+                            del.data=list[i];
+                            td.appendChild(del);
+                            break;
+                        default:
+                            td.textContent=list[i][prop].toString().length>20 ? list[i][prop].toString().slice(0,20) :list[i][prop];
+                            break;
+                    }
+                    tr.appendChild(td);
+                }
+                table.appendChild(tr);
+            }
+        }
+
+        function deletedHandler(e) {
+            var self=this;
+            shoppingList=shoppingList.filter(function (t) {
+                return t.id!==self.data.id;
+            });
+            clearTable();
+            createTable(shoppingList);
+        }
+        
+        function checkHandler(e) {
+           if(!this.data){
+                shoppingList=shoppingList.map(function (t) {
+                    t.selected=e.currentTarget.checked;
+                    return t;
+                })
+           }else{
+               shoppingList=shoppingList.map(function (t) {
+                   if(t.id===e.currentTarget.data.id){
+                       t.selected=e.currentTarget.checked;
+                   }
+                   return t;
+               })
+           }
+           clearTable();
+           createTable(shoppingList);
+        }
+        
+        function getAllChecked() {
+            return shoppingList.every(function (t) {
+                return t.selected;
+            })
+        }
+
+    </script>
+</body>
+</html>

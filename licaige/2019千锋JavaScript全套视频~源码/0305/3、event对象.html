@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html{
+            font-size: 100px;
+        }
+        body{
+            font-size: 14px;
+        }
+        img{
+            width: 8rem;
+            height: 8rem;
+        }
+    </style>
+</head>
+<body>
+<form action="#" method="get" id="form1">
+    <input type="text" id="texts">
+    <input type="checkbox" id="inputs">
+    <select id="selects" multiple>
+        <option>北京</option>
+        <option>上海</option>
+        <option>天津</option>
+        <option>武汉</option>
+    </select>
+    <input type="submit">
+    <input type="reset">
+</form>
+    <script>
+        /*
+        *   表单中如果表单元素的value值或者选中属性被修改,并且与原来的值不同
+        *   当失去焦距时触发change事件
+        *
+        * */
+        /*var inputs=document.querySelector("#inputs");
+        inputs.addEventListener("change",changeHandler);
+        function changeHandler(e) {
+            console.log(e);
+        }*/
+        /*
+        * selects.selectedIndex 当前选择下拉菜单的索引值
+        *selects.selectedOptions 是一个列表,当选择下拉菜单时,如果没有指定多选
+        * 这个列表中只有一个元素,如果指定多选时,可以有多个元素
+        *
+        * */
+       /* var selects=document.getElementById("selects");
+        selects.addEventListener("change",changeHandler);
+        function changeHandler(e) {
+//            console.log(selects.selectedIndex);
+            console.log(selects.selectedOptions)
+//            console.log(selects.selectedOptions[0].textContent);
+        }*/
+
+        /*
+        *
+        *   图片,脚本,css样式表文件的加载时,如果指定地址错误加载失败,
+        *   都可以通过侦听error来判断是否错误
+        *
+        *   ajax也可以用来判断通信失败
+        *
+        * */
+   /*     var img=new Image();
+        img.addEventListener("error",errorHandler);
+        img.src="img/1.jpg";
+        function errorHandler(e) {
+            console.log("加载错误");
+        }*/
+
+
+
+   /*
+   *   load
+   *     加载,用于浏览器全部加载完成判断,图片加载成功判断,视频,声音等加载
+   *     后面学习ＡＪＡＸ也可以使用ｌｏａｄ判断加载完成
+   *
+   *
+   * */
+     /*
+        因为script标签比img更早执行完毕
+        var img=document.getElementById("imgs");
+        console.log(img);//null*/
+   /*  window.onload=function () {
+//         当整个页面全部加载完毕,然后图片加载完成,
+// 这个时候在执行这个load完成后的事件就可以获取页面中任意位置的img
+         var img=document.getElementById("imgs");
+         console.log(img);
+     }*/
+
+
+   /*
+   *
+   *  submit 和 reset事件都是针对表单form的侦听
+   *  通常用于提交表单和重置表单时,需要取消系统默认的提交事件
+   *
+   *
+   * */
+ /*  var form1=document.getElementById("form1");
+   form1.addEventListener("submit",formHandler);
+   form1.addEventListener("reset",formHandler);
+   function formHandler(e) {
+       e.preventDefault();
+       console.log("aaa")
+   }*/
+
+/*
+   页面随着窗口大小的变化自适应缩放内部元素的大小
+   resize事件是可以获取window窗口变化缩放的事件侦听,当窗口大小发生改变时,收到该事件
+    window.addEventListener("resize",resizeHandler);
+    function resizeHandler(e) {
+        var scale=document.documentElement.clientWidth/1343;
+        document.documentElement.style.fontSize=100*scale+"px";
+    }*/
+
+    /*
+    *  select
+    *  当文本框中的值被选中时,激活该事件
+    *
+    *texts.selectionStart texts.selectionEnd 被选中的元素
+    * */
+  /*  var texts=document.getElementById("texts");
+        texts.addEventListener("select",selectHandler);
+    function selectHandler(e) {
+//        console.log(e)
+//        console.log(texts.selectionStart,texts.selectionEnd)
+        texts.value=texts.value.slice(0,texts.selectionStart)+
+            texts.value.slice(texts.selectionStart,texts.selectionEnd).toUpperCase()+
+            texts.value.slice(texts.selectionEnd);
+    }*/
+
+ /*
+  scroll 滚动条滚动事件(不是滚轮滚动)
+  window.addEventListener("scroll",scrollHandler);
+
+    function scrollHandler(e) {
+        console.log("aa");
+    }*/
+    </script>
+    <img src="img/max.jpg" id="imgs">
+</body>
+</html>

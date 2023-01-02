@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+//        encodeURIComponent();//转换为URI编码格式
+//        decodeURIComponent();//将URI编码转为字符
+//        console.log(encodeURIComponent("谢天"));
+//     作用就是为了将前后端发送的中文统一编码格式,不会出现乱码
+        var obj={
+          user:"谢天",
+          age:30
+        };
+        var xhr=new XMLHttpRequest();
+        xhr.open("POST","http://10.9.25.176:3002");
+        xhr.addEventListener("load",loadHandler);
+        xhr.send(encodeURIComponent(JSON.stringify(obj)));
+
+        function loadHandler(e) {
+            console.log(JSON.parse(decodeURIComponent(this.response)));
+        }
+    </script>
+</body>
+</html>

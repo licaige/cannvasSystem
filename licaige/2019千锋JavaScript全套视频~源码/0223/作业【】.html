@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div
+        {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: absolute;
+            left:400px;
+            top:400px;
+        }
+        table
+        {
+            border-collapse: collapse;
+        }
+        td
+        {
+            border: 1px solid #000000;
+            width: 100px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+<button id="upBn">上</button>
+<button id="downBn">下</button>
+<button id="leftBn">左</button>
+<button id="rightBn">右</button>
+<div id="div0"></div>
+    <script>
+ /*       5.求随机颜色，至少用3种方法
+        6、四个按钮,bn0-(+left),bn1-(+top),bn2-(-left),bn3-(-top),根据点击按钮div移动的改变方向
+        7、通过函数创建表格,参数是行和列*/
+
+      /*  function getRandomColor() {
+            var r=parseInt(Math.random()*256).toString();
+            var g=parseInt(Math.random()*256).toString();
+            var b=parseInt(Math.random()*256).toString();
+            console.log("rgba("+r+","+g+","+b+","+Math.random().toFixed(2)+")")
+        }*/
+
+
+ /*function getRandomColor() {
+    var color="#";
+    for(var i=0;i<3;i++){
+        var str=parseInt(Math.random()*256);
+        if(str<16){
+            str="0"+str.toString(16);
+        }else{
+            str=str.toString(16);
+        }
+        color+=str;
+    }
+     console.log(color)
+ }*/
+
+
+ /*
+ *  按钮移动div
+ *
+ * */
+   /* var upBn=document.getElementById("upBn");
+    var downBn=document.getElementById("downBn");
+    var leftBn=document.getElementById("leftBn");
+    var rightBn=document.getElementById("rightBn");
+    var div=document.getElementById("div0");
+    var speed=10;
+    div.lefts=400;
+    div.tops=400;
+    upBn.addEventListener("click",clickHandler);
+    downBn.addEventListener("click",clickHandler);
+    leftBn.addEventListener("click",clickHandler);
+    rightBn.addEventListener("click",clickHandler);
+    function clickHandler() {
+        switch (this){
+            case upBn:
+                div.tops-=speed;
+                break;
+            case downBn:
+                div.tops+=speed;
+                break;
+            case leftBn:
+                div.lefts-=speed;
+                break;
+            case rightBn:
+                div.lefts+=speed;
+                break;
+        }
+        div.style.left=div.lefts+"px";
+        div.style.top=div.tops+"px";
+    }*/
+
+
+    function createTable(row,col) {
+        var table="<table>";
+        for(var i=0;i<row;i++){
+            table+="<tr>";
+            for(var j=0;j<col;j++){
+                table+="<td></td>";
+            }
+            table+="</tr>";
+        }
+        document.write(table);
+    }
+
+ createTable(10,10);
+
+
+    </script>
+</body>
+</html>

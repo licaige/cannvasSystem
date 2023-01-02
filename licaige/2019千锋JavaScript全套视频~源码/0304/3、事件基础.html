@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="bn0">按钮1</button>
+<button id="bn1">按钮2</button>
+    <script>
+        /*
+        *
+        *   javascript是事件驱动语言
+        *   事件的作用是触发并且传递数据
+        *
+        * */
+//        var bn0=document.getElementById("bn0");
+//        var bn1=document.getElementById("bn1");
+        /* bn0.addEventListener("click",clickHandler);
+         function clickHandler(e) {
+             console.log("aaa");
+         }
+
+         var evt=new MouseEvent("click");
+         bn0.dispatchEvent(evt);*/
+
+       /* bn0.addEventListener("chelema",fn1);//侦听事件
+//        bn0.dispatchEvent(new Event("chiliema"))
+//        bn0.addEventListener("click",fn1);
+        var evt=new Event("chelema");
+        evt.n=3;//事件对象是可以携带一些非系统规定的属性(原event对象的属性不能覆盖)
+        bn0.dispatchEvent(evt);//抛发事件
+//        同一个对象(抛发的和接收的)只要事件的type相同,那么就会侦听事件接收到
+//        console.log(evt);
+//        事件函数中只有一个参数,这个参数就是事件对象
+        function fn1(e) {
+            console.log(e);
+        }*/
+
+     /*  document.addEventListener("ev",fn1);
+
+        setTimeout(function () {
+            new Promise(function (res,rej) {
+                console.log("1");
+                res();
+            }).then(function () {
+                var evt=new Event("ev");
+                evt.num="33333";
+                document.dispatchEvent(evt);//抛发后立即接收到
+                console.log("2");
+            });
+           console.log("3");
+        },0);
+        function fn1(e) {
+            console.log("4");
+            console.log(e.num);
+        }
+        console.log("5");*/
+
+
+
+
+
+        new Promise(function (res,rej) {
+            console.log("1");
+            res();
+        }).then(function () {   //t1
+            setTimeout(function () {//s1
+                console.log("2");
+                new Promise(function (res,rej) {
+                    console.log("3");
+                    res();
+                }).then(function () {   //t2
+                    setTimeout(function () { //s2
+                        console.log("4");
+                    },0);
+                    console.log("5");
+                });
+                console.log("6");
+            },0);
+            console.log("7");
+        });
+        console.log("8");
+        setTimeout(function () { //s3
+            console.log("9");
+            new Promise(function (res,rej) {
+                console.log("10");
+                res();
+            }).then(function () {   //t3
+                setTimeout(function () {//s4
+                    console.log("11");
+                },0);
+                console.log("12");
+            });
+            console.log("13");
+        },0);
+
+    </script>
+</body>
+</html>

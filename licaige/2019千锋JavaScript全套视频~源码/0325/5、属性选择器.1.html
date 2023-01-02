@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    <input type="text" title="文本" name="user" abc="123" data="val-2" class="a1 b2">
+    <input type="password" title="文本" name="pass" data="vals" class="b2 a3">
+    <input type="radio" title="文本" name="sex" data="val-1" class="a1 a3">
+    <script>
+        // $("[abc]").val("你好");//选择有某个属性的元素
+        // $("[type=text]").val("nihao");//属性值等于什么..
+        // $("[type^=t]");//属性以t起头
+        // console.log($("[data|=val]"));//|= 属性的值是某个值或者以这个值起头并且后面紧跟-的元素
+        // console.log($("[data$=s]"));//以什么字母或者字符结尾
+        // console.log($("[data!=vals]"));//data的值不等于vals的属性
+        // console.log($("[class~=a3]"));//查找某个属性的值以空格隔开的,一般用作class属性的值查找
+        // console.log($("[type*=r]"));//将type属性值中含有r字母的值都获取
+    </script>
+</body>
+</html>

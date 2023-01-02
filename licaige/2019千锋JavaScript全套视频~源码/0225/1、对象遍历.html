@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/Utils.js"></script>
+</head>
+<body>
+<div id="div0"></div>
+    <script>
+        var obj={
+            a:1,
+            b:2,
+            c:3,
+            d:function () {
+                console.log("aa");
+            }
+        };
+
+//        console.log(obj["a"]);
+        obj.a=10;
+        obj["a"]=10;
+
+        obj.d();
+        obj["d"]();
+        /*
+        *   for in 语句,遍历对象
+        *
+        * */
+        for(var prop in obj){
+            console.log(prop,obj[prop]);
+        }
+
+        var obj1={};
+        for(var key in obj){
+            obj1[key]=obj[key];
+        }
+        obj.a=40;
+        console.log(obj1,obj);
+    var obj2={
+        a:{
+            a:1,
+            b:2
+        },
+        c:{
+            a:1,
+            b:2
+        }
+    };
+     /*  function setStyle(elem,style) {
+           for(var prop in style){
+               elem.style[prop]=style[prop];
+           }
+       }
+
+        var div0=document.getElementById("div0");
+       setStyle(div0,{
+           width:"100px",
+           height:"100px",
+           backgroundColor:"red"
+       });*/
+
+       /* HTMLElement.prototype.addStyle=function (style) {
+            for(var prop in style){
+                this.style[prop]=style[prop];
+            }
+        };
+
+        div0.addStyle({
+            width:"100px",
+            height:"100px",
+            backgroundColor:"red"
+        });*/
+
+        var div0=document.getElementById("div0");
+       Utils.setStyle(div0,{
+           width:"100px",
+           height:"100px",
+           backgroundColor:Utils.randomColor()
+       })
+    </script>
+</body>
+</html>

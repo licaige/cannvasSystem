@@ -1,0 +1,23 @@
+
+    /*for(var i1=arr4.length;i1>0;i1--){
+                for(var i2=0;i2<i1-1;i2++){
+                    if(arr4[i2]>arr4[i2+1]){
+                        var temp=arr4[i2];
+                        arr4[i2]=arr4[i2+1];
+                        arr4[i2+1]=temp;
+                    }
+                }
+            }*/
+
+
+        /*for(var i3=0;i3<arr4.length;i3++){
+            var min=i3;
+            for(var i4=i3+1;i4<arr4.length;i4++){
+                if(arr4[i4]<arr4[min]){
+                    min=i4;
+                }
+            }
+            var t=arr4[i3];
+            arr4[i3]=arr4[min];
+            arr4[min]=t;
+        }*/

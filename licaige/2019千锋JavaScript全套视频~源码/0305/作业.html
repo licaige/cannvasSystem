@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var pre;
+        init();
+        function init() {
+            document.addEventListener("click",clickHandler);
+        }
+
+        function clickHandler(e) {
+            if(e.target===document.documentElement){
+                var div=document.createElement("div");
+                div.style.width="50px";
+                div.style.height="50px";
+                div.style.backgroundColor="red";
+                div.style.position="absolute";
+                div.style.left=e.clientX-25+"px";
+                div.style.top=e.clientY-25+"px";
+                document.body.appendChild(div);
+                return;
+            }
+            if(!e.target.bool){
+                if(pre){
+                    pre.style.border="none";
+                    pre.bool=false;
+                }
+                e.target.style.border="1px solid #000000";
+                e.target.bool=true;
+                pre=e.target;
+                return;
+            }
+            e.target.bool=false;
+            e.target.style.border="none";
+        }
+    </script>
+</body>
+</html>

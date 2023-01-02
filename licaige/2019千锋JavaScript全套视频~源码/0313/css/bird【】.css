@@ -1,0 +1,63 @@
+/*
+-------------------------------------------------------------------
+Created with TexturePacker https://www.codeandweb.com/texturepacker
+-------------------------------------------------------------------
+Inline:     <i class="yourspritesname"></i>
+Responsive: <div class="yourspritesname"></div>
+*/
+.banner {max-width:343px; max-height:14px; }
+.banner::after {content: ' ';display: inline-block; width:343px; height:14px; background-position: 0.6211180124223602% 97.28506787330316%;background-size: 146.9387755102041% 1678.5714285714287%;background-image: url("../img/bird.png");padding: 0; }
+div.banner::after {max-width:343px; width:100%;height:0;padding: 0 0 4.081632653061225% 0;}
+.bird0 {max-width:40px; max-height:26px; }
+.bird0::after {content: ' ';display: inline-block; width:40px; height:26px; background-position: 74.35344827586206% 99.52153110047847%;background-size: 1260% 903.8461538461538%;background-image: url("../img/bird.png");padding: 0; }
+div.bird0::after {max-width:40px; width:100%;height:0;padding: 0 0 65% 0;}
+.bird1 {max-width:40px; max-height:26px; }
+.bird1::after {content: ' ';display: inline-block; width:40px; height:26px; background-position: 83.1896551724138% 99.04306220095694%;background-size: 1260% 903.8461538461538%;background-image: url("../img/bird.png");padding: 0; }
+div.bird1::after {max-width:40px; width:100%;height:0;padding: 0 0 65% 0;}
+.down_bird0 {max-width:40px; max-height:30px; }
+.down_bird0::after {content: ' ';display: inline-block; width:40px; height:30px; background-position: 64.87068965517241% 86.34146341463415%;background-size: 1260% 783.3333333333334%;background-image: url("../img/bird.png");padding: 0; }
+div.down_bird0::after {max-width:40px; width:100%;height:0;padding: 0 0 75% 0;}
+.down_bird1 {max-width:40px; max-height:30px; }
+.down_bird1::after {content: ' ';display: inline-block; width:40px; height:30px; background-position: 73.70689655172414% 86.34146341463415%;background-size: 1260% 783.3333333333334%;background-image: url("../img/bird.png");padding: 0; }
+div.down_bird1::after {max-width:40px; width:100%;height:0;padding: 0 0 75% 0;}
+.down_mod {max-width:62px; max-height:2px; }
+.down_mod::after {content: ' ';display: inline-block; width:62px; height:2px; background-position: 14.479638009049774% 98.71244635193133%;background-size: 812.9032258064516% 11750%;background-image: url("../img/bird.png");padding: 0; }
+div.down_mod::after {max-width:62px; width:100%;height:0;padding: 0 0 3.225806451612903% 0;}
+.down_pipe {max-width:62px; max-height:60px; }
+.down_pipe::after {content: ' ';display: inline-block; width:62px; height:60px; background-position: 53.84615384615385% 78.28571428571429%;background-size: 812.9032258064516% 391.6666666666667%;background-image: url("../img/bird.png");padding: 0; }
+div.down_pipe::after {max-width:62px; width:100%;height:0;padding: 0 0 96.7741935483871% 0;}
+.game_over {max-width:221px; max-height:40px; }
+.game_over::after {content: ' ';display: inline-block; width:221px; height:40px; background-position: 95.75971731448763% 0.5128205128205128%;background-size: 228.05429864253395% 587.5%;background-image: url("../img/bird.png");padding: 0; }
+div.game_over::after {max-width:221px; width:100%;height:0;padding: 0 0 18.099547511312217% 0;}
+.head {max-width:236px; max-height:77px; }
+.head::after {content: ' ';display: inline-block; width:236px; height:77px; background-position: 0.373134328358209% 86.70886075949367%;background-size: 213.5593220338983% 305.1948051948052%;background-image: url("../img/bird.png");padding: 0; }
+div.head::after {max-width:236px; width:100%;height:0;padding: 0 0 32.6271186440678% 0;}
+.message {max-width:269px; max-height:135px; }
+.message::after {content: ' ';display: inline-block; width:269px; height:135px; background-position: 0.425531914893617% 1%;background-size: 187.36059479553904% 174.07407407407408%;background-image: url("../img/bird.png");padding: 0; }
+div.message::after {max-width:269px; width:100%;height:0;padding: 0 0 50.185873605947954% 0;}
+.ok {max-width:96px; max-height:33px; }
+.ok::after {content: ' ';display: inline-block; width:96px; height:33px; background-position: 66.42156862745098% 50.99009900990099%;background-size: 525% 712.1212121212121%;background-image: url("../img/bird.png");padding: 0; }
+div.ok::after {max-width:96px; width:100%;height:0;padding: 0 0 34.375% 0;}
+.score {max-width:85px; max-height:29px; }
+.score::after {content: ' ';display: inline-block; width:85px; height:29px; background-position: 93.55608591885442% 20.388349514563107%;background-size: 592.9411764705883% 810.3448275862069%;background-image: url("../img/bird.png");padding: 0; }
+div.score::after {max-width:85px; width:100%;height:0;padding: 0 0 34.11764705882353% 0;}
+.start {max-width:85px; max-height:29px; }
+.start::after {content: ' ';display: inline-block; width:85px; height:29px; background-position: 93.55608591885442% 34.95145631067961%;background-size: 592.9411764705883% 810.3448275862069%;background-image: url("../img/bird.png");padding: 0; }
+div.start::after {max-width:85px; width:100%;height:0;padding: 0 0 34.11764705882353% 0;}
+.submit {max-width:85px; max-height:29px; }
+.submit::after {content: ' ';display: inline-block; width:85px; height:29px; background-position: 91.40811455847255% 85.92233009708738%;background-size: 592.9411764705883% 810.3448275862069%;background-image: url("../img/bird.png");padding: 0; }
+div.submit::after {max-width:85px; width:100%;height:0;padding: 0 0 34.11764705882353% 0;}
+.up_bird0 {max-width:40px; max-height:29px; }
+.up_bird0::after {content: ' ';display: inline-block; width:40px; height:29px; background-position: 79.3103448275862% 49.51456310679612%;background-size: 1260% 810.3448275862069%;background-image: url("../img/bird.png");padding: 0; }
+div.up_bird0::after {max-width:40px; width:100%;height:0;padding: 0 0 72.5% 0;}
+.up_bird1 {max-width:40px; max-height:29px; }
+.up_bird1::after {content: ' ';display: inline-block; width:40px; height:29px; background-position: 88.14655172413794% 49.51456310679612%;background-size: 1260% 810.3448275862069%;background-image: url("../img/bird.png");padding: 0; }
+div.up_bird1::after {max-width:40px; width:100%;height:0;padding: 0 0 72.5% 0;}
+.up_mod {max-width:62px; max-height:3px; }
+.up_mod::after {content: ' ';display: inline-block; width:62px; height:3px; background-position: 0.22624434389140272% 99.13793103448276%;background-size: 812.9032258064516% 7833.333333333333%;background-image: url("../img/bird.png");padding: 0; }
+div.up_mod::after {max-width:62px; width:100%;height:0;padding: 0 0 4.838709677419355% 0;}
+.up_pipe {max-width:62px; max-height:60px; }
+.up_pipe::after {content: ' ';display: inline-block; width:62px; height:60px; background-position: 61.31221719457014% 24%;background-size: 812.9032258064516% 391.6666666666667%;background-image: url("../img/bird.png");padding: 0; }
+div.up_pipe::after {max-width:62px; width:100%;height:0;padding: 0 0 96.7741935483871% 0;}
+
+/* $TexturePacker:SmartUpdate:d48e792986ba14fe460f753abea46068:aa0a5ecf5b726f2fb3c2dea380d0375d:ca8c95b1d11782f8c6fbad1cabcabfa6$ */

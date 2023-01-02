@@ -1,0 +1,60 @@
+ var goodsData=[
+            {id:1001,icon:"img/a.jpg",info:"東格 P20 4R/6 230g高光面照片纸/喷墨打印相片纸/相纸 100张装",initPrice:"￥24.9",nowPrice:"¥7.9",soldOut:0.64},
+            {id:1002,icon:"img/b.jpg",info:"1.5米*1.8米宝宝爬行垫加厚爬爬垫防潮泡沫地垫婴儿童游戏地毯家用客厅",initPrice:"￥59.9",nowPrice:"¥18.8",soldOut:0.87},
+            {id:1003,icon:"img/c.jpg",info:"【钜惠疯抢！足量一盒50贴】【买三送一，6盒一疗程】正宗艾草养生足",initPrice:"￥99",nowPrice:"¥29.9",soldOut:0.95},
+            {id:1004,icon:"img/d.jpg",info:"Jackscool加士酷投影仪家用办公全高清1080p智能无线手机投影机4K激",initPrice:"￥2698",nowPrice:"¥1099",soldOut:0.22}
+        ];
+
+
+接口文档
+
+1、获取商品列表
+    req
+        type:0x01
+    res
+        resolute:[],//商品列表
+        error:null
+2、获取购物车列表
+     req
+        type:0x02
+     res
+         resolute:[],//购物车列表
+         error:null
+3、向购物车中添加商品
+    req
+        type:0x03
+        id:00001
+    res
+        resolute:[],//购物车列表
+        error:null
+4、修改商品数量
+    req
+        type:0x04
+        id:00001
+        num:2
+    res
+        resolute:[]
+        error:null
+5、删除商品
+    req
+        type:0x05
+        id:00001
+    res
+        resolute:[],//购物车列表
+        error:null
+6、选中商品
+    req
+        type:0x06
+        id:00001
+        select:true
+    res
+        resolute:[]
+        error:null
+7、选中所有商品
+    req
+        type:0x06
+        ids:[001,002]
+        select:true
+    res
+        resolute:[]
+        error:null

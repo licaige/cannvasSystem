@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+       table{
+           border-collapse: collapse;
+           width: 800px;
+       }
+       td{
+           height: 30px;
+           line-height: 30px;
+           border: 1px solid #000000;
+       }
+        #div1
+        {
+            display: none;
+        }
+        #div2
+        {
+            visibility: hidden;
+        }
+        #div3
+        {
+            opacity: 0;
+        }
+    </style>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    <ul>
+        <!-- <span>1</span> -->
+        <li>2</li>
+        <li>3</li>
+        <li class="abc">4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+    </ul>
+    <ul>
+         <li>8</li>
+         <li>9</li>
+         <li>10</li>
+         <li>11</li>
+         <li>12</li>
+         <li>13</li>
+      </ul>
+      <table>
+          <tr>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td class="a">1</td>
+              <td>1</td>
+          </tr>
+          <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+        
+      </table>
+      <div id="div1">1</div>
+      <div id="div2">
+          <span></span>
+      </div>
+      <div id="div3"></div>
+      <ul>
+          <li></li>
+      </ul>
+    <script>
+        // $("li:first").text("文本");//将所有li获取列表,选择列表中第一个
+        // $("li:first-child").text("文本");//根据当前选择器的父容器来选择其第一子项,并且这个子项必须是当前选择器
+            // $("li:first-of-type").text("文本");//根据当前选择器的父容器来选择其子项中第一个li
+        // $("li:last");//所有li的最后一个项
+        // $("li:last-child");//根据当前选择器的父容器来选择其最后一个子项,并且这个子项必须是当前选择器
+        // $("li:last-of-type")
+
+            // console.log($("li:not(.abc)"));//列表中不是什么内容的
+            // $("li:odd").css("color","red");//奇数
+            // $("li:even").css("color","red");//偶数
+        // $("tr:odd").css("backgroundColor","rgba(255,0,0,0.2)");
+        // $("li:eq(2)");//找到li中的第二个jQuery元素
+        // $("li:gt(2)");//将li列表中所有下标大于2的jQuery元素返回
+        // $("li:lt(2)");//将li列表中所有下标小于2的jQuery元素返回
+
+        // $(":header");//选择所有h1-h6的所有标签
+
+        // $(":animated");//所有动画元素选中
+
+        // $(":focus");//当期焦距汇集的元素
+
+        // console.log($("li").get(0));//获取第0个DOM元素
+        // console.log($("li").eq(0));//获取第0个jQuery元素
+        // console.log($("li").first());//$("li:first")
+        // console.log($("li").last());//$("li:last")
+        // console.log($("li").not());//$("li:not()")
+        // console.log($("div:empty"));//选择空元素,没有子元素或者内容的标签
+        // console.log($("ul:has(.abc)"));//查找所有后代中包含.class或者#id标签
+        // console.log($("div:parent"));//选择非空元素
+        // console.log($("div").parent());//选择div的父容器
+        // console.log($("div").parents());//选择div的所有父容器
+        // console.log($(".a").parentsUntil("body"));//向上父元素选择到body之前
+        // console.log($(":hidden"));//所有非显示元素或者设置了display:none的元素
+        // console.log($(":visible"));//所有可见元素
+
+
+
+
+        // $("li:only-child").text("内容");//查找当前元素的父容器是否只有当前这个元素一个
+        // $("li:nth-child(2)").text("内容");//li的父容器的第二个子元素,其中包含了兄弟项可以不是同一类型,注意,这里的2不是下标,是数值从1开始
+        // $("li:nth-child(odd)").css("color","red");//这是从1开始数
+            // $("li:nth-child(2n-1)").css("color","red");//和odd相同
+            // $("li:nth-of-type(2)").css("color","red");
+
+
+            // console.log($("li").is(".abc"));//判断选择器列表中是否有.abc元素的
+            // console.log($("li").hasClass("abc"));//判断选择器列表中是否有abc类元素的
+            // $("li").slice(0,4).css("color","red");//从第0项到第4项
+
+
+
+            $("<div></div>").appendTo("body");
+            $("div").html("<div></div>");
+            $("div").on("click",clickhandler);
+    </script>
+</body>
+</html>

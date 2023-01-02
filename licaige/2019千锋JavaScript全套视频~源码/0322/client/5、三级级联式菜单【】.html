@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/Menu.js"></script>
+</head>
+<body>
+    <script>
+        let arr=[];
+        init();
+        function init() {
+           for(let i=0;i<3;i++){
+               arr.push(new Menu(document.body));
+//               事件的抛发和侦听对象都必须是DOM
+               arr[i].menu.addEventListener(Menu.SELECT_CHANGE_EVENT,menuSelectHandler);
+           }
+            ajax({type:0});
+        }
+        
+        function menuSelectHandler(e) {
+            let index=arr.indexOf(this.self);
+            if(index===0){
+                ajax({type:1,province:e.selectContent});
+            }else if(index===1){
+                ajax({type:2,province:arr[0].selectContent,city:e.selectContent});
+            }
+        }
+        
+        function ajax(obj) {
+            let xhr=new XMLHttpRequest();
+            xhr.addEventListener("readystatechange",readyStateChangeHandler);
+            xhr.open("POST","http://10.9.25.176:3004");
+            xhr.send(encodeURIComponent(JSON.stringify(obj)));
+        }
+
+        function readyStateChangeHandler(e) {
+            if(this.readyState===4 && this.status===200){
+                let obj=JSON.parse(decodeURIComponent(this.response));
+                arr[obj.type].setData(obj.resArr);
+            }
+        }
+    </script>
+</body>
+</html>

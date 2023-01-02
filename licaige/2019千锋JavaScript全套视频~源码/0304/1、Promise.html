@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--1-->
+    <script>
+//        Promise
+      /*  var img=new Image();
+        img.src="./img/3-.jpg";
+        img.onload=function () {
+             var img=new Image();
+             img.src="./img/4-/jpg";
+             img.onload=function () {
+
+             }
+        }*/
+
+   /*  var promise=new Promise(function (resolve,reject) {
+            var img=new Image();
+            img.src="./img/1-.jpg";
+            img.onload=function () {
+                resolve(this);
+            };
+            img.onerror=function () {
+                reject("加载失败");
+            }
+      });
+
+
+        promise.then(function (data) {
+            console.log(data,"__________");
+        },function (error) {
+            console.log(error,"|||||||||");
+        })*/
+
+
+/*
+        function loadImg(src) {
+           return new Promise(function (res,rej) {
+                var img=new Image();
+                img.onload=function () {
+                    res(this);
+                };
+                img.onerror=function () {
+                    rej("加载错误");
+                };
+               img.src=src;
+            });
+        }
+
+        var arr=[];
+        loadImg("./img/3-.jpg").then(function (data) {
+            arr.push(data);
+            return loadImg("./img/4-.jpg");
+        },function (error) {
+            console.log(error);
+        }).then(function (data) {
+            arr.push(data);
+            console.log(arr);
+        },function (error) {
+            console.log(error);
+        })*/
+    </script>
+</body>
+</html>

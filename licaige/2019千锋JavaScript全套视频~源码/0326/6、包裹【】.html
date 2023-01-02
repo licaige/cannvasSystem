@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    <span>网易</span>
+    <span>网易</span>
+    <span>网易</span>
+    <span>网易</span>
+    <div>
+        <p>
+            <label>标签</label>
+        </p>
+        <div>
+            <label>标签</label>
+        </div>
+        <span></span>
+    </div>
+    <script>
+//        $("span").wrap("<a href='http://www.163.com'></a>");
+        /*$("span").wrap(function (index,item) {
+            
+        })*/
+//        $("span").wrap("div");
+//        $("span").wrap($("div"));
+//        $("span").wrap($("div")[0]);
+//            $("label").unwrap();//删除父元素
+//            $("label").unwrap("p");//删除指定的父元素
+
+
+//        $("span").wrapAll("<div></div>");//注意前面选择器一定要精准,否则将会把其他的元素也包裹进来
+        $("span").wrapInner("<label></label>");//将span标签的内容包裹起来
+    </script>
+</body>
+</html>

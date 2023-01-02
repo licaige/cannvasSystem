@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var hero;
+        init();
+        function init() {
+            hero=document.createElement("div");
+            Object.assign(hero.style,{
+                width:"32px",
+                height:"33px",
+                backgroundImage:"url('./img/Actor01-Braver03.png')",
+                backgroundPositionX:"0px",
+                backgroundPositionY:"0px",
+                position:"absolute"
+            });
+            hero.num=0;
+            hero.time=10;
+            hero.playBool=false;
+            hero.direction=0;
+            hero.speed=1;
+            document.body.appendChild(hero);
+            window.addEventListener("keydown",keyHandler);
+            window.addEventListener("keyup",keyHandler);
+            animation();
+        }
+        function keyHandler(e) {
+            console.log(e);
+            if(e.keyCode<37 || e.keyCode>40) return;
+            if(e.type==="keydown"){
+                switch (e.keyCode){
+                    case 37:
+                        hero.direction=1;
+                        break;
+                    case 38:
+                        hero.direction=3;
+                        break;
+                    case 39:
+                        hero.direction=2;
+                        break;
+                    case 40:
+                        hero.direction=0;
+                        break;
+                }
+                hero.style.backgroundPositionY=-hero.direction*33+"px";
+                hero.playBool=true;
+            }else if(e.type==="keyup"){
+                hero.playBool=false;
+                hero.time=10;
+                hero.num=0;
+                hero.style.backgroundPositionX=-hero.num*32+"px"
+            }
+        }
+
+        function animation() {
+            requestAnimationFrame(animation);
+            heroMove();
+            playerAnimation();
+        }
+        
+        function heroMove() {
+            if(!hero.playBool) return;
+            switch (hero.direction){
+                case 0:
+                    hero.style.top=hero.offsetTop+hero.speed+"px";
+                    break;
+                case 1:
+                    hero.style.left=hero.offsetLeft-hero.speed+"px";
+                    break;
+                case 2:
+                    hero.style.left=hero.offsetLeft+hero.speed+"px";
+                    break;
+                case 3:
+                    hero.style.top=hero.offsetTop-hero.speed+"px";
+                    break;
+            }
+        }
+
+        function playerAnimation() {
+            if(!hero.playBool)return;
+            hero.time--;
+            if(hero.time>0) return;
+            hero.time=10;
+            hero.num++;
+            if(hero.num>3) hero.num=0;
+            hero.style.backgroundPositionX=-hero.num*32+"px"
+        }
+    </script>
+</body>
+</html>

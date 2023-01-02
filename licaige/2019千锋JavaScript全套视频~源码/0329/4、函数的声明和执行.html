@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        //普通函数
+//        function fn1() {
+//
+//        }
+////        匿名函数赋值为变量
+//        var fn2=function () {
+//
+//        };
+////        对象内匿名函数
+//        var obj={
+//            a:function () {
+//                this.play();
+//            },
+//            play:function () {
+//
+//            }
+//        };
+//
+//        document.onclick=function () {
+//
+//        };
+//
+////        这种匿名函数,只能在这里这些,并且永远无法清除
+//        setInterval(function () {
+//
+//        },16)
+//
+//
+
+       /* var fn=new Function("num1","num2","return num1+num2");
+        console.log(fn(4,5));*/
+
+
+       function fn1() {
+           
+       }
+       fn1();
+
+        var sum=(function (num1,num2) {
+            var a=10;//局部变量
+            return num1+num2;
+        })(3,5);
+        console.log(sum);
+    </script>
+</body>
+</html>

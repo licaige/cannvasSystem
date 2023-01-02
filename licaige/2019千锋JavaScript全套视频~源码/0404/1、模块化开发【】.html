@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+       /* function a() {
+            
+        }
+        function b() {
+
+        }
+        a();
+        b();
+        */
+     /*   var obj={
+            a:function () {
+                
+            },
+            b:function () {
+                
+            }
+        };
+        obj.a();
+        obj.b();*/
+
+//这叫放大模式,就是在原有的对象基础上增加新的方法
+    /* var obj=(function (n) {
+        var a=n;//不会暴露给外面
+        return {
+            b:function () {
+                console.log(a);
+            },
+            c:function () {
+                
+            }
+        }
+     })(5);
+
+     obj=(function (_obj) {
+         var s=10;
+         _obj.c1=10;
+         _obj.d=function () {
+             console.log(s);
+         };
+         return _obj;
+     })(obj);
+     obj.b();
+     obj.d();*/
+//     obj.a//没有a属性
+
+
+
+    /*
+//    宽放大,如果obj存在,就直接增加属性,如果不存在,就在使用新对象增加属性
+    var obj;
+       obj=(function (_obj) {
+           var s=10;
+           _obj.c1=10;
+           _obj.d=function () {
+               console.log(s);
+           };
+           return _obj;
+       })(obj || {});
+       obj.b();
+       obj.d();*/
+
+    var xhr=new XMLHttpRequest();
+    xhr.addEventListener("load",loadHandler);
+    xhr.open("GET","http://10.9.25.176:3005?type=2");
+    xhr.send();
+    function loadHandler(e) {
+        console.log(xhr.response);
+    }
+    </script>
+</body>
+</html>

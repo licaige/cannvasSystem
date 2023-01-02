@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /*
+        *
+        *  跨域解决必须是服务器才可以
+        *  cors跨域
+        *   1\在服务器的响应头中加入Access-Control-Allow-Origin:域名.如果需要所有
+        *   域都可以访问Access-Control-Allow-Origin:*;
+        *   2\需要多个域访问时,可以在服务器的根目录下配置crossdomain.xml文件
+        *   在里面添加允许访问的域,服务器调用这个xml解析允许访问的域名
+        *   <cross-domain-policy>
+                <allow-access-from domain="域名1"/>
+                <allow-access-from domain="域名2"/>
+                <allow-access-from domain="域名3"/>
+             </cross-domain-policy>
+        *
+        *
+        * */
+
+        /*
+        *   jsonp跨域
+        *   jsonp和json没有关系
+        *   jsonp不是ajax通信
+        *
+        *
+        *
+        * */
+        var script=document.createElement("script");
+        script.src="http://10.9.25.176:3003?a=cdef&b=4&fb=showResult";
+        document.body.appendChild(script);
+       
+        function showResult(a,b) {
+            console.log(a,b);
+        }
+    </script>
+
+<!--<script>
+    function callback() {
+        console.log("完成")
+    }
+
+    var script=document.createElement("script");
+    script.src="./js/a.js";
+    document.body.appendChild(script);
+</script>-->
+   <!-- <script>
+        callback();
+        /*
+        *
+        *   当添加一个scriptDOM标签时,这个标签的src指向的地址中就可以取回一些方法放在
+        *   script当中
+        *
+        * */
+    </script>-->
+
+</body>
+</html>

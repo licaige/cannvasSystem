@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html{
+            background-color: #f6f6f6;
+        }
+    </style>
+    <script src="js/goodsItem.js"></script>
+</head>
+<body>
+    <script>
+//        let item=new GoodsItem(,document.body);
+        let arr=[];
+        let list=[
+            {id:1001,icon:"./img/a.jpg",info:"SNP 燕窝水库补水面膜贴 10片/盒 （男士女士通用护肤化妆品）", nowPrice:109,initPrice:299,sold:0.35},
+            {id:1002,icon:"./img/b.jpg",info:"林弘堂 去芯莲子干货湖南特产白莲米500g湘潭无芯磨皮湘莲", nowPrice:22.9,initPrice:64.5,sold:0.45},
+            {id:1003,icon:"./img/c.jpg",info:"荣耀路由Pro光纤宽带大户型穿墙 1200Mbps有线无线双千兆智能无线路由器 支持IPv6", nowPrice:399,initPrice:599,sold:0.75},
+            {id:1004,icon:"./img/d.jpg",info:"黑白调(Hbada)电脑椅家用办公椅子可躺电竞椅靠背座椅人体工学椅老板椅凳子 白色(脚托)", nowPrice:1090,initPrice:2990,sold:0.15},
+            {id:1005,icon:"./img/e.jpg",info:"象印ZOJIRUSHI 保温杯不锈钢真空保冷杯车载弹盖男女茶水杯子SM-KZ36/48 AG深蓝色 480ml", nowPrice:49,initPrice:189,sold:0.30},
+            {id:1006,icon:"./img/f.jpg",info:"TSL谢瑞麟 钻石戒指 18K金玫瑰金镶钻石戒指求婚钻戒（钻共约12分约20颗）BB026 12号圈口", nowPrice:10900,initPrice:29900,sold:0.02},
+            {id:1007,icon:"./img/h.jpg",info:"汪汪队 迪士尼 儿童羽毛球拍双拍套装幼儿大圆拍小孩户外运动玩具 初学训练拍球拍3-12岁 汪汪队蓝色（一对）", nowPrice:18,initPrice:29,sold:0.50}
+        ];
+        for(let i=0;i<list.length;i++){
+            let item=new GoodsItem(list[i],document.body);
+            arr.push(item);
+        }
+
+let obj={id:1001,icon:"./img/a.jpg",info:"SNP 燕窝水库补水面膜贴 10片/盒 （男士女士通用护肤化妆品）", nowPrice:109,initPrice:299,sold:0.35};
+    setInterval(animtion,100);
+    function animtion() {
+        obj.sold=(Number(obj.sold)+0.01).toFixed(2);
+        arr[0].render(obj);
+    }
+    </script>
+</body>
+</html>

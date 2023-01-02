@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div
+        {
+            margin-top: 50px;
+        }
+        label
+        {
+            float: left;
+            margin-right: 5px;
+        }
+        .star
+        {
+            display: block;
+            float: left;
+            width: 16px;
+            height: 16px;
+            background: url("img/commstar.png") 0 0;
+            margin-top: 3px;
+            cursor: pointer;
+        }
+
+        .face
+        {
+            display: none;
+            width: 16px;
+            height: 16px;
+            background: url("img/face-red.png") 0 0;
+            margin-top: -18px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label>快递包装</label>
+        <span class="star"><span class="face"></span></span>
+        <span class="star"><span class="face"></span></span>
+        <span class="star"><span class="face"></span></span>
+        <span class="star"><span class="face"></span></span>
+        <span class="star"><span class="face"></span></span>
+    </div>
+<script>
+    var div,spanList;
+    var position=-1;
+    init();
+    function init() {
+        div=document.querySelector("div");
+        spanList=Array.prototype.slice.call(document.querySelectorAll("div>span"));
+        div.addEventListener("mouseover",mouseHandler);
+        div.addEventListener("mouseout",mouseHandler);
+        div.addEventListener("mouseleave",mouseLeaveHandler);
+        div.addEventListener("click",clickHandler);
+    }
+
+    function clickHandler(e) {
+        if(e.target.constructor!==HTMLSpanElement) return;
+        position=spanList.indexOf(e.target);
+    }
+    function mouseLeaveHandler(e) {
+        setStarRed(position)
+    }
+    function mouseHandler(e) {
+        if(e.target.constructor!==HTMLSpanElement) return;
+        var index=spanList.indexOf(e.target);
+        if(e.type==="mouseover"){
+            if(index>position){
+                setStarRed(index);
+            }else{
+                setStarRed(position);
+            }
+
+            e.target.firstElementChild.style.display="block";
+            e.target.firstElementChild.style.backgroundPositionX=-(4-index)*20+"px";
+        }else if(e.type==="mouseout"){
+            e.target.firstElementChild.style.display="none";
+        }
+
+    }
+
+    function setStarRed(index) {
+        for(var i=0;i<spanList.length;i++){
+            if(i<=index){
+              spanList[i].style.backgroundPositionY="-16px";
+               continue;
+            }
+            spanList[i].style.backgroundPositionY="0px";
+        }
+    }
+
+</script>
+</body>
+</html>

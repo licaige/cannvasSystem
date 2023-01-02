@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+      /*  function fn1() {
+            var i=0;
+//            被保留的私有局部变量
+            return  function() {
+                i++;
+                console.log(i);
+            }
+        }
+        var fn=fn1();
+        fn();
+        fn();*/
+
+        /*
+        *  1\函数嵌套函数,外层函数return里层的函数
+        *  2\里层函数中调用了外层函数中局部变量
+        *  3\返回的函数赋值给了一个全局变量存储
+        *
+        *
+        * */
+
+        var Utils=(function () {
+            var list=[];
+            return {
+                add:function (item) {
+                    if(list.indexOf(item)>-1) return;
+                    list.push(item);
+                },
+                remove:function (item) {
+                    if(list.indexOf(item)<0) return;
+                    list.splice(list.indexOf(item),1);
+                },
+                get length(){
+                    return list.length;
+                },
+                get showData(){
+                    return list.join();
+                },
+                dispose:function () {
+                    list=null;
+                }
+            }
+        })();
+
+
+        Utils.add(1);
+        Utils.add(1);
+        Utils.add(2);
+        Utils.add(4);
+      Utils.remove(2);
+        console.log(Utils);
+
+
+        Utils.dispose();
+        Utils=null;
+
+
+
+        /*
+        *
+        *   使用闭包时,容易造成内存泄露
+        *
+        *
+        * */
+        
+        
+        function fn1() {
+            var i=1;
+            return function (num1) {
+                i++;
+                return num1+i;
+            }
+        }
+
+        var fn=fn1();
+        console.log(fn(10));
+        console.log(fn(10));
+        console.log(fn(15));
+    </script>
+</body>
+</html>

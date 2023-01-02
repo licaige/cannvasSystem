@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+<div abc="5"></div>
+<div abc="4"></div>
+<div abc="3"></div>
+<div abc="1"></div>
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+    <script>
+//        console.log($("div").attr("abc"));//仅获取第一个元素的标签属性值
+//        $("div").attr("re","12345");
+//    var arr=[123,321,456,654];
+//添加同一个属性,不同的属性值
+        /*$("div").attr("re",function (index,value) {
+//            value是原来re这个属性的值
+            return arr[index];
+        })*/
+
+//        添加多个属性,不同属性值
+       /* $("div").attr({
+            "a":function (index,value) {
+                return index;
+            },
+            "b":function (index,value) {
+                return index;
+            }
+        })*/
+//       $("div").removeAttr("abc");
+//        $("input").attr("checked","");
+//        $("input").removeAttr("checked");
+    </script>
+</body>
+</html>

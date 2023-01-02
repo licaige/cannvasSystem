@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <div id="div0"></div>
+    <div>
+        <div id="div1">
+            <div>
+                <ul id="ul0">
+                    <li id="li0"></li>
+                    <li></li>
+                    <li id="li1">
+                        <img id="im0" src="">
+                    </li>
+                    <li></li>
+                    <li id="li2"></li>
+                </ul>
+            </div>
+        </div>
+        <p   id="p0">
+            <span  id="span0"></span>
+            <span></span>
+            <span  id="span1"></span>
+            <span></span>
+        </p>
+    </div>
+    <div  id="div2">
+        <img id="img1" src="">
+    </div>
+    <div></div>
+</div>
+    <script>
+
+       /* var i=0;
+        var sum=0;
+        function getSum() {
+            i++;
+            sum+=i;
+            if(i>15000){
+                return sum;//最后一次返回给前一个函数
+            }
+          return  getSum();
+
+        }
+
+        console.log(getSum());*/
+
+
+
+
+/*
+        var i=0;
+        var sum=0;
+
+        var s=fn0();
+
+        function fn0() {
+            i++;//i=1
+            sum+=i;//sum=1;
+          return fn1();//6
+        }
+
+        
+        function fn1() {
+            i++;//i=2;
+            sum+=i;//sum=3;
+            return fn2();//6
+        }
+        
+        function fn2() {
+            i++;//i=3;
+            sum+=i;//sum=6;
+            if(i>2){
+                return sum;//6
+            }
+        }*/
+
+
+    var dic={};
+     console.log(getElemId(document.body));
+    function getElemId(elem) {
+        if(elem.id){
+            dic[elem.id]=elem;
+        }
+        for(var i=0;i<elem.children.length;i++){
+            getElemId(elem.children[i]);
+        }
+        return dic;
+    }
+    </script>
+</body>
+</html>

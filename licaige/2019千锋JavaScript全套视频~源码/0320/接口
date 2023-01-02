@@ -1,0 +1,44 @@
+ 发送方式:
+       POST
+ URL
+    http://10.9.25.176:3010
+
+
+1、发送聊天内容接口
+    req
+        {
+            type:1,
+            name:"",
+            msg:"",
+            date:""
+        }
+    res
+    {
+             result:[
+                 {name:"",msg:"",date:""},
+                 {name:"",msg:"",date:""},
+                 {name:"",msg:"",date:""},
+                 {name:"",msg:"",date:""},
+                 {name:"",msg:"",date:""},
+                 ...
+             ]
+             error:null
+         }
+
+2、实时获取聊天内容
+ req
+        {
+          type:2
+        }
+    res
+    {
+        result:[
+            {name:"",msg:"",date:""},
+            {name:"",msg:"",date:""},
+            {name:"",msg:"",date:""},
+            {name:"",msg:"",date:""},
+            {name:"",msg:"",date:""},
+            ...
+        ]
+        error:null
+    }

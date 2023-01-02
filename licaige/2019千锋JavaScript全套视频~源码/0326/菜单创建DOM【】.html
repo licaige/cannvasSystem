@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/Utils.js"></script>
+
+</head>
+<body>
+    <script>
+        let menu,pre,cloneElem;
+        let menuList=["新建","复制","剪切","粘贴","删除"];
+        init();
+        function init() {
+            createMenu();
+            document.addEventListener("contextmenu",showMenuHandler);
+        }
+        function showMenuHandler(e) {
+            if(!menu) return;
+            e.preventDefault();
+            menu.style.display="block";
+            menu.style.left=e.x-15+"px";
+            menu.style.top=e.y-10+"px";
+        }
+        function createMenu() {
+            menu=Utils.createDom("ul",document.body,{
+                listStyle:"none",
+                margin:0,
+                padding:0,
+                position:"absolute",
+                cursor: "default",
+                display:"none",
+                zIndex:1
+            });
+            for(let i=0;i<menuList.length;i++){
+                let li=Utils.createDom("li",menu,{
+                    padding:"10px 30px",
+                    backgroundColor:"rgba(100,100,254,0.4)"
+                });
+                li.textContent=menuList[i];
+            }
+            menu.addEventListener("mouseover",mouseHandler);
+            menu.addEventListener("mouseout",mouseHandler);
+            menu.addEventListener("mouseleave",mouseHandler);
+            menu.addEventListener("click",mouseHandler);
+        }
+
+        function mouseHandler(e) {
+
+            if(e.type==="mouseleave") menu.style.display="none";
+            if(e.target.constructor===HTMLUListElement)return;
+            switch (e.type){
+                case "mouseover":
+                    e.target.style.backgroundColor="rgba(100,100,254,0.8)";
+                    break;
+                case "mouseout":
+                    e.target.style.backgroundColor="rgba(100,100,254,0.4)";
+                    break;
+                case "click":
+                    ctrlDom(e.target.textContent,e);
+                    menu.dispatchEvent(new MouseEvent("mouseleave"));
+                    break;
+            }
+        }
+        
+        function ctrlDom(type,e) {
+            switch (menuList.indexOf(type)){
+                case 0:
+                    createDiv(e);
+                    break;
+                case 1:
+                    if(!pre)return;
+                    cloneElem=pre.cloneNode(false);
+                    break;
+                case 3:
+                    if(!cloneElem)return;
+                    document.body.appendChild(cloneElem);
+                    cloneElem.style.left=e.x-25+"px";
+                    cloneElem.style.top=e.y-25+"px";
+                    cloneElem.style.border="none";
+                    cloneElem.addEventListener("click",clickHandler);
+                    break;
+                case 2:
+                    if(!pre)return;
+                    cloneElem=pre.cloneNode(false);
+                case 4:
+                    if(!pre)return;
+                    removeElem(pre);
+                    break;
+            }
+        }
+        
+        function removeElem(elem) {
+            Utils.removeDrag(elem);
+            elem.removeEventListener("click",clickHandler);
+            elem.remove();
+            pre=null;
+        }
+        
+        function createDiv(e) {
+            let elem=Utils.createDom("div",document.body,{
+                width:"50px",
+                height:"50px",
+                backgroundColor:Utils.randomColor(),
+                position:"absolute",
+                left:e.x-25+"px",
+                top:e.y-25+"px"
+            });
+            elem.addEventListener("click",clickHandler);
+        }
+        
+        function clickHandler(e) {
+            selectElem(this);
+        }
+        
+        function selectElem(elem) {
+            if(pre){
+                pre.style.border="none";
+                Utils.removeDrag(pre);
+            }
+            pre=elem;
+            pre.style.border="1px solid #000000";
+            Utils.dragElem(pre);
+        }
+    </script>
+</body>
+</html>

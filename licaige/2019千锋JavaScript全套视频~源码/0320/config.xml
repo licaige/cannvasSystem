@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+    <zhangsan class="abc">1</zhangsan>
+    <lisi id="a1">2</lisi>
+    <div face="sdf">
+        <span>
+            <a>3</a>
+        </span>
+    </div>
+    <img/>
+    <prices>
+        <price id="2" name="A" color="FF6432" istp="true">1200</price>
+        <price id="3" name="B" color="FFCD32" istp="true">800</price>
+        <price id="4" name="C" color="96CD69" istp="false">500</price>
+        <price id="5" name="D" color="008000" istp="false">300</price>
+    </prices>
+</data>

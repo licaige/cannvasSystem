@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function* abc(n) {
+            yield n;
+            let s=5;
+            n+=s;
+            yield n;
+            n*=n;
+            yield n;
+            return n;
+        }
+
+        let s=abc(10);
+        /*
+        *  {done:false,value:yield返回值}
+        *
+        * */
+//        console.log(s.next());
+//        console.log(s.next());
+//        console.log(s.next());
+//        console.log(s.next());
+       /* let v=s.next();
+        while (!v.done){
+            console.log(v.value);
+            v=s.next();
+        }*/
+
+
+/*
+       function loadImage(src) {
+           return new Promise(function (res,rej) {
+               let img=new Image();
+               img.src=src;
+               img.onload=function () {
+                   res(img);
+               }
+           })
+       }
+
+       function* getImgs(list) {
+           let arr=[];
+           let i=0;
+           yield loadImage(list[i]).then(function (img) {
+               arr.push(img);
+                i++;
+                if(i>list.length-1) return;
+
+           })
+
+       }
+
+       let list=[];
+       for(let i=3;i<80;i++){
+           list.push(`./img/${i}-.jpg`);
+       }
+        let s1=getImgs(list);
+
+        let v=s1.next();
+        while (!v.done){
+            v=s1.next();
+        }*/
+    </script>
+</body>
+</html>

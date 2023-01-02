@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            font-family: "Microsoft YaHei";
+        }
+        .clearFloat::after
+        {
+            content: ".";
+            display: block;
+            clear: both;
+            height: 0;
+            visibility: hidden;
+        }
+        .clearFloat
+        {
+            zoom: 1;
+        }
+        #headDivCon
+        {
+            width: 1366px;
+
+            background-color: #323232;
+            position: fixed;
+            top:0;
+            list-style: none;
+            color: white;
+            font-size: 12px;
+        }
+        #headDivCon>li
+        {
+            float: left;
+            line-height: 43px;
+            height: 43px;
+            border-left: inset 1px #a3a3a3;
+            position: relative;
+        }
+        #headDivCon>li:first-child
+        {
+            width: 92px;
+            text-align: right;
+            border: none;
+        }
+        #headDivCon>li:nth-child(2)
+        {
+            width: 56px;
+            text-align: center;
+            border: none;
+        }
+        .arrow
+        {
+            background: url("img/nav_sprite_v42.png") 0 -704px;
+            display: inline-block;
+            width: 10px;
+            height: 5px;
+            line-height: 0;
+            margin-bottom: 8px;
+            transition: all 300ms;
+
+        }
+        #headDivCon>li:hover>.arrow
+        {
+            transition: all 300ms;
+            transform: rotate(180deg);
+        }
+        #headDivCon>li:nth-child(5)
+        {
+            width: 50px;
+
+
+        }
+        #headDivCon>li:nth-child(2)>.arrow
+        {
+            margin-bottom: 0;
+        }
+        #headDivCon>li:nth-child(3)
+        {
+            width: 398px;
+            border: none;
+        }
+        #headDivCon>li:nth-child(4)
+        {
+            width: 53px;
+
+
+        }
+        #headDivCon>li:nth-child(5)>.arrow
+        {
+            line-height: 0;
+            margin-bottom: 8px;
+        }
+        #headDivCon>li:nth-child(6)
+        {
+            width: 94px;
+
+
+        }
+        #headDivCon>li:nth-child(7)
+        {
+            width: 92px;
+
+
+        }
+        #headDivCon>li:nth-child(8)
+        {
+            width: 71px;
+
+
+        }
+        #headDivCon>li:nth-child(9),#headDivCon>li:nth-child(10)
+        {
+            width: 51px;
+
+
+        }
+        #headDivCon>li:nth-child(11)
+        {
+            width: 50px;
+
+
+        }
+        #headDivCon>li:nth-child(12)
+        {
+            width: 70px;
+            background-color: #f70e0e;
+            text-align: center;
+            font-size: 12px;
+            border: none;
+        }
+        #headDivCon>li:nth-child(13)
+        {
+            width: 105px;
+            border: none;
+        }
+        #headDivCon>li:nth-child(14)
+        {
+            width: 68px;
+
+        }
+        #headDivCon>li:nth-child(15)
+        {
+            border: none;
+
+        }
+        .headFirstSpan
+        {
+            background: url("img/products_sprites0727.svg") 0 -138px;
+            display: inline-block;
+            width: 25px;
+            height: 23px;
+            margin-top: 10px;
+            margin-left: 16px;
+        }
+        #headSpan4
+        {
+            background-position: 0 -138px;
+
+        }
+
+        #headSpan5
+        {
+            background-position: 0 -115px;
+            margin-left: 10px;
+        }
+
+        #headSpan6
+        {
+            background-position: 0 -23px;
+            width: 54px;
+            margin-left: 17px;
+        }
+        #headSpan7
+        {
+            background-position:  0 0;
+            width: 54px;
+            margin-left: 17px;
+        }
+        #headSpan8
+        {
+            background-position:  0 -162px;
+            width: 35px;
+            margin-left: 12px;
+        }
+        #headSpan9
+        {
+            background-position:  0 -69px;
+            width: 18px;
+            margin-left: 12px;
+        }
+        #headSpan10
+        {
+            background-position:  0 -92px;
+            width: 22px;
+            margin-left: 12px;
+        }
+        #headSpan11
+        {
+            background-position:  0 -46px;
+            width: 22px;
+            margin-left: 12px;
+        }
+        #headDivCon>li:nth-child(12)>div
+        {
+            width: 100%;
+            height: 5px;
+            background-color: #f70e0e;
+        }
+        #headDivCon>li:nth-child(13)>.arrow
+        {
+            margin-bottom: 0;
+        }
+        #headDivCon>li:nth-child(14)>span
+        {
+            width: 40%;
+            height: 2px;
+            margin-top: 5px;
+            margin-left: 18px;
+            background-color: white;
+            display: block;
+
+        }
+        #headDivCon>li:nth-child(14)
+        {
+            line-height: 8px;
+        }
+        #headDivCon>li>ul
+        {
+            color: #323232;
+            list-style: none;
+            line-height: 24px;
+            position: absolute;
+            right: 0;
+            padding: 5px 0;
+            font-size: 14px;
+            width: 140px;
+            border: 1px #323232 solid;
+            display: none;
+
+        }
+        #headDivCon>li>ul>li
+        {
+            padding: 5px 10px;
+            border-bottom: dotted 1px #a3a3a3;
+        }
+        #headDivCon>li>ul>li:last-child
+        {
+            border: none;
+        }
+        #headDivCon>li:hover>ul
+        {
+            display: block;
+        }
+        #headDivCon>li:nth-child(6)>div
+        {
+            width: 100%;
+            height: 10px;
+        }
+        #bodyDivCon
+        {
+            width: 958px;
+            margin: auto;
+            margin-top: 77px ;
+
+        }
+        #logoDiv>span:first-child
+        {
+            width: 135px;
+            height: 42px;
+            background-image: url("img/sprite_img1109.png");
+            display: inline-block;
+        }
+        #logoDiv>span:last-child
+        {
+            width: 130px;
+            height: 40px;
+            background-image: url("img/wljd_all1012.jpg");
+            display: inline-block;
+
+        }
+        #logoDiv>img
+        {
+           margin-left: 227px;
+        }
+        #menuDivCon
+        {
+            font-size: 12px;
+            border-top: 2px solid #f33;
+            list-style: none;
+            padding: 12px 0;
+
+
+        }
+        #menuDivCon li
+        {
+            line-height: 26px;
+
+            border-right: 1px solid #e5e5e5;
+            float: left;
+            padding:0 17px;
+            word-spacing: 3px;
+        }
+        #menuDivCon li:first-child
+        {
+            padding-left:0;
+        }
+        #menuDivCon li:last-child
+        {
+            padding-right: 0;
+            border: none;
+        }
+        #leftCon
+        {
+            width: 630px;
+
+            float: left;
+
+            margin-top: 30px;
+        }
+        #rightCon
+        {
+            width: 300px;
+
+            float: left;
+
+            margin-left: 28px;
+            margin-top: 30px;
+        }
+        #myProduct
+        {
+            width: 298px;
+            border:1px solid #e5e5e5 ;
+            border-top:none ;
+        }
+        #myProduct>div>div:first-child
+        {
+            float: left;
+            height: 37px;
+            border-top: 2px solid #f33;
+            width: 150px;
+            color: #ff3333;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 37px;
+            text-align: center;
+        }
+        #myProduct>div>div:last-child
+        {
+            float: left;
+            height: 37px;
+            width: 147px;
+            border: solid 1px #e5e5e5;
+            border-right:none;
+            font-size: 12px;
+            text-align: right;
+            line-height: 37px;
+
+        }
+        #myProduct>div>div:last-child>span
+        {
+            width: 15px;
+            height: 15px;
+            display: inline-block;
+            background: url("img/sprite_icon.png") -85px -62px;
+            margin-right: 10px;
+            margin-bottom: -5px;
+
+        }
+        #myProduct>ul
+        {
+            list-style: none;
+            padding:0 15px;
+
+        }
+        .products
+        {
+            padding: 15px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .productsIcon
+        {
+            background: url("img/sprite_img1109.png") ;
+            width: 42px;
+            height: 42px;
+            float: left;
+            margin-top: 5px;
+        }
+        .productText
+        {
+            float: left;
+            font-size: 12px;
+            margin-left: 15px;
+            line-height: 20px;
+            margin-top: 5px;
+        }
+        #news>div:first-child
+        {
+            background-position: -386px 0;
+
+        }
+
+        #mail>div:first-child
+        {
+            background-position: -160px 0;
+        }
+        #kaola>div:first-child
+        {
+            background-position: -210px 0;
+        }
+        #tuijian>div:first-child
+        {
+            border-left: 1px solid #ff3333;
+            padding-left: 5px;
+            /*font-family: "Microsoft YaHei";*/
+            font-size: 14px;
+        }
+        #tuijian>div:last-child
+        {
+            font-size: 12px;
+            word-spacing: 8px;
+            padding-top: 8px;
+            line-height: 22px;
+            color: #a3a3a3;
+        }
+        .wangyiApp
+        {
+            width: 48px;
+            font-size: 12px;
+            text-align: center;
+            color: #a3a3a3;
+            /*font-family: "Microsoft YaHei";*/
+            float: left;
+            margin:20px 9px;
+            line-height: 25px;
+        }
+        .wangyiApp>span
+        {
+            background-image: url("img/sprite_img1109.png");
+            width: 43px;
+            height: 40px;
+            display: block;
+
+
+        }
+        .wangyiApp:first-child>span
+        {
+            background-position: -193px -1030px;
+        }
+        .wangyiApp:nth-child(2)>span
+        {
+            background-position: -244px -1030px;
+        }
+        .wangyiApp:nth-child(3)>span
+        {
+            background-position: -95px -1030px;
+        }
+        .wangyiApp:nth-child(4)>span
+        {
+            background-position: 0 -1030px;
+        }
+        #appUl
+        {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <ul id="headDivCon">
+        <li>网易首页</li>
+        <li>应用 <span class="arrow"></span></li>
+        <li></li>
+        <li><span id="headSpan4" class="headFirstSpan"></span></li>
+        <li><span id="headSpan5" class="headFirstSpan"></span><span class="arrow"></span></li>
+        <li><span id="headSpan6" class="headFirstSpan"></span> <span class="arrow"></span>
+            <div></div>
+            <ul>
+                <li>薄荷直播大厅</li>
+                <li>下载薄荷直播App</li>
+            </ul>
+        </li>
+        <li><span id="headSpan7" class="headFirstSpan"></span> <span class="arrow"></span></li>
+        <li><span id="headSpan8" class="headFirstSpan"></span> <span class="arrow"></span></li>
+        <li><span id="headSpan9" class="headFirstSpan"></span> <span class="arrow"></span></li>
+        <li><span id="headSpan10" class="headFirstSpan"></span> <span class="arrow"></span></li>
+        <li><span id="headSpan11" class="headFirstSpan"></span> <span class="arrow"></span></li>
+        <li>登录<div></div></li>
+        <li>&nbsp;注册免费邮箱 <span class="arrow"></span></li>
+        <li>
+            <br>
+            <span></span>
+            <span></span>
+            <span></span>
+        </li>
+        <li></li>
+    </ul>
+    <div id="bodyDivCon" class="clearFloat">
+        <div id="logoDiv">
+            <span></span>
+            <img src="img/45040_nuby_20171114.jpg">
+            <span></span>
+        </div>
+        <ul id="menuDivCon" class="clearFloat">
+            <li>
+                新闻 军事 图片 航空<br>
+                娱乐 电影 薄荷 电视剧
+            </li>
+            <li>
+                体育 红彩 NBA 中超<br>
+                财经 股票 基金 商业
+            </li>
+            <li>
+                科技 手机 智能 彩票<br>
+                时尚 女人 教育 亲子
+            </li>
+            <li>
+                直播 PGC 公开课<br>
+                房产 家居 租房
+            </li>
+            <li>
+                汽车 购车 选车<br>
+                健康 酒香 身体课
+            </li>
+            <li>
+                北京 政务 跟贴<br>
+                旅游 海淘 严选
+            </li>
+            <li>
+                公益 佛学 网易号<br>
+                艺术 双创 收藏
+            </li>
+        </ul>
+        <div><img src="img/1200125_atjh_20180109.jpg" style="width: 960px;height: 100px"></div>
+        <div><img src="img/11.png" style="width: 960px;height: 62px"></div>
+        <div id="leftCon">
+            <img src="img/roll.png">
+            <!--待续-->
+        </div>
+        <div id="rightCon">
+            <div id="myProduct">
+                <div  class="clearFloat">
+                    <div>我的产品</div>
+                    <div>全部产品 <span></span></div>
+                </div>
+                <ul>
+                    <li id="news" class="clearFloat products">
+                        <div class="productsIcon"></div>
+                        <div class="productText">
+                            网易新闻<br>
+                            新闻首页 ios下载 Android下载
+                        </div>
+                    </li>
+                    <li id="mail" class="products clearFloat">
+                        <div class="productsIcon"></div>
+                        <div class="productText">
+                            网易邮箱<br>
+                            免费邮 VIP邮箱 企业邮箱 邮箱大师
+                        </div>
+                    </li>
+                    <li  id="kaola" class="products clearFloat">
+                        <div class="productsIcon"></div>
+                        <div class="productText">
+                            网易考拉<br>
+                            新用户特价 领红包 点卡9.8折
+                        </div>
+                    </li>
+                    <li id="tuijian" class="products">
+                        <div>推荐</div>
+                        <div>薄荷直播 彩票 博客 印像派 青果<br>
+                            大学MOOC 网易美学 有钱 云阅读 翻译<br>
+                            火车票 商城 网易智造 新闻客户端 车险</div>
+                    </li>
+                    <li>
+                        <ul id="appUl" class="clearFloat">
+                            <li class="wangyiApp"><span></span>网易薄荷</li>
+                            <li class="wangyiApp"><span></span>网易菠萝</li>
+                            <li class="wangyiApp"><span></span>网易红彩</li>
+                            <li class="wangyiApp"><span></span>网易严选</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        console.log(document.body.lastElementChild.previousElementSibling.lastElementChild.lastElementChild.lastElementChild.children[1].lastElementChild.firstChild)
+    </script>
+</body>

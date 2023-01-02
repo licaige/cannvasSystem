@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/Utils.js"></script>
+    <style>
+        html{
+            cursor: none;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let pointList=[];
+        let point={};
+        let divs=[];
+        let time=3;
+        init();
+        function init() {
+            for(let i=0;i<5;i++){
+               let div=Utils.createDom("div",document.body,{
+                    width:"50px",
+                    height:"50px",
+                    backgroundColor:"red",
+                    position:"absolute",
+                   opacity:i*0.15
+                });
+                divs.push(div);
+            }
+            document.addEventListener("mousemove",mouseHandler);
+            animation();
+        }
+
+        function mouseHandler(e) {
+            point.x=e.x;
+            point.y=e.y;
+        }
+        function animation() {
+            requestAnimationFrame(animation);
+            for(let i=0;i<pointList.length;i++){
+                divs[i].style.left=pointList[i].x+"px";
+                divs[i].style.top=pointList[i].y+"px";
+            }
+            time--;
+            if(time>0) return;
+            time=3;
+            pointList.push({x:point.x,y:point.y});
+            if(pointList.length>5) pointList.shift();
+            console.log(pointList)
+
+        }
+    </script>
+</body>
+</html>

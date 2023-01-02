@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <style>
+        .glyphicon-search{
+            left:35px;
+        }
+        #search
+        {
+            padding-left: 30px;
+            padding-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!--<form class="form-inline">
+        <div class="form-group has-success has-feedback"><label for="user">用户名</label><input id="user" type="text" name="user" class="form-control"><span class="glyphicon glyphicon-ok form-control-feedback"></span></div>
+        <div class="form-group has-error  has-feedback"><label for="pass">密&nbsp;&nbsp;码</label><input id="pass" type="password" name="pass"  class="form-control"><span class="glyphicon glyphicon-remove  form-control-feedback"></span></div>
+        <input type="submit" value="登录" class="btn btn-danger">
+        <div class="input-group"><div class="input-group-addon">$</div><input type="text" title="money" id="money" class="form-control"><div class="input-group-addon">.00</div></div>
+    </form>-->
+    <form class="form-inline">
+        <div class="form-group has-feedback"><label for="user">用户名</label><input id="user" type="text" name="user" class="form-control"><span class="glyphicon form-control-feedback"></span></div>
+        <div class="form-group has-feedback"><label for="pass">密&nbsp;&nbsp;码</label><input id="pass" type="password" name="pass" class="form-control"><span class="glyphicon  form-control-feedback"></span></div>
+        <div class="form-group has-warning has-feedback"><label for="search">搜&nbsp;&nbsp;索</label><input id="search" type="text" name="search" class="form-control" placeholder="输入商家/品类/商圈"><span class="glyphicon glyphicon-search  form-control-feedback"></span></div>
+    </form>
+<script>
+    var user,pass,id;
+    init();
+    function init() {
+        user=document.getElementById("user");
+        pass=document.getElementById("pass");
+
+        user.addEventListener("input",inputHandler);
+        pass.addEventListener("input",inputHandler);
+    }
+    function inputHandler(e) {
+        if(id) return;
+        setTimeout(setInputHandler,500,this)
+    }
+
+    function setInputHandler(input) {
+        clearTimeout(id);
+        id=0;
+        if(input===user){
+            setInputClass(input,/^\w{6,18}$/.test(input.value))
+        }else if(input===pass){
+            setInputClass(input,/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{6,18}$/.test(input.value))
+        }
+    }
+    
+    function setInputClass(input,bool) {
+        if(input.bool===bool) return;
+        input.bool=bool;
+        if(bool){
+            removeClass(input.parentElement,"has-error");
+            addClass(input.parentElement,"has-success");
+            removeClass(input.nextElementSibling,"glyphicon-remove");
+            addClass(input.nextElementSibling,"glyphicon-ok");
+        }else{
+            removeClass(input.parentElement,"has-success");
+            addClass(input.parentElement,"has-error");
+            removeClass(input.nextElementSibling,"glyphicon-ok");
+            addClass(input.nextElementSibling,"glyphicon-remove");
+        }
+    }
+
+
+    function addClass(elem,_className) {
+        var arr=elem.className.split(/\s/);
+        if(arr.indexOf(_className)>-1) return;
+        arr.push(_className);
+        elem.className=arr.join(" ");
+    }
+
+    function removeClass(elem,_className) {
+        var arr=elem.className.split(/\s/);
+        var index=arr.indexOf(_className);
+        if(index===-1) return;
+        arr.splice(index,1);
+        elem.className=arr.join(" ");
+    }
+</script>
+</body>
+</html>

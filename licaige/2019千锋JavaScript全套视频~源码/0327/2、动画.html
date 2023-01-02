@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+
+<ul>
+    <li>北京
+        <ul>
+            <li>昌平
+                <ul>
+                    <li>沙河</li>
+                    <li>城关</li>
+                    <li>回龙观</li>
+                    <li>天通苑</li>
+                </ul>
+            </li>
+            <li>海淀</li>
+            <li>朝阳</li>
+            <li>东城</li>
+            <li>西城</li>
+        </ul>
+    </li>
+    <li>山东</li>
+    <li>山西</li>
+    <li>河北
+        <ul>
+            <li>保定</li>
+            <li>石家庄</li>
+            <li>张家口
+                <ul>
+                    <li>张北</li>
+                    <li>崇礼</li>
+                    <li>下花园</li>
+                    <li>宣化</li>
+                </ul>
+            </li>
+            <li>承德</li>
+            <li>邯郸</li>
+        </ul>
+    </li>
+    <li>河南</li>
+</ul>
+    <script>
+        /*$("<div></div>")
+            .appendTo("body")
+            .width(50)
+            .height(50)
+            .css("backgroundColor","red")
+                    //            hide 隐藏 2000时间,后面函数是完成动画后执行的函数
+            .hide(2000,function () {
+                $(this).show(2000);
+            });*/
+        /*$("<div></div>")
+            .appendTo("body")
+            .width(50)
+            .height(50)
+            .css("backgroundColor","red")
+            //            hide 隐藏 2000时间,后面函数是完成动画后执行的函数
+            .slideUp(2000,function () {
+                $(this).slideDown(2000);
+            });*/
+       /* $("ul").on("click",function (e) {
+            if(e.target.constructor!==HTMLLIElement) return;
+            e.stopPropagation();
+            if(!e.target.bool){
+                e.target.bool=true;
+                $(e.target.firstElementChild).slideUp(1000);
+            }else{
+                e.target.bool=false;
+                $(e.target.firstElementChild).slideDown(1000);
+            }
+        })*/
+
+      /*  $("<div></div>")
+            .appendTo("body")
+            .width(50)
+            .height(50)
+            .css("backgroundColor","red")
+            //            fadeOut 隐藏 2000时间,后面函数是完成动画后执行的函数
+            /!*.fadeOut(2000,function () {
+                $(this).fadeIn(2000);
+            });*!/
+            .fadeTo(2000,0.5)*/
+
+
+
+
+        $("<div></div>")
+            .appendTo("body")
+            .width(50)
+            .height(50)
+            .css("backgroundColor","red")
+            .animate({
+                width:100,
+                height:100
+            },2000).animate({
+            width:200,
+            height:200
+        },2000)
+    </script>
+</body>
+</html>

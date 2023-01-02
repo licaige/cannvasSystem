@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /*
+        *   因为浏览器的安全措施,禁止浏览器中的代码直接访问文件夹,修改删除文件内容.
+        *   因此,在浏览器中js如果需要获取本地文件必须通过AJAX获取本地文件,但是不能
+        *   修改和删除.如果需要保存为本地文件,只有通过cookie和webStorage.
+        *
+        *   nodejs是服务端程序,服务端程序允许操作服务器电脑本地文件
+        *
+        *
+        *
+        * */
+
+        /*
+        *  open方法
+        *
+        *
+        *  Method     GET  POST  PUT  DELETE
+        *
+        *  GET  明文URL地址尾部写入request参数传送给服务端,因此数据小,不保密,
+        *
+        *  优点,随时可以通过URL获取,有利于网页和网页间传输数据,发送给服务器时,
+        *  服务器方便提取,可以查看.
+        *
+        *  POST  非明文发送,在send中写入request参数传送给服务端,数据可以较多,保密
+        *  (不能直接看到,但是可以通过浏览器的工具栏看到数据).不能通过URL获取,不适合
+        *  网页和网页间数据传递,服务器的语言不通,提取的方式不同.
+        *
+        *  URL   地址
+        *    协议://IP地址:端口号?参数字符串
+        *    如果是file协议,可以不用写file://,不需要给ip和端口,只需给相对路径和文件名
+        *    并且在设置Method时,可以随意给任何的内容,GET或者POST都可以
+        *
+        *  async  异步,默认状态是true,就是异步,我们需要写入侦听事件来确定是否
+        *  通信完成,并且执行了通信成功后的事件函数.
+        *  如果将这个参数修改为false,那么就是同步,我们在send消息发出后等待服务器的
+        *  响应,不继续执行后续的语句,知道服务器将数据推送过来后再继续执行.,不建议大家
+        *  使用同步,可能会造成卡死
+        *
+        *
+        *  user和password是该网站通信的要求,服务端可以定义通信的用户名和密码,这里填写后
+        *  服务器可以验证是否允许进入
+        *
+        * */
+//        var xhr=new XMLHttpRequest();
+//        xhr.open("GET","http://10.9.25.176:3000?a=1&b=2",true);
+//        xhr.addEventListener("load",loadHandler);
+//        xhr.addEventListener("timeout",timeOutHandler);
+////        xhr.setRequestHeader()
+////        xhr.withCredentials=false;
+//        xhr.timeout=2000;
+//        xhr.send();
+//        function loadHandler(e) {
+////            console.log(this.response);
+////            console.log(this.getAllResponseHeaders());
+//            console.log(this.getResponseHeader("content-type"));
+//        }
+//
+//        function timeOutHandler(e) {
+//
+//        }
+
+
+      /*  var xhr1=new XMLHttpRequest();
+        xhr1.open("GET","http://10.9.25.176:3000?a=1&b=2",false);
+        xhr1.send();
+        console.log(xhr.response);*/
+
+
+      /*
+      *   Http请求头
+      *  requestHeader
+      *   请求头的方法
+      * setRequestHeader
+      *   Content-Length  内容长度,在使用POST发送时,AJAX会自动发送请求头中包含Content-Length
+      *   是指当前发送数据的长度
+      *  content-type”,”application/x-www-form-urlencoded;charset=utf-8”
+      *
+      *  请求头在设置时只能出现在open之后,send之前
+      *  主要目的是告诉服务器发送的消息相关信息
+      *
+      *
+      * 响应头
+      * responseHeader
+      * 服务端发送给客户端的响应头消息
+      * xhr.getAllResponseHeaders()  获取服务端所有发送来的响应头
+      * xhr.getResponseHeader("content-type")获取指定服务端响应头
+      *
+      *
+      *    xhr.withCredentials=true;  设置安全策略,如果客户端和服务端同域的情况下,会将cookie发送给服务器
+      *    如果不同域,就会报错.
+      * */
+
+
+      /*
+      *
+      *   abort() 终止AJAX连接
+      *
+      *
+      *
+      * */
+
+
+      /*
+      *xhr.timeout=2000;
+      * timeout 超时,服务器响应速度较慢,前端需要设置请求超时,当多少毫秒后没有返回消息
+      * 主动切断ajax请求,(abort)
+      *  xhr.addEventListener("timeout",timeOutHandler);
+      * 这是请求超时事件,如果请求超时,就执行该事件函数
+      * */
+
+
+      /*
+      *
+      *  send  发送请求
+      *   send()   GET请求时
+      *
+      *
+      *   POST
+      *   send(String)  发送字符串,queryString,1,变量名1=值1&变量2=值2. 2,JSON字符串
+      *   send(document) 发送XML数据
+      *   send(FormData)  表单数据  通常作用是将表单中内容提交给服务端
+      *  send(ArrayBuffer)  二进制数组,用于发送二进制数据流
+      *  send(Blob)   大型二进制数组存储容器
+      *
+      * */
+      var xhr=new XMLHttpRequest();
+        xhr.addEventListener("readystatechange",loadHandler);
+      xhr.open("POST","http://10.9.25.176:3001");
+     /* var data=new FormData();
+      data.append("a",3);
+      data.append("b",5);
+      xhr.send(data);*/
+     xhr.send("a=1&b=2");
+      function loadHandler(e) {
+//            console.log(this.response);
+//          console.log(this.readyState);
+          console.log(this.status);
+          if(this.readyState===4 && this.status===200){
+                console.log("通信成功");
+          }
+      }
+
+
+
+      /*
+      *   xhr.readyState
+      *     0   创建 XMLHttpRequest
+      *     1   调用了open方法
+      *     2   写入了header并且执行send
+      *     3   loading  正在传输数据,已经收到数据头
+      *     4   finish   数据传输完成或者失败,并且关闭了通信
+      *
+      *
+      *     load 事件是指在xhr.readyState===4时触发
+      *
+      *
+      *
+      * */
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <!--<script src="js/main.js" defer></script>-->
+</head>
+<body>
+<img src="img/bird.png">
+<div></div>
+<form>
+    <input type="text" name="user">
+    <input type="password" name="pass">
+</form>
+<button>发送</button>
+    <script>
+      /*  $.getJSON("tsconfig.json",function (data) {
+            console.log(data);
+        });
+        $.getScript("./js/a.js",function (data) {
+
+        })*/
+
+//      $("div").load("tsconfig.json");
+//        $("div").load("http://10.9.25.176:3000?a=10&b=20");
+
+//        $("div").load("index.html");//带样式加载
+//        $("div").load("index.html ul");//只加载标签不加载样式
+//        $("div").load("index.html .a");
+        /*$(this).load("tsconfig.json",function (data) {
+            console.log(data);
+        })*/
+//         data 是加载e.response,status 加载成功状态,xhr就是AJAX的xhr
+        /*$(this).load("http://10.9.25.176:3000?a=10&b=20",function (data,status,xhr) {
+            console.log(data,xhr);
+        })*/
+
+       /*
+//            load("url",发送给服务器的数据(GET或者POST不做明显区分),通信完成后的响应函数)
+
+       $(this).load("http://10.9.25.176:3000","a=10&b=20",function (data) {
+            console.log(data);
+        });
+      $(this).load("http://10.9.25.176:3001","a=10&b=20",function (data) {
+          console.log(data);
+      })*/
+
+       /*
+       *  get或者post通信
+       *
+       * */
+       /*$.get("http://10.9.25.176:3000","a=10&b=20",function (data) {
+           console.log(data);
+       })*/
+//      $.post("http://10.9.25.176:3001","a=10&b=20",function (data) {
+//          console.log(data);
+//      })
+
+       /* $.ajax({
+            type:"POST",
+            url:"http://10.9.25.176:3001",
+            data:{a:10,b:10},
+            success:function (data) {
+                console.log(data);
+            }
+        })*/
+
+       $("button").click(function () {
+           $.ajax({
+               type:"POST",
+               url:"http://10.9.25.176:3001",
+//               表单序列化,自动将表单中的数据转换为对象发送服务器
+               data:$("form").serialize(),
+               success:function (data) {
+                   console.log(data);
+               }
+           })
+       })
+    </script>
+</body>
+</html>

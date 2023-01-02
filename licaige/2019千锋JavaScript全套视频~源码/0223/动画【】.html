@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div
+        {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="div0"></div>
+    <script>
+        var div0=document.getElementById("div0");
+        var left=0;
+        var bool=true;
+
+        setInterval(animation,16);
+//        var time=0;
+        div0.addEventListener("click",clickHandler);
+
+
+        function clickHandler(e) {
+            bool=!bool;
+        }
+        function animation() {
+            if(!bool) return;
+//            console.log("已经过了"+(time++)+"秒")
+            left+=2;
+            div0.style.left=left+"px";
+        }
+    </script>
+</body>
+</html>
