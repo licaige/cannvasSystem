@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .small_img
+        {
+            width: 350px;
+            height: 350px;
+            border: 1px solid #999999;
+            position: relative;
+        }
+        .mask
+        {
+            width: 153px;
+            height: 153px;
+            background-color: rgba(255,192,0,0.3);
+            position: absolute;
+        }
+        .big_img{
+            width: 350px;
+            height: 350px;
+            position: absolute;
+            left:360px;
+            top:8px;
+            border: 1px solid #999999;
+        }
+        .leftBn
+        {
+            position: relative;
+            left:0;
+            width: 22px;
+            height: 32px;
+            background: url("img/prev.png");
+            float: left;
+            top:15px;
+        }
+        .rightBn
+        {
+            position: relative;
+            width: 22px;
+            height: 32px;
+            background: url("img/sprite.png") -78px 0;
+            float: left;
+            top:15px;
+        }
+        .iconCon
+        {
+            margin-top: 20px;
+            width: 350px;
+            height: 58px;
+        }
+        .iconList
+        {
+            width: 290px;
+            height: 58px;
+            float: left;
+            position: relative;
+            overflow: hidden;
+        }
+        .iconImgList
+        {
+            width: 348px;
+            font-size: 0;
+            height: 58px;
+            position: absolute;
+        }
+        .iconImgList img
+        {
+            border: 2px solid transparent;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="small_img">
+            <div class="mask"></div>
+        </div>
+        <div class="big_img"></div>
+        <div class="iconCon">
+            <div class="leftBn"></div>
+            <div class="iconList">
+                <div class="iconImgList">
+                </div>
+            </div>
+            <div class="rightBn"></div>
+        </div>
+    </div>
+    <script>
+        let smallImg,bigImg,mask,iconImgList,leftBn,rightBn;
+        let firstP,lastP,pre;
+        let list=["1_icon.jpg","2_icon.jpg","3_icon.jpg","4_icon.jpg","5_icon.jpg","6_icon.jpg"];
+        init();
+        function init() {
+            smallImg=document.querySelector(".small_img");
+            mask=document.querySelector(".mask");
+            bigImg=document.querySelector(".big_img");
+            iconImgList=document.querySelector(".iconImgList");
+            leftBn=document.querySelector(".leftBn");
+            rightBn=document.querySelector(".rightBn");
+            for(let i=0;i<list.length;i++){
+                let img=new Image();
+                img.src="./img/"+list[i];
+                iconImgList.appendChild(img);
+                if(i===0){
+                    selectImg(img);
+                }
+            }
+            setImage("./img/"+list[0].replace("_icon",""));
+            firstP=0;
+            lastP=4;
+            smallImg.addEventListener("mousemove",mouseHandler);
+            smallImg.addEventListener("mouseleave",mouseLeaveHandler);
+            smallImg.addEventListener("mouseenter",mouseLeaveHandler);
+            iconImgList.addEventListener("mouseover",imgSelectHandler);
+
+            leftBn.addEventListener("click",clickHandler);
+            rightBn.addEventListener("click",clickHandler);
+        }
+
+        function imgSelectHandler(e) {
+            if(e.target===iconImgList) return;
+            selectImg(e.target);
+            setImage(e.target.src.replace("_icon",""));
+
+        }
+
+        function setImage(src) {
+            if(smallImg.children.length===1){
+                let img=new Image();
+                img.src=src;
+                img.style.width="350px";
+                img.style.height="350px";
+                img.style.position="absolute";
+                smallImg.insertBefore(img,smallImg.firstElementChild);
+            }else{
+                smallImg.firstElementChild.src=src;
+            }
+            bigImg.style.backgroundImage=`url(${src})`;
+        }
+        function mouseLeaveHandler(e) {
+            if(e.type==="mouseenter"){
+                bigImg.style.display="block";
+            }else if(e.type==="mouseleave"){
+                bigImg.style.display="none";
+            }
+        }
+        function mouseHandler(e) {
+            mask.style.left=e.x-mask.offsetWidth/2+"px";
+            mask.style.top=e.y-mask.offsetHeight/2+"px";
+
+            if(mask.offsetLeft<0){
+                mask.style.left="0px";
+            }
+            if(mask.offsetTop<0){
+                mask.style.top="0px";
+            }
+            if(mask.offsetLeft+mask.offsetWidth>smallImg.offsetWidth){
+                mask.style.left=smallImg.offsetWidth-mask.offsetWidth+"px";
+            }
+            if(mask.offsetTop+mask.offsetHeight>smallImg.offsetHeight){
+                mask.style.top=smallImg.offsetHeight-mask.offsetHeight+"px";
+            }
+            bigImg.style.backgroundPositionX=-mask.offsetLeft*(800/350)+"px";
+            bigImg.style.backgroundPositionY=-mask.offsetTop*(800/350)+"px";
+        }
+
+        function clickHandler(e) {
+            if(this===leftBn){
+                if(firstP-1<0) return;
+                firstP--;
+                lastP--;
+                iconImgList.style.left=-firstP*58+"px";
+            }else if(this===rightBn){
+                if(lastP+1>list.length-1) return;
+                lastP++;
+                firstP++;
+                iconImgList.style.left=-(lastP-4)*58+"px";
+            }
+        }
+        function selectImg(elem) {
+            if(pre){
+                pre.style.border="2px solid transparent";
+            }
+            pre=elem;
+            pre.style.border="2px solid #e01222";
+        }
+    </script>
+</body>
+</html>

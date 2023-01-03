@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<div id="app">
+			<my-component></my-component>
+		</div>
+		
+	    <script src="js/loading.js"></script>
+        <script src="https://unpkg.com/vue@next"></script>
+		<script>
+		    const app = Vue.createApp({});
+			app.component('my-component', {
+				data(){
+					return {
+						message: ''
+					}
+				},
+    	        template: '<p>{{message}}</p>',
+    	        beforeCreate () {
+    			    Loading.show();
+    			},
+    			created () {
+    			  	// 准备数据，例如从服务器端获取数据，
+    			  	// 当响应成功后，关闭loading，设置数据
+    			  	// 此处用setTimeout模拟耗时的操作
+    			  	setTimeout(()=>{
+    			  		Loading.close();
+    			  		this.message = "Java无难事";
+    			  	}, 2000);
+    			}
+        	});
+        	
+        	app.mount('#app');
+		</script>
+	</body>
+</html>

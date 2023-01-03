@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div
+        {
+            text-align: center;
+            margin-top: 200px;
+        }
+        input
+        {
+            width: 460px;
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid #000000;
+            background-color: transparent;
+            font-size: 30px;
+        }
+        ul
+        {
+            list-style: none;
+            width: 460px;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            border: 1px solid #000000;
+            border-top:none ;
+        }
+        li
+        {
+            background-color: white;
+            cursor: default;
+            font-size: 16px;
+            padding: 5px 2px;
+        }
+        li:hover
+        {
+            background-color: azure;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="input" title="input">
+    </div>
+    <script>
+        var input,id,script,ul;
+        init();
+        function init() {
+            input=document.getElementById("input");
+            input.addEventListener("input",inputHandler);
+        }
+        function inputHandler(e) {
+            if(id)return;
+            id=setTimeout(throttleHandler,500);
+        }
+        
+        function throttleHandler() {
+            clearTimeout(id);
+            id=0;
+            if(script){
+                script.remove();
+                script=null;
+            }
+            /*
+            *  创建并添加一次,才可以执行一次,因此在使用jsonp的时候要注意每次获取数据
+            *  都需要删除原来创建jsonp对应的script标签,再创建新标签
+            *
+            * */
+            script=document.createElement("script");
+            script.src="https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd="+input.value+"&json=1&p=3&sid=22084_1436_13548_21120_22036_22073&req=2&csor=0&cb=callback";
+            document.body.appendChild(script)
+        }
+        
+        function callback(data) {
+            if(ul){
+                ul.removeEventListener("click",clickhandler);
+                ul.remove();
+                ul=null;
+            }
+           ul=document.createElement("ul");
+            ul.addEventListener("click",clickhandler);
+           ul.style.left=input.offsetLeft+"px";
+           for(var i=0;i<data.s.length;i++){
+               var li=document.createElement("li");
+               li.textContent=data.s[i];
+               ul.appendChild(li);
+           }
+           document.body.appendChild(ul);
+//            https://www.baidu.com/s?ie=utf-8&f=3&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E4%BD%A0%E5%A5%BD%E6%97%A7%E6%97%B6%E5%85%89&oq=nihao&rsv_pq=aeaf83740007b230&rsv_t=2c91pj9T8hulzffTFscupVU%2B1v9fDql%2B92QEw2sXXUGr8Ro9ulhsLHStnas&rqlang=cn&rsv_enter=1&rsv_sug1=11&rsv_sug7=100&rsv_sug3=14&rsv_sug2=1&prefixsug=%25E4%25BD%25A0%25E5%25A5%25BD&rsp=0&inputT=1392702&rsv_sug4=1393234
+        }
+        
+        function clickhandler(e) {
+            if(e.target.constructor!==HTMLLIElement) return;
+            location.href= "https://www.baidu.com/s?ie=utf-8&f=3&rsv_bp=1&rsv_idx=1&tn=baidu&wd="+e.target.textContent+"&oq="+input.value+"&rsv_pq=aeaf83740007b230&rsv_t=2c91pj9T8hulzffTFscupVU%2B1v9fDql%2B92QEw2sXXUGr8Ro9ulhsLHStnas&rqlang=cn&rsv_enter=1&rsv_sug1=11&rsv_sug7=100&rsv_sug3=14&rsv_sug2=1&prefixsug=%25E4%25BD%25A0%25E5%25A5%25BD&rsp=0&inputT=1392702&rsv_sug4=1393234"
+        }
+    </script>
+</body>
+</html>

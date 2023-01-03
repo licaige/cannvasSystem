@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+        <div id="app">
+        	<post-item :post-title="title"></post-item>
+        </div>
+	
+	      <script src="https://unpkg.com/vue@next"></script>
+        <script>
+            const app = Vue.createApp({
+                data(){
+                    return {
+                        title: 'Java无难事'
+                    }
+                }
+            });
+            app.component('PostItem', {
+                //声明props
+                props: ['postTitle'],
+                setup(props){
+                    Vue.watchEffect(() => {
+                        console.log(props.postTitle);
+                    })
+                },
+                template: '<h3>{{ postTitle }}</h3>'
+            });
+        	const vm = app.mount('#app');
+        </script>
+	</body>
+</html>

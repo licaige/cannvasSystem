@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .ball
+        {
+            width: 10px;
+            height: 10px;
+            background-color: deepskyblue;
+            position: absolute;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var arr=[];
+        var r=30;
+        var time=4;
+        init();
+        function init() {
+            animation()
+        }
+
+        function createBall(alpha) {
+           var ball=document.createElement("div");
+            ball.className="ball";
+            ball.style.opacity=alpha;
+            document.body.appendChild(ball);
+            ball.angle=0;
+            arr.push(ball);
+        }
+
+        function animation() {
+            requestAnimationFrame(animation);
+            for(var i=0;i<arr.length;i++){
+                update(arr[i]);
+            }
+            time--;
+            if(time>0 || arr.length>15) return;
+            createBall(1-arr.length*0.08);
+            time=4;
+        }
+
+        function update(elem) {
+            elem.angle+=5;
+            if(elem.angle===360) elem.angle=0;
+            var speedX=Math.sin(elem.angle*Math.PI/180)*r;
+            var speedY=Math.cos(elem.angle*Math.PI/180)*r;
+            elem.style.left=(document.documentElement.clientWidth-elem.offsetWidth)/2+speedX+"px";
+            elem.style.top=(document.documentElement.clientHeight-elem.offsetHeight)/2+speedY+"px";
+        }
+    </script>
+</body>
+</html>

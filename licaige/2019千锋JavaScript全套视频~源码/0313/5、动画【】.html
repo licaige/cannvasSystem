@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div
+        {
+            transform: rotate(0deg);
+        }
+    </style>
+    <script src="js/Tween.js"></script>
+    <!--<link rel="stylesheet" href="css/animate.css">-->
+</head>
+<body>
+    <!--<div class="animated zoomOutLeft" style="display: block;">欢迎来到千峰H5学习</div>-->
+    <script>
+        var div;
+        init();
+        function init() {
+            div=document.createElement("div");
+            Object.assign(div.style,{
+                width:"50px",
+                height:"50px",
+                backgroundColor:"red",
+                borderRadius:"25px",
+                transform: "rotate(0deg)",
+                background: "linear-gradient(red,yellow,orange)",
+
+                position:"absolute"
+            });
+            document.body.appendChild(div);
+            animation();
+            document.addEventListener("click",clickHandler);
+        }
+
+        function clickHandler(e) {
+            var tween=new TWEEN.Tween({left:div.offsetLeft,top:div.offsetTop,r:0});
+            tween.to({left:e.x-div.offsetWidth/2,top:e.y-div.offsetHeight/2,r:720},1000);
+            tween.onUpdate(updateHandler);//实时更新
+            tween.onComplete(completeHandler);//完成后执行函数
+            tween.onStart(startHandler);//开始时执行的函数
+//            tween.onStop(stopHandler);//暂停停止时执行的函数
+            tween.easing(TWEEN.Easing.Quadratic.Out);//缓动
+            tween.repeat(1);//重复
+            tween.yoyo(true);//悠悠球
+//            tween.delay(1000);//延迟
+//            tween.repeatDelay(1000);//重复间隔延迟
+            tween.start();
+        }
+
+        function updateHandler() {
+          div.style.left=this.left+"px";
+          div.style.top=this.top+"px";
+          div.style.transform="rotate("+this.r+"deg)";
+        }
+
+        function animation() {
+            requestAnimationFrame(animation);
+            TWEEN.update();
+        }
+        
+        function startHandler() {
+            
+        }
+        
+        function completeHandler() {
+            div.style.display="none";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div0"></div>
+    <script>
+      /*  var date=new Date(); //2
+        console.log(date);
+        console.log(date.getFullYear());
+        console.log(date.getMonth());//月份显示是从0开始计算,1就是2月
+        console.log(date.getDate());//几号
+        console.log(date.getDay());//星期几  0-6 0是星期日
+        console.log(date.getHours());//小时
+        console.log(date.getMinutes());//分
+        console.log(date.getSeconds());//秒
+        console.log(date.getMilliseconds());//毫秒
+
+//        set的所有方法  5
+        date.setFullYear(2020);
+        date.setMonth(12);//如果设置12大于了11,就会进1年,当前为1月,2021年1月
+        console.log(date);*/
+
+
+        var div=document.getElementById("div0");
+        setInterval(animation,1000);
+
+        function animation() {
+            var date=new Date();
+            div.innerHTML=date.getFullYear()+"年"+(date.getMonth()+1)+"月"+
+                date.getDate()+"日 星期"+(date.getDay()===0 ? "日" : date.getDay())+
+                " "+date.getHours()+"时"+date.getMinutes()+"分"+date.getSeconds()+"秒";
+        }
+
+
+
+       /* var id=setInterval(fn,16);
+        var num=0;
+        function fn() {
+            console.log(id);
+            num++;
+            if(num>=3){
+                clearInterval(id);
+            }
+
+        }*/
+/*
+*
+*  var id= setInterval(每次执行函数,多少毫秒执行一次)
+*   返回一个id,这个id的作用可以是clearInterval清除该id,这样就停止了这个时间间隔
+*
+*   clearInterval(id)  清除时间间隔执行函数
+* */
+
+     /* var id=setInterval(fn,16);
+      var num=3;
+      function fn() {
+          num--;
+          console.log(num);
+          if(num>0) return;
+          num=3;
+          console.log("aa");
+      }*/
+
+        /*
+        *
+        * var id=setTimeout(需要以后执行的函数,需要多少毫秒以后) 延迟执行函数
+        *  返回一个id,用来作为清除该延迟使用的
+        * clearTimeout 清除延迟处理
+        * */
+     /*  var id=setTimeout(fn1,4000);
+        
+        function fn1() {
+//            只要使用setTimeout就一定在函数中使用clearTimeout清除它
+            clearTimeout(id);
+        }*/
+
+    </script>
+</body>
+</html>

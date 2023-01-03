@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <style>
+        /*div*/
+        /*{*/
+            /*width: 100px;*/
+            /*height: 100px;*/
+            /*background-color: red;*/
+        /*}*/
+        div{
+            width:50px;
+            height: 50px;
+        }
+        .div0{
+
+            background-color: red;
+        }
+        .div1{
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+    <script>
+//        console.log($("div").css("width"));//;利用css直接获取到第一个div的应用后样式
+//        $("div").css("left","50px");
+        /*$("div").css("left",function (index,value) {
+              return index*50+"px";
+        })*/
+/*
+        $("div").css({
+            position:"relative",
+            left:function (index) {
+                return index*50+"px"
+            },
+            backgroundColor:function () {
+                var col="rgba(";
+                for(var i=0;i<3;i++){
+                    col+=Math.floor(Math.random()*256)+","
+                }
+                col+="1)";
+                return col;
+            }
+        })*/
+
+
+        /*$("div").addClass("div0").on("click",function () {
+            $(this).removeClass("div0").addClass("div1");
+        })*/
+       /* $("div").addClass("div0").on("click",function () {
+                $(this).toggleClass("div1");//可以切换
+                $(this).toggleClass("div1",true);//不能切换回来
+                $(this).toggleClass("div1",false);//不能切换
+        })*/
+//        导航切换
+      /* $("div").addClass("div0").on("click",function () {
+           $(this).removeClass("div0").addClass("div1").siblings().removeClass("div1").addClass("div0")
+       })*/
+
+
+
+    </script>
+</body>
+</html>

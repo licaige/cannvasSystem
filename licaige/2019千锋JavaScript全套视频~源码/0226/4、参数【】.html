@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /*
+        *  参数如果写在所有参数的最前面,那就是必要参数
+        *  ES5中所有的参数一般都需要按位填写,如果没有填写,就会变成undefined
+        *  多填进入的参数值不会被直接获取到
+        *
+        *
+        * */
+       /* function fn1(a,b,c) {
+            console.log(a,b,c);
+        }
+        fn1(null,3,4,10,20);*/
+
+       function max() {
+//            console.log(arguments);//函数中就可以获取这个arguments
+           var arr=Array.from(arguments);
+            return arr.reduce(function (p1,p2) {
+                return p1>p2 ? p1 : p2;
+            });
+       }
+      console.log(max(1,2,3,5,7,9,1,2,5));
+        console.log(max(3,6,8,20,10));
+        
+        
+        function fn2() {
+//            arguments.callee 当前执行的函数
+//            console.log(arguments.callee.a);
+            console.log(arguments.callee);
+            console.log(arguments.callee.caller);//回调当前函数的父级函数
+            console.log(arguments)
+        }
+        fn2.a=10;
+//        fn2(3,4,6,7);
+    function fn3(fn) {
+        fn();
+    }
+    fn3(fn2);
+    </script>
+</body>
+</html>

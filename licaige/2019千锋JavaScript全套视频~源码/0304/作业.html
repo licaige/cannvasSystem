@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table
+        {
+           border-collapse: collapse;
+            width: 800px;
+        }
+        td,th{
+            height: 30px;
+            border: 1px solid #000000;
+            line-height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <label for="ids">id:</label><input type="text" id="ids" name="ids"><br>
+    <label for="icon">图标:</label><input type="text" id="icon" name="icon"><br>
+    <label for="names">名称:</label><input type="text" id="names" name="names"><br>
+    <label for="num">数量:</label><input type="text" id="num" name="num"><br>
+    <label for="price">单价:</label><input type="text" id="price" name="price"><br>
+    <button id="bn">添加</button>
+    <hr>
+    <script>
+       var bn,inputs,table,labels;
+        init();
+        function init() {
+            bn=document.getElementById("bn");
+            inputs=document.querySelectorAll("[type=text]");
+            labels=document.getElementsByTagName("label");
+            bn.addEventListener("click",clickHandler);
+            createTable();
+        }
+        
+        function createTable() {
+            table=document.createElement("table");
+            var tr=document.createElement("tr");
+            var th0=document.createElement("th");
+            tr.appendChild(th0);
+            var input=document.createElement("input");
+            input.type="checkbox";
+            input.addEventListener("click",checkHandler);
+            th0.appendChild(input);
+            for(var i=0;i<labels.length;i++){
+                var th=document.createElement("th");
+                th.textContent=labels[i].textContent.slice(0,-1);
+                tr.appendChild(th);
+            }
+            var th1=document.createElement("th");
+            th1.textContent="删除";
+            tr.appendChild(th1);
+            table.appendChild(tr);
+            document.body.appendChild(table)
+        }
+
+        function clickHandler(e) {
+            var tr=document.createElement("tr");
+            var obj={selected:false};
+            for(var i=0;i<inputs.length;i++){
+                obj[inputs[i].name]=inputs[i].value;
+            }
+            obj.del="删除";
+            for(var prop in obj){
+                var td=document.createElement("td");
+                if(prop==="selected"){
+                    var input=document.createElement("input");
+                    input.type="checkbox";
+                    td.appendChild(input);
+                    input.addEventListener("click",checkHandler);
+                }else if(prop==="del"){
+                    var delBn=document.createElement("button");
+                    delBn.textContent="删除";
+                    td.appendChild(delBn);
+                    delBn.addEventListener("click",delHandler);
+                }else if(prop==="icon"){
+                    var img=new Image();
+                    img.src=obj.icon;
+                    td.appendChild(img);
+                }else{
+                    td.textContent=obj[prop];
+                    console.log(prop)
+                }
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+
+        function checkHandler(e) {
+            var checks=document.querySelectorAll("[type=checkbox]");
+            if(this===checks[0]){
+                for(var i=1;i<checks.length;i++){
+                    checks[i].checked=this.checked;
+                }
+                return;
+            }
+            var bool=true;
+            for(var j=1;j<checks.length;j++){
+                if(!checks[j].checked){
+                    bool=false;
+                    break;
+                }
+            }
+            checks[0].checked=bool;
+        }
+
+        function delHandler(e) {
+            var tr=this.parentElement.parentElement;
+            tr.remove();
+        }
+    </script>
+</body>
+</html>

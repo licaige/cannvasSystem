@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<div v-html="hElt"></div>
+		</div>
+	
+		<script src="https://unpkg.com/vue@next"></script>
+		<script>
+			const vm = Vue.createApp({
+				data() {
+				    return {
+				        hElt: "<h1>《Java无难事》</h1>"
+				    }
+				}
+			}).mount('#app');
+		</script>
+	</body>
+</html>

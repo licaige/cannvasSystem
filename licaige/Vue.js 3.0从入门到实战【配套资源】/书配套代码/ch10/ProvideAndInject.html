@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<parent></parent>
+		</div>
+		
+		<script src="https://unpkg.com/vue@next"></script>
+		<script>
+		    const app = Vue.createApp({});
+			app.component('parent', {
+                data() {
+                    return {
+                        msg: 'Java无难事'
+                    }  
+                },
+			    methods: {
+			  	    sayHello(name){
+			  		    console.log("Hello, " + name);
+			  	    }
+			    },
+			    provide(){
+			  	    return {
+			  		    // 数据message和sayHello方法可供后代组件访问
+			  		    message: this.msg,
+			  		    hello : this.sayHello
+			  	    }
+			    },
+				template: '<child/>',
+			})
+			
+			app.component('child', {
+				// 接收message数据属性和hello方法
+			 	inject: ['message', 'hello'],
+			 	mounted(){
+			 		// 当自身的方法来访问
+			 		this.hello('zhangsan');
+			 	},
+			 	// 当自身的数据属性来访问
+				template: '<p>{{message}}</p>'
+			})
+
+			const vm = app.mount('#app')
+		</script>
+	</body>
+</html>

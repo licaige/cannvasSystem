@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /*
+        *  this  是window
+        *
+        * */
+        /*this
+        function fn1() {
+            this
+        }*/
+
+
+
+
+
+        /*
+        *
+        *  事件函数中的this
+        *
+        *  事件侦听的对象
+        * */
+
+
+       /* document.addEventListener("click",clickHandler);
+        function clickHandler(e) {
+//            this
+        }*/
+     /*  var img=new Image();
+       img.src="aa.jpg";
+       img.onload=function () {
+//           console.log(this);//img
+       }*/
+
+
+     /*
+     *
+     *   bind  call  apply
+     *   混入的对象替代函数中this,这种方法仅适用于函数中
+     *   bind仅适用回调函数中
+     * */
+    /* function fn2() {
+         console.log(this)
+     }
+     fn2.call({a:1,b:2});
+     fn2.apply({a:1,b:2});
+     fn2.bind({a:1,b:2})();*/
+
+
+
+    /*
+    *
+    *   对象的函数中this一般指该对象
+    * */
+    var obj={
+        a:1,
+        b:2,
+        c:function () {
+            console.log(this.d());
+        },
+        d:function () {
+            return this.a;
+        }
+    };
+
+
+        class Box{
+            constructor(){
+                this.name="aa"
+            }
+            play(){
+//                this//类实例化的对象
+                console.log(this.name);
+                console.log(this===b);
+                this.a();
+            }
+            a(){
+                console.log("aaa");
+            }
+        }
+//        let b=new Box();
+//        b.play();
+//        let c=new Box();
+//        c.play();
+
+
+
+        /*
+        *  ES6   箭头函数
+        *  this  是当前箭头函数环境的this指向
+        *
+        * */
+//        document.addEventListener("click",e=>console.log(this))
+        
+        
+//        function abc() {
+//            document.addEventListener("click",e=>console.log(this))
+//        }
+//        abc();
+//      abc.call({a:1})
+        
+        var arr=[1,2,3,4,5];
+        document.addEventListener("click",clickHandler);
+        function clickHandler(e) {
+//            在js的API方法中,使用回调函数的方法,一般this都会被重新指向window
+            /*arr.reduce(function (item) {
+                console.log(this);
+            })*/
+           /* setInterval(function () {
+                console.log(this);
+            },16)*/
+           var self=this;//如果需要使用外部变量时一般都会存储一次
+           arr.sort(function () {
+               console.log(self);
+           })
+        }
+    </script>
+</body>
+</html>

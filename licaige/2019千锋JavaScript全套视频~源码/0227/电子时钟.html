@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div
+        {
+            width: 200px;
+            height: 170px;
+            background-image: url("img/num.png");
+            float: left;
+        }
+        span
+        {
+            float: left;
+            font-size: 40px;
+            line-height: 170px;
+        }
+    </style>
+</head>
+<body>
+    <div id="hour1"></div>
+    <div id="hour2"></div><span>:</span>
+    <div id="minute1"></div>
+    <div id="minute2"></div><span>:</span>
+    <div id="second1"></div>
+    <div id="second2"></div>
+    <script>
+        var hour1,hour2,minute1,minute2,second1,second2;
+        var pointArray=[
+            {x:825,y:170},
+            {x:0,y:0},
+            {x:205,y:0},
+            {x:410,y:0},
+            {x:615,y:0},
+            {x:825,y:0},
+            {x:0,y:170},
+            {x:205,y:170},
+            {x:410,y:170},
+            {x:615,y:170}
+        ];
+        init();
+        function init() {
+//            获取所有的div
+            hour1=document.getElementById("hour1");
+            hour2=document.getElementById("hour2");
+            minute1=document.getElementById("minute1");
+            minute2=document.getElementById("minute2");
+            second1=document.getElementById("second1");
+            second2=document.getElementById("second2");
+            animation();
+//            开启时间间隔运行
+            setInterval(animation,1000);
+        }
+
+        
+        function animation() {
+//            获取当前时间,并且把当前时间转换为字符,如果这个数字小于10.给前面加0
+            var date=new Date();
+          /*  var minutes=date.getMinutes();
+            var seconds=date.getSeconds();
+            var hour=date.getHours();
+            hour=hour<10 ? "0"+hour : hour;*/
+          var hour=getString(date.getHours());
+          var minutes=getString(date.getMinutes());
+          var seconds=getString(date.getSeconds());
+//          根据现在时间设置当前div的图片
+            setImg(hour1,hour[0]);
+            setImg(hour2,hour[1]);
+            setImg(minute1,minutes[0]);
+            setImg(minute2,minutes[1]);
+            setImg(second1,seconds[0]);
+            setImg(second2,seconds[1]);
+        }
+//        给入数字,如果是小于10的,就加前导0,否则返回这个数字的字符
+        function getString(num) {
+            return num<10 ? "0"+num : num.toString();
+        }
+
+//        给入需要改变的div,给入需要改变的值,根据坐标数组中对应的数修改当前图片的坐标位置
+        function setImg(elem,num) {
+            elem.style.backgroundPositionX=-pointArray[num].x+"px";
+            elem.style.backgroundPositionY=-pointArray[num].y+"px";
+        }
+    </script>
+</body>
+</html>

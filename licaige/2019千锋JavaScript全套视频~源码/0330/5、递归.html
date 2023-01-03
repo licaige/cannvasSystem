@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="div0">
+        <div>
+            <div id="div1">
+                <div></div>
+                <div id="div2"></div>
+                <div></div>
+            </div>
+        </div>
+        <div id="div3">
+            <div></div>
+            <div id="div4"></div>
+            <div></div>
+        </div>
+
+        <div>
+            <div id="div5"></div>
+            <div>
+                <div id="div6">
+                    <div></div>
+                    <div id="div7">
+                        <div>
+                            <div></div>
+                            <div id="div8"></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div id="div9"></div>
+                </div>
+            </div>
+            <div></div>
+        </div>
+    </div>
+    <script>
+      /*  var i=0;
+        function fn1() {
+//            i++;
+//            if(i>16000) return;
+//            fn1();
+        }
+        fn1();*/
+
+      
+    /*  function maxValue() {
+          if(!arguments.callee.position){
+              arguments.callee.position=1;
+              arguments.callee.max=arguments[0];
+          }
+          arguments.callee.position++;
+          if(arguments.callee.position>arguments.length)return arguments.callee.max;
+//          arguments.callee.max=arguments.callee.max>arguments[arguments.callee.position] ?　arguments.callee.max :arguments[arguments.callee.position];
+          if(arguments[arguments.callee.position]>arguments.callee.max) arguments.callee.max=arguments[arguments.callee.position];
+            return maxValue.apply(null,arguments);
+
+      }
+      console.log(maxValue(2,4,5,7));*/
+
+
+    /*
+    *  如果递归需要返回一个结果时
+    *   一共做两个return返回
+    *   第一个是条件满足时返回最终的结果
+    *   第二个是每次递归时,都要返回调用递归函数的结果
+    *
+    *
+    * */
+
+        /*var arr=[1,4,6,7];
+        var s=0;
+        var i=0;
+        function sum() {
+            s+=arr[i];
+            i++;
+            if(i>arr.length-1) return s;//最后一次
+            return sum();//返回sum执行的结果
+        }
+        console.log(sum());*/
+
+
+
+      /*var div=document.querySelectorAll("[id]");
+  var obj={};
+  for(var i=0;i<div.length;i++){
+      obj[div[i].id]=div[i];
+  }
+  obj["div1"].textContent="aaa"*/
+
+    var obj={};
+      function getDivDIC(elem) {
+            if(elem.id){
+                obj[elem.id]=elem;
+            }
+            for(var i=0;i<elem.children.length;i++){
+                 getDivDIC(elem.children[i]);
+            }
+            return obj;
+      }
+      console.log(getDivDIC(document.body));
+    </script>
+</body>
+</html>

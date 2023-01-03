@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #rollImg{
+            width: 1280px;
+            height: 426px;
+            position: relative;
+            overflow: hidden;
+            margin: auto;
+        }
+        #imgCon{
+            width: 6400px;
+            height: 426px;
+            font-size: 0;
+            position: absolute;
+            left:0;
+            transition: all 1s;
+        }
+        #imgCon img
+        {
+            width: 1280px;
+            height: 426px;
+
+        }
+        #leftBn,#rightBn
+        {
+            position: absolute;
+            top:183px;
+        }
+        #leftBn{
+            left:10px;
+        }
+        #rightBn
+        {
+            right: 10px;
+        }
+        ul{list-style: none;position: absolute;left:500px;bottom: 10px}
+        li{border: 1px solid #FF0000;border-radius: 8px;width: 16px;height: 16px;float: left;margin-left: 10px;background-color: rgba(255,0,0,0)}
+    </style>
+</head>
+<body>
+    <div id="rollImg">
+        <div id="imgCon">
+            <img src="img/a.jpeg">
+            <img src="img/b.jpeg">
+            <img src="img/c.jpeg">
+            <img src="img/d.jpeg">
+            <img src="img/e.jpeg">
+        </div>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <img id="leftBn" src="img/left.png">
+        <img id="rightBn" src="img/right.png">
+    </div>
+<script>
+    /*
+    *  设置变量
+    *  leftBn  左边按钮
+    *  rightBn 右边按钮
+    *  imgCon 图片的父容器
+    *  liList li小圆点的数组列表
+    *  preLi 上一次显示li小圆点变量
+    *
+    * */
+    var leftBn,rightBn,imgCon,liList,preLi;
+//    用来定位当前图片外容器所在第几张图的位置
+    var position=0;
+//    初始化函数
+    init();
+    /*
+    * 1.获取所有初始DOM元素
+    * 2.针对所有按钮和所有li小圆点做点击侦听
+    * 3.执行当前小圆点位置改变和图片位置改变,根据position
+    *
+    *
+    * */
+    function init() {
+//        左按钮
+        leftBn=document.getElementById("leftBn");
+//        右按钮
+        rightBn=document.getElementById("rightBn");
+//        图片容器
+        imgCon=document.getElementById("imgCon");
+//        先根据标签名获取li的所有列表,然后通过转换将这个类数组转换为数组
+        liList=Array.from(document.getElementsByTagName("li"));
+//        侦听左边按钮和右边按钮的点击,执行点击事件函数clickHandler
+        leftBn.addEventListener("click",clickHandler);
+        rightBn.addEventListener("click",clickHandler);
+//        循环小圆点li的数组,针对数组中每个小圆点做点击侦听事件,执行liClickHandler
+        for(var i=0;i<liList.length;i++){
+            liList[i].addEventListener("click",liClickHandler);
+        }
+//        执行切换图片并且重置小圆点显示函数
+        imgConMove();
+    }
+
+    /*
+    *
+    *  小圆点点击事件函数
+    *  当点击小圆点时,判断当前被点击的小圆点在小圆点数组中是第几个,也能判断出
+    *  当前我们要展现图片的是第几张,并且将这个值赋予position,因为position改变,
+    *  在执行imgConMove函数时就会切换图片并且重置小圆点显示
+    *
+    * */
+    function liClickHandler(e) {
+        position=liList.indexOf(this);
+        imgConMove();
+    }
+    /*
+    * 点击左右按钮切换图片的函数
+    *  1.如果点击的按钮是leftBn时,让position-1,这样我们就可以显示上一张图片的位置
+    *  如果点击的这个值递减后小于0,我们让他到最大值4,这样我们可以循环点击下去,再执行
+    *  imgConMove函数时就会切换图片并且重置小圆点显示
+    *
+    *2.如果点击的按钮是rightBn时,让position+1,这样我们就可以显示下一张图片的位置
+    *  如果点击的这个值递加后大于图片数量4,我们让他到最小值0,这样我们可以循环点击下去,再执行
+    *  imgConMove函数时就会切换图片并且重置小圆点显示
+    *
+    * */
+    function clickHandler(e) {
+        if(this===leftBn){
+            position--;
+            if(position<0){
+                position=4;
+            }
+            imgConMove();
+            return;
+        }
+        position++;
+        if(position>4){
+            position=0;
+        }
+        imgConMove();
+    }
+
+    /*
+    *  切换图片,并且切换被点击的小圆点
+    *  1.设置当前图片的父容器的left是-1280*第几张图片,
+    *  负数是向左移动,1280是一张图片的宽度,position是第几张图
+    *  我们可以让图片外容器移动到我们需要显示图片位置
+    *  2.判断当前preLi变量所代表的的li小圆点是否存在,这个变量保存
+    *  了上一次点击显示小圆点是哪一个,因此这次切换新的图片时,我们
+    *  需要将上次的那个小圆点背景色设置为透明
+    *  3.position是当前第几张图片,对应就是小圆点是第几个,从小圆点
+    *  数组中取出对应的小圆点赋值给preLi
+    *  4.修改这次新的小圆点背景色是红色半透
+    *
+    * */
+    function imgConMove() {
+        imgCon.style.left=-1280*position+"px";
+        if(preLi){
+            preLi.style.backgroundColor="rgba(255,0,0,0)";
+        }
+        preLi=liList[position];
+        preLi.style.backgroundColor="rgba(255,0,0,0.3)";
+    }
+
+
+
+</script>
+</body>
+</html>

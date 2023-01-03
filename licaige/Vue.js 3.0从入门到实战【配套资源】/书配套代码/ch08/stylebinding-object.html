@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>style绑定</title>
+	</head>
+	<body>
+		<div id="app">
+		   <div v-bind:style="styleObject">《Java无难事》</div>
+		</div>
+	
+		<script src="https://unpkg.com/vue@next"></script>
+		<script>
+			const vm = Vue.createApp({
+    		    data() {
+    		        return {
+    		            styleObject: {
+    						color: 'red',
+    						fontSize: '30px'
+    					}
+    		        }
+    		    }
+		    }).mount('#app');
+		</script>
+	</body>
+</html>

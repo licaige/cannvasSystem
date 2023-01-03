@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var arr=[1,2,4,6,7,8,5,9];
+  /*      var bool=arr.some(function (t) {
+//            判断所有元素是否有满足该条件的,
+// 如果遇到一次满足则不再继续判断,直接返回true,否则返回false
+            return t>10;
+        });
+        console.log(bool);*/
+//    判断数组中是否有大于5的值
+       /* if(arr.some(function (t) { return t>5 })){
+
+        }*/
+
+/*
+        查询对象型数组是否有符合条件的元素
+        var data=[
+            {id:1001,icon:"img/1.png",name:"餐饮0",num:1,price:10},
+            {id:1002,icon:"img/2.png",name:"餐饮1",num:1,price:20},
+            {id:1003,icon:"img/3.png",name:"餐饮2",num:1,price:30},
+            {id:1004,icon:"img/4.png",name:"餐饮3",num:1,price:40},
+            {id:1005,icon:"img/5.png",name:"餐饮4",num:1,price:50},
+            {id:1006,icon:"img/6.png",name:"餐饮5",num:1,price:60},
+            {id:1007,icon:"img/7.png",name:"餐饮6",num:1,price:70},
+            {id:1008,icon:"img/8.png",name:"餐饮7",num:1,price:80},
+            {id:1009,icon:"img/9.png",name:"餐饮8",num:1,price:90},
+            {id:1010,icon:"img/10.png",name:"餐饮9",num:1,price:100}
+        ];
+        if(data.some(function (t) { return t.id===1005 })){
+            console.log("有");
+        }*/
+/*
+        判断数组中每一个是否满足条件,如果全部都满足,就返回true,否则返回false
+       var bool=arr.every(function (t) {
+            return t>0;
+        });
+        console.log(bool);*/
+
+    /*
+    *
+    *   filter过滤筛选
+    *
+    * */
+   /* var arr1=arr.filter(function (t) {
+        t++;
+        return t>5;//返回的任然是原元素
+    });
+    console.log(arr1,arr);*/
+
+        var data=[
+            {id:1001,icon:"img/1.png",name:"餐饮0",num:1,price:10},
+            {id:1002,icon:"img/2.png",name:"餐饮1",num:1,price:20},
+            {id:1003,icon:"img/3.png",name:"餐饮2",num:1,price:30},
+            {id:1004,icon:"img/4.png",name:"餐饮3",num:1,price:40},
+            {id:1005,icon:"img/5.png",name:"餐饮4",num:1,price:50},
+            {id:1006,icon:"img/6.png",name:"餐饮5",num:1,price:60},
+            {id:1007,icon:"img/7.png",name:"餐饮6",num:1,price:70},
+            {id:1008,icon:"img/8.png",name:"餐饮7",num:1,price:80},
+            {id:1009,icon:"img/9.png",name:"餐饮8",num:1,price:90},
+            {id:1010,icon:"img/10.png",name:"餐饮9",num:1,price:100}
+        ];
+       /* data.forEach(function (t) {
+            t.selected=Math.random()*2+1<2;
+        });
+        /!*
+        *  判断是否每个元素都被选中
+        *
+        * *!/
+        if(data.length===data.filter(function (t) { return t.selected }).length){
+
+        }*/
+
+       /*
+       *  如果没有initValue值,sum就是第0项的值,item就是第一项值,所以index是从1开始
+       *求和运算
+       * */
+//               arr是实例.动态方法
+       /* var s=arr.reduce(function (sum,item,index) {
+            console.log(sum,item,index);
+            return sum+item;
+        },-10);//这里第二个参数时initValue初始值,如果设置这个初始值,index就从0开始
+        console.log(s);*/
+
+//        类名:类别的名称
+//       Array.isArray();//静态方法
+//        Array.from();//ES6的方法
+
+//        Array.prototype.slice.call(div);
+//        Array.from(div);//将类数组转换为数组
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+       function Box() {
+           this.a=5;
+           Object.defineProperty(this,"s",{
+               value:20
+           })
+       }
+       Box.prototype.constructor=Box;
+       Box.prototype.num=10;
+       /*
+       *  hasOwnProperty判断对象下某个属性是否是该对象的对象属性
+       *
+       *   Box.prototype.isPrototypeOf(obj)  判断obj的原型链是否和Box的原型一致
+       *   isPrototypeOf  检测该对象是否是实例该类的对象或者该类的父类
+       *
+       *
+       *   propertyIsEnumerable  查看对象下属性是否是可枚举属性
+       * */
+//       var obj=new Box();
+//        console.log(obj.hasOwnProperty("num"));
+//        console.log(obj.a);
+//       obj.num=20;
+//        console.log(obj.num,obj);
+//       console.log(obj.hasOwnProperty("num"));
+
+
+//       console.log(Box.prototype.isPrototypeOf(obj))
+//        console.log(Box.prototype===obj.__proto__)
+
+      /*  class Box{
+            constructor(){
+
+            }
+            num=10;
+        }
+
+        class Ball extends Box{
+            constructor(){
+                super();
+                this.num=20;
+            }
+
+        }
+
+        var b1=new Ball();
+        console.log(b1);*/
+
+        var b=new Box();
+//        console.log(b.propertyIsEnumerable("a"));
+//        console.log(b.constructor)
+
+//      对象中constructor就是这个对象抽象的类名,映射,根据对象映射类名
+        var c=new b.constructor();
+        console.log(c);
+        var arr=[1,2,3,4,5];
+        var arr1=new arr.constructor();
+        console.log(arr1);
+    </script>
+</body>
+</html>

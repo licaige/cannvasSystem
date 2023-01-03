@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/Utils.js"></script>
+</head>
+<body>
+    <script>
+        var ul;
+//        高度数组
+        var heightList=[];
+//        初始图片的名称值
+        var num=2;
+//        当前文档宽度
+        var bodyWidth;
+//        最大图片名称
+        const MAX=79;
+//        瀑布流数量是5条
+        const COL_NUM=5;
+//        每条瀑布流的边距
+        const MARGIN_LEFT=10;
+        init();
+        function init() {
+//            初始化时将现在的文档宽度赋值给bodyWidth变量,用于后面发生变化时对比
+            bodyWidth=document.body.clientWidth;
+//            创建ul
+            ul=document.createElement("ul");
+            Object.assign(ul.style,{
+                listStyle:"none",
+                width:"100%",
+                margin:0,
+                padding:0
+            });
+//            根据瀑布流数量创建li
+            for(var i=0;i<COL_NUM;i++){
+                var li=document.createElement("li");
+                Object.assign(li.style,{
+                    margin:0,
+//                    设置如果当前是第0个,不需要设置左边线,其他的设置左边线
+                    marginLeft:i===0 ? 0 : MARGIN_LEFT+"px",
+                    padding:0,
+                    fontSize:0,
+//                    设置当前瀑布流的宽度是页面宽度减去所有间距(这里第一个没有间距,只有COL_NUM-1个有间距),然后除以条数,计算出每条的宽度
+                    width:(document.body.clientWidth-MARGIN_LEFT*(COL_NUM-1))/COL_NUM+"px",
+                    float:"left"
+                });
+//                给高度数组中每个对应元素设置初始值是0
+                heightList.push(0);
+                ul.appendChild(li);
+            }
+            document.body.appendChild(ul);
+//            第一次加载进入图片时,修改整个页面的所有内容宽高
+            resizeHandler();
+//            如果页面宽高改变时,修改页面的整个内容宽高
+            window.addEventListener("resize",resizeHandler);
+//            加载第一张图片
+            var img=new Image();
+            img.addEventListener("load",loadHandler);
+            img.src="img/"+num+"-.jpg";
+        }
+        /*
+        *  重设瀑布流的每个li的宽度和每个li中图片的宽度
+        *
+        * */
+        function resizeHandler(e) {
+//            设置当前的页面宽度是bodyWidth以便下次比较
+            bodyWidth=document.body.clientWidth;
+//            循环ul的所有子项li
+            for(var i=0;i<ul.children.length;i++){
+//                计算当前每个瀑布流的宽度
+                var width=(document.body.clientWidth-MARGIN_LEFT*(COL_NUM-1))/COL_NUM+"px";
+//            设置每个li的宽度
+                ul.children[i].style.width=width;
+//                设置每个li的所有子项,(也就是所有图片的宽度)
+                for(var j=0;j<ul.children[i].children.length;j++){
+                    ul.children[i].children[j].style.width=width;
+                }
+            }
+        }
+
+        /*
+        *  每张图片加载完成后的执行的函数
+        *
+        *
+        * */
+
+        function loadHandler(e) {
+//            求出高度数组中最小的高度值
+            var min=Math.min.apply(null,heightList);
+//            根据这个高度值，计算出这个高度所在的下标，这个下标刚好对应的是li所在的下标
+            var index=heightList.indexOf(min);
+//          因为我们后面仍然使用当前图片的进行继续加载，所以，我们先把这个图片复制一个，操作复制的这个图片的宽高及加入li
+            var cloneImg=this.cloneNode(false);
+//            设置复制的图片的底边距
+            cloneImg.style.marginBottom=MARGIN_LEFT+"px";
+//            设置复制图片的宽度
+            cloneImg.style.width=(document.body.clientWidth-MARGIN_LEFT*(COL_NUM-1))/COL_NUM+"px";
+//           将当前复制的图片放在最小高度的那个li中
+            ul.children[index].appendChild(cloneImg);
+//            给这个高度数组中对应的最小的值累加当前图片的宽度及底边距
+            heightList[index]+=(cloneImg.height+MARGIN_LEFT);
+//            如果当前新加入图片后，页面宽度发生改变，就重设页面中每个li的宽度，和里面的所有图片的宽度
+            if(document.body.clientWidth!==bodyWidth){
+                resizeHandler();
+            }
+
+            num++;
+//            如果图片的数量超出最大值
+            if(num>=MAX){
+//                不继续加载了，删除了事件侦听，并跳出
+                this.removeEventListener("load",loadHandler);
+                return;
+            }
+//           重新指定图片的地址，利用load事件侦听，重新加载新图片
+            this.src="img/"+num+"-.jpg";
+        }
+
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div
+        {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<!-- HTML 标签属性命名,不区分大小,所以全部用小写,单词与单词之间使用横杆连接,标签属性可以看为一个公开属性-->
+<div id="div0" class="divStyle" title="abc" xietian="abc" main-data="abc"></div>
+<button>按钮</button>
+<button>按钮</button>
+<button>按钮</button>
+<button>按钮</button>
+<button>按钮</button>
+<button>按钮</button>
+<button>按钮</button>
+    <script>
+//        document.body
+//        document.title
+//console.log(document.URL)
+//        document.domain;
+   /*
+    跑马灯title*/
+   /* str="你有一封信邮件,请前往邮箱查收";
+        var num=0;
+        var str1="";
+//console.log(str.substr(0,11))
+        setInterval(animation,500);
+        function animation() {
+            str1=str.substring(num,num+11);
+            if(num+11>str.length-1)
+            {
+              var s=num+11-(str.length-1);
+              str1+=str.substring(0,s);
+            }
+            num++;
+            if(num>str.length-1) num=0;
+            document.title=str1;
+            console.log(str1);
+        }*/
+   /*  第二种写法
+    str="你有一封信邮件,请前往邮箱查收       ";
+    var num=0;
+    setInterval(animation,200);
+   function animation() {
+       var str1="";
+       var s=num;
+       while (str1.length<11){
+            str1+=str[s];
+            s++;
+           if(s>str.length-1){
+               s=0;
+           }
+       }
+       num++;
+       if(num>str.length-1)num=0;
+       document.title=str1;
+   }*/
+
+
+    /*
+    *  DOM 元素有两个属性   标签属性   对象属性
+    *
+    *   部分系统的标签属性和对象属性完全相同
+    *   id name type checked title src href style
+    *
+    *
+    *   注意:
+    *   class属性在对象属性中是className
+    * */
+
+    var div=document.createElement("div");
+    div.a=10;//DOM 对象属性
+    console.log(div.a);
+    document.body.appendChild(div);
+
+    var div0=document.getElementById("div0");
+    console.log(div0.className);
+    console.log(div0.title);
+
+
+    var bns=document.getElementsByTagName("button");
+    for(var i=0;i<bns.length;i++){
+//        bns[i].addEventListener("click",clickHandler);
+        bns[i].n=i;
+    }
+
+    function clickHandler(e) {
+       this.textContent=this.textContent+this.n;
+    }
+
+    /*
+    *  标签属性
+    *  通过js设置获取标签属性
+    *  设置属性或者获取属性,属性值都是字符类型
+    * */
+//    console.log(document.querySelector("[main-data]"));
+//        console.log(div0.main-data);
+//获取标签属性
+        console.log(div0.getAttribute("main-data"));
+        console.log(div0.getAttribute("xietian"));
+//        设置标签属性     属性名   属性值
+        div0.setAttribute("xietian",100);
+        div0.setAttribute("boolean",false);
+//      删除属性
+        div0.removeAttribute("boolean");
+
+
+
+        /*
+        * DOM 样式
+        * 取消原有css中-,将-后面的字母变大写就可以
+        * 这种方法是增加行内样式的方法
+        * */
+        div0.style.backgroundColor="red";
+
+//        console.log(div0.style.width)
+//        console.log(getComputedStyle(div0).width);//除IE外所有浏览器使用这种方法获取计算后样式
+//        console.log(div0.currentStyle.width);//IE获取计算后样式
+
+        var width;
+        try {
+            width=getComputedStyle(div0).width;
+        }catch (error){
+            width=div0.currentStyle.width;
+        }
+        console.log(width);
+
+        
+    </script>
+</body>
+</html>

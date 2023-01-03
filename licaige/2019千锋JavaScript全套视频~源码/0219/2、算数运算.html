@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+       /* var a1=7;
+        var a2=2;
+        console.log(a1+a2);
+        console.log(Number((a1-a2).toFixed(2)));//解决1.2-0.1时的数值问题
+        console.log(a1*a2);
+        console.log(a1/a2);
+        console.log(a1%a2);*/
+
+
+       /*
+       * 字符串运算
+       * */
+       var b1="a";
+       var b2="b";
+       var b3=10;
+       var b4=true;NaN
+       console.log(b1+b2);//字符串的运算，实际是首尾相加
+        console.log(b1+b3);//现将数值转换为字符，然后在进行字符串相加
+        console.log(b1+b4);//现将布尔值转换为字符，然后在进行字符串相加
+//        在运算中所有类型自动转换都是隐式转换，都是用强制转换
+
+//   - * / %   运算中会将值全部隐式转换为数值，再进行运算
+//       Infinity  正无穷
+        var c1="10a";
+        var c2=5;
+        var c3="";
+        var c4=true;
+        var c5="50";
+        var c6=null;
+        var c7=undefined;
+        console.log(c1-c2);//NaN
+        console.log(c2-c3);//5
+        console.log(c2-c4);//4
+        console.log(c5/c3);//Infinity
+        console.log(c5-c6);//50
+        console.log(c5-c7);//undefined强转数值是
+
+
+    </script>
+</body>
+</html>

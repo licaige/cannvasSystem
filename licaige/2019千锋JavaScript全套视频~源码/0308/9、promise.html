@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function getImage(src) {
+            return new Promise(function (res,rej) {
+                let img=new Image();
+                img.src=src;
+                img.onload=function () {
+                    res(img);
+                };
+                img.onerror=function () {
+                    rej("加载错误")
+                }
+            })
+        }
+        
+        /*let promise=getImage("./img/3-.jpg");
+        let promise1=promise.then(function (data) {
+            console.log(data);
+          return getImage("./img/4-.jpg");
+        },function (error) {
+            console.log(error);
+        });
+        let promise2=promise1.then(function (data) {
+            console.log(data);
+            return getImage("./img/5-.jpg")
+        })*/
+        /*
+        *  链式异步
+        *
+        * */
+      /*  getImage("./img/3-.jpg").then(function (data) {
+            console.log(data);
+            return getImage("./img/4-.jpg");
+        }).then(function (data) {
+            return getImage("./img/5-.jpg");
+        }).then(function (data) {
+            return getImage("./img/6-.jpg")
+        })*/
+
+
+/*  then有两个参数,都是函数,第一个函数是成功调用函数,第二个函数是失败调用函数
+      getImage("./img/1-.jpg").then(function (data) {
+          console.log(data);
+      },function (err) {
+          console.log(err);
+      })*/
+//  catch 失败后执行方法,有一个参数,这个参数是函数,失败后执行
+       /* getImage("./img/1-.jpg").then(function (data) {
+            console.log(data);
+        }).catch(function (err) {
+            console.log(err);
+        })*/
+    let list=[];
+      for(let i=3;i<80;i++){
+            list.push(getImage("./img/"+i+"-.jpg"));
+      }
+        /*
+        * Promise.all  执行多个异步数组,最后返回所有结果组成列表数组
+        *
+        *
+        *
+        * */
+  /*     Promise.all(list).then(function (arr) {
+          arr.forEach(t=>console.log(t.src));
+       });*/
+
+  /*
+  *   race  赛跑
+  *   执行多个异步数组,谁先完成异步,返回谁
+  *
+  *
+  * */
+
+        Promise.race(list).then(function (data) {
+            console.log(data);
+        })
+    </script>
+</body>
+</html>

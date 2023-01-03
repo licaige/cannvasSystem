@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let obj={a:1,_b:2};
+        let obj1={a:1,_b:2};
+        let handler={
+//            设置对象的属性值
+            set:function (target,key,value) {
+                if(key.startsWith("_")){
+                    console.log("不能设置私有变量的值");
+                    return;
+                }
+                target[key]=value;
+            },
+//            获取对象的属性值
+            get:function (target,key) {
+                if(key.startsWith("_")){
+                    console.log("不能读取私有变量的值");
+                    return;
+                }
+                return target[key];
+            },
+//            判断属性是否是对象的对象属性
+            has:function (target,key) {
+                return key in target;
+            }
+        };
+        let p=new Proxy(obj,handler);
+        let p1=new Proxy(obj1,handler);
+       p._b=20;
+       /*
+       * p是obj的代理，p就可以完成对于obj属性的操作
+       * 代理也可以完成新属性的添加
+       * */
+        console.log(p._b);
+    </script>
+</body>
+</html>

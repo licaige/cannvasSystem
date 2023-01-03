@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text" id="texts"><span></span>
+    <script>
+        /*
+        *  不要使用同一个表达式做多次判断
+        *
+        *
+        * */
+//        console.log("1982-09-232".match(/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/));
+     /*   var texts=document.getElementById("texts");
+        texts.addEventListener("blur",blurHandler);
+//        var reg=/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/g;
+        function blurHandler(e) {
+
+            if(/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/g.test(texts.value)){
+                texts.nextElementSibling.textContent="输入正确";
+                texts.nextElementSibling.style.color="green";
+                return;
+            }
+            texts.nextElementSibling.textContent="输入错误";
+            texts.nextElementSibling.style.color="red";
+        }*/
+
+
+        var texts=document.getElementById("texts");
+        texts.addEventListener("input",inputHandler);
+        /*
+        * 函数节流
+        * 用来控制函数不要长时间的连续调用,控制函数在指定时间调用一次
+        * 函数防抖
+        * 指定时间调用一次函数
+        *
+        * */
+        var id;
+        function inputHandler(e) {
+            if(id) return;
+            id=setTimeout(function () {
+                clearTimeout(id);
+                id=0;
+                if(/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/g.test(texts.value)){
+                    texts.nextElementSibling.textContent="输入正确";
+                    texts.nextElementSibling.style.color="green";
+                    return;
+                }
+                texts.nextElementSibling.textContent="输入错误";
+                texts.nextElementSibling.style.color="red";
+            },1000)
+        }
+
+
+    </script>
+</body>
+</html>

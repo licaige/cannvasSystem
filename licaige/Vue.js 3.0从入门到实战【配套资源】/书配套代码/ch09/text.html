@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id = "app">
+		    <!--
+			<input type="text" v-model.trim="message" value="Hello Vue.js">
+			-->
+			<input :value="message" @input="message = $event.target.value" />
+			<p>message：{{message}}</p>
+		</div>
+	
+		<script src="https://unpkg.com/vue@next"></script>
+        <script>
+        	const vm = Vue.createApp({
+        	    data() {
+        	        return {
+        	            message: 'Java无难事'
+        	        }
+        	    }
+            }).mount('#app');
+        </script>
+	</body>
+</html>

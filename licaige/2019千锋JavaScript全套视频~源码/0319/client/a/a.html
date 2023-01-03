@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+//        console.log(document.cookie)
+        window.addEventListener("storage",storageHandler);
+        function storageHandler(e) {
+            document.documentElement.style.backgroundColor=localStorage.bg;
+        }
+    </script>
+</body>
+</html>

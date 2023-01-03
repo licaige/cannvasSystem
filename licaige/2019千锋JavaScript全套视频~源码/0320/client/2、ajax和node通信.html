@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+
+    <script>
+
+        //  北京市昌平区天通苑28号楼 306号
+        //      ip地址               端口号
+
+        //谢天家  孟女士家
+//        域名      域名
+
+
+        //  北京市昌平区天通苑28号楼 602号
+//        张三家
+
+
+        //  北京市海淀区黄庄38号楼 602号
+        //        李四家
+        document.cookie="user=xt123456";
+        var xhr=new XMLHttpRequest();
+        xhr.open("GET","http://10.9.25.176:3001?user=xietian&age=20");
+        xhr.addEventListener("load",loadHandler);
+        xhr.send();
+        function loadHandler(e) {
+            console.log(this.response);
+        }
+
+    </script>
+</body>
+</html>

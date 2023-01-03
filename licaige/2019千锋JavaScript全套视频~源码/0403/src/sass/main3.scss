@@ -1,0 +1,46 @@
+//@import "main2";
+/*
+p{
+  //color: $color;
+}
+li>{
+  @import "main2";
+}*/
+
+/*
+@mixin setDiv{
+  width: 50px;
+  height: 50px;
+  background-color: skyblue;
+}
+div
+{
+  @include setDiv;
+}*/
+
+@mixin setDiv($w:50,$h:50,$c:red){
+  @if($h<50){
+    $h:50;
+  }@else if($h>100){
+    $h:100;
+  }
+  width: $w+px;
+  height: $h+px;
+  background-color: $c;
+}
+.div0
+{
+    //@include setDiv;
+    @include setDiv(30,30);
+}
+.div1
+{
+  //@include setDiv(100,100,skyblue);
+  @include setDiv(100);
+}
+.div2
+{
+  div{
+    @extend .div1
+  }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+<div>5</div>
+<input type="text" value="1">
+<input type="text" value="2">
+<input type="text" value="3">
+<input type="text" value="4">
+    <script>
+        //        html===innerHTML
+        //        text===textContent;
+        //          val===value;//针对form表单的元素
+//        $("div").html("<a href='#'>超链接</a>");
+//        $("div:nth-child(3)").html("<a href='#'>超链接</a>");
+//        $("div").eq(2).html("<a href='#'>超链接</a>");
+       /* var link=["http://www.163.com","http://www.qq.com","http://www.baidu.com","http://www.tao.com"];
+        $("div").html(function (index,item) {
+                 var url="#";
+                if(link[index]) url=link[index];
+               return "<a href='"+url+"'>"+item+"</a>"
+        })*/
+
+//       $("div").text("内容");
+//        $("div").text(function (index,item) {
+//            return "内容"+index;
+//        });
+
+
+
+//        $("input").val("你好");
+        /*$("input").val(function (index,item) {
+            return "你好"+index;
+        })*/
+
+//        console.log($("div").html());//获取div列表第0项的html,只获取一个
+//        console.log($("div").text());//获取每个div列表的textContent并且连接成一个字符串
+//        console.log($("input").val());//获取input列表第0项的value,只获取一个
+
+
+        var arr=[1,2,3,4,5,6];
+//        将遍历的元素放在each的第一个参数中,第二个参数是遍历的函数
+//        $.each和forEach相同
+//      var arr1=$.each(arr,function (index,item) {
+////            console.log(index,item);
+//        });
+//        console.log(arr1);
+
+       /* var obj={a:1,b:2,c:3};
+        $.each(obj,function (key,value) {
+            console.log(key,value);
+        })*/
+     /*  $.each($("div"),function (index,item) {
+//           item是一个DOM元素
+           console.log(index,item);
+       })*/
+
+//     只针对jQuery列表遍历
+//     $("div").each(function (index,item) {
+//         console.log(index,item);
+//     })
+    </script>
+</body>
+</html>

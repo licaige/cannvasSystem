@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var obj={a:10,b:{a:1,d:10}};
+        var obj1={};
+        Object.defineProperties(obj1,{
+                a:{
+                    value:10
+
+                },
+             b:{
+                    value:[1,2,3,4],
+                 writable:true,
+                 configurable:true
+                }
+        });
+        Object.defineProperties(obj,{
+            name:{
+                enumerable:true,
+                value:10
+            },
+            age:{
+                configurable:true,
+                writable:true,
+                value:20
+            },
+            _sex:{
+                configurable:true,
+                writable:true,
+                value:"男"
+            },
+            sex:{
+                configurable:true,
+                enumerable:true,
+                set:function (value) {
+                    this._sex=value;
+                },
+                get:function () {
+                    return this._sex;
+                }
+            },
+            home:{
+                configurable:true,
+                writable:true,
+                value:{
+                    a:new Date(),
+                    b:/[a]+/g,
+                    c:obj1
+                }
+            }
+        });
+
+//        var obj2=Object.assign({},obj);//不行,只能浅拷贝,只复制第一层,其他都会引用
+//        var obj2=JSON.parse(JSON.stringify(obj));
+//        console.log(obj2,obj);
+
+        function cloneObject(targetObject,sourceObject) {
+            var names=Object.getOwnPropertyNames(sourceObject);
+            for(var i=0;i<names.length;i++){
+                var desc=Object.getOwnPropertyDescriptor(sourceObject,names[i]);
+                if(typeof(desc.value)==="object" && desc.value!==null){
+                    var obj=new desc.value.constructor();
+                    Object.defineProperty(targetObject,names[i],{
+                        enumerable:desc.enumerable,
+                        writable:desc.writable,
+                        configurable:desc.configurable,
+                        value:obj
+                    });
+                    cloneObject(obj,desc.value)
+                }else{
+                    Object.defineProperty(targetObject,names[i],desc);
+                }
+            }
+            return targetObject;
+        }
+       /* var obj3=cloneObject({},obj);
+//        obj.home.c.b=100;
+        console.log(obj3,obj);*/
+
+
+      /*  var date=new Date();
+        console.log(new date.constructor());
+        var a=/[a]+/g;
+        console.log(new a.constructor());*/
+
+
+   /*   var objs={a:1};
+      Object.prototype.abcd=function () {
+            console.log(this);
+      };
+      objs.abcd();*/
+   
+   Object.prototype.cloneObjects=function (sourceObject) {
+       var names=Object.getOwnPropertyNames(sourceObject);
+       for(var i=0;i<names.length;i++){
+           var desc=Object.getOwnPropertyDescriptor(sourceObject,names[i]);
+           if(typeof(desc.value)==="object" && desc.value!==null){
+               var obj=new desc.value.constructor();
+               Object.defineProperty(this,names[i],{
+                   enumerable:desc.enumerable,
+                   writable:desc.writable,
+                   configurable:desc.configurable,
+                   value:obj
+               });
+               obj.cloneObjects(desc.value)
+           }else{
+               Object.defineProperty(this,names[i],desc);
+           }
+       }
+       return this;
+   };
+
+   var objs={bcd:10};
+   objs.cloneObjects(obj);
+   console.log(objs);
+    </script>
+</body>
+</html>

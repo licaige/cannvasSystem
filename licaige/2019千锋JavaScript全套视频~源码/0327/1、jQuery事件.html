@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--async 异步加载-->
+    <!--defer 所有DOM加载完毕以后执行-->
+    <script src="js/a.js" defer></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+
+    <script>
+       /* $("<div></div>").appendTo("body").width(50).height(50).css("backgroundColor","red")
+            .click(function (e) {
+                console.log("click")
+            }).mousedown(function (e) {
+            
+        }).mousemove(function () {
+            
+        })*/
+      /* $("<div></div>").appendTo("body").width(50).height(50).css("backgroundColor","red")
+           .mousedown(function (e1) {
+               var div=$(this);
+               $(document).mousemove(function (e2) {
+                   div.offset({left:e2.clientX-e1.offsetX,top:e2.clientY-e1.offsetY})
+               }).mouseup(function (e3) {
+                   $(this).off("mousemove mouseup");
+               })
+           })*/
+      var img;
+//      js的标签中defer是页面加载完成,并且将DOM放入在页面中,但是DOM元素的内容没有加载完成,比如link标签,img标签
+//       load事件,是页面加载完成,并且ＤＯＭ放入在页面中，图片，link,视频,声音统统加载完成后才执行,只触发一次
+//       window.addEventListener("load",init);
+//       function init() {
+//            img=document.querySelector("img");
+//            console.log(img.width);
+//       }
+//       ready事件和defer属性相同,可以触发多次
+        /*$(window).ready(function (e) {
+            img=document.querySelector("img");
+            console.log(img.width);
+        })*/
+      /* $("<div></div>").appendTo("body").width(50).height(50)
+           .css("backgroundColor","red").hover(function () {
+           $(this).css("backgroundColor","blue");
+       },function () {
+           $(this).css("backgroundColor","red");
+       })*/
+
+      /* $("<div></div>").appendTo("body").width(50).height(50)
+           .css("backgroundColor","red").on("click",function (e) {
+           console.log(e)
+       })*/
+//       $("<div></div>").appendTo("body").width(50).height(50)
+//           .click(function (e) {
+//               console.log("aaa");
+////               自动设置了停止冒泡,停止系统默认事件
+//           }).triggerHandler("click");
+//       会冒泡,会执行系统事件
+       //.trigger("click")
+
+
+
+     /*  $("<div></div>").appendTo("body").width(50).height(50).css("backgroundColor","red")
+//           一个on事件可以绑定多个事件模式
+       //           jQuery事件命名空间,用于多个相同事件删除时,只删除指定的事件
+           .on("click.a mousemove",function (e) {
+               console.log("aaa")
+           }).on("click.b",function (e) {
+            console.log("bbbb")
+            }).off("click.a");*/
+
+
+       var div=$("<div></div>").appendTo("body").width(50).height(50).css("backgroundColor","red");
+        div.on("mousedown",mouseHandler);
+        function mouseHandler(e) {
+            if(e.type==="mousedown"){
+//                on事件可以传参,传参后,在事件函数的e.data中
+                $(document).on("mousemove mouseup",{elem:this,offsetX:e.offsetX,offsetY:e.offsetY},mouseHandler);
+            }else if(e.type==="mousemove"){
+               $(e.data.elem).offset({left:e.clientX-e.data.offsetX,top:e.clientY-e.data.offsetY});
+            }else if(e.type==="mouseup"){
+                $(this).off("mousemove mouseup")
+            }
+        }
+    </script>
+    <div></div>
+<img src="img/bird.png">
+</body>
+</html>

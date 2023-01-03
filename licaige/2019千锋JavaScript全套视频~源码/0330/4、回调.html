@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+
+    </div>
+    <script>
+        function fn1(fn) {
+            fn();
+        }
+        function fn2() {
+            console.log("aa");
+        }
+
+        fn1(fn2);
+        /*
+        *
+        *  回调一般是实现异步执行
+        *
+        * */
+     /*   init();
+       function init() {
+           var img=new Image();
+           img.callback=callback;
+           img.addEventListener("load",loadHandler);
+           img.src="img/pic11.png"
+       }
+       
+       function loadHandler(e) {
+           this.callback(this);
+       }
+       function callback(self) {
+           var div=document.querySelector("div");
+           div.style.width=self.width*2+"px";
+       }*/
+       /*
+       *
+       *  回调就是在一个函数中执行另一个变量带入的函数,变量可以是参数,也可以是属性
+       *
+       *
+       * */
+    /*
+    *
+    *  回调地狱死循环
+    * */
+      /* function fn3(fn) {
+           fn(fn5);
+       }
+       function fn4(fn) {
+           fn(fn3);
+       }
+       function fn5(fn) {
+           fn(fn4);
+       }
+       fn3(fn4)*/
+    </script>
+</body>
+</html>

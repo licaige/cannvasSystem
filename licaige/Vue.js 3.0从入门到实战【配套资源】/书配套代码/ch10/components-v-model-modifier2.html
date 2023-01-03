@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+        <div id="app">
+        	<my-input v-model:title.capitalize="message"></my-input>
+        </div>
+		
+	    <script src="https://unpkg.com/vue@next"></script>
+		<script>
+            const app = Vue.createApp({
+                data() {
+                    return {
+                        message: ''
+                    }
+                }
+            });
+            
+            app.component('MyInput', {
+                data: function(){
+                    return {
+                        inpuStyles: {
+                            'background-color': '#cdcdcd',
+                            opacity: 0.5
+                        },
+                    }
+                },
+            	props: {
+            	    title: String,
+            	    // modelModifiers prop默认为空对象
+            	    titleModifiers: {
+            	        default: () => ({})
+            	    }
+            	},
+            	methods: {
+            	    emitValue(e) {
+            	        let value = e.target.value
+                        if (this.titleModifiers.capitalize) {
+                            value = value.charAt(0).toUpperCase() + value.slice(1)
+                        }
+                        this.$emit('update:title', value)
+            	    }  
+            	},
+                template: `
+                    <div>
+                        <input :value="title"
+                            :style="inpuStyles"
+                            @input="emitValue">
+                        <label>{{ title }}</label>
+                    </div>
+                `
+            });
+            const vm = app.mount('#app');
+		</script>
+	</body>
+</html>

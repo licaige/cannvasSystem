@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p
+        {
+            height: 6000px;
+        }
+        p img
+        {
+            display: block;
+        }
+        div
+        {
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            right: 100px;
+            bottom: 100px;
+            border: 1px solid #000000;
+            font-size: 50px;
+            line-height: 60px;
+            text-align: center;
+            cursor: default;
+            background-color: rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <img src="img/icon01.png">
+        <img src="img/icon02.png">
+        <img src="img/icon03.png">
+        <img src="img/icon04.png">
+        <img src="img/icon05.png">
+        <img src="img/icon06.png">
+        <img src="img/icon07.png">
+        <img src="img/icon08.png">
+        <img src="img/icon09.png">
+        <img src="img/icon01.png">
+        <img src="img/icon02.png">
+        <img src="img/icon03.png">
+        <img src="img/icon04.png">
+        <img src="img/icon05.png">
+        <img src="img/icon06.png">
+        <img src="img/icon07.png">
+        <img src="img/icon08.png">
+        <img src="img/icon09.png">
+        <img src="img/icon01.png">
+        <img src="img/icon02.png">
+        <img src="img/icon03.png">
+        <img src="img/icon04.png">
+        <img src="img/icon05.png">
+        <img src="img/icon06.png">
+        <img src="img/icon07.png">
+        <img src="img/icon08.png">
+        <img src="img/icon09.png">
+        <img src="img/icon01.png">
+        <img src="img/icon02.png">
+        <img src="img/icon03.png">
+        <img src="img/icon04.png">
+        <img src="img/icon05.png">
+        <img src="img/icon06.png">
+        <img src="img/icon07.png">
+        <img src="img/icon08.png">
+        <img src="img/icon09.png">
+        <img src="img/icon01.png">
+        <img src="img/icon02.png">
+        <img src="img/icon03.png">
+        <img src="img/icon04.png">
+        <img src="img/icon05.png">
+        <img src="img/icon06.png">
+        <img src="img/icon07.png">
+        <img src="img/icon08.png">
+        <img src="img/icon09.png">
+        <img src="img/icon01.png">
+        <img src="img/icon02.png">
+        <img src="img/icon03.png">
+        <img src="img/icon04.png">
+        <img src="img/icon05.png">
+        <img src="img/icon06.png">
+        <img src="img/icon07.png">
+        <img src="img/icon08.png">
+        <img src="img/icon09.png">
+        <img src="img/icon01.png">
+        <img src="img/icon02.png">
+        <img src="img/icon03.png">
+        <img src="img/icon04.png">
+        <img src="img/icon05.png">
+        <img src="img/icon06.png">
+        <img src="img/icon07.png">
+        <img src="img/icon08.png">
+        <img src="img/icon09.png">
+    </p>
+    <div>^</div>
+<script>
+    var div;
+    var bool=false,
+        speed=200;
+
+    init();
+   function init() {
+       div=document.querySelector("div");
+       div.addEventListener("click",clickHandler);
+       div.style.opacity="0";
+       document.addEventListener("scroll",scrollHandler);
+       setInterval(animation,16);
+   }
+    function clickHandler(e) {
+        bool=true;
+    }
+    
+    
+    function animation() {
+        if(!bool)return;
+        if(document.documentElement.scrollTop<=0){
+            bool=false;
+            div.style.opacity="0";
+            return;
+        }
+        document.documentElement.scrollTop-=speed;
+    }
+
+    function scrollHandler(e) {
+        if(document.documentElement.scrollTop>100){
+            div.style.opacity="1";
+            return;
+        }
+        if(document.documentElement.scrollTop<=0){
+            div.style.opacity="0";
+        }
+    }
+</script>
+</body>
+</html>

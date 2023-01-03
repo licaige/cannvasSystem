@@ -1,0 +1,46 @@
+/*此文件用于放置页面布局公用UI样式*/
+
+
+/************搜索框**************/
+.search-bar {
+    display: flex;
+    position: relative;
+    padding: 0px 8px;
+    margin-top: 10px;
+
+    .search-item {
+        margin: 0px 4px;
+        align-items: center;
+        display: flex;
+
+        /deep/ .el-input {
+            width: 150px;
+        }
+
+        &.btn {
+            margin-left: 20px;
+        }
+    }
+
+    .right-btn {
+        position: absolute;
+        right: 20px;
+
+        .more {
+            display: block;
+            height: 32px;
+            line-height: 32px;
+            cursor: pointer;
+            color: $oneLevelBtnColor;
+            font-size: 16px;
+
+            &:hover {
+                color: $hoverColor;
+            }
+        }
+    }
+}
+
+.search-content {
+    padding-top: 15px;
+}

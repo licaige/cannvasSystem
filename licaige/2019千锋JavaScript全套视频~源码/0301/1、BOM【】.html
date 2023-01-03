@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+//        window.document;(DOM)
+//    window是权限最高的对象,他可以找到我们要操作的所有子目标
+
+//       var a=window.open("http://www.163.com","网易","width=400,height=400");3
+//      a.close();
+//        a.alert("确定")
+//        window.close();3
+
+//窗口内部宽高,不含工具栏,地址栏等内容,包含滚动条
+        console.log(window.innerWidth,window.innerHeight);//5
+//        当前窗口宽高包含工具等.
+        console.log(window.outerWidth,window.outerHeight);//5
+//    窗口当前的位置,只能获取,不能设置
+        console.log(window.screenLeft,window.screenTop);//5
+
+
+    /*   var id=setTimeout(function () {
+            location.reload();//3秒后重载页面,给PHP等服务端工程师使用
+            clearTimeout(id);
+       },3000);*/
+
+//       location.href="http://www.163.com";//跳转页面  3
+//        location.assign("http://www.163.com");//跳转页面 5
+//        location.replace("http://www.163.com");//跳转页面 5
+        
+//        document.addEventListener("click",clickHandler);
+        function clickHandler(e) {
+            location.href="a.html";//跳转页面,有历史记录
+
+//            location.assign("http://www.163.com");//跳转页面,有历史记录
+//            location.replace("http://www.163.com");//跳转页面,没有历史记录
+        }
+
+        console.log(location.hash);//获取地址栏中#后面内容    5
+        console.log(location.search);//获取地址栏中?后面的内容  1
+
+        console.log(location.hostname);//域名
+        console.log(location.pathname);//目录
+        console.log(location.port);//端口号
+        console.log(location.protocol);//协议
+
+//     相当于设备屏幕宽高
+        console.log(screen.availWidth,screen.availHeight);//不带屏幕下面的系统部件
+        console.log(screen.width,screen.height);//包含系统部件
+
+
+
+        console.log(navigator.userAgent);//3
+        console.log(navigator.appName);//5
+        console.log(navigator.appVersion);//5
+        console.log(navigator.platform);//5
+
+        class Box{
+            constructor(){
+
+            }
+
+            static get getInstance(){
+                if(!Box._instance){
+                    Object.defineProperty(Box,"_instance",{enumerable:false,value:new Box()});
+                }
+                return Box._instance;
+            }
+        }
+
+    </script>
+</body>
+</html>

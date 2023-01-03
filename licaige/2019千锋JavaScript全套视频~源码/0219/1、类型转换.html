@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div
+        {
+            width: 100px;
+            height: 100px;
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body>
+<div id="div0"></div>
+    <script>
+        var n=35;
+//        console.log(n.toString());
+//        console.log(n.toString(36));//toString(r) r只能介于2-36之间
+       /* var color=0xFF0000;
+        console.log(color.toString(16));*/
+
+//       console.log(n.toFixed(2));//toFixed(n) 保留小数点后几位，0-100之间,会四舍五入
+
+
+        console.log(parseFloat("3.145"));//将字符转换为小数
+        console.log(parseInt("3.145"));//将字符转换为整数
+
+/*
+*  使用parseInt或者parseFloat时，转换根据第0位开始到字符所在位置的前一位，如果第0位就是
+*  字符，将转换为NaN
+*
+* */
+        console.log(parseFloat("3.14a"));
+        console.log(Number("3.14a"));
+        console.log(parseInt("3.8"));//不做四舍五入
+    </script>
+</body>
+</html>

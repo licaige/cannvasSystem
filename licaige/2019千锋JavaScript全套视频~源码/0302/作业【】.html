@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table
+        {
+            border-collapse: collapse;
+            width: 800px;
+        }
+        td,th
+        {
+            text-align: center;
+            line-height: 30px;
+            height: 30px;
+            border: 1px solid #000000;
+        }
+        td img
+        {
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+//        1.写一个函数,用不同浏览器打开,显示当前浏览器类型和版本
+//        4.使用DOM创建所有已学过的所有标签,使用对象型数组创建表格,创建的图片需要可以显示图片
+//        5.写一个函数,参数是创建标签名,父容器,style对象,返回一个创建好的元素,并且把它放在父容器中
+        
+  /*      function getBrowserVer() {
+            var str=navigator.userAgent;
+            console.log(str);
+            if(str.indexOf("Chrome")>-1){
+                if(str.indexOf("Win64")>-1){
+                    return "Chrome "+str.split("Chrome/")[1].split(" ")[0];
+                }
+                return "Safari "+str.split("Safari/")[1];
+            }else if(str.indexOf("Firefox")){
+                return "Firefox "+str.split("Firefox/")[1];
+            }
+        }
+console.log(getBrowserVer());*/
+
+var data=[
+    {id:1001,icon:"img/icon01.png",name:"计算机",num:1,price:10},
+    {id:1002,icon:"img/icon02.png",name:"手机",num:1,price:20},
+    {id:1003,icon:"img/icon03.png",name:"电脑",num:1,price:30},
+    {id:1004,icon:"img/icon04.png",name:"显示器",num:1,price:40},
+    {id:1005,icon:"img/icon05.png",name:"飞行器",num:1,price:50},
+    {id:1006,icon:"img/icon06.png",name:"计时器",num:1,price:60},
+    {id:1007,icon:"img/icon07.png",name:"笔记本",num:1,price:70},
+    {id:1008,icon:"img/icon08.png",name:"草稿本",num:1,price:80},
+    {id:1009,icon:"img/icon09.png",name:"公示牌",num:1,price:90},
+    {id:1010,icon:"img/icon10.png",name:"手机线",num:1,price:100}
+];
+// javascript object的属性是根据增加的先后顺序遍历
+    data=data.map(function (t) {
+        var obj={};
+        obj.selected=Math.floor(Math.random()*2)>0;
+        for(var key in t){
+            obj[key]=t[key];
+        }
+        return obj;
+    });
+    createTable(data);
+        function createTable(data) {
+            var table=document.createElement("table");
+            var thr=document.createElement("tr");
+            table.appendChild(thr);
+            for(var prop in data[0]){
+                var th=document.createElement("th");
+                if(prop==="selected"){
+                    var input1=document.createElement("input");
+                    input1.type="checkbox";
+                    th.appendChild(input1);
+                }else{
+                    th.textContent=prop;
+                }
+                thr.appendChild(th);
+            }
+            for(var i=0;i<data.length;i++){
+                var tr=document.createElement("tr");
+                table.appendChild(tr);
+                for(var key in data[i]){
+                    var td=document.createElement("td");
+                    if(key==="icon"){
+                        var img=new Image();
+                        img.src=data[i].icon;
+                        td.appendChild(img);
+                    }else if(key==="selected"){
+                        var input=document.createElement("input");
+                        input.type="checkbox";
+                        td.appendChild(input);
+                        input.checked=data[i].selected;
+                    }else{
+                        td.textContent=data[i][key];
+                    }
+                    tr.appendChild(td);
+                }
+            }
+            document.body.appendChild(table);
+        }
+
+
+        function $c(type,parent,style,text) {
+            var elem=document.createElement(type);
+            for(var key in style){
+                elem.style[key]=style[key];
+            }
+            if(text){
+                var t=document.createTextNode(text);
+                elem.appendChild(t);
+            }
+            if(parent){
+                parent.appendChild(elem);
+            }
+            return elem;
+        }
+
+
+       var div=$c("div",document.body,{
+            width:"100px",
+            height:"100px",
+            backgroundColor:"red"
+        },"容器");
+       var img=$c("img",div);
+       img.src="img/icon01.png";
+
+
+
+createTables(data);
+function createTables(data) {
+    var table=$c("table");
+    var thr=$c("tr",table);
+    for(var prop in data[0]){
+       var th=$c("th",thr);
+        if(prop==="selected"){
+            var input1=$c("input",th);
+            input1.type="checkbox";
+        }else{
+            th.textContent=prop;
+        }
+
+    }
+    for(var i=0;i<data.length;i++){
+        var tr=$c("tr",table);
+        for(var key in data[i]){
+            var td=$c("td",tr);
+            if(key==="icon"){
+                var img=$c("img",td);
+                img.src=data[i].icon;
+            }else if(key==="selected"){
+                var input=$c("input",td);
+                input.type="checkbox";
+                input.checked=data[i].selected;
+            }else{
+                td.textContent=data[i][key];
+            }
+        }
+    }
+    document.body.appendChild(table);
+}
+
+
+    </script>
+</body>
+</html>

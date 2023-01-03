@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div
+        {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+<button>按钮4</button>
+    <script>
+        /*
+        *  柯里化多被应用于单一参数的传入,异步调用多次后统一执行函数
+        *
+        *
+        * */
+        /*  function curry(_fn){
+          var arg=[];
+          var fn=_fn;
+          return function () {
+              if(arguments.length>0){
+                 arg=arg.concat(Array.prototype.slice.call(arguments));
+                 return;
+              }
+             return fn.apply(null,arg);
+          }
+      }
+
+  function getSum() {
+          var arr=Array.prototype.slice.call(arguments);
+          return arr.reduce(function (p1, p2) { return p1+p2 });
+      }
+
+      var fn=curry(getSum);
+      fn(5);
+      fn(6);
+      fn(7,8,9);
+      fn(10);
+      console.log(fn());*/
+        
+       /* var bns=document.querySelectorAll("button");
+        var div=document.querySelector("div");
+        for(var i=0;i<bns.length;i++){
+            bns[i].addEventListener("click",clickHandler);
+        }
+        var fn=curry(setDivBg);
+
+        function clickHandler(e) {
+            fn(this);
+        }
+        
+        function curry(_fn) {
+            var arr=[];
+            var fn=_fn;
+            return function (item) {
+                if(item){
+                    if(arr.indexOf(item)>-1){
+                        arr.splice(arr.indexOf(item),1)
+                    }else{
+                        arr.push(item);
+                    }
+                    fn.apply(null,arr);
+
+                    return;
+                }
+                fn.apply(null,arr);
+            }
+        }
+        
+        function setDivBg() {
+            var arr=Array.prototype.slice.call(arguments);
+            if(arr.length<4){
+                div.style.backgroundColor="white";
+                div.textContent="";
+                return;
+            }
+            div.style.backgroundColor="red";
+
+            div.textContent=arr.reduce(function (p1, p2) {
+                return p1+p2.textContent+",";
+            },"");
+        }*/
+    </script>
+</body>
+</html>

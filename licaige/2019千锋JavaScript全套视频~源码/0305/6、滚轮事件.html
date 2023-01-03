@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /*
+        *   火狐  DOMMouseScroll
+        *   谷歌和IE mousewheel
+        *    滚轮事件
+        *
+        *
+        *
+        *    mousewheel
+        *    deltaX:-0
+        *    deltaY:-100  纵向向上 -100,向下是100
+        *    deltaZ:0
+        *    detail:0
+        *    wheelDelta:120
+        *    wheelDeltaX:0
+        *    wheelDeltaY:120    纵向向上 120 向下 -120
+        *
+        * DOMMouseScroll
+        *   detail: -3  滚轮向上-3  滚轮向下3;
+        *
+        *
+        * */
+        document.addEventListener("DOMMouseScroll",mouseHandler);
+        document.addEventListener("mousewheel",mouseHandler);
+        function mouseHandler(e) {
+            console.log(e);
+        }
+    </script>
+</body>
+</html>

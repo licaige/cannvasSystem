@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 50px;
+            height: 50px;
+            background-color: orange;
+            position: absolute;
+        }
+        #div1
+        {
+            background-color: greenyellow;
+        }
+    </style>
+    <script src="js/Utils.js"></script>
+</head>
+<body>
+    <!--<div id="div0"></div>-->
+    <!--<div id="div1"></div>-->
+    <script>
+      /*  var div0=document.getElementById("div0");
+        var div1=document.getElementById("div1");
+        Utils.dragElem(div0);
+        Utils.getRandomPosition(div1);
+        div0.addEventListener("elemMove",mouseHandler);
+        function mouseHandler(e) {
+               if(Utils.hitTest(div0,div1)){
+                   Utils.getRandomPosition(div1);
+               }
+        }*/
+    TimeManage=(function () {
+        var list=[];
+        return {
+            add:function (elem) {
+                if(list.indexOf(elem)<0){
+                    list.push(elem);
+                }
+                return elem;
+            },
+            remove:function (elem) {
+                var index=list.indexOf(elem);
+                if(index<0) return elem;
+                list.splice(index,1);
+                return elem;
+            },
+            start:function () {
+                if(!this.id){
+                    this.id=setInterval(this.animation,16);
+                }
+            },
+            end:function () {
+               clearInterval(this.id);
+            },
+            animation:function () {
+                for(var i=0;i<list.length;i++){
+                    if(!list[i].update)continue;
+                    list[i].update();
+                }
+            }
+
+        }
+    })();
+
+
+      function Box(r,speed,parent) {
+          this.createDiv(r,parent);
+          this.speed=speed;
+      }
+      Box.prototype={
+          constructor:Box,
+          createDiv:function (r,parent) {
+                if(this.elem) return this.elem;
+                this.elem=document.createElement("div");
+                Object.assign(this.elem.style,{
+                    width:r*2+"px",
+                    height:r*2+"px",
+                    backgroundColor:"red",
+                    position:"absolute",
+                    borderRadius:r+"px"
+                });
+                parent.appendChild(this.elem);
+                this.elem.addEventListener("click",this.clickHandler.bind(this));
+              return this.elem;
+          },
+          clickHandler:function (e) {
+              this.bool=!this.bool;
+                if(this.bool){
+                    TimeManage.add(this);
+                    return;
+                }
+              TimeManage.remove(this);
+          },
+          update:function () {
+              if(!this.elem)return;
+              this.elem.style.left=this.elem.offsetLeft+this.speed+"px";
+          }
+      };
+
+
+      new Box(50,1,document.body);
+      new Box(25,2,document.body);
+      TimeManage.start();
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="https://unpkg.com/vue@next"></script>
+		<script>
+		    const {reactive, watchEffect} = Vue;
+		    const state = reactive({
+               count: 0
+            })
+            
+            watchEffect(() => {
+               document.body.innerHTML = `count is ${state.count}`
+            })
+		</script>
+	</body>
+</html>

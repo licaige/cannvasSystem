@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div
+        {
+            width: 50px;
+            height: 50px;
+            background-color: orange;
+            position: absolute;
+        }
+    </style>
+    <script src="js/Tween.js"></script>
+</head>
+<body>
+    <select id="easing"></select>
+    <select id="outs"></select>
+    <div></div>
+    <script>
+
+        var easing,outs,div;
+        init();
+        function init() {
+            easing=document.querySelector("#easing");
+            outs=document.querySelector("#outs");
+            div=document.querySelector("div");
+            /*for(var prop in TWEEN.Easing){
+                var option=document.createElement("option");
+                option.textContent=prop;
+                easing.appendChild(option);
+            }*/
+            animation();
+           var prop=createOption(TWEEN.Easing,easing);
+            easing.addEventListener("change",changHandler);
+            selectInit(prop)
+        }
+
+        function changHandler(e) {
+            var prop=easing.selectedOptions[0].textContent;
+            selectInit(prop)
+        }
+
+        function selectInit(prop) {
+            var len=outs.children.length;
+            for(var i=0;i<len;i++){
+                outs.firstElementChild.remove();
+            }
+            /*for(var strs in TWEEN.Easing[prop]){
+                var option=document.createElement("option");
+                option.textContent=prop;
+                outs.appendChild(option);
+            }*/
+           var propStr=createOption(TWEEN.Easing[prop],outs);
+            outs.addEventListener("change",outsChangeHandler);
+            outsChangeHandler();
+        }
+
+        function outsChangeHandler(e) {
+            var prop=easing.selectedOptions[0].textContent;
+            var outProp=outs.selectedOptions[0].textContent;
+            var tween=new TWEEN.Tween({x:0,y:0});
+            tween.to({x:300,y:300},1000);
+            tween.onUpdate(updateHandler);
+            tween.easing(TWEEN.Easing[prop][outProp]);
+            tween.start();
+        }
+
+        function updateHandler() {
+            div.style.left=this.x+"px";
+            div.style.top=this.y+"px";
+        }
+
+        function createOption(obj,parent) {
+            var first;
+            for(var prop in obj){
+                if(!first) first=prop;
+                var option=document.createElement("option");
+                option.textContent=prop;
+                parent.appendChild(option);
+            }
+            return first;
+        }
+
+        function animation() {
+            requestAnimationFrame(animation);
+            TWEEN.update();
+        }
+    </script>
+</body>
+</html>

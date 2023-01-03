@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var obj={};
+//        obj.a=10;
+        Object.defineProperty(obj,"a",{
+//            不可删除(不可修改属性*),如果不设置时,默认值false,不可删除
+            configurable:true,
+//            不可遍历属性(枚举属性),默认值是false,不可以枚举(不可使用assign)
+            enumerable:true,
+//            是否可修改属性,默认值是false,不可以修改
+            writable:true,
+            value:10
+        });
+//        console.log(obj.a);
+        for(var str in obj){
+            console.log(str,obj[str])
+        }
+
+//       delete obj.a;
+        obj.a=20;
+       console.log(obj);
+
+
+
+
+       /*
+       *  如果使用defineProperty 设置set和get方法时,不允许设置writable和value
+       *
+       * */
+        obj._a=10;
+        Object.defineProperty(obj,"a",{
+//            不可删除(不可修改属性*),如果不设置时,默认值false,不可删除
+            configurable:true,
+//            不可遍历属性(枚举属性),默认值是false,不可以枚举(不可使用assign)
+            enumerable:true,
+            set:function (value) {
+                this._a=value;
+            },
+            get:function () {
+                return this._a;
+            }
+        });
+        console.log(obj);
+
+
+        function Box(n) {
+            this.n=n;
+        }
+        var box=new Box(10);
+        console.log(box.constructor.arguments)
+    </script>
+</body>
+</html>

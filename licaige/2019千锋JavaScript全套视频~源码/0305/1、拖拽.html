@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div
+        {
+            width: 50px;
+            height: 50px;
+            background-color: orange;
+            position: absolute;
+        }
+    </style>
+    <script src="js/Utils.js"></script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+<script>
+  /*
+   拖拽1
+
+   var div=document.querySelector("div");
+    div.onmousedown=function (evt) {
+        var x=evt.offsetX;
+        var y=evt.offsetY;
+        document.onmousemove=function (e) {
+            div.style.left=e.clientX-x+"px";
+            div.style.top=e.clientY-y+"px";
+        };
+        div.onmouseup=function () {
+          document.onmousemove=null;
+        }
+    }*/
+
+/*
+  拖拽第二版
+    var divs=document.querySelectorAll("div");
+
+   for(var i=0;i<divs.length;i++){
+       divs[i].addEventListener("mousedown",mouseDownHandler);
+   }
+    function mouseDownHandler(e) {
+       e.preventDefault();
+        document.addEventListener("mousemove",mouseMoveHandler);
+        document.x=e.offsetX;
+        document.y=e.offsetY;
+        document.elem=this;
+        this.addEventListener("mouseup",mouseUpHandler);
+    }
+
+    function mouseMoveHandler(e) {
+        this.elem.style.left=e.clientX-this.x+"px";
+        this.elem.style.top=e.clientY-this.y+"px";
+    }
+
+    function mouseUpHandler(e) {
+        document.removeEventListener("mousemove",mouseMoveHandler);
+    }*/
+
+
+
+/*
+第三种
+  var divs=document.querySelectorAll("div");
+  for(var i=0;i<divs.length;i++){
+      drag(divs[i]);
+  }
+
+  removeDrag(divs[0]);
+
+        function drag(elem) {
+            elem.addEventListener("mousedown",mouseHandler);
+        }
+        function removeDrag(elem) {
+            elem.removeEventListener("mousedown",mouseHandler);
+        }
+
+        function mouseHandler(e) {
+            switch (e.type){
+                case "mousedown":
+                    e.preventDefault();
+                    document.addEventListener("mousemove",mouseHandler);
+                    this.addEventListener("mouseup",mouseHandler);
+                    this.x=e.offsetX;
+                    this.y=e.offsetY;
+                    document.elem=this;
+                    break;
+                case "mousemove":
+                    this.elem.style.left=e.clientX-this.elem.x+"px";
+                    this.elem.style.top=e.clientY-this.elem.y+"px";
+                    break;
+                case "mouseup":
+                    document.removeEventListener("mousemove",mouseHandler);
+                    this.removeEventListener("mouseup",mouseHandler);
+                    break;
+            }
+        }*/
+
+  var divs=document.querySelectorAll("div");
+  for(var i=0;i<divs.length;i++){
+        Utils.dragElem(divs[i]);
+  }
+
+  var img=new Image();
+    img.src="./img/1.png";
+    document.body.appendChild(img);
+
+    Utils.dragElem(img);
+
+
+
+
+/*    var obj={
+        a:1,
+        b:function () {
+            console.log(this);//obj
+            console.log(this.a);
+            var div=document.createElement("div");
+            document.body.appendChild(div);
+            div.addEventListener("click",this.clickHandler)
+        },
+        clickHandler:function (e) {
+            console.log(this);//div
+        }
+    }*/
+</script>
+</body>
+</html>

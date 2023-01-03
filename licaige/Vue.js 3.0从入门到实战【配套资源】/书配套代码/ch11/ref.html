@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="https://unpkg.com/vue@next"></script>
+		<script>
+		    const {ref, watchEffect} = Vue;
+		    const state = ref(0)
+            
+            watchEffect(() => {
+               document.body.innerHTML = `count is ${state.value}`
+            })
+		</script>
+	</body>
+</html>

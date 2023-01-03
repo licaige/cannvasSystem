@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function Box() {
+            
+        }
+        
+        Box.prototype.play=function () {
+            console.log(this.num);
+        };
+//        动态属性
+        Box.prototype.num=3;
+
+
+        /*
+        *  静态属性和静态方法不会随之产生新对象而改变
+        *  因为这个属性和方法就属于当前类自身的属性,与实例的对象无关
+        *
+        *
+        * */
+//        静态属性和静态方法
+        Box.play1=function () {
+//            静态方法中不能使用this
+            console.log(Box.num)
+        };
+        Box.num=100;
+
+        var b1=new Box();
+        var b2=new Box();
+//        console.log(b,Box.num);
+        b1.num=10;
+        b2.num=20;
+//        console.log(b1,b2)
+        b1.play();
+        b2.play();
+        Box.play1();
+
+
+//        Math.floor();
+//        var arr=[1,2,3];
+//        arr.push();
+
+//        Array.from();
+
+//        Math.max.apply(null,arr);
+
+//        arr替代了数组中执行slice所需要的实例化对象
+//        Array.prototype.slice.call(arr);
+
+        Array.prototype.max=function () {
+            if(this.some(function (t) { return isNaN(Number(t)) })) return NaN;
+            return this.reduce(function (p1, p2) {
+                return p1>p2 ? p1 : p2;
+            })
+        };
+        var arr=[1,5,2,0,19,28,75,20];
+        console.log(arr.max());
+
+        HTMLDivElement.prototype.createRect=function () {
+            this.style.width="50px";
+            this.style.height="50px";
+            this.style.backgroundColor="red";
+            this.style.position="absolute";
+        };
+        var div=document.createElement("div");
+        document.body.appendChild(div);
+        div.createRect();
+
+
+        function Ball() {
+            
+        }
+        Ball.prototype={
+            a:1
+        };
+        Ball.prototype.constructor=Ball;
+        var b3=new Ball();
+        var b4=new Ball();
+        b4.a=10;
+        console.log(b3);
+
+
+        /*
+        *
+        *   原型是指类的动态方法集
+        *   原型链是对象的方法集,源资源与类的原型,原型链等于原型
+        *
+        *
+        * */
+
+        console.log(b4.__proto__===Ball.prototype);
+//        b4.__proto__.a=20;//不能
+
+
+    </script>
+</body>
+</html>

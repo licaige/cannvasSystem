@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <style>
+        .modal-body
+        {
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+<!--data-target="#myModal" 绑定按钮操作的对象,data-toggle="modal"操作打开模态窗-->
+   <button class="btn btn-default" data-target="#myModal" data-toggle="modal">打开模态窗</button>
+    <!--设置为模态窗,并且隐藏,fade滑出-->
+   <div class="modal fade" id="myModal">
+        <!--让模态窗缩紧居中-->
+        <div class="modal-dialog">
+            <!--让模态窗浮起来-->
+            <div class="modal-content">
+                <div class="modal-header">
+                        <!--data-dismiss="modal" 关闭模态窗-->
+                    <button class="close"  data-dismiss="modal"><span>&times;</span></button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    Text in a modal
+                    Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+
+                    Popover in a modal
+                    This  should trigger a popover on click.
+
+                    Tooltips in a modal
+                    This link and that link should have tooltips on hover.
+
+                    Overflowing text to show scroll behavior
+                    Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+
+                    Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+
+                    Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+
+                    Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+
+                    Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+
+                    Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+
+                    Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+
+                    Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+
+                    Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default"  data-dismiss="modal">Close</button>
+                    <button class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

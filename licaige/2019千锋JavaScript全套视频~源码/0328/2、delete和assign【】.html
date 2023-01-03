@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var obj={a:1,b:2};
+//        delete obj.a;
+//        console.log(obj);
+
+
+        var arr=[1,2,3,4];
+        delete arr[0];//这样删除会造成数组紧密型结构破坏掉,变成松散型结构
+        console.log(arr);
+
+
+      /*  for(var prop in obj){
+            delete  obj[prop];
+        }
+        delete obj.__proto__;// 原型是不能被删除的
+        console.log(obj);*/
+
+
+        var obj1=Object.create(obj);
+//        delete  obj1.__proto__.a;//禁止使用
+        console.log(obj);
+
+
+        var a=10;
+//        console.log(window.a);
+//        delete  window.a;//delete不能删除任何window下的属性
+//        console.log(window.a);
+
+//        delete 也可以删除对象下的方法;
+
+        /*
+        *
+        *Object.assign(目标对象,源对象);
+        *  将源对象中所有的属性和方法复制添加在目标对象中,如果有相同的属性或者方法时
+        *  会覆盖原有目标对象的属性值和方法,只可以做浅复制,并且只可以做可遍历属性的复制
+        *  原型链的属性不可以被复制.复制后返回目标对象.
+        *  可以合并复制多个源对象到目标对象,合并复制后,后面的源对象如果有相同属性时
+        *  会覆盖前面的源对象属性
+        *
+        *
+        *  Object.create()是把源对象作为目标对象的原型链放入的
+        *  Object.assign()把源对象的属性复制到目标对象的对象属性中
+        * */
+        var obj2=Object.assign({},obj1);
+        console.log(obj2);
+
+        var obj3=Object.assign({},{a:1},{b:2},{c:3},{a:4,c:5});
+        console.log(obj3);
+    </script>
+</body>
+</html>

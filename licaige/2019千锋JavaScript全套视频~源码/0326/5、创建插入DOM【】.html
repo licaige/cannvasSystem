@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+//        $("<div></div>");//创建Div
+/*
+*    插入在内部
+*    append
+*    appendTo
+*    prepend
+*    prependTo
+*
+*
+*
+* */
+//        $("body").append("<div></div>");
+//            $("div").append("<span></span>");
+            /*$("div").append(function (index,item) {
+                return `<span>${index}</span>`
+            });*/
+
+           /* $("body").append(function () {
+                return $("<table></table>").append(function () {
+                        return $("<tr></tr>").append(function () {
+                            var str="";
+                            for(var i=0;i<5;i++){
+                                str+="<td>"+i+"</td>";
+                            }
+                            return str;
+                        })
+                })
+            })*/
+
+
+          /* $("<div></div>")
+               .appendTo("body")
+               .width(50)
+               .height(50)
+               .css("backgroundColor","red")
+               .on("click",function () {
+                   $(this).css("backgroundColor","blue");
+               })*/
+
+//        document.body.insertBefore(span,document.body.firstElementChild);
+//          $("<span></span>").prependTo("body");
+       /* $("body").prepend("<span></span>");
+        $("div").prepend(function () {
+            
+        })*/
+       /*
+       *
+       *  插入在兄弟中,当前元素前后
+       *
+       *
+       *
+       * */
+//       $("div").after("<span></span>")
+//       $("div:last").after("<span></span>")
+//        $("div").before("<span></span>");
+//        $("div:first").before("<span></span>")
+//        $("<span></span>").insertBefore("div:first");
+//        $("<span></span>").insertAfter("div:last");
+    </script>
+</body>
+</html>

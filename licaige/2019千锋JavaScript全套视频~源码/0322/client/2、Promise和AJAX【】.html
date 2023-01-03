@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /*
+        *
+        *   Promise  使用Promise,当执行了res或者rej,同一个异步过程不会再做第二次处理
+        *
+        *
+        *
+        * */
+        function ajax(method,url,arg) {
+            return new Promise(function (res,rej) {
+                var xhr;
+                try {
+                    xhr=new XMLHttpRequest();
+                }catch (e){
+                    xhr=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                if(method.toLowerCase()==="get"){
+                    url+="?"+arg;
+                }
+                xhr.open(method,url);
+                xhr.onreadystatechange=function (e) {
+                    if(xhr.readyState===4 && xhr.status===200){
+                        res(xhr.response);
+                    }else if(xhr.readyState===4 && xhr.status!==200){
+                        rej("发送失败");
+                    }
+                };
+                xhr.send(method.toLowerCase()==="post" ? arg : "");
+            })
+        }
+
+
+        ajax("get","http://10.9.25.176:3000","a=3&b=4").then(function (res) {
+                console.log(res)
+        }).catch(function (err) {
+                console.log(err);
+        })
+
+    </script>
+</body>
+</html>

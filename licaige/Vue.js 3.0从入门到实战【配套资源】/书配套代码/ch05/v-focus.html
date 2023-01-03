@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<input v-focus>
+		</div>
+	
+		<script src="https://unpkg.com/vue@next"></script>
+		<script>
+		    const app = Vue.createApp({});
+			// 注册一个全局自定义指令
+			app.directive('focus', {
+			  // 当绑定元素被挂载到DOM中时
+			  mounted(el) {
+			    // 聚焦元素
+			    el.focus()
+			  }
+			})
+			app.mount('#app')
+		</script>
+	</body>
+</html>

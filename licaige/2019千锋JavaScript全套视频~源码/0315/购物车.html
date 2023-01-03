@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html
+        {
+            /*background-color: #cccccc;*/
+
+        }
+    </style>
+    <script src="js/goodsItem.js"></script>
+</head>
+<body>
+<div id="div0"></div>
+    <script>
+        var data=[
+            {id:1001,icon:"img/03.jpg",goods:"德国DMK进口牛奶 欧德堡（Oldenburger）超高温处理全脂纯牛奶1L*12盒",info:"1L*12",nowPrice:139,initPrice:156,sold:0.5},
+            {id:1002,icon:"img/04.jpg",goods:"帮宝适(Pampers)超薄干爽绿帮纸尿裤L164片(9-14kg)大码 尿不湿箱装",info:"L【9-14kg】",nowPrice:225,initPrice:275,sold:0.5},
+            {id:1003,icon:"img/05.jpg",goods:" 意大利进口 百乐可（BALOCCO） 千层酥饼 脆皮酥薄脆饼干 焦糖味 200g",info:"焦糖脆皮酥200g",nowPrice:27.9,initPrice:40,sold:0.5},
+            {id:1004,icon:"img/06.jpg",goods:"百草味 坚果零食干果 每日坚果 奶油味夏威夷果200g/袋（内含开果器）",info:"夏威夷果奶油味200g/袋",nowPrice:16.9,initPrice:30,sold:0.5},
+            {id:1005,icon:"img/07.jpg",goods:"三星 Galaxy S10 8GB+512GB炭晶黑（SM-G9730）3D超声波屏下指纹超感官全视屏骁龙855双卡双待全网通4G游戏手机 ",info:"炭晶黑\n8GB+512GB",nowPrice:7699,initPrice:9899,sold:0.5},
+            {id:1006,icon:"img/01.jpg",goods:"罗技（G）G102 游戏鼠标 8000DPI RGB鼠标 黑色 吃鸡鼠标 绝地求生",info:"G102有线游戏鼠标 黑色",nowPrice:119,initPrice:146,sold:0.5},
+            {id:1007,icon:"img/02.jpg",goods:"联想(Lenovo)拯救者Y7000英特尔酷睿i5 15.6英寸游戏笔记本电脑( i5-8300H 8G 512G SSD GTX1050 黑)",info:"Y7000【1050 i5 512",nowPrice:5699,initPrice:6200,sold:0.5}
+        ];
+        var shoppingList=[];
+        const CHANGE_STEP_NUMBER_EVENT="change_step_number_event";
+        init();
+        function init() {
+             var elem=document.createDocumentFragment();
+            var div0=document.getElementById("div0");
+
+
+            for(var i=0;i<data.length;i++){
+                var goods=new GoodsItem(data[i],elem);
+                div0.appendChild(createStepNumber(data[i]));
+            }
+            document.body.appendChild(elem);
+            document.addEventListener(GoodsItem.ADD_SHOPPING_LIST_EVENT,addShoppingList);
+            document.addEventListener(CHANGE_STEP_NUMBER_EVENT,changeNumberHandler);
+        }
+
+        function changeNumberHandler(e) {
+            console.log(e.data,e.num);
+        }
+
+        function addShoppingList(e) {
+            var id=e.data.id;
+           var item=shoppingList.filter(function (t) {
+                return t.id===id;
+            })[0];
+           if(item){
+              item.num++;
+              item.sum=item.num*item.price;
+           }else{
+               var goods={
+                   selected:false,
+                   id:e.data.id,
+                   icon:e.data.icon,
+                   goods:e.data.goods,
+                   info:e.data.info,
+                   price:e.data.nowPrice,
+                   num:1,
+                   sum:e.data.nowPrice,
+                   deleted:false
+               };
+               shoppingList.push(goods);
+           }
+        }
+
+
+        function createStepNumber(data) {
+            var div=document.createElement("div");
+            Object.assign(div.style,{
+                position:"relative"
+            });
+            var leftBn=document.createElement("button");
+            var input=document.createElement("input");
+            var rightBn=document.createElement("button");
+            leftBn.textContent="-";
+            rightBn.textContent="+";
+            var bnStyle={
+                width:"25px",
+                height:"25px",
+                backgroundColor:"#FFFFFF",
+                outline:"none",
+                cursor: "pointer",
+                position:"relative",
+                border:"1px solid #CCCCCC"
+            };
+            Object.assign(leftBn.style,bnStyle);
+            Object.assign(rightBn.style,bnStyle);
+            Object.assign(input.style,{
+                width:"50px",
+                height:"21px",
+                border:"1px solid #CCCCCC",
+                borderLeft:"none",
+                borderRight:"none",
+                outline:"none",
+                position:"relative",
+                textAlign:"center"
+            });
+            input.value=1;
+            div.appendChild(leftBn);
+            div.appendChild(input);
+            div.appendChild(rightBn);
+            leftBn.stepNum=rightBn.stepNum=input.stepNum=div;
+            leftBn.addEventListener("click",bnClickHandler);
+            rightBn.addEventListener("click",bnClickHandler);
+            input.addEventListener("input",inputHandler);
+            div.step=1;
+            var id=0;
+            div.setData=function (num) {
+                div.step=num;
+                input.value=num;
+                if(id)return;
+                id=setTimeout(function () {
+                    var evt=new Event(CHANGE_STEP_NUMBER_EVENT);
+                    evt.data=data;
+                    evt.num=div.step;
+                    document.dispatchEvent(evt);
+                    clearTimeout(id);
+                    id=0;
+                },500)
+            };
+            return div;
+        }
+
+
+        function bnClickHandler(e) {
+            if(this.textContent==="+"){
+                if(this.stepNum.step===99)return;
+                this.stepNum.setData(this.stepNum.step+1);
+            }else if(this.textContent==="-"){
+                if(this.stepNum.step===1)return;
+                this.stepNum.setData(this.stepNum.step-1);
+            }
+        }
+        function inputHandler(e) {
+            var num=Number(this.value.replace(/\D/,""));
+            if(num>99) num=99;
+            if(num<1) num=1;
+            this.stepNum.setData(num);
+        }
+
+    </script>
+</body>
+</html>

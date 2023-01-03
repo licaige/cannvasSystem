@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,GACA;EACE,gBAAgB,EAHX,GAAG;EAIR,KAAK,EAAE,KAAK;EACZ,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,QAAI;IACF,SAAS,EAAE,IAAI;IACf,KAAK,EAAE,IAAI",
+"sources": ["mian1.scss"],
+"names": [],
+"file": "mian1.css"
+}

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello Vue.js</title>
+    </head>
+    <body>
+        <!--View-->
+        <div id="app">
+            <a v-bind:[attributeName]="url">新浪网</a>
+        </div>
+    
+        <script src="https://unpkg.com/vue@next"></script>
+        <script>
+            var vm = Vue.createApp({
+                  data(){
+                    return{
+                      attributeName: "href",
+                      url: "http://www.sina.com.cn/"  
+                    }
+                }
+            }).mount('#app');
+        </script>
+    </body>
+</html>

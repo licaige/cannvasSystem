@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var date1=new Date();
+        date1.setHours(18);
+        console.log(date1-new Date());
+        var chr=["零","一","二","三","四","五","六","七","八","九"];
+        var weeks=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+        init();
+        function init() {
+            setInterval(animation,1000);
+        }
+        
+        function animation() {
+            var date=new Date();
+            var year=getYears(date.getFullYear());
+            var month=getChrNum(date.getMonth()+1);
+            var dates=getChrNum(date.getDate());
+            var week=weeks[date.getDay()];
+            var hour=getChrNum(date.getHours());
+            var minute=getChrNum(date.getMinutes());
+            var second=getChrNum(date.getSeconds());
+            console.log(year,month,dates,week,hour,minute,second)
+        }
+
+        function getYears(year) {
+            year=year.toString();
+            var str="";
+           for(var i=0;i<year.length;i++){
+                str+=chr[year[i]];
+           }
+           return str;
+        }
+        
+        function getChrNum(num) {
+            if(num>=100 || num<0 || num!==parseInt(num)) return;
+            if(num<10) return chr[num];
+            if(num===10) return "十";
+            if(num%10===0) return chr[num/10]+"十";
+            if(num<20) return "十"+chr[num%10];
+            var time=num.toString();
+            return chr[parseInt(time[0])]+"十"+chr[parseInt(time[1])];
+        }
+    </script>
+</body>
+</html>

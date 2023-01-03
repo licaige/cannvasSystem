@@ -1,0 +1,10 @@
+{
+  "name": "xietian",
+  "version": "1.0.1",
+  "backgroundColor":"#FFFF00",
+  "dependencies": {
+      "a":"1",
+      "b":"c"
+  },
+  "arr":[1,2,3,4,5]
+}

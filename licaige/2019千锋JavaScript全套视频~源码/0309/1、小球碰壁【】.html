@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var arr=[];
+//        var time;
+        
+        init();
+        function init() {
+            for(var i=0;i<10;i++){
+                arr.push(createBall(randomInt(10,20),randomInt(1,5),randomInt(2,6)))
+            }
+//            time=new Date().getTime();
+            setInterval(animation,16);
+        }
+
+        function randomInt(min,max) {
+            return Math.floor(Math.random()*(max-min)+min);
+        }
+
+        function createBall(r,speedX,speedY,parent) {
+            if(!parent) parent=document.body;
+            if(r<=0) r=5;
+           var ball=document.createElement("div");
+            setStyle(ball,{
+                width:r*2+"px",
+                height:r*2+"px",
+                borderRadius:r+"px",
+                backgroundColor:"red",
+                position:"absolute"
+            });
+            ball.speedX=speedX;
+            ball.speedY=speedY;
+            parent.appendChild(ball);
+            return ball;
+        }
+
+        function setStyle(elem,style) {
+            for(var prop in style){
+                elem.style[prop]=style[prop];
+            }
+        }
+        
+        function animation() {
+            for(var i=0;i<arr.length;i++){
+                arr[i].style.left=arr[i].offsetLeft+arr[i].speedX+"px";
+                arr[i].style.top=arr[i].offsetTop+arr[i].speedY+"px";
+                if(arr[i].offsetLeft>300 || arr[i].offsetLeft<=0){
+                    arr[i].speedX=-arr[i].speedX;
+                }
+                if(arr[i].offsetTop>300 || arr[i].offsetTop<=0){
+                    arr[i].speedY=-arr[i].speedY;
+                }
+            }
+        /*    console.log(new Date().getTime()-time);
+            time=new Date().getTime();*/
+        }
+
+    </script>
+</body>
+</html>

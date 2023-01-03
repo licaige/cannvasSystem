@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+        <div id="app">
+        	<my-input v-model:title="message"></my-input>
+        </div>
+		
+	    <script src="https://unpkg.com/vue@next"></script>
+		<script>
+            const app = Vue.createApp({
+                data() {
+                    return {
+                        message: 'Java无难事'
+                    }
+                }
+            });
+            
+            app.component('MyInput', {
+                data: function(){
+                    return {
+                        inpuStyles: {
+                            'background-color': '#cdcdcd',
+                            opacity: 0.5
+                        },
+                    }
+                },
+            	props: {
+            	    title: String  
+            	},
+                template: `
+                    <div>
+                        <input :value="title"
+                            :style="inpuStyles"
+                            @input="$emit('update:title', $event.target.value)">
+                        <label>{{ title }}</label>
+                    </div>
+                `	
+            });
+            /*
+            app.component('MyInput', {
+            	props: ['modelValue'],
+                template: `
+                    <input v-model="value">
+                `,
+                computed: {
+                    value: {
+                        get(){
+                            return this.modelValue
+                        },
+                        set(newValue){
+                            this.$emit('update:modelValue', newValue);
+                        }
+                    }
+                }
+            });*/
+            const vm = app.mount('#app');
+		</script>
+	</body>
+</html>

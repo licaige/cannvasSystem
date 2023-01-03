@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        class Ball{
+            constructor(_a){
+                this.a=_a;
+            }
+            play(){
+                console.log(this.a);
+            }
+            b=20;
+            static plays(){
+                
+            }
+        }
+
+
+
+        class Box extends Ball{
+            constructor(_a){
+                super(_a);//执行超类的constructor()构造函数,可以带参进入
+            }
+//            override 覆盖
+            //重写了父类的play方法,覆盖了原父类的play方法内容
+            play(){
+//                super.方法
+                super.play();//执行超类对象对应的该方法
+                console.log(this.b);
+            }
+        }
+
+        let b=new Ball(10);
+        b.play();
+        let c=new Box(30);
+        console.log(c);
+        c.play()
+    </script>
+</body>
+</html>

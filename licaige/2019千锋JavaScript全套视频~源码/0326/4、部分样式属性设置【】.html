@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <style>
+        /*div*/
+        /*{*/
+            /*padding: 5px;*/
+            /*border: 2px solid #000000;*/
+            /*margin: 10px;*/
+            /*width: 50px;*/
+            /*height: 50px;*/
+            /*background-color: red;*/
+        /*}*/
+        #div0
+        {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            left:50px;
+            top:10050px;
+        }
+        #div1
+        {
+            width: 50px;
+            height: 50px;
+            background-color: greenyellow;
+            position: absolute;
+            left:100px;
+            top:100px;
+        }
+    </style>
+</head>
+<body>
+    <!--<div></div>-->
+    <!--<div></div>-->
+    <!--<div></div>-->
+    <!--<div></div>-->
+    <div id="div0">
+        <div id="div1"></div>
+    </div>
+    <button>按钮</button>
+    <script>
+//        $("div").width(50);
+        /*$("div").width(function (index) {
+            return (index+1)*50
+        });*/
+//        console.log($("div").width());
+      /*  $("div").on("click",function () {
+            $(this).width($(this).width()+50);
+        })*/
+//      setInterval(function () {
+//          var a=$("div").eq(0);
+//          a.width(a.width()+1)
+//      },16)
+
+//        $("div").width(50).height(50).css("backgroundColor","red");
+//        console.log($("div").width())
+//        console.log($("div").innerWidth());//width+padding
+//        $("div").innerWidth(100);//如果设置值,会自动减去padding,设置100,实际width是90
+//        console.log($("div").outerWidth());//width+padding+border
+//$("div").outerWidth(100);//实际会减去border和padding的值
+//        console.log($("div").outerWidth(true));//width+padding+border+margin
+
+//        console.log($("#div1").offset());//getBoundingClientRect()里面left,top相同
+//        console.log($("#div1").position());//offsetLeft,offsetTop相同,相同父容器(父容器定位)
+//        $("#div1").offset({left:300,top:300});//可以设置可以获取
+//        $("#div1").position();//position()不能设置,只能获取
+
+        var bool=false;
+        $("button").css({
+            position:"fixed",
+            right:"10px",
+            bottom:"10px"
+        }).on("click",function () {
+            bool=true;
+        });
+
+        setInterval(animation,16);
+        function animation() {
+            if(!bool) return;
+            var elem=$("html");
+            if(elem.scrollTop()<=0){
+                bool=false;
+            }
+            elem.scrollTop(elem.scrollTop()-500);
+        }
+    </script>
+</body>
+</html>

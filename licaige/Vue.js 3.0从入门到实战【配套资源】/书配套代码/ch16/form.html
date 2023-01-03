@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<div id="app">
+			<my-component></my-omponent>
+		</div>
+		<script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/vuex@next"></script>
+		<script>
+		  const app = Vue.createApp({});
+			const store = Vuex.createStore({
+			  strict: true,
+			  state() {
+			    return {
+			        message: 'Java无难事'    
+			    }
+			  },
+			  mutations: {
+			    updateMessage (state, msg) {
+			      state.message = msg;
+			    }
+			  }
+			})
+			app.component('MyComponent', {
+			    /*
+				computed: Vuex.mapState([
+                    'message'
+                ]),
+                methods: {
+                    updateMessage(e){
+                        this.$store.commit('updateMessage', e.target.value)
+                    }
+                },*/
+				// template: '<input type="text" v-model="message">'
+				// template: '<input type="text" :value="message" @input="updateMessage">'
+				computed: {
+                    message: {
+                        get () {
+                            return this.$store.state.message;
+                        },
+                        set (value) {
+                            this.$store.commit('updateMessage', value);
+                        }
+                    }
+                },
+                template: '<input type="text" v-model="message">'
+  		    });
+  		    
+  		    app.use(store).mount('#app')
+		</script>
+	</body>
+</html>

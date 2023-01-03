@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+      /*  class Box{
+            constructor(){
+//                this.a=10;//ES6对象的属性可以被继承
+            }
+            play(){
+
+            }
+            set num(value){
+
+            }
+            static getSum(){
+
+            }
+            a=10;
+
+        }*/
+   
+      /*  class Ball extends Box{
+            constructor(){
+                super();
+            }
+        }
+*/
+        /*function Box() {
+            this.a=10;//设置对象属性
+        }
+        Box.prototype.play=function () {
+//            设置原型方法
+        };
+        Box.prototype.a=10;//设置原型属性
+
+        Object.defineProperty(Box.prototype,"num",{
+            enumerable:true,
+            configurable:true,
+            set:function (value) {
+//                设置类的set/get方法
+            },
+            get:function () {
+                
+            }
+        });
+        Box.getSum=function () {
+//            静态方法
+        };*/
+
+      /*  function Box() {
+            
+        }
+        Box.prototype={
+            constructor:Box,
+            play:function () {
+                
+            },
+            a:10,
+            set num(value){
+                
+            }
+        };
+        Box.getSum=function () {
+            
+        };*/
+
+        
+       /* var b=new Box();
+        console.log(b);*/
+      /* var b=new Ball();
+       console.log(b);*/
+
+
+//      在类的原型中增加方法,实例的对象就可以调用它
+
+
+        function Box() {
+            this.a=1;
+        }
+        Box.sum=function () {
+//            静态方法,模型的方法
+//            静态方法中不能操作this
+        };
+        Box.prototype.sum=function () {
+//            prototype就是new的对象实例的方法
+//            动态方法,根据模型创建的对象的方法
+                this.a=10;
+        };
+//        Box.prototype.constructor
+//        构造函数作用就是根据类创建对象时执行的初始函数,也就是执行对象入口函数
+       /* var b=new Box();
+        b.sum();
+        Box.sum();*/
+        
+        
+
+    </script>
+</body>
+</html>

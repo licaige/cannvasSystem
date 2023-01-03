@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    <div class="div0">
+        <p></p>
+        <div>
+            <p>
+                <span></span>
+                <span></span>
+            </p>
+        </div>
+    </div>
+    <ul>
+        <li class="lis">1</li>
+        <li>2</li>
+        <li class="li0">3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li class="li1">7</li>
+        <li>8</li>
+    </ul>
+    <script>
+        // find()等同于后代选择器
+        // $("div").find("span").text("内容");//$("div span").text("");
+
+        // $(".div0>p")
+        // $(".div0").children("p").text("内容");//$(".div0>p");
+    //    console.log($(".div0").children()[0]);//.div0的子代中第0个元素DOM
+
+
+        // $(".li0").next().text("内容");//$(".li0+*");
+        // $(".li0").next("li").text("内容")//$(".li0+li");
+
+        // $(".li0").nextAll().text("内容");//$(".li0~*");
+        // $(".li0").nextAll("li");//$(".li~li");
+
+        // $(".li0").nextUntil(".li1").text("内容");//从当前项到指定的兄弟项之前
+
+
+        // $(".li0").prev().text("内容");//从当前选择内容向上选择一个哥哥
+        // $(".li0").prev("li").text("内容");
+        // $(".li").prevAll();//向上选择所有的哥哥
+        // $(".li0").prevUntil(".lis");//向上选择到.lis之间的哥哥
+        // $(".li0").siblings();//选择.li0的所有兄弟(哥哥和弟弟)
+
+            // $("li").on("click",function(){
+            //     $(this).css({
+            //         color:"red"
+            //     }).siblings().css({
+            //         color:"black"
+            //     })
+            // });
+            
+
+            
+    </script>
+</body>
+</html>

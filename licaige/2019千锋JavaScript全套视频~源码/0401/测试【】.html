@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/main.js"></script>
+</head>
+<body>
+    <script>
+        function CheckBox(parent,name) {
+            this.init(parent,name);
+        }
+        CheckBox.prototype={
+            constructor:CheckBox,
+            init:function(parent,name){
+                this.checkbox=this.initCreate(parent,14);
+                this.checked=false;
+            },
+            initCreate:function(parent,wh){
+                if(this.checkbox) return this.checkbox;
+                let div=document.createElement("div");
+                Object.assign(div.style,{
+                    width:wh+"px",
+                    height:wh+"px",
+                    backgroundImage:"url(./img/new_icon.png)"
+                });
+                this.clickBind=this.clickHandler.bind(this);
+                parent.appendChild(div);
+                div.addEventListener("click",this.clickBind);
+                return div;
+            },
+
+            clickHandler:function(e){
+                this.checked=!this.checked
+            },
+            set checked(value){
+                if(this._checked===value) return;
+                this._checked=value;
+                Object.assign(this.checkbox.style,{
+                    backgroundPositionX:value ? "-128px" : "-238px",
+                    backgroundPositionY:value ? "-126px" : "-37px"
+                });
+                this.checkbox.dispatchEvent(new Event("change"));
+            },
+            get checked(){
+                return Boolean(this._checked);
+            }
+        };
+
+
+
+        function Radio(parent,name) {
+            Radio.superClass.constructor.call(this,parent,name);
+            this.names=name;
+        }
+        Radio.extendClass(CheckBox);
+
+        Radio.prototype.addProto({
+            init:function(parent,name){
+                this.checkbox=this.initCreate(parent,18);
+                this.checkbox.setAttribute("name",name);
+                this.checkbox.self=this;
+                this.checked=false;
+            },
+            clickHandler:function(e){
+                this.checked=true;
+            },
+            set checked(value){
+                if(this._checked===value) return;
+                let div=this.checkbox;
+                if(value){
+                    let arr=Array.from(document.getElementsByName(this.names));
+                    arr.forEach(function (t) {
+                        if(div!==t){
+                            t.self.checked=false;
+                        }
+                    });
+                }
+                Object.assign(this.checkbox.style,{
+                    backgroundPositionX:value ? "-175px" : "-195px",
+                    backgroundPositionY:value ? "-104px" : "-104px"
+                });
+                this._checked=value;
+                this.checkbox.dispatchEvent(new Event("change"));
+            }
+        });
+
+
+       /* var checkBox=new CheckBox(document.body);
+        var checkBox1=new CheckBox(document.body);
+        var checkBox2=new CheckBox(document.body);
+        var checkBox3=new CheckBox(document.body);
+        var checkBox4=new CheckBox(document.body);*/
+
+
+        let radio=new Radio(document.body,"sex");
+        radio.checked=true;
+        let radio1=new Radio(document.body,"sex");
+        let radio2=new Radio(document.body,"sex");
+        let radio3=new Radio(document.body,"sex");
+    </script>
+</body>
+</html>
